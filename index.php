@@ -22,7 +22,7 @@ $ch = curl_init();
 
 
 curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/api/v1/token"); //set API URL
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
@@ -36,23 +36,22 @@ $headers = array(
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); //provides the CURLOPT_HTTPHEADER with the $header array for the curl request
 
 //same as header except POST
-$post = array(
-    'grant_type:=password&username=hallam&password=9JS(g8Zh'
-);
+$post = "grant_type=password&username=hallam&password=9JS(g8Zh";
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post); //same as header except POST
 
 //set the <CLIENTID>:<CLIENTSECRET> for the API's communication with us... the client.
 $username = "sci-toolset";
-$password = "st"; //gibberish username and pass
+$password = "st";
 curl_setopt($ch,CURLOPT_USERPWD, "$username:$password"); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
 
 //executes the curl request and gets the status code (200) being success
 $result = curl_exec($ch);  
 
-//prints log to screen
-print($result);
-
 //ALWAYS CLOSE CONNECTIONS!
 curl_close($ch);
+
+//prints log to screen
+var_dump($result);
+
 
 ?>
