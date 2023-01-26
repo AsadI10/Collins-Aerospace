@@ -24,9 +24,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for executio
 
 //setting header variables for API call. (So API reaches correct Endpoint)
 $headers = array(
-    'Content-Type'=> 'application/x-www-form-urlencoded',
-    'Accept'=> '*/*',
-    'Host'=> 'localhost' //return address
+    'Content-Type: application/x-www-form-urlencoded',
+    'Accept: */*',
+    'Host: localhost' //return address
 );
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); //provides the CURLOPT_HTTPHEADER with the $header array for the curl request
 
