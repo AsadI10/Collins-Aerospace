@@ -5,8 +5,13 @@
  This object will be used for all
  calls back and forth to the API.
  The object can also take many extra
- 'bodys', 'headers', 'POST fields 
+ 'bodys', 'headers', 'POST' fields 
  for certain requests.
+
+ read this for basics to POST &
+ Header fields:
+
+ https://reqbin.com/Article/HttpPost
  */
 
 $ch = curl_init();
