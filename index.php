@@ -42,10 +42,9 @@ $data = array(
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data); //same as header except POST
 
 //set the <CLIENTID>:<CLIENTSECRET> for the API's communication with us... the client.
-$client = "hallam";
-$clientSecret = "9JS(g8Zh";
-curl_setopt($ch, CURLOPT_USERNAME, $client);
-curl_setopt($ch,CURLOPT_USERPWD, $clientSecret); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
+$username = "hallam";
+$password = "9JS(g8Zh"; //gibberish username and pass
+curl_setopt($ch,CURLOPT_USERPWD, "$username:$password"); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
 
 //executes the curl request and gets the status code (200) being success
 $result = curl_exec($ch);  
