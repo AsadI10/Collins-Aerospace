@@ -36,14 +36,14 @@ $headers = array(
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); //provides the CURLOPT_HTTPHEADER with the $header array for the curl request
 
 //same as header except POST
-$data = array(
-    'grant_type=password&username=hallam&password=9JS(g8Zh'
+$post = array(
+    'grant_type:=password&username=hallam&password=9JS(g8Zh'
 );
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data); //same as header except POST
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post); //same as header except POST
 
 //set the <CLIENTID>:<CLIENTSECRET> for the API's communication with us... the client.
-$username = "hallam";
-$password = "9JS(g8Zh"; //gibberish username and pass
+$username = "sci-toolset";
+$password = "st"; //gibberish username and pass
 curl_setopt($ch,CURLOPT_USERPWD, "$username:$password"); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
 
 //executes the curl request and gets the status code (200) being success
