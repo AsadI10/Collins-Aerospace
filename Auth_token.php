@@ -1,5 +1,3 @@
-
-
 <?php
 
 /* Instantiate $ch (curl object).
@@ -19,6 +17,7 @@
  CURL_OPT functions:
  https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
  */
+session_start();
 
 $ch = curl_init();
 
@@ -46,13 +45,21 @@ $password = "st";
 curl_setopt($ch,CURLOPT_USERPWD, "$username:$password"); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
 
 //executes the curl request and gets the status code (200) being success
-$result = curl_exec($ch);  
+$_SESSION["authtoken"] = curl_exec($ch);  
 
 //ALWAYS CLOSE CONNECTIONS!
 curl_close($ch);
 
+//To get the Access token specifically from OAuth Json obj.
+$at = "access_token";
+$_SESSION["authtoken"] = json_decode($_SESSION["authtoken"]);
+$_SESSION["authtoken"] = $_SESSION["authtoken"]->$at;
+
 //prints log to screen
-var_dump($result);
+var_dump($_SESSION["authtoken"]);
+
+//REMOVE THE COMMENT ON THE HEADER TO SEE HOW PRODUCT RETRIEVAL WORKS.
+//header("Location: Get_products.php");
 
 
 ?>
