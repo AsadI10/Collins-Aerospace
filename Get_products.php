@@ -1,5 +1,21 @@
 <?php
-//works
+/* Instantiate $ch (curl object).
+
+ This object will be used for all
+ calls back and forth to the API.
+ The object can also take many extra
+ 'bodys', 'headers', 'POST' fields 
+ for certain requests.
+
+ read this for basics to POST &
+ Header fields:
+
+ https://reqbin.com/Article/HttpPost
+
+ also refer to this to demonstrate
+ CURL_OPT functions:
+ https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
+ */
 
 session_start();
 
