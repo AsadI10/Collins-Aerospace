@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+require("Auth_token.php");
+?>
 <html>
      <head>
           <meta charset="UTF-8">
@@ -20,9 +23,11 @@
      </head>
 
      <body>
+          <h1><?php echo $_SESSION["authtoken"];?></h1>
           <div id="map"></div>
           <script>
                var map = L.map('map').setView([51.505, -0.09], 13);
+
                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                maxZoom: 19,
                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'

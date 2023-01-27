@@ -1,5 +1,4 @@
 <?php
-
 /* Instantiate $ch (curl object).
 
  This object will be used for all
@@ -56,7 +55,7 @@ $_SESSION["authtoken"] = json_decode($_SESSION["authtoken"]);
 $_SESSION["authtoken"] = $_SESSION["authtoken"]->$at;
 
 //prints log to screen
-var_dump($_SESSION["authtoken"]);
+//var_dump($_SESSION["authtoken"]);
 
 //REMOVE THE COMMENT ON THE HEADER TO SEE HOW PRODUCT RETRIEVAL WORKS.
 //header("Location: Get_products.php");
