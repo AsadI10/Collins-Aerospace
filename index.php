@@ -23,7 +23,6 @@ require("Auth_token.php");
      </head>
 
      <body>
-          <h1><?php echo $_SESSION["authtoken"];?></h1>
           <div id="map"></div>
           <script>
                var points = [];
