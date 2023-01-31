@@ -81,7 +81,7 @@ function getDetails($id){
 
     curl_close($ch);
 
-    $_SESSION["data"] = json_encode($results);
+    $_SESSION["data"] = $_SESSION["data"].$results;
 
 }
 

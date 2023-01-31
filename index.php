@@ -34,6 +34,8 @@ require("Get_products.php");
         </ul>
     </nav>
      <div id="map"></div>
+
+     <!--<h1><?php echo $_SESSION["data"];?></h1>-->
      <script>
           var points = [];
 
