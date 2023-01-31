@@ -4,7 +4,12 @@ session_start();
      require("Auth_token.php");
      require("Get_products.php");
 ?>
-<?=$_SESSION["data"];?>
+<?php
+$p = "product";
+$_SESSION["data"] = json_encode($_SESSION["data"]);
+$s = $_SESSION["data"]->$p;
+echo $s;
+?>
 <html>
      <head>
           <meta charset="UTF-8">
