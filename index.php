@@ -11,6 +11,7 @@ require("Auth_token.php");
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
           integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
           crossorigin=""/>
+          <link rel="stylesheet" href="CSS/index.css"/>
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
@@ -22,7 +23,14 @@ require("Auth_token.php");
           </style>
      </head>
 
-     <body oncontextmenu="return false;">
+     <body>
+     <nav class="CollinsNav">
+        <h2>Collins</h2>
+        <ul>
+            <li>Menu</li>
+            <li>Logout</li>
+        </ul>
+    </nav>
           <div id="map"></div>
           <script>
                var points = [];
