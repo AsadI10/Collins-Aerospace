@@ -22,7 +22,7 @@ require("Auth_token.php");
           </style>
      </head>
 
-     <body>
+     <body oncontextmenu="return false;">
           <div id="map"></div>
           <script>
                var points = [];
