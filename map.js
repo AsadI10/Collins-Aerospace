@@ -1,9 +1,12 @@
 /*
-AJAX REQUEST TO TRY AND GET THE ECHOD OUT DATA FROM Fetch_Data.php
+AJAX REQUEST TO TRY AND GET THE ECHO'D OUT DATA FROM Fetch_Data.php
 */
-let data = fetch('Fetch_data.php');
-
-document.write(data);
+fetch('Fetch_data.php')
+.then(function(response){
+     return response.json();
+}).then(function(data){
+     alert(data);
+});
 
 var points = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
