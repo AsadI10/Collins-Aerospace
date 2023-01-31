@@ -26,12 +26,25 @@ require("Auth_token.php");
           <h1><?php echo $_SESSION["authtoken"];?></h1>
           <div id="map"></div>
           <script>
-               var map = L.map('map').setView([51.505, -0.09], 13);
+               var points = [];
+
+               var map = L.map('map').setView([53.45043, -2.25975], 13);
 
                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                maxZoom: 19,
                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                }).addTo(map);
+
+function onMapClick(e) {
+     points.push(e.latlng);
+     L.marker(e.latlng).addTo(map);
+}
+map.on('click', onMapClick);
+
+window.oncontextmenu = function () {
+  var polygon = L.polygon(points).addTo(map);
+  points = [];
+}
           </script>
      </body>
 
