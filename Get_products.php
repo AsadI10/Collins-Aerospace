@@ -15,9 +15,12 @@
  also refer to this to demonstrate
  CURL_OPT functions:
  https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
- */
+ 
+ -------------------------------------
+ MAKE THIS A FUNCTION AT SOME POINT!!!
+ -------------------------------------
 
-session_start();
+ */
 
 $ch = curl_init();
 
@@ -44,7 +47,42 @@ $results = curl_exec($ch);
 
 curl_close($ch);
 
-var_dump($results);
+$sr = "searchresults";
+$r = "results";
+$id = "id";
+$results = json_decode($results);
 
+foreach($results->$r->$sr as &$val){
+    getDetails($val->$id);
+}
+
+
+
+//GETS THE COORDINATES AND ALL META DATA.
+
+function getDetails($id){
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/discover/api/v1/products/".$id); //set API URL
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
+
+    $headers = array(
+        'Accept: */*',
+        'Authorization: Bearer '.$_SESSION["authtoken"],
+        'Content-Type: application/json',
+    );
+
+    curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+
+    $results = curl_exec($ch);
+
+    curl_close($ch);
+
+    $_SESSION["data"] = json_encode($results);
+
+}
 
 ?>

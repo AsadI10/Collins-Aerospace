@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 require("Auth_token.php");
+require("Get_products.php");
 ?>
 <html>
      <head>
@@ -17,13 +18,14 @@ require("Auth_token.php");
           crossorigin=""></script>
           <style type="text/css">
                #map {
-                    overflow: auto;
-                    height: 1080px;
+                    display: flex;
+                    width: 500px;
+                    height: 250px;
                }
           </style>
      </head>
 
-     <body>
+     <body oncontextmenu="return false;">
      <nav class="CollinsNav">
         <h2>Collins</h2>
         <ul>
@@ -31,28 +33,32 @@ require("Auth_token.php");
             <li>Logout</li>
         </ul>
     </nav>
-          <div id="map"></div>
-          <script>
-               var points = [];
+     <div id="map"></div>
+     <script>
+          var points = [];
 
-               var map = L.map('map').setView([53.45043, -2.25975], 13);
+          var map = L.map('map').setView([53.45043, -2.25975], 13);
 
-               L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-               maxZoom: 19,
-               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-               }).addTo(map);
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
 
-function onMapClick(e) {
-     points.push(e.latlng);
-     L.marker(e.latlng).addTo(map);
-}
-map.on('click', onMapClick);
+          function onMapClick(e) {
+               points.push(e.latlng);
+               L.marker(e.latlng).addTo(map);
+          }
 
-window.oncontextmenu = function () {
-  var polygon = L.polygon(points).addTo(map);
-  points = [];
-}
-          </script>
+          function oncontextmenu(e) {
+               var polygon;
+               polygon = L.polygon(points).addTo(map);
+               points = [];
+          }
+
+          map.on('contextmenu', oncontextmenu);
+          map.on('click', onMapClick);
+     </script>
+
      </body>
 
 </html>
