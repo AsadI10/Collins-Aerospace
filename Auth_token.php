@@ -16,7 +16,6 @@
  CURL_OPT functions:    
  https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
  */
-session_start();
 
 $ch = curl_init();
 
@@ -56,9 +55,4 @@ $_SESSION["authtoken"] = $_SESSION["authtoken"]->$at;
 
 //prints log to screen
 //var_dump($_SESSION["authtoken"]);
-
-//REMOVE THE COMMENT ON THE HEADER TO SEE HOW PRODUCT RETRIEVAL WORKS.
-//header("Location: Get_products.php");
-
-
 ?>

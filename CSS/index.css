@@ -2,7 +2,7 @@
     background-color: #ffffff;
     color: #000000;
     list-style: none;
-    text-align: right;
+    text-align: center;
     padding: 20px 0 20px 0;
     background-color: #ccc;
 }
@@ -16,4 +16,10 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     color: #815a5a;
+}
+
+#map {
+    display: flex;
+    width: 1000px;
+    height: 250px;
 }

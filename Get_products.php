@@ -56,8 +56,6 @@ foreach($results->$r->$sr as &$val){
     getDetails($val->$id);
 }
 
-
-
 //GETS THE COORDINATES AND ALL META DATA.
 
 function getDetails($id){
@@ -84,5 +82,4 @@ function getDetails($id){
     $_SESSION["data"] = $_SESSION["data"].$results;
 
 }
-
 ?>

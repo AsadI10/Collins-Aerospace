@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
-require("Auth_token.php");
-require("Get_products.php");
+session_start();
+     require("Auth_token.php");
+     require("Get_products.php");
 ?>
+<?=$_SESSION["data"];?>
 <html>
      <head>
           <meta charset="UTF-8">
@@ -16,13 +18,6 @@ require("Get_products.php");
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
-          <style type="text/css">
-               #map {
-                    display: flex;
-                    width: 500px;
-                    height: 250px;
-               }
-          </style>
      </head>
 
      <body oncontextmenu="return false;">
@@ -33,16 +28,18 @@ require("Get_products.php");
             <li>Logout</li>
         </ul>
     </nav>
+
      <div id="map"></div>
 
-     <!--<h1><?php echo $_SESSION["data"];?></h1>-->
+
      <script>
           var points = [];
-
           var map = L.map('map').setView([53.45043, -2.25975], 13);
 
+          document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
+
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
+          maxZoom: 18,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           }).addTo(map);
 
@@ -57,6 +54,10 @@ require("Get_products.php");
                points = [];
           }
 
+          function loadProducts(){
+          }
+
+          loadProducts();
           map.on('contextmenu', oncontextmenu);
           map.on('click', onMapClick);
      </script>
