@@ -4,12 +4,7 @@ session_start();
      require("Auth_token.php");
      require("Get_products.php");
 ?>
-<?php
-$p = "product";
-$_SESSION["data"] = json_encode($_SESSION["data"]);
-$s = $_SESSION["data"]->$p;
-echo $s;
-?>
+
 <html>
      <head>
           <meta charset="UTF-8">
@@ -36,7 +31,9 @@ echo $s;
 
      <div id="map"></div>
 
+     <script type="text/javascript" src="map.js"></script>
 
+     <!--
      <script>
           var points = [];
           var map = L.map('map').setView([53.45043, -2.25975], 13);
@@ -66,7 +63,7 @@ echo $s;
           map.on('contextmenu', oncontextmenu);
           map.on('click', onMapClick);
      </script>
-
+     -->
      </body>
 
 </html>

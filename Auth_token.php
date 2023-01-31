@@ -4,7 +4,7 @@
  This object will be used for all
  calls back and forth to the API.
  The object can also take many extra
- 'bodys', 'headers', 'POST' fields 
+ 'body's', 'headers', 'POST' fields 
  for certain requests.
 
  read this for basics to POST &
