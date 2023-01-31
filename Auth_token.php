@@ -13,7 +13,7 @@
  https://reqbin.com/Article/HttpPost
 
  also refer to this to demonstrate
- CURL_OPT functions:
+ CURL_OPT functions:    
  https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
  */
 session_start();
