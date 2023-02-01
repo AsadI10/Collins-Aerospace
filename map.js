@@ -27,6 +27,7 @@ function oncontextmenu(e) {
      points = [];
 }
 
+//GONNA HAVE TO GET LARGE SPECIFICS IN JS ITSELF
 function loadProducts(){
      var obj;
 
