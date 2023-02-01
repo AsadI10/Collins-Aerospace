@@ -59,15 +59,14 @@ $results = json_decode($results);
 
 $results = $results->$r->$sr;
 
-var_dump(json_encode($results));
+//var_dump(json_encode($results));
 
 /*
 foreach($results as &$val){
     getDetails($val->$id);  
 }
+
 */
-
-
 
 
 //BULLSHIT CRAP CRAP CRAPGETS THE COORDINATES AND ALL META DATA.
@@ -75,7 +74,6 @@ function getDetails($id){
         $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/discover/api/v1/products/".$id); //set API URL
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
@@ -94,8 +92,8 @@ function getDetails($id){
     $set = json_decode($set);
     $p = "product";
     $r = "result";
-    $i = "identifier";
-    var_dump($set->$p->$r->$i);
+    $c = "centre";
+    //var_dump($set->$p->$r->$c);
     //INSERT INTO DB HERE TO JAVASCRIPT CAN ACCESS IT AND DRAW IT!
 }
 ?>
