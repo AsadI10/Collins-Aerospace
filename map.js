@@ -14,7 +14,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
 map.on('contextmenu', oncontextmenu);
 map.on('click', onMapClick);
-loadProducts()
+loadProducts();
 
 function onMapClick(e) {
      points.push(e.latlng);
@@ -28,10 +28,14 @@ function oncontextmenu(e) {
 }
 
 function loadProducts(){
+     var obj;
+
      fetch('Fetch_data.php')
-     .then(function(response){
-          return response.json();
-     }).then(function(data){
-          console.log(data);
-     });
+     .then(res => res.json())
+     .then(data =>{
+          obj = data;
+     })
+     .then(()=>{
+          console.log(obj);
+     })
 }
