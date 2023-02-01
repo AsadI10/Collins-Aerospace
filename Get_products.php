@@ -75,11 +75,11 @@ function getDetails($id){
 
     curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
-    $results = curl_exec($ch);
+    $set = curl_exec($ch);
 
     curl_close($ch);
 
-    $_SESSION["data"] = $_SESSION["data"].$results;
+    $_SESSION["data"] = $_SESSION["data"].strval($set);
 
 }
 ?>
