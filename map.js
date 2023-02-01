@@ -1,5 +1,4 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
-var s;
 var points = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
 

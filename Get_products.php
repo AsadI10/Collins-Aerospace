@@ -20,7 +20,7 @@
  MAKE THIS A FUNCTION AT SOME POINT!!!
  -------------------------------------
 
- */
+*/
 
 $ch = curl_init();
 try{
@@ -44,7 +44,7 @@ $headers = array(
 
 curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
-$post = '{"size":5, "keywords":""}';
+$post = '{"size":121, "keywords":""}';
 
 curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
@@ -56,15 +56,23 @@ $sr = "searchresults";
 $r = "results";
 $id = "id";
 $results = json_decode($results);
-$endJson = "";
 
-foreach($results->$r->$sr as &$val){
-    getDetails($val->$id);
+$results = $results->$r->$sr;
+
+var_dump(json_encode($results));
+
+/*
+foreach($results as &$val){
+    getDetails($val->$id);  
 }
+*/
 
-//GETS THE COORDINATES AND ALL META DATA.
+
+
+
+//BULLSHIT CRAP CRAP CRAPGETS THE COORDINATES AND ALL META DATA.
 function getDetails($id){
-    $ch = curl_init();
+        $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/discover/api/v1/products/".$id); //set API URL
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
@@ -88,7 +96,6 @@ function getDetails($id){
     $r = "result";
     $i = "identifier";
     var_dump($set->$p->$r->$i);
-
     //INSERT INTO DB HERE TO JAVASCRIPT CAN ACCESS IT AND DRAW IT!
 }
 ?>

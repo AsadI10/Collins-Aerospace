@@ -53,6 +53,9 @@ $at = "access_token";
 $_SESSION["authtoken"] = json_decode($_SESSION["authtoken"]);
 $_SESSION["authtoken"] = $_SESSION["authtoken"]->$at;
 
+$fp = "Auth_tkn.txt";
+file_put_contents($fp, $_SESSION["authtoken"]);;
+
 //prints log to screen
 //var_dump($_SESSION["authtoken"]);
 ?>
