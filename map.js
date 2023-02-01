@@ -1,6 +1,4 @@
-/*
-AJAX REQUEST TO TRY AND GET THE ECHO'D OUT DATA FROM Fetch_Data.php
-*/
+//ALL MAP DATA AND ASSOCIATED FUNCTIONS.
 var s;
 var points = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
@@ -29,14 +27,5 @@ function oncontextmenu(e) {
 
 //GONNA HAVE TO GET LARGE SPECIFICS IN JS ITSELF
 function loadProducts(){
-     var obj;
 
-     fetch('Fetch_data.php')
-     .then(res => res.json())
-     .then(data =>{
-          obj = data;
-     })
-     .then(()=>{
-          console.log(obj);
-     })
 }

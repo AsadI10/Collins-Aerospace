@@ -30,7 +30,6 @@ session_start();
     </nav>
 
      <div id="map"></div>
-
      <script type="text/javascript" src="map.js"></script>
 
      </body>

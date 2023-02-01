@@ -23,6 +23,11 @@
  */
 
 $ch = curl_init();
+try{
+    $db = new SQLite3('DB.db');
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 
 curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/discover/api/v1/products/search"); //set API URL
 curl_setopt($ch, CURLOPT_POST, true);
@@ -51,13 +56,13 @@ $sr = "searchresults";
 $r = "results";
 $id = "id";
 $results = json_decode($results);
+$endJson = "";
 
 foreach($results->$r->$sr as &$val){
     getDetails($val->$id);
 }
 
 //GETS THE COORDINATES AND ALL META DATA.
-
 function getDetails($id){
     $ch = curl_init();
 
@@ -76,10 +81,14 @@ function getDetails($id){
     curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
     $set = curl_exec($ch);
-
     curl_close($ch);
 
-    $_SESSION["data"] = $_SESSION["data"].strval($set);
+    $set = json_decode($set);
+    $p = "product";
+    $r = "result";
+    $i = "identifier";
+    var_dump($set->$p->$r->$i);
 
+    //INSERT INTO DB HERE TO JAVASCRIPT CAN ACCESS IT AND DRAW IT!
 }
 ?>
