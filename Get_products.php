@@ -96,6 +96,8 @@ foreach($handles as $ch){
     curl_close($ch);
 }
 
+$fn = "product_return.txt";
+
 $_SESSION["pd"] = $res;
 
 
