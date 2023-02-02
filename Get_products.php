@@ -23,11 +23,6 @@
 */
 
 $ch = curl_init();
-try{
-    $db = new SQLite3('DB.db');
-}catch(Exception $e){
-    echo $e->getMessage();
-}
 
 curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/discover/api/v1/products/search"); //set API URL
 curl_setopt($ch, CURLOPT_POST, true);
@@ -59,7 +54,7 @@ $results = json_decode($results);
 
 $results = $results->$r->$sr;
 
-//var_dump(json_encode($results));
+var_dump(json_encode($results));
 
 /*
 foreach($results as &$val){
