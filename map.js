@@ -34,7 +34,7 @@ function loadProducts(){
                var tmp = JSON.parse(data[i]);
                var id = tmp.product.id;
                var centre = tmp.product.result.centre;
-               var latlang = centre.split(',');s
+               var latlang = centre.split(',');
                var marker = L.marker([latlang[0],latlang[1]],{
                     title: id
                }).addTo(map);
