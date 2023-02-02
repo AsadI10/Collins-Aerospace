@@ -35,7 +35,11 @@ function loadProducts(){
                var id = tmp.product.id;
                var centre = tmp.product.result.centre;
                var latlang = centre.split(',');
-               L.marker([latlang[0],latlang[1]]).addTo(map);
+               var marker = L.marker([latlang[0],latlang[1]],{
+                    title: id
+               }).addTo(map);
+
+               marker.bindPopup(id).openPopup();
           }
      });
 }
