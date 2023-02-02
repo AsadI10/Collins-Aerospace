@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
-     require("Auth_token.php");
-     require("Get_products.php");
+     require_once("Auth_token.php");
+     require_once("Get_products.php");
 ?>
 
 <html>

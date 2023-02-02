@@ -55,10 +55,13 @@ $results = $results->$r->$sr;
 
 //var_dump(json_encode($results));
 
+//-----------------------------------
+//MULTITHREADED PRODUCT DATA RETRIVAL
+//-----------------------------------
+
 $mh = curl_multi_init();
 
 
-//MULTITHREADED PRODUCT DATA RETRIVAL
 foreach($results as &$val){
     $ch = curl_init();
     $handles[] = $ch;
@@ -79,21 +82,21 @@ foreach($results as &$val){
 
 }
 
-$res = "";
+$res = array();
 $running = null;
 do{
     curl_multi_exec($mh,$running);
 }while($running);
 
 foreach($handles as $ch){
-    $res = $res.curl_multi_getcontent($ch);
-    $dd = json_decode($res,true);
+    array_push($res,curl_multi_getcontent($ch));
+    //$dd = json_decode($res,true);
 
     curl_multi_remove_handle($mh, $ch);
     curl_close($ch);
 }
 
-//var_dump($res);
+$_SESSION["pd"] = $res;
 
 
 
