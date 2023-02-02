@@ -1,5 +1,6 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
-var points = [];
+var userpoints = [];
+var markers = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
 
 document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
@@ -14,14 +15,14 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 loadProducts();
 
 function onMapClick(e) {
-     points.push(e.latlng);
+     userpoints.push(e.latlng);
      L.marker(e.latlng).addTo(map);
 }
 
 function oncontextmenu(e) {
      var polygon;
      polygon = L.polygon(points).addTo(map);
-     points = [];
+     userpoints = [];
 }
 
 //GONNA HAVE TO GET LARGE SPECIFICS IN JS ITSELF
@@ -35,11 +36,11 @@ function loadProducts(){
                var id = tmp.product.id;
                var centre = tmp.product.result.centre;
                var latlang = centre.split(',');
-               var marker = L.marker([latlang[0],latlang[1]],{
+               markers[i] = L.marker([latlang[0],latlang[1]],{
                     title: id
                }).addTo(map);
 
-               marker.bindPopup(id).openPopup();
+               markers[i].bindPopup(id).openPopup();
           }
      });
 }
