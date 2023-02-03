@@ -1,3 +1,8 @@
+//----------------------------------------------------------
+//COULD POTENTIALLY WRAP ALL THIS CODE IN THE FETCH DATA
+//SECTION SO THAT WE CAN USE THE DATA THROUGHOUT THE PROGRAM.
+//----------------------------------------------------------
+
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
 var userpoints = [];
 var markers = [];
@@ -10,9 +15,33 @@ maxZoom: 18,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+//Creates a marker for each product pulled from the API
+//also applies event based functions to each marker +
+//attributes.
+function loadProducts(){
+     fetch('Fetch_product_data.php')
+     .then(function(response){
+          return response.json();
+     }).then(function(data){
+          for(let i = 0; i < 121; i++){
+               var tmp = JSON.parse(data[i]);
+               var id = tmp.product.id;
+               var centre = tmp.product.result.centre;
+               var latlang = centre.split(',');
+               markers[i] = L.marker([latlang[0],latlang[1]],{
+                    title: id,
+                    GeoJSON: JSON.parse(data[i])
+               }).addTo(map).bindPopup(id);
+               markers[i].on('click',onClick_Marker);
+          }
+          
+     });
+}
+
 //map.on('contextmenu', oncontextmenu);
 //map.on('click', onMapClick);
 loadProducts();
+
 
 function onMapClick(e) {
      userpoints.push(e.latlng);
@@ -25,22 +54,6 @@ function oncontextmenu(e) {
      userpoints = [];
 }
 
-//GONNA HAVE TO GET LARGE SPECIFICS IN JS ITSELF
-function loadProducts(){
-     fetch('Fetch_product_data.php')
-     .then(function(response){
-          return response.json();
-     }).then(function(data){
-          for(let i = 0; i < 121; i++){
-               var tmp = JSON.parse(data[i]);
-               var id = tmp.product.id;
-               var centre = tmp.product.result.centre;
-               var latlang = centre.split(',');
-               markers[i] = L.marker([latlang[0],latlang[1]],{
-                    title: id
-               }).addTo(map);
-
-               markers[i].bindPopup(id).openPopup();
-          }
-     });
+//todo
+function onClick_Marker(e){
 }
