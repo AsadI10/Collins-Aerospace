@@ -19,8 +19,5 @@ nav ul li a{
 }
 
 #map {
-    position: absolute;
-    display: flex;
-    width: 1500px;
-    height: 750px;
+    height: 100vh;
 }
