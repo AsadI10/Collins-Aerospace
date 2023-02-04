@@ -97,7 +97,6 @@ foreach($handles as $ch){
 }
 
 $fn = "product_return.txt";
-
 $_SESSION["pd"] = $res;
 
 

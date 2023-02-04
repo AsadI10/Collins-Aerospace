@@ -4,13 +4,13 @@ fetch('Fetch_product_data.php')
      return response.json();
 }).then(function(data){
 
-//---------
-//CODE BODY
-//---------
+//---------------
+//---CODE BODY---
+//---------------
 
 var userpoints = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
-var markers = new L.LayerGroup().addTo(map); 
+var markers = new L.LayerGroup().addTo(map);
 
 document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
 
@@ -32,19 +32,6 @@ for(let i = 0; i < 121; i++){
           GeoJSON: tmp
      }).addTo(markers).bindPopup(id).on('click',onClick_Marker);
 }
-
-/*
-function onMapClick(e) {
-     userpoints.push(e.latlng);
-     L.marker(e.latlng).addTo(map);
-}    
-
-function oncontextmenu(e) {
-     var polygon;
-     polygon = L.polygon(points).addTo(map);
-     userpoints = [];
-}
-*/
 
 //when a marker is clicked all of its metadata is returned
 function onClick_Marker(e){

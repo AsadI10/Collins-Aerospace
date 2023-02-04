@@ -4,7 +4,7 @@
  This object will be used for all
  calls back and forth to the API.
  The object can also take many extra
- 'body's', 'headers', 'POST' fields 
+ 'body's', 'headers', 'POST' fields
  for certain requests.
 
  read this for basics to POST &
@@ -13,15 +13,14 @@
  https://reqbin.com/Article/HttpPost
 
  also refer to this to demonstrate
- CURL_OPT functions:    
+ CURL_OPT functions:
  https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
  */
-
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://hallam.sci-toolset.com/api/v1/token"); //set API URL
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //enables returned JSON from execution
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
 
@@ -43,7 +42,7 @@ $password = "st";
 curl_setopt($ch,CURLOPT_USERPWD, "$username:$password"); //same as setting an option for the header except its for <USERNAME>:<PASSWORD> and takes a string
 
 //executes the curl request and gets the status code (200) being success
-$_SESSION["authtoken"] = curl_exec($ch);  
+$_SESSION["authtoken"] = curl_exec($ch);
 
 //ALWAYS CLOSE CONNECTIONS!
 curl_close($ch);
