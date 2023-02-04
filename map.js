@@ -52,7 +52,7 @@ function oncontextmenu(e) {
      });
      //displays all the products within the polygon onto the panel
      document.getElementById('panel1').innerHTML= body;
-     points = [];
+     userpoints = [];
 }
 
 
@@ -60,7 +60,7 @@ function oncontextmenu(e) {
 function onClick_Marker(e){
      var gj = e.sourceTarget.options.GeoJSON;
      console.log(gj);
-     var body = "ID: " + gj.product.result.identifier + "\n NAME: " + gj.product.result.title + "\n\n COORDINATES: " + gj.product.result.centre;
+     var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
      document.getElementById('panel1').innerHTML= body;
 }
 
