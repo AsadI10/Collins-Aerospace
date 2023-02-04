@@ -33,6 +33,32 @@ for(let i = 0; i < 121; i++){
      }).addTo(markers).bindPopup(id).on('click',onClick_Marker);
 }
 
+map.on('contextmenu', oncontextmenu);
+map.on('click', onMapClick);
+
+function oncontextmenu(e) {
+     var polygon;
+     var body;
+     polygon = L.polygon(userpoints).addTo(map);
+     markers.getLayers().forEach(element => {
+          if(polygon.contains(element._latlng)){
+               body = body + "<br>" + element.options.title;
+          }
+     });
+     //displays all the products within the polygon onto the panel
+     document.getElementById('panel1').innerHTML= body;
+     points = [];
+}
+
+function onMapClick(e) {
+     map.removeLayer(polygon);
+
+     userpoints.push(e.latlng);
+     L.marker(e.latlng).addTo(map);
+}
+
+
+
 //when a marker is clicked all of its metadata is returned
 function onClick_Marker(e){
      var gj = e.sourceTarget.options.GeoJSON;
@@ -40,19 +66,5 @@ function onClick_Marker(e){
      var body = "ID: " + gj.product.result.identifier + "\n NAME: " + gj.product.result.title + "\n\n COORDINATES: " + gj.product.result.centre;
      document.getElementById('panel1').innerHTML= body;
 }
-
-var polygon = L.polygon([
-     [56.825566,-0.5404735],
-     [56.198361,-5.145993],
-     [54.163498,-2.24200]
-]).addTo(map);
-
-markers.getLayers().forEach(element => {
-     
-     if(polygon.contains(element._latlng)){
-          console.log(element);
-     }
-     
-});
 
 });
