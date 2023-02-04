@@ -19,6 +19,7 @@ session_start();
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
+          <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
      </head>
 
      <body oncontextmenu="return false;">
@@ -30,7 +31,7 @@ session_start();
      <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
 
      <div id="map">
-          <script type="text/javascript" src="map.js"></script>
+          <script type="text/javascript" src="map.js" ></script>
      </div>
 
      </body>

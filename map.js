@@ -29,7 +29,7 @@ for(let i = 0; i < 121; i++){
      var latlang = centre.split(',');
      L.marker([latlang[0],latlang[1]],{
           title: id,
-          GeoJSON: tmp
+          GeoJSON: tmp,
      }).addTo(markers).bindPopup(id).on('click',onClick_Marker);
 }
 
@@ -40,5 +40,19 @@ function onClick_Marker(e){
      var body = "ID: " + gj.product.result.identifier + "\n NAME: " + gj.product.result.title + "\n\n COORDINATES: " + gj.product.result.centre;
      document.getElementById('panel1').innerHTML= body;
 }
+
+var polygon = L.polygon([
+     [56.825566,-0.5404735],
+     [56.198361,-5.145993],
+     [54.163498,-2.24200]
+]).addTo(map);
+
+markers.getLayers().forEach(element => {
+     
+     if(polygon.contains(element._latlng)){
+          console.log(element);
+     }
+     
+});
 
 });
