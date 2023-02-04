@@ -57,8 +57,6 @@ function onMapClick(e) {
      L.marker(e.latlng).addTo(map);
 }
 
-
-
 //when a marker is clicked all of its metadata is returned
 function onClick_Marker(e){
      var gj = e.sourceTarget.options.GeoJSON;
