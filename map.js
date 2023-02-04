@@ -59,7 +59,6 @@ function oncontextmenu(e) {
 //when a marker is clicked all of its metadata is returned
 function onClick_Marker(e){
      var gj = e.sourceTarget.options.GeoJSON;
-     console.log(gj);
      var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
      document.getElementById('panel1').innerHTML= body;
 }
