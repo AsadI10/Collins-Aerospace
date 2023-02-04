@@ -9,8 +9,8 @@ fetch('Fetch_product_data.php')
 //---------
 
 var userpoints = [];
-var markers = [];
 var map = L.map('map').setView([53.45043, -2.25975], 13);
+var markers = new L.LayerGroup().addTo(map); 
 
 document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
 
@@ -18,7 +18,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 maxZoom: 18,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
 
 //Creates a marker for each product pulled from the API
 //also applies event based functions to each marker +
@@ -31,7 +30,7 @@ for(let i = 0; i < 121; i++){
      L.marker([latlang[0],latlang[1]],{
           title: id,
           GeoJSON: tmp
-     }).addTo(map).bindPopup(id).on('click',onClick_Marker);
+     }).addTo(markers).bindPopup(id).on('click',onClick_Marker);
 }
 
 /*
