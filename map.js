@@ -36,6 +36,11 @@ for(let i = 0; i < 121; i++){
 map.on('contextmenu', oncontextmenu);
 map.on('click', onMapClick);
 
+function onMapClick(e) {
+     userpoints.push(e.latlng);
+     L.marker(e.latlng).addTo(map);
+}
+
 function oncontextmenu(e) {
      var polygon;
      var body;
@@ -50,12 +55,6 @@ function oncontextmenu(e) {
      points = [];
 }
 
-function onMapClick(e) {
-     map.removeLayer(polygon);
-
-     userpoints.push(e.latlng);
-     L.marker(e.latlng).addTo(map);
-}
 
 //when a marker is clicked all of its metadata is returned
 function onClick_Marker(e){
