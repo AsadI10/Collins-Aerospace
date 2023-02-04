@@ -50,8 +50,8 @@ function oncontextmenu(e) {
 function onClick_Marker(e){
      var gj = e.sourceTarget.options.GeoJSON;
      console.log(gj);
-
-     document.getElementById('panel1').innerHTML=JSON.stringify(gj);
+     var body = "ID: " + gj.product.result.identifier + "\n NAME: " + gj.product.result.title + "\n\n COORDINATES: " + gj.product.result.centre;
+     document.getElementById('panel1').innerHTML= body;
 }
 
 });
