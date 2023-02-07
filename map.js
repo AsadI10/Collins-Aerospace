@@ -4,6 +4,8 @@ fetch('Fetch_product_data.php')
      return response.json();
 }).then(function(data){
 
+console.log(data);
+
 //---------------
 //---CODE BODY---
 //---------------
@@ -22,7 +24,8 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 //Creates a marker for each product pulled from the API
 //also applies event based functions to each marker +
 //attributes.
-for(let i = 0; i < 121; i++){
+
+for(let i = 0; i < data.length; i++){
      var tmp = JSON.parse(data[i]);
      var id = tmp.product.id;
      var centre = tmp.product.result.centre;

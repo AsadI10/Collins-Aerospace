@@ -3,7 +3,7 @@
     session_start();
     require_once("APIInterface.php");
     $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
-    $_SESSION["APIInterface"]->UpdateAllProducts();
+    $_SESSION["APIInterface"]->GetProducts();
     require_once("Get_products.php");
 ?>
 
