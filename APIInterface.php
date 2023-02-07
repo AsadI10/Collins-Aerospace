@@ -180,8 +180,8 @@ class APIInterface{
 			curl_close($ch);
 		}
 
-		$_SESSION["pd"] = $res;
-		$this->_ProductData = $res;
+		$p = new ProductData($identifier);
+		$p->SaveToCache();
 	}
 }
 ?>
