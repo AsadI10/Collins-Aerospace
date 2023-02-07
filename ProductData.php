@@ -4,6 +4,7 @@
 	class ProductData
 	{
 		private $_Identifier;
+		public $Name;
 		public $Center;
 		public $DateCreated;
 
@@ -20,7 +21,7 @@
 		}
 
 		public function SaveToCache(){
-			$handle = new SQLite3(SQL_FILE);#
+			$handle = new SQLite3(SQL_FILE);
 
 			$sql = "UPDATE ProductData"
 		}
