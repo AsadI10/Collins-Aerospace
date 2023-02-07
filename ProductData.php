@@ -8,7 +8,7 @@
 		}
 		
 		public function GetIdentifer(){
-			return $this->_Identifier; 
+			return $this->_Identifier;
 		}
 
 		public static function LoadFromCache($identifier){
