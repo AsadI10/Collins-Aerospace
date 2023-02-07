@@ -2,7 +2,7 @@
 	// Path to the SQLite database for caching.
 	const SQL_FILE = "./cache.sql";
 
-	class ProductData
+	class ProductData implements \JsonSerializable
 	{
 		// ======
 		// Fields
@@ -31,12 +31,23 @@
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function LoadFromCache($identifier){
 			$handle = new SQLite3(SQL_FILE);
+
+			// If not found, return null
+			return null;
 		}
 
 		// Saves this object into the SQLite database.
 		// Updates an existing record or creates a new record if one doesn't exist already.
 		public function SaveToCache(){
 			$handle = new SQLite3(SQL_FILE);
+		}
+
+
+		public function jsonSerialize()
+		{
+			$vars = get_object_vars($this);
+
+			return $vars;
 		}
 	}
 ?>
