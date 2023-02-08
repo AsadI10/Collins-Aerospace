@@ -31,7 +31,6 @@
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function LoadFromCache($identifier){
 			$handle = new SQLite3(SQL_FILE);
-
 			// If not found, return null
 			return null;
 		}

@@ -13,6 +13,4 @@ class CacheDB extends SQLite3{
 
 }
 
-$Database = new CacheDB;
-
 ?>

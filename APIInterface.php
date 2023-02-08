@@ -64,7 +64,6 @@ class APIInterface{
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
 
-		//setcookie("data",$_SESSION["authtoken"]);
 	}
 
 	// This function shouldn't be used as everything that needs it should be in this class.
@@ -78,29 +77,7 @@ class APIInterface{
 	}
 
 	// Query the API and get updated information on all products.
-	public function UpdateAllProducts(){
-		/* Instantiate $ch (curl object).
-
-		 This object will be used for all
-		 calls back and forth to the API.
-		 The object can also take many extra
-		 'body's', 'headers', 'POST' fields 
-		 for certain requests.
-
-		 read this for basics to POST &
-		 Header fields:
-
-		 https://reqbin.com/Article/HttpPost
-
-		 also refer to this to demonstrate
-		 CURL_OPT functions:
-		 https://stackoverflow.com/questions/61266770/how-to-get-oauth-2-0-using-php-curl-with-client-credentials-as-grant-type
- 
-		 -------------------------------------
-		 MAKE THIS A FUNCTION AT SOME POINT!!!
-		 -------------------------------------
-
-		*/
+	public function GetProducts(){
 
 		$ch = curl_init();
 
@@ -120,7 +97,8 @@ class APIInterface{
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
-		$post = '{"size":121, "keywords":""}';
+		//returning small bits of data with pagination.
+		$post = '{"size":10, "keywords":""}';
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
@@ -129,38 +107,42 @@ class APIInterface{
 		$sr = "searchresults";
 		$r = "results";
 		$id = "id";
+		$pid = "paginationId";
 		$results = json_decode($results);
 
+		$paginationID = $pid;
 		$results = $results->$r->$sr;
 
-		//var_dump(json_encode($results));
+		var_dump($results);
 
+		foreach($results as &$product){
+			$this->GetData($product->id);
+		}
+
+	}
+
+	public function GetData($identifier){
 		//-----------------------------------
 		//MULTITHREADED PRODUCT DATA RETRIVAL
 		//-----------------------------------
 
 		$mh = curl_multi_init();
 
+		$ch = curl_init();
+		$handles[] = $ch;
 
-		foreach($results as &$val){
-			$ch = curl_init();
-			$handles[] = $ch;
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
 
-			curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$val->$id); //set API URL
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
+		$headers = array(
+			'Accept: */*',
+			'Authorization: Bearer '.$this->_AccessToken,
+			'Content-Type: application/json',
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-			$headers = array(
-				'Accept: */*',
-				'Authorization: Bearer '.$this->_AccessToken,
-				'Content-Type: application/json',
-			);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-			curl_multi_add_handle($mh,$ch);
-
-		}
+		curl_multi_add_handle($mh,$ch);
 
 		$res = array();
 		$running = null;
@@ -176,8 +158,8 @@ class APIInterface{
 			curl_close($ch);
 		}
 
-		$_SESSION["pd"] = $res;
-		$this->_ProductData = $res;
+		$p = new ProductData($identifier);
+		$p->SaveToCache();
 	}
 }
 ?>
