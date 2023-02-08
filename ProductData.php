@@ -8,6 +8,8 @@
 		// Fields
 		// ======
 		private $_Identifier;
+		// Singleton Database Object Used For DB Interaction.
+		private $Database;
 
 		public $Name;
 		// Coordinates of the center of this product
@@ -18,9 +20,10 @@
 		// =========
 		// Functions
 		// =========
-
-		function __construct($identifier){
+  
+		function __construct($identifier, $database){
 			$this->_Identifier;
+			$this->Database = $database;
 		}
 		
 		// Returns the identifier of this product.
@@ -29,10 +32,8 @@
 		}
 
 		// Fetches a ProductData object that has been cached in the SQLite database.
-		public static function LoadFromCache($identifier){
-			$handle = new SQLite3(SQL_FILE);
-			// If not found, return null
-			return null;
+		public function LoadFromCache($identifier){
+			$vals = $this->Database->loadProduct($identifier);
 		}
 
 		// Saves this object into the SQLite database.

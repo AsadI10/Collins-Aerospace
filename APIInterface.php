@@ -5,11 +5,12 @@ class APIInterface{
 	private $_APIDomain;
 	private $_AccessToken;
 	private $_ProductData;
+	private $Database;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
 		$this->_APIDomain = $apiDomain;
-
+		$this->Database = new CacheDB;
 		// Aquire access token:
 
 		/* Instantiate $curlInstance (curl object).
@@ -158,7 +159,7 @@ class APIInterface{
 			curl_close($ch);
 		}
 
-		$p = new ProductData($identifier);
+		$p = new ProductData($identifier, $this->Database);
 		$p->SaveToCache();
 	}
 }
