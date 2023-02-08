@@ -1,6 +1,6 @@
 <?php
 	// Path to the SQLite database for caching.
-	const SQL_FILE = "./cache.sql";
+	const SQL_FILE = "./Cache.db";
 
 	class ProductData implements \JsonSerializable
 	{
