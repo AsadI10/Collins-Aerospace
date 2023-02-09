@@ -1,7 +1,4 @@
 <?php
-	// Path to the SQLite database for caching.
-	const SQL_FILE = "./Cache.db";
-
 	class ProductData implements \JsonSerializable
 	{
 		// ======
@@ -39,7 +36,6 @@
 		// Saves this object into the SQLite database.
 		// Updates an existing record or creates a new record if one doesn't exist already.
 		public function SaveToCache(){
-			$handle = new SQLite3(SQL_FILE);
 		}
 
 

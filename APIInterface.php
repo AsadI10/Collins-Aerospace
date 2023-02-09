@@ -1,4 +1,7 @@
 <?php
+require_once("ProductData.php");
+require_once("CacheDB.php");
+
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
 
@@ -78,7 +81,7 @@ class APIInterface{
 	}
 
 	// Query the API and get updated information on all products.
-	public function GetProducts(){
+	public function UpdateAllProducts(){
 
 		$ch = curl_init();
 
@@ -113,8 +116,6 @@ class APIInterface{
 
 		$paginationID = $pid;
 		$results = $results->$r->$sr;
-
-		var_dump($results);
 
 		foreach($results as &$product){
 			$this->GetData($product->id);

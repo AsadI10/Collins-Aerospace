@@ -11,7 +11,8 @@ class CacheDB extends SQLite3{
         $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Center TEXT, Footprint TEXT)');
     }
 
-    public function LoadProduct($productid){
+    // Returns the raw stored form of a Product
+    public function GetProduct($productid){
         $sql = "SELECT * FROM Products WHERE Product_id = :pid";
         $stmt = $this->prepare($sql);
         $stmt->bindParam(':pid', $productid);
@@ -24,7 +25,5 @@ class CacheDB extends SQLite3{
 
         return $splitResults;
     }
-
 }
-
 ?>
