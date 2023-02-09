@@ -80,6 +80,11 @@ class APIInterface{
 		return $this->_ProductData;
 	}
 
+	// Directly calls the API to get a list of all product identifiers.
+	public function GetAllProductIdentifiers(){
+
+	}
+
 	// Query the API and get updated information on all products.
 	public function UpdateAllProducts(){
 
