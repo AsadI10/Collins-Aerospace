@@ -7,10 +7,10 @@
 		// Fields
 		// ======
 		private $_Identifier;
-		public $Name;
+		private $_Name;
 		// Coordinates of the center of this product
-		public $Centre;
-		public $DateCreated;
+		private $_Centre;
+		private $_DateCreated;
 
 		// =========
 		// Functions
@@ -18,9 +18,9 @@
   
 		function __construct($identifier, $name, $centre, $dateCreated){
 			$this->_Identifier = $identifier;
-			$this->Name = $name;
-			$this->Centre = $centre;
-			$this->DateCreated = $dateCreated;
+			$this->_Name = $name;
+			$this->_Centre = $centre;
+			$this->_DateCreated = $dateCreated;
 		}
 		
 		// Returns the identifier of this product.
@@ -29,15 +29,15 @@
 		}
 
 		public function GetName(){
-			return $this->Name;
+			return $this->_Name;
 		}
 
 		public function GetCentre(){
-			return $this->Centre;
+			return $this->_Centre;
 		}
 
 		public function GetDateCreated(){
-			return $this->DateCreated;
+			return $this->_DateCreated;
 		}
 
 		// Fetches a ProductData object that has been cached in the SQLite database.

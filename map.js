@@ -32,7 +32,7 @@ fetch('Fetch_product_data.php')
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
             var id = tmp["_Identifier"];
-            var centre = tmp["Centre"];
+            var centre = tmp["_Centre"];
             var latlang = centre.split(',');
             L.marker([latlang[0], latlang[1]], {
                 title: id,
