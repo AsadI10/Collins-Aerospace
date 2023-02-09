@@ -3,6 +3,7 @@
     require_once("APIInterface.php");
     require_once("CacheDB.php");
     session_start();
+    
     $_SESSION["CacheDB"] = new CacheDB();
     $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
     $_SESSION["APIInterface"]->UpdateAllProducts();
