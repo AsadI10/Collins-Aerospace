@@ -64,6 +64,7 @@ class APIInterface{
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
+		$_SESSION["CacheDB"]->init();
 
 	}
 
@@ -94,7 +95,7 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 		//returning small bits of data with pagination.
-		$post = '{"size":121, "keywords":""}';
+		$post = '{"size":5, "keywords":""}';
 
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);

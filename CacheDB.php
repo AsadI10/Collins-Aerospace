@@ -4,11 +4,10 @@ class CacheDB extends SQLite3{
 
     function __construct(){
         $this->open("./Cache.db");
-        $this->init();
     }
 
-    private function init(){
-        $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Center TEXT, Footprint TEXT, LastAccessed INT, LastUpdated INT)');
+    public function init(){
+        $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Centre TEXT, LastAccessed INT, LastUpdated INT)');
     }
 
     // Returns the raw stored form of a Product
@@ -24,6 +23,10 @@ class CacheDB extends SQLite3{
         }
 
         return $splitResults;
+    }
+
+    public function CacheProduct($product){
+        $this->exec("INSERT INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
     }
 }
 ?>

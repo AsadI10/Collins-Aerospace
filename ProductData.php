@@ -28,6 +28,18 @@
 			return $this->_Identifier;
 		}
 
+		public function GetName(){
+			return $this->Name;
+		}
+
+		public function GetCentre(){
+			return $this->Centre;
+		}
+
+		public function GetDateCreated(){
+			return $this->DateCreated;
+		}
+
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function Load($identifier){
 			// Try and fetch from database
@@ -55,9 +67,8 @@
 		// Saves this object into the SQLite database.
 		// Updates an existing record or creates a new record if one doesn't exist already.
 		public function SaveToCache(){
-
+			$_SESSION["CacheDB"]->CacheProduct($this);
 		}
-
 
 		public function jsonSerialize()
 		{
