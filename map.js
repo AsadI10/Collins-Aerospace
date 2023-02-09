@@ -10,6 +10,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// This is a debug thing and doesn't do anything important.
+fetch('Fetch_product_data.php')
+    .then(function (response) {
+        console.log(response.text());
+    });
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not

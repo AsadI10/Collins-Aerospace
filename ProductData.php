@@ -43,9 +43,15 @@
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function Load($identifier){
 			// Try and fetch from database
-			//$vals = $_SESSION["CacheDB"]->GetProduct($identifier);
+			$vals = $_SESSION["CacheDB"]->GetProduct($identifier);
 			// If found and in date
-			if(false){//$vals != null){
+			if($vals != null){
+				// Create new object and populate it with data
+				$cachedObject = new ProductData($identifier,
+				$vals["Product_Name"],
+				$vals["Centre"],
+				null);
+				return $cachedObject;
 
 			}
 			// If not found in database or is old

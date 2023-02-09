@@ -23,13 +23,14 @@ class CacheDB{
         $stmt->bindParam(':pid', $productid);
         $result = $stmt->execute();
 
-        $splitResults = array();
-        while($row = $result->fetchArray()){
-            array_push($splitResults,$row);
-        }
+        $record = $result->fetchArray(SQLITE3_ASSOC);
 
-        $db->close();
-        return $splitResults;
+        // If record is old, return null
+
+        // Otherwise, update LastAccessed
+
+        // There should be only 1, so return it
+        return $record;
 
     }
 
