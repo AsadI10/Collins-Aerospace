@@ -8,12 +8,10 @@ class APIInterface{
 	private $_APIDomain;
 	private $_AccessToken;
 	private $_ProductData;
-	private $Database;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
 		$this->_APIDomain = $apiDomain;
-		$this->Database = new CacheDB;
 		// Aquire access token:
 
 		/* Instantiate $curlInstance (curl object).
@@ -82,12 +80,6 @@ class APIInterface{
 
 	// Directly calls the API to get a list of all product identifiers.
 	public function GetAllProductIdentifiers(){
-
-	}
-
-	// Query the API and get updated information on all products.
-	public function UpdateAllProducts(){
-
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/search"); //set API URL
@@ -109,6 +101,7 @@ class APIInterface{
 		//returning small bits of data with pagination.
 		$post = '{"size":10, "keywords":""}';
 
+
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
 		$results = curl_exec($ch);
@@ -122,51 +115,65 @@ class APIInterface{
 		$paginationID = $pid;
 		$results = $results->$r->$sr;
 
-		foreach($results as &$product){
-			$this->GetData($product->id);
+		$result = array();
+		foreach($results as $element){
+			array_push($result, $element->id);
+		}
+
+		return $result;
+	}
+
+	// Query the API and cache everything!
+	public function UpdateAllProducts(){
+
+		$identifiers = $this->GetAllProductIdentifiers();
+
+		foreach($identifiers as &$product){
+			$this->GetData($product)->SaveToCache();
 		}
 
 	}
 
 	public function GetData($identifier){
-		//-----------------------------------
-		//MULTITHREADED PRODUCT DATA RETRIVAL
-		//-----------------------------------
+		////-----------------------------------
+		////MULTITHREADED PRODUCT DATA RETRIVAL
+		////-----------------------------------
+		//
+		//$mh = curl_multi_init();
+		//
+		//$ch = curl_init();
+		//$handles[] = $ch;
+		//
+		//curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
+		//
+		//$headers = array(
+		//	'Accept: */*',
+		//	'Authorization: Bearer '.$this->_AccessToken,
+		//	'Content-Type: application/json',
+		//);
+		//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		//
+		//curl_multi_add_handle($mh,$ch);
+		//
+		//$res = array();
+		//$running = null;
+		//echo "test";
+		//do{
+		//	curl_multi_exec($mh,$running);
+		//}while($running);
+		//
+		//foreach($handles as $ch){
+		//	array_push($res,curl_multi_getcontent($ch));
+		//	//$dd = json_decode($res,true);
+		//
+		//	curl_multi_remove_handle($mh, $ch);
+		//	curl_close($ch);
+		//}
 
-		$mh = curl_multi_init();
-
-		$ch = curl_init();
-		$handles[] = $ch;
-
-		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
-
-		$headers = array(
-			'Accept: */*',
-			'Authorization: Bearer '.$this->_AccessToken,
-			'Content-Type: application/json',
-		);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-		curl_multi_add_handle($mh,$ch);
-
-		$res = array();
-		$running = null;
-		do{
-			curl_multi_exec($mh,$running);
-		}while($running);
-
-		foreach($handles as $ch){
-			array_push($res,curl_multi_getcontent($ch));
-			//$dd = json_decode($res,true);
-
-			curl_multi_remove_handle($mh, $ch);
-			curl_close($ch);
-		}
-
-		$p = new ProductData($identifier, $this->Database);
-		$p->SaveToCache();
+		$p = new ProductData($identifier);
+		return $p;
 	}
 }
 ?>

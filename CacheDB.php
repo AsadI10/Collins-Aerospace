@@ -8,7 +8,7 @@ class CacheDB extends SQLite3{
     }
 
     private function init(){
-        $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Center TEXT, Footprint TEXT)');
+        $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Center TEXT, Footprint TEXT, LastAccessed INT, LastUpdated INT)');
     }
 
     // Returns the raw stored form of a Product
