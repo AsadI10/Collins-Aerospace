@@ -7,7 +7,6 @@
 		// Fields
 		// ======
 		private $_Identifier;
-
 		public $Name;
 		// Coordinates of the center of this product
 		public $Centre;
@@ -17,8 +16,11 @@
 		// Functions
 		// =========
   
-		function __construct($identifier){
+		function __construct($identifier, $name, $centre, $dateCreated){
 			$this->_Identifier = $identifier;
+			$this->Name = $name;
+			$this->Centre = $centre;
+			$this->DateCreated = $dateCreated;
 		}
 		
 		// Returns the identifier of this product.
@@ -46,7 +48,6 @@
 				}
 
 			}
-
 			// If not found
 			return null;
 		}
@@ -54,6 +55,7 @@
 		// Saves this object into the SQLite database.
 		// Updates an existing record or creates a new record if one doesn't exist already.
 		public function SaveToCache(){
+
 		}
 
 

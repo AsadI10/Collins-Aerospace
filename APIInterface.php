@@ -94,7 +94,7 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 		//returning small bits of data with pagination.
-		$post = '{"size":10, "keywords":""}';
+		$post = '{"size":121, "keywords":""}';
 
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
@@ -123,6 +123,7 @@ class APIInterface{
 
 		$identifiers = $this->GetAllProductIdentifiers();
 
+		//THIS SHIT NEEEDDDDSSS TO GET SPEEEEEEED UP I.E MULTITHREAD THE EXECUTION
 		foreach($identifiers as &$product){
 			$this->GetData($product)->SaveToCache();
 		}
@@ -154,8 +155,7 @@ class APIInterface{
 		$result = json_decode($result);
 		$result = $result->product->result;
 		
-
-		$p = new ProductData($identifier);
+		$p = new ProductData($identifier,$result->viewname,$result->centre,$result->datecreated);
 		$p->Centre = $result->centre;
 		return $p;
 	}
