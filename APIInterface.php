@@ -7,7 +7,6 @@ class APIInterface{
 
 	private $_APIDomain;
 	private $_AccessToken;
-	private $_ProductData;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
@@ -74,10 +73,6 @@ class APIInterface{
 		return $this->_AccessToken;
 	}
 
-	public function GetProductData(){
-		return $this->_ProductData;
-	}
-
 	// Directly calls the API to get a list of all product identifiers.
 	public function GetAllProductIdentifiers(){
 		$ch = curl_init();
@@ -135,44 +130,33 @@ class APIInterface{
 	}
 
 	public function GetData($identifier){
-		////-----------------------------------
-		////MULTITHREADED PRODUCT DATA RETRIVAL
-		////-----------------------------------
-		//
-		//$mh = curl_multi_init();
-		//
-		//$ch = curl_init();
-		//$handles[] = $ch;
-		//
-		//curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
-		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
-		//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
-		//
-		//$headers = array(
-		//	'Accept: */*',
-		//	'Authorization: Bearer '.$this->_AccessToken,
-		//	'Content-Type: application/json',
-		//);
-		//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		//
-		//curl_multi_add_handle($mh,$ch);
-		//
-		//$res = array();
-		//$running = null;
-		//echo "test";
-		//do{
-		//	curl_multi_exec($mh,$running);
-		//}while($running);
-		//
-		//foreach($handles as $ch){
-		//	array_push($res,curl_multi_getcontent($ch));
-		//	//$dd = json_decode($res,true);
-		//
-		//	curl_multi_remove_handle($mh, $ch);
-		//	curl_close($ch);
-		//}
+		//-----------------------------------
+		//MULTITHREADED PRODUCT DATA RETRIVAL
+		//-----------------------------------
+		
+		$ch = curl_init();
+		
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); // This is needed to stop it printing to screen
+		
+		$headers = array(
+			'Accept: */*',
+			'Authorization: Bearer '.$this->_AccessToken,
+			'Content-Type: application/json',
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		$result = json_decode($result);
+		$result = $result->product->result;
+		
 
 		$p = new ProductData($identifier);
+		$p->Centre = $result->centre;
 		return $p;
 	}
 }

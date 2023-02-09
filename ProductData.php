@@ -1,16 +1,16 @@
 <?php
+	require_once("CacheDB.php");
+
 	class ProductData implements \JsonSerializable
 	{
 		// ======
 		// Fields
 		// ======
 		private $_Identifier;
-		// Singleton Database Object Used For DB Interaction.
-		private $Database;
 
 		public $Name;
 		// Coordinates of the center of this product
-		public $Center;
+		public $Centre;
 		public $DateCreated;
 
 		// =========
@@ -29,9 +29,9 @@
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function Load($identifier){
 			// Try and fetch from database
-			$vals = $_SESSION["CacheDB"]->GetProduct($identifier);
+			//$vals = $_SESSION["CacheDB"]->GetProduct($identifier);
 			// If found and in date
-			if($vals != null){
+			if(false){//$vals != null){
 
 			}
 			// If not found in database or is old
@@ -39,7 +39,6 @@
 			{
 				// Fetch from API
 				$APIResult = $_SESSION["APIInterface"]->GetData($identifier);
-
 				// If API returned a good result, cache it and return.
 				if($APIResult != null){
 					$APIResult->SaveToCache();
