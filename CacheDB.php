@@ -1,19 +1,25 @@
 <?php
 
-class CacheDB extends SQLite3{
+class CacheDB{
+
+    private $path;
 
     function __construct(){
-        $this->open("./Cache.db");
+        $this->path = "./Cache.db";
+        $this->init();
     }
 
     public function init(){
-        $this->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Centre TEXT, LastAccessed INT, LastUpdated INT)');
+        $db = new Sqlite3($this->path);
+        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Centre TEXT, LastAccessed INT, LastUpdated INT)');
+        $db->close();
     }
 
     // Returns the raw stored form of a Product
     public function GetProduct($productid){
+        $db = new Sqlite3($this->path);
         $sql = "SELECT * FROM Products WHERE Product_id = :pid";
-        $stmt = $this->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bindParam(':pid', $productid);
         $result = $stmt->execute();
 
@@ -22,11 +28,15 @@ class CacheDB extends SQLite3{
             array_push($splitResults,$row);
         }
 
+        $db->close();
         return $splitResults;
+
     }
 
     public function CacheProduct($product){
-        $this->exec("INSERT INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
+        $db = new Sqlite3($this->path);
+        $db->exec("INSERT INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
+        $db->close();
     }
 }
 ?>
