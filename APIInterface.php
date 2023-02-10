@@ -138,7 +138,7 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 		$results = curl_exec($ch);
-		curl_close($ch);
+		curl_close($ch); 
 
 		return $this->NormalizeResults($results);
 

@@ -11,8 +11,6 @@ fetch('Fetch_product_data.php')
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
-
-        console.log(data);
         //---------------
         //---CODE BODY---
         //---------------
@@ -63,10 +61,21 @@ fetch('Fetch_product_data.php')
 
     });
 
-    fetch('Fetch_pagination_data.php')
-    .then(function (response) {
-        // TODO: Error checking to check if response is json or not
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-    });
+        fetch('Fetch_pagination_data.php')
+        .then(function (response) {
+            // TODO: Error checking to check if response is json or not
+            return response.json();
+        }).then(function (data) {
+
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                var tmp = data[i];
+                var id = tmp["_Identifier"];
+                var centre = tmp["_Centre"];
+                var latlang = centre.split(',');
+                L.marker([latlang[0], latlang[1]], {
+                    title: id,
+                    GeoJSON: tmp,
+                }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
+            }
+        });
