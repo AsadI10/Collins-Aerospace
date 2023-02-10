@@ -1,11 +1,11 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
 // This is a debug thing and doesn't do anything important. aiggghhhttttt
-/*
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         console.log(response.text());
 });
-*/
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
@@ -61,12 +61,13 @@ fetch('Fetch_product_data.php')
 
     });
 
-    
-    //this will need to be put in a Worker Thread until all products have populated the DB...
-    fetch('Fetch_pagination_data.php')
-    .then(function (response) {
-        // TODO: Error checking to check if response is json or not
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-    });
+//
+//    //this will need to be put in a Worker Thread until all products have populated the DB...
+//    fetch('Fetch_pagination_data.php')
+//    .then(function (response) {
+//        // TODO: Error checking to check if response is json or not
+//        return response.json();
+//    }).then(function (data) {
+//        console.log(data);
+//        
+//    });

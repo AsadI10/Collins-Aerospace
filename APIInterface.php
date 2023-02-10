@@ -95,15 +95,32 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 		//returning small bits of data with pagination.
-		$post = '{"size":3, "keywords":""}';
+		$post = '{"size":300, "keywords":""}';
 
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
 		$results = curl_exec($ch);
 		curl_close($ch);
+		$results = json_decode($results);
+
+		$paginationID = $results->paginationId;
+		$result = array();
 		
-		return $this->NormalizeResults($results);
+		// This loop can be multi-threaded
+		do{
+			$results = $results->results->searchresults;
+			$shouldExit = count($results) <= 0;
+
+			foreach($results as $element){
+				array_push($result, $element->id);
+			}
+
+			$results = $this->GetNextPage($paginationID);
+			$results = json_decode($results);
+		} while(!$shouldExit);
+
+		return $result;
 	}
 
 	public function NormalizeResults($results){
@@ -120,10 +137,10 @@ class APIInterface{
 		return $result;
 	}
 
-	public function GetPaginationIdentifiers(){
+	public function GetNextPage($paginationID){
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/page/".$_SESSION['Pagination_id']); //set API URL
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/page/".$paginationID); //set API URL
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
@@ -140,19 +157,7 @@ class APIInterface{
 		$results = curl_exec($ch);
 		curl_close($ch); 
 
-		return $this->NormalizeResults($results);
-
-	}
-
-	// Query the API and cache everything!
-	public function UpdateAllProducts(){
-
-		$identifiers = $this->GetAllProductIdentifiers();
-
-		//THIS SHIT NEEEDDDDSSS TO GET SPEEEEEEED UP I.E MULTITHREAD THE EXECUTION
-		foreach($identifiers as &$product){
-			$this->GetData($product)->SaveToCache();
-		}
+		return $results;
 
 	}
 
