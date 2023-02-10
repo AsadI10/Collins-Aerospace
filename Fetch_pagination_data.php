@@ -5,7 +5,6 @@ require_once("CacheDB.php");
 
 session_start();
 
-echo $_SESSION['Pagination_id'];
 if($_SESSION['Pagination_id'] != null){
     $allarr = array();
     $identifiers = $_SESSION["APIInterface"]->GetPaginationIdentifiers();

@@ -14,10 +14,10 @@ fetch('Fetch_product_data.php')
         //---------------
         //---CODE BODY---
         //---------------
-
         //Creates a marker for each product pulled from the API
         //also applies event based functions to each marker +
         //attributes.
+
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
             var id = tmp["_Identifier"];
@@ -61,21 +61,12 @@ fetch('Fetch_product_data.php')
 
     });
 
-        fetch('Fetch_pagination_data.php')
-        .then(function (response) {
-            // TODO: Error checking to check if response is json or not
-            return response.json();
-        }).then(function (data) {
+    //this will need to be put in a Worker Thread until all products have populated the DB...
 
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                var tmp = data[i];
-                var id = tmp["_Identifier"];
-                var centre = tmp["_Centre"];
-                var latlang = centre.split(',');
-                L.marker([latlang[0], latlang[1]], {
-                    title: id,
-                    GeoJSON: tmp,
-                }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
-            }
-        });
+    fetch('Fetch_pagination_data.php')
+    .then(function (response) {
+        // TODO: Error checking to check if response is json or not
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
+    });
