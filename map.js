@@ -13,7 +13,6 @@ fetch('Fetch_product_data.php')
     }).then(function (data) {
 
         console.log(data);
-
         //---------------
         //---CODE BODY---
         //---------------
@@ -62,4 +61,12 @@ fetch('Fetch_product_data.php')
             document.getElementById('panel1').innerHTML = body;
         }
 
+    });
+
+    fetch('Fetch_pagination_data.php')
+    .then(function (response) {
+        // TODO: Error checking to check if response is json or not
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
     });

@@ -37,6 +37,8 @@
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
      </div>
+     
+     <script type="text/javascript" src="map.js" ></script>
 
      </body>
 

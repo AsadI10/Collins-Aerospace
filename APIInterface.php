@@ -101,7 +101,12 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
 		$results = curl_exec($ch);
+		curl_close($ch);
+		
+		return $this->NormalizeResults($results);
+	}
 
+	public function NormalizeResults($results){
 		$set = json_decode($results);
 
 		$_SESSION['Pagination_id'] = $set->paginationId;
@@ -113,6 +118,30 @@ class APIInterface{
 		}
 
 		return $result;
+	}
+
+	public function GetPaginationIdentifiers(){
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/page/".$_SESSION['Pagination_id']); //set API URL
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		curl_setopt($ch, CURLOPT_TCP_FASTOPEN, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
+
+		$headers = array(
+			'Accept: */*',
+			'Authorization: Bearer '.$this->_AccessToken,
+		);
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+
+		$results = curl_exec($ch);
+		curl_close($ch);
+
+		return $this->NormalizeResults($results);
+
 	}
 
 	// Query the API and cache everything!
