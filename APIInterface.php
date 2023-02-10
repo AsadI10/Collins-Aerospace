@@ -95,21 +95,17 @@ class APIInterface{
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 		//returning small bits of data with pagination.
-		$post = '{"size":5, "keywords":""}';
+		$post = '{"size":3, "keywords":""}';
 
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
 		$results = curl_exec($ch);
 
-		$sr = "searchresults";
-		$r = "results";
-		$id = "id";
-		$pid = "paginationId";
-		$results = json_decode($results);
+		$set = json_decode($results);
 
-		$paginationID = $pid;
-		$results = $results->$r->$sr;
+		$_SESSION['Pagination_id'] = $set->paginationId;
+		$results = $set->results->searchresults;
 
 		$result = array();
 		foreach($results as $element){
@@ -157,7 +153,6 @@ class APIInterface{
 		$result = $result->product->result;
 		
 		$p = new ProductData($identifier,$result->viewname,$result->centre,$result->datecreated);
-		$p->Centre = $result->centre;
 		return $p;
 	}
 }

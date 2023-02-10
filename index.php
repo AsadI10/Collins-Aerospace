@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php
-    require_once("APIInterface.php");
-    require_once("CacheDB.php");
-    session_start();
-    
-    $_SESSION["CacheDB"] = new CacheDB();
-    $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
-    $_SESSION["APIInterface"]->UpdateAllProducts();
+     require_once("APIInterface.php");
+     require_once("CacheDB.php");
+     session_start();
+
+     $_SESSION["CacheDB"] = new CacheDB();
+     $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
+     $_SESSION["APIInterface"]->UpdateAllProducts();
 ?>
 
 <html>
@@ -35,7 +35,7 @@
      <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
 
      <div id="map">
-          <script type="text/javascript" src="map.js" ></script>
+          <script type="text/javascript" src="Map_init.js" ></script>
      </div>
 
      </body>

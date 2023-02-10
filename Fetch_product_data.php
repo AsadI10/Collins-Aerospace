@@ -5,7 +5,7 @@ require_once("CacheDB.php");
 session_start();
 // If an identifier is provided, return that specific ProductData if it exists.
 if(isset($_POST["identifier"]) ){
-	$result = ProductData::LoadFromCache($_POST["identifier"]);
+	$result = ProductData::Load($_POST["identifier"]);
 	if($result != null)
 		echo json_encode($result);
 }

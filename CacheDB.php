@@ -9,9 +9,11 @@ class CacheDB{
         $this->init();
     }
 
+
     public function init(){
         $db = new Sqlite3($this->path);
-        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name String, Centre TEXT, LastAccessed INT, LastUpdated INT)');
+        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
+        //$db->exec('CREATE UNIQUE INDEX Products_Product_id on Products(Product_id)');
         $db->close();
     }
 
@@ -36,7 +38,7 @@ class CacheDB{
 
     public function CacheProduct($product){
         $db = new Sqlite3($this->path);
-        $db->exec("INSERT INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
+        $db->exec("INSERT OR IGNORE INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
         $db->close();
     }
 }

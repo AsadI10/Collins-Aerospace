@@ -1,26 +1,18 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
-var userpoints = [];
-var map = L.map('map').setView([53.45043, -2.25975], 13);
-var markers = new L.LayerGroup().addTo(map);
-
-document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-// This is a debug thing and doesn't do anything important.
+// This is a debug thing and doesn't do anything important. aiggghhhttttt
+/*
 fetch('Fetch_product_data.php')
     .then(function (response) {
         console.log(response.text());
-    });
-
+});
+*/
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
+
+        console.log(data);
 
         //---------------
         //---CODE BODY---
