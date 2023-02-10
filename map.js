@@ -61,8 +61,8 @@ fetch('Fetch_product_data.php')
 
     });
 
+    
     //this will need to be put in a Worker Thread until all products have populated the DB...
-
     fetch('Fetch_pagination_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
