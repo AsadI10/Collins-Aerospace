@@ -54,20 +54,11 @@ fetch('Fetch_product_data.php')
 
         //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
+            console.log(e);
+
             var gj = e.sourceTarget.options.GeoJSON;
-            var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
-            document.getElementById('panel1').innerHTML = body;
+            //var body = "ID: " + gj.product.result._Identifier + "<br>NAME: " + gj.product.result._Name + "<br><br>COORDINATES: " + gj.product.result._Centre;
+            document.getElementById('panel1').innerHTML = JSON.stringify(gj);
         }
 
     });
-
-//
-//    //this will need to be put in a Worker Thread until all products have populated the DB...
-//    fetch('Fetch_pagination_data.php')
-//    .then(function (response) {
-//        // TODO: Error checking to check if response is json or not
-//        return response.json();
-//    }).then(function (data) {
-//        console.log(data);
-//        
-//    });

@@ -64,6 +64,7 @@ class APIInterface{
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
+		//Initilize the database I.E create the product table
 		$_SESSION["CacheDB"]->init();
 
 	}
