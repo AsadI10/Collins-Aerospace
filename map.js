@@ -51,11 +51,8 @@ fetch('Fetch_product_data.php')
             userpoints = [];
         }
 
-
         //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
-            console.log(e);
-
             var gj = e.sourceTarget.options.GeoJSON;
             //var body = "ID: " + gj.product.result._Identifier + "<br>NAME: " + gj.product.result._Name + "<br><br>COORDINATES: " + gj.product.result._Centre;
             document.getElementById('panel1').innerHTML = JSON.stringify(gj);
