@@ -17,10 +17,10 @@ fetch('Fetch_product_data.php')
         //---------------
         //---CODE BODY---
         //---------------
-
         //Creates a marker for each product pulled from the API
         //also applies event based functions to each marker +
         //attributes.
+        
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
             var id = tmp["Identifier"];
@@ -35,7 +35,7 @@ fetch('Fetch_product_data.php')
         //forget about these event functions
         //map.on('contextmenu', onContextMenu);
         //map.on('click', onMapClick);
-        
+
         map.on('boxzoomend', onShiftDrag);
 
         function onShiftDrag(e){
