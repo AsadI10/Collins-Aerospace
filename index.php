@@ -6,6 +6,12 @@
 
      $_SESSION["CacheDB"] = new CacheDB();
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
+
+     // The testing zone
+     $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
+     $testProduct = $_SESSION["APIInterface"]->GetData($testIdentifier);
+     $testProduct->SaveToCache();
+     // Not the testing zone
 ?>
 
 <html>

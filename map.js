@@ -1,11 +1,11 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
 // This is a debug thing and doesn't do anything important. aiggghhhttttt
-/*
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         console.log(response.text());
 });
-*/
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
