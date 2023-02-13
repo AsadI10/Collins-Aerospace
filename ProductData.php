@@ -6,10 +6,10 @@
 		// ======
 		// Fields
 		// ======
-		private $_Identifier;
-		private $_Name;
+		private $Identifier;
+		private $Name;
 		// Coordinates of the center of this product
-		private $_Centre;
+		private $Centre;
 		
 		public $DocumentType;
 		public $DateCreated;
