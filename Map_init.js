@@ -5,7 +5,7 @@ var markers = new L.LayerGroup().addTo(map);
 var shapes = new L.LayerGroup().addTo(map);
 
 //This add a scale to the map
-// L.control.scale().addTo(map);
+L.control.scale().addTo(map);
 
 document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
 
