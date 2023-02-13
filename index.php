@@ -9,9 +9,8 @@
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-     $testProduct = $_SESSION["APIInterface"]->GetData($testIdentifier);
-     $_SESSION["CacheDB"]->GetProduct($testIdentifier);
-     $testProduct->SaveToCache();
+     //$_SESSION["APIInterface"]->echojson($testIdentifier);
+     
      // Not the testing zone
 ?>
 
@@ -33,7 +32,7 @@
      </head>
 
      <body oncontextmenu="return false;"> 
-
+     
      <h1 class="name">Collins Aerospace</h1>
      <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="">Home</a>
@@ -42,14 +41,13 @@
      </nav>
 
      <span id="panel1" class="d-block p-2 bg-dark text-white">
-          <h1>Worked</h1>
      </span>
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
      </div>
      <footer>
-     <p class="copy">&copy; Created By <a class="Asad" href="">Team 1 Sheffield Hallam University</a> |
+     <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
         </p>
      </footer>
