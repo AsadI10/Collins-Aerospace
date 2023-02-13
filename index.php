@@ -9,7 +9,7 @@
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-     $_SESSION["APIInterface"]->echojson($testIdentifier);
+     //$_SESSION["APIInterface"]->echojson($testIdentifier);
      
      // Not the testing zone
 ?>
