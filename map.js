@@ -32,29 +32,30 @@ fetch('Fetch_product_data.php')
             }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
         }
 
+        //forget about these event functions
         //map.on('contextmenu', onContextMenu);
         //map.on('click', onMapClick);
+        
         map.on('boxzoomend', onShiftDrag);
 
         function onShiftDrag(e){
-            var body;
+            var body = "";
             var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
             [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
-            
             var rectangle = L.rectangle(bounds).addTo(map);
             markers.getLayers().forEach(element=>{
                 if(rectangle.contains(element._latlng)){
-                    body = body + "<br>" + element.options.title;
+                    body += element.options.title + "<br>";
                 }
             });
             document.getElementById('panel1').innerHTML = body;
         }
 
         function onClick_Marker(e) {
-            console.log(e);
             var gj = e.sourceTarget.options.GeoJSON;
             var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
             document.getElementById('panel1').innerHTML = body;
         }
 
-    });
+    })
+;
