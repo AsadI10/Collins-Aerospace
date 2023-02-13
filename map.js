@@ -12,8 +12,6 @@ fetch('Fetch_product_data.php')
         return response.json();
     }).then(function (data) {
 
-        console.log(data);
-
         //---------------
         //---CODE BODY---
         //---------------
@@ -57,5 +55,4 @@ fetch('Fetch_product_data.php')
             document.getElementById('panel1').innerHTML = body;
         }
 
-    })
-;
+    });

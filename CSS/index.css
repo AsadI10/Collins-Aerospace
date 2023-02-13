@@ -1,6 +1,6 @@
 #map {
     /* position: relative; */
-    height: 70vh;
+    height: 65vh;
     /*or as desired*/
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
@@ -12,7 +12,8 @@
     float: right;
     position: sticky;
     width: 30%;
-    height: 83vh;
+    height: 65vh;
+    height: 8vh;
 }
 body {
     background-color: #343a40;
@@ -30,12 +31,12 @@ body {
     color: white;
     font-style: italic;
     text-align: center;
-    border-top: solid 1px grey;
-    padding-top: 8px;
+    /* border-top: solid 1px grey; */
+    padding-top: 13px;
 }
 /* this is the right side of the page where we can add piecharts */
 span#panel1{
-    border: 20px black;
+    text-align: center;
 }
 .name{
     color: white;
