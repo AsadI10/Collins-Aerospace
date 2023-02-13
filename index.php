@@ -18,6 +18,10 @@
      <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+     <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="">Home</a>
+     </nav>
           <title>Collins Team One</title>
           <!--Leaflet-->
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -33,9 +37,40 @@
 
      <body oncontextmenu="return false;">
 
-     <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="">Home</a>
-     </nav>
+     
+     <span id="panel1" class="d-block p-2 bg-dark text-white">
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable
+        ([
+          ['Task', 'Hours per Day'],
+          ['',     11],
+          ['',      200],
+          ['',  245],
+          ['', 276],
+          ['',    76]
+        ]);
+
+        var options = 
+        {
+          chartArea: {width: 400, height: 300},
+          backgroundColor: 'transparent',
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+     <div id="piechart" style="width: 300px; height: 100%;   "></div>
+     </span>
+     <div id="map">
+          <script type="text/javascript" src="Map_init.js" ></script>
+     </div>
 
      <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
 
