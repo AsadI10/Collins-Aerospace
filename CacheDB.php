@@ -11,7 +11,11 @@ class CacheDB{
 
 
     private function _Init(){
-        $db = new Sqlite3($this->path);
+        try{
+            $db = new Sqlite3($this->path);
+        }catch(Exception $e){
+            $db = new Sqlite3("/Applications/XAMPP/xamppfiles/htdocs/Collins-Aerospace/Cache.db");
+        }
         $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, Date_Created TEXT, Date_Modified TEXT, Product_URL TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
         //$db->exec('CREATE UNIQUE INDEX Products_Product_id on Products(Product_id)');
         $db->close();
@@ -30,7 +34,7 @@ class CacheDB{
         // If record is old, return null
 
         // Otherwise, update LastAccessed
-        
+
         // There should be only 1, so return it
         return $record;
 
