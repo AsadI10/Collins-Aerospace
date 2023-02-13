@@ -32,14 +32,20 @@
      </head>
 
      <body oncontextmenu="return false;"> 
-     
-     <h1 class="name">Collins Aerospace</h1>
-     <nav class="navbar navbar-dark bg-dark">
+     <!-- <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="">Home</a>
           <a class="navbar-logout" href="">Logout</a>
           <a href=""></a>
+     </nav> -->
+     <h1 class="name">Collins Aerospace</h1>
+     <nav>
+          <ul>
+               <li>Home</li>
+               <li>Logout</li>
+          </ul>
+          <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
-
+<br>
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      </span>
 
