@@ -42,6 +42,11 @@
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
           <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <!-- use this to get the search bar -->
+          <!-- <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+          <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script> -->
+          <link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
      </head>
 
      <body oncontextmenu="return false;"> 
@@ -59,7 +64,36 @@
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
 <br>
+<!-- span used to create a chart on the right hand side  -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
+     <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+         ['Task', 'Hours per Day'],
+          ['Plane', 11],
+          ['Jet', 2],
+          ['Military', 2],
+          ['Random', 2],
+          ['On ground', 7]
+        ]);
+
+        var options = {
+          backgroundColor: 'transparent',
+          is3D: true,
+          'width':400,
+          'height':300,
+          'title' : 'My Chart'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="piechart" style="width: 350px; height: 200px;"></div>
+
+
      </span>
 
      <div id="map">
