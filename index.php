@@ -4,13 +4,26 @@
      require_once("CacheDB.php");
      session_start();
 
-     $_SESSION["CacheDB"] = new CacheDB();
+     // Initialize the caching database to cache API call results
+     $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
+     // Initialize the APIInterface to communicate with the API
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
+
+     $apiFailureReason = $_SESSION["APIInterface"]->GetFailureReason();
+     if($apiFailureReason != null){
+        ?>
+        <h1>APIInterface failed to initialize!</h1>
+        <t><?php echo $apiFailureReason ?></t>
+        <?php
+          exit();
+     }
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-     $testProduct = $_SESSION["APIInterface"]->GetData($testIdentifier);
-     $testProduct->SaveToCache();
+     $testProduct = ProductData::Load($testIdentifier);
+     //var_dump($testProduct);
+     //$_SESSION["APIInterface"]->echojson($testIdentifier);
+     
      // Not the testing zone
 ?>
 
@@ -35,6 +48,7 @@
           <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
      </head>
 
+<<<<<<< HEAD
      <body oncontextmenu="return false;">
 
      
@@ -73,13 +87,31 @@
      </div>
 
      <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+=======
+     <body oncontextmenu="return false;"> 
+     <!-- <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="">Home</a>
+          <a class="navbar-logout" href="">Logout</a>
+          <a href=""></a>
+     </nav> -->
+     <h1 class="name">Collins Aerospace</h1>
+     <nav>
+          <ul>
+               <li>Home</li>
+               <li>Logout</li>
+          </ul>
+          <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
+     </nav>
+<br>
+     <span id="panel1" class="d-block p-2 bg-dark text-white">
+     </span>
+>>>>>>> ebdba47df6495020f4d1f6bb1e1dab36e5d19e82
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
      </div>
-     <br> 
      <footer>
-     <p class="copy">&copy; Created By <a class="Asad" href="">Team 1 Sheffield Hallam University</a> |
+     <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
         </p>
      </footer>

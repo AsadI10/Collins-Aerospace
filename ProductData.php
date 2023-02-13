@@ -53,8 +53,13 @@
 				// Create new object and populate it with data
 				$cachedObject = new ProductData($identifier,
 				$vals["Product_Name"],
-				$vals["Centre"],
-				null);
+				$vals["Centre"]);
+
+				$cachedObject->DateCreated = $vals["Date_Created"];
+				$cachedObject->DateModified = $vals["Date_Modified"];
+				$cachedObject->ProductURL = $vals["Product_URL"];
+				$cachedObject->Footprint = new FootprintData($vals["Footprint_Type"], json_decode($vals["Footprint_Coordinates"]));
+				
 				return $cachedObject;
 
 			}

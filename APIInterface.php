@@ -8,6 +8,7 @@ class APIInterface{
 
 	private $_APIDomain;
 	private $_AccessToken;
+	private $_FailureReason;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
@@ -58,13 +59,23 @@ class APIInterface{
 
 		//executes the curl request and gets the status code (200) being success
 		$requestReturn = curl_exec($curlInstance);
-
 		//ALWAYS CLOSE CONNECTIONS!
 		curl_close($curlInstance);
+
+		// Check if a response was given
+		if($requestReturn == false){
+			$this->_FailureReason = "No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.";
+			return;
+		}
 
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
+		$this->_FailureReason = null;
+	}
+
+	public function GetFailureReason(){
+		return $this->_FailureReason;
 	}
 
 	// This function shouldn't be used as everything that needs it should be in this class.
@@ -74,7 +85,7 @@ class APIInterface{
 	}
 
 	// Directly calls the API to get a list of all product identifiers.
-	public function GetAllProductIdentifiers(){
+	public function GetAllProductIdentifiers($documentType = null, $missionType = null){
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/search"); //set API URL
@@ -96,6 +107,12 @@ class APIInterface{
 		//returning small bits of data with pagination.
 		$post = '{"size":300, "keywords":""}';
 
+		if($documentType != null){
+
+		}
+		if($missionType != null){
+
+		}
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
@@ -194,6 +211,30 @@ class APIInterface{
 		$p->Thumbnail = $result->thumbnail;
 		$p->MissionID = $result->missionid;
 		return $p;
+	}
+
+	// Just echos the raw JSON and does nothing else.
+	public function echojson($identifier){
+		$ch = curl_init();
+		
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); // This is needed to stop it printing to screen
+		
+		$headers = array(
+			'Accept: */*',
+			'Authorization: Bearer '.$this->_AccessToken,
+			'Content-Type: application/json',
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		$result = json_decode($result);
+		$result = $result->product->result;
+		echo json_encode($result);
 	}
 }
 ?>

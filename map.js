@@ -11,16 +11,13 @@ fetch('Fetch_product_data.php')
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
-
-        console.log(data);
-
         //---------------
         //---CODE BODY---
         //---------------
-
         //Creates a marker for each product pulled from the API
         //also applies event based functions to each marker +
         //attributes.
+        
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
             var id = tmp["Identifier"];
@@ -29,36 +26,45 @@ fetch('Fetch_product_data.php')
             L.marker([latlang[0], latlang[1]], {
                 title: id,
                 GeoJSON: tmp,
-            }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
+            }).addTo(markers).bindPopup(id)
+            .on('click', onClick_Marker)
+            .on('mouseover',onMouseOver_marker);
         }
 
-        map.on('contextmenu', oncontextmenu);
-        map.on('click', onMapClick);
+        //forget about these event functions
+        //map.on('contextmenu', onContextMenu);
+        //map.on('click', onMapClick);
 
-        function onMapClick(e) {
-            userpoints.push(e.latlng);
-            L.marker(e.latlng).addTo(map);
-        }
+        map.on('boxzoomend', onShiftDrag);
 
-        function oncontextmenu(e) {
-            var polygon;
-            var body;
-            polygon = L.polygon(userpoints).addTo(map);
-            markers.getLayers().forEach(element => {
-                if (polygon.contains(element._latlng)) {
-                    body = body + "<br>" + element.options.title;
+        function onShiftDrag(e){
+            shapes.clearLayers();
+
+            var body = "";
+            var rectangle;
+            var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
+            [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
+
+            var rectangle = L.rectangle(bounds).addTo(shapes);
+
+            //can be put into its own function
+            markers.getLayers().forEach(element=>{
+                if(rectangle.contains(element._latlng)){
+                    body += element.options.title + "<br>";
                 }
             });
-            //displays all the products within the polygon onto the panel
             document.getElementById('panel1').innerHTML = body;
-            userpoints = [];
         }
 
+        function onMouseOver_marker(e){
 
-        //when a marker is clicked all of its metadata is returned
+        }
+
         function onClick_Marker(e) {
+            shapes.clearLayers();
+
             var gj = e.sourceTarget.options.GeoJSON;
-            var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
+            var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
             document.getElementById('panel1').innerHTML = body;
         }
 
