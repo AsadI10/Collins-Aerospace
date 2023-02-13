@@ -10,17 +10,25 @@
 		private $_Name;
 		// Coordinates of the center of this product
 		private $_Centre;
-		private $_DateCreated;
+		
+		public $DocumentType;
+		public $DateCreated;
+		public $DateModified;
+		// Footprint data object
+		public $Footprint;
+		public $ProductURL;
+		public $Thumbnail;
+		public $MissionID;
+
 
 		// =========
 		// Functions
 		// =========
   
-		function __construct($identifier, $name, $centre, $dateCreated){
+		function __construct($identifier, $name, $centre){
 			$this->_Identifier = $identifier;
 			$this->_Name = $name;
 			$this->_Centre = $centre;
-			$this->_DateCreated = $dateCreated;
 		}
 		
 		// Returns the identifier of this product.

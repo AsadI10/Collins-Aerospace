@@ -1,6 +1,7 @@
 <?php
 require_once("ProductData.php");
 require_once("CacheDB.php");
+require_once("FootprintData.php");
 
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
@@ -186,8 +187,15 @@ class APIInterface{
 
 		$result = json_decode($result);
 		$result = $result->product->result;
-		
-		$p = new ProductData($identifier,$result->viewname,$result->centre,$result->datecreated);
+
+		$p = new ProductData($identifier,$result->viewname,$result->centre);
+		$p->DocumentType = $result->documentType;
+		$p->DateCreated = date("d-m-Y H:i:s", $result->datecreated/1000);
+		$p->DateModified = date("d-m-Y H:i:s", $result->datemodified/1000);
+		$p->Footprint = new FootprintData($result->footprint->type, $result->footprint->coordinates);
+		$p->ProductURL = $result->producturl;
+		$p->Thumbnail = $result->thumbnail;
+		$p->MissionID = $result->missionid;
 		return $p;
 	}
 }
