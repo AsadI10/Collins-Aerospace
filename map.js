@@ -26,7 +26,9 @@ fetch('Fetch_product_data.php')
             L.marker([latlang[0], latlang[1]], {
                 title: id,
                 GeoJSON: tmp,
-            }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
+            }).addTo(markers).bindPopup(id)
+            .on('click', onClick_Marker)
+            .on('mouseover',onMouseOver_marker);
         }
 
         //forget about these event functions
@@ -37,15 +39,33 @@ fetch('Fetch_product_data.php')
 
         function onShiftDrag(e){
             var body = "";
+            var rectangle;
             var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
             [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
-            var rectangle = L.rectangle(bounds).addTo(map);
+
+
+            /* THIS NEEDS TO BE FIXED SO THAT POLYGONS CAN BE REMOVED 
+            console.log(shapes._layers);
+            
+            if(shapes._layers){
+                map.removeLayer(shapes);
+            }
+            */
+            
+            var rectangle = L.rectangle(bounds).addTo(shapes);
+
+
+            //can be put into its own function
             markers.getLayers().forEach(element=>{
                 if(rectangle.contains(element._latlng)){
                     body += element.options.title + "<br>";
                 }
             });
             document.getElementById('panel1').innerHTML = body;
+        }
+
+        function onMouseOver_marker(e){
+
         }
 
         function onClick_Marker(e) {

@@ -4,12 +4,29 @@
      require_once("CacheDB.php");
      session_start();
 
-     $_SESSION["CacheDB"] = new CacheDB();
+     // Initialize the caching database to cache API call results
+     $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
+     // Initialize the APIInterface to communicate with the API
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
+
+     $apiFailureReason = $_SESSION["APIInterface"]->GetFailureReason();
+     if($apiFailureReason != null){
+        ?>
+        <h1>APIInterface failed to initialize!</h1>
+        <t><?php echo $apiFailureReason ?></t>
+        <?php
+          exit();
+     }
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
+<<<<<<< HEAD
      //$_SESSION["APIInterface"]->echojson($testIdentifier);
+=======
+     $testProduct = ProductData::Load($testIdentifier);
+     //var_dump($testProduct);
+     //$_SESSION["APIInterface"]->echojson($testIdentifier);
+>>>>>>> 47b228f2a78db2df83dde7466d881416f4ca979e
      
      // Not the testing zone
 ?>
