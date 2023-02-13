@@ -21,6 +21,8 @@ class CacheDB{
             Date_Created TEXT,
             Date_Modified TEXT,
             Product_URL TEXT,
+            Footprint_Type TEXT,
+            Footprint_Coordinates TEXT,
             LastAccessed INT,
             LastUpdated INT,
             UNIQUE(Product_id))'
@@ -81,6 +83,8 @@ class CacheDB{
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->ProductURL."','"
+        .$product->Footprint->Type."','"
+        .json_encode($product->Footprint->Coordinates)."','"
         .$nowTime."','"
         .$nowTime."')"
         );
