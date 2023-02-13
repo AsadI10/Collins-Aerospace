@@ -10,6 +10,7 @@
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
      $testProduct = $_SESSION["APIInterface"]->GetData($testIdentifier);
+     $_SESSION["CacheDB"]->GetProduct($testIdentifier);
      $testProduct->SaveToCache();
      // Not the testing zone
 ?>
@@ -31,7 +32,7 @@
           <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
      </head>
 
-     <body oncontextmenu="return false;">
+     <body oncontextmenu="return false;"> 
 
      <h1 class="name">Collins Aerospace</h1>
      <nav class="navbar navbar-dark bg-dark">

@@ -11,7 +11,11 @@ class CacheDB{
 
 
     private function _Init(){
-        $db = new Sqlite3($this->path);
+        try{
+            $db = new Sqlite3($this->path);
+        }catch(Exception $e){
+            $db = new Sqlite3("/Applications/XAMPP/xamppfiles/htdocs/Collins-Aerospace/Cache.db");
+        }
         $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, Date_Created TEXT, Date_Modified TEXT, Product_URL TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
         //$db->exec('CREATE UNIQUE INDEX Products_Product_id on Products(Product_id)');
         $db->close();
@@ -27,13 +31,30 @@ class CacheDB{
 
         $record = $result->fetchArray(SQLITE3_ASSOC);
 
-        // If record is old, return null
+        // If record is absent, return null
+        if($record == false){
+            return null;
+        }
+        // Check age
+        $nowTime = date("d-m-Y H:i:s");
+        $lastUpdated = strtotime($record["LastUpdated"]);
+        // This is in seconds
+        $outofdateSeconds = 86400;
+        // If entry is old, return null
+        if(strtotime($nowTime) - $lastUpdated > $outofdateSeconds){
+            // Remove stale entry
+            $sql = "DELETE FROM Products WHERE Product_id = :pid";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':pid', $productid);
+            $result = $stmt->execute();
+            // Return null
+            return null;
+        }
 
         // Otherwise, update LastAccessed
 
         // There should be only 1, so return it
         return $record;
-
     }
 
     public function CacheProduct($product){
@@ -52,4 +73,15 @@ class CacheDB{
         $db->close();
     }
 }
+
+/*
+        Just moved this into a comment cos it was clogging up me screen xx - finn.
+
+        $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':lastAccessed', $nowTime);
+        $stmt->bindParam(':pid', $productid);
+        $stmt->execute();
+
+*/
 ?>

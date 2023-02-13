@@ -17,10 +17,10 @@ fetch('Fetch_product_data.php')
         //---------------
         //---CODE BODY---
         //---------------
-
         //Creates a marker for each product pulled from the API
         //also applies event based functions to each marker +
         //attributes.
+        
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
             var id = tmp["Identifier"];
@@ -32,34 +32,30 @@ fetch('Fetch_product_data.php')
             }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
         }
 
-        map.on('contextmenu', oncontextmenu);
-        map.on('click', onMapClick);
+        //forget about these event functions
+        //map.on('contextmenu', onContextMenu);
+        //map.on('click', onMapClick);
 
-        function onMapClick(e) {
-            userpoints.push(e.latlng);
-            L.marker(e.latlng).addTo(map);
-        }
+        map.on('boxzoomend', onShiftDrag);
 
-        function oncontextmenu(e) {
-            var polygon;
-            var body;
-            polygon = L.polygon(userpoints).addTo(map);
-            markers.getLayers().forEach(element => {
-                if (polygon.contains(element._latlng)) {
-                    body = body + "<br>" + element.options.title;
+        function onShiftDrag(e){
+            var body = "";
+            var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
+            [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
+            var rectangle = L.rectangle(bounds).addTo(map);
+            markers.getLayers().forEach(element=>{
+                if(rectangle.contains(element._latlng)){
+                    body += element.options.title + "<br>";
                 }
             });
-            //displays all the products within the polygon onto the panel
             document.getElementById('panel1').innerHTML = body;
-            userpoints = [];
         }
 
-
-        //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
             var gj = e.sourceTarget.options.GeoJSON;
-            var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
+            var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
             document.getElementById('panel1').innerHTML = body;
         }
 
-    });
+    })
+;

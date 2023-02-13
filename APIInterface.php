@@ -160,6 +160,10 @@ class APIInterface{
 
 	}
 
+	public function GetIdentifiers($documentType, $missionType){
+
+	}
+
 	public function GetData($identifier){
 		//-----------------------------------
 		//MULTITHREADED PRODUCT DATA RETRIVAL
