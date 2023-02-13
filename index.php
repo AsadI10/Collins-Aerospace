@@ -20,13 +20,9 @@
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-<<<<<<< HEAD
-     //$_SESSION["APIInterface"]->echojson($testIdentifier);
-=======
      $testProduct = ProductData::Load($testIdentifier);
      //var_dump($testProduct);
      //$_SESSION["APIInterface"]->echojson($testIdentifier);
->>>>>>> 47b228f2a78db2df83dde7466d881416f4ca979e
      
      // Not the testing zone
 ?>
