@@ -33,11 +33,15 @@
 
      <body oncontextmenu="return false;">
 
+     <h1 class="name">Collins Aerospace</h1>
      <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="">Home</a>
+          <a class="navbar-logout" href="">Logout</a>
      </nav>
 
-     <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+     <span id="panel1" class="d-block p-2 bg-dark text-white">
+          <h1>Worked</h1>
+     </span>
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
