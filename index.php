@@ -41,7 +41,6 @@
      </nav>
 
      <span id="panel1" class="d-block p-2 bg-dark text-white">
-          <h1>Worked</h1>
      </span>
 
      <div id="map">
