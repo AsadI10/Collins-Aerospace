@@ -27,12 +27,16 @@ fetch('Fetch_product_data.php')
             var latlang = centre.split(',');
             L.marker([latlang[0], latlang[1]], {
                 title: id,
-                GeoJSON: tmp,
+                GeoJSON: tmp
             }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
         }
 
         map.on('contextmenu', oncontextmenu);
         map.on('click', onMapClick);
+        /*
+        =====================
+        POLYGON DRAWING LOGIC
+        =====================
 
         function onMapClick(e) {
             userpoints.push(e.latlng);
@@ -52,6 +56,7 @@ fetch('Fetch_product_data.php')
             document.getElementById('panel1').innerHTML = body;
             userpoints = [];
         }
+        */
 
         //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
