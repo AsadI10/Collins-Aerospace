@@ -9,6 +9,15 @@
      // Initialize the APIInterface to communicate with the API
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
 
+     $apiFailureReason = $_SESSION["APIInterface"]->GetFailureReason();
+     if($apiFailureReason != null){
+        ?>
+        <h1>APIInterface failed to initialize!</h1>
+        <t><?php echo $apiFailureReason ?></t>
+        <?php
+          exit();
+     }
+
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
      $testProduct = ProductData::Load($testIdentifier);

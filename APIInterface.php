@@ -8,6 +8,7 @@ class APIInterface{
 
 	private $_APIDomain;
 	private $_AccessToken;
+	private $_FailureReason;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
@@ -58,13 +59,23 @@ class APIInterface{
 
 		//executes the curl request and gets the status code (200) being success
 		$requestReturn = curl_exec($curlInstance);
-
 		//ALWAYS CLOSE CONNECTIONS!
 		curl_close($curlInstance);
+
+		// Check if a response was given
+		if($requestReturn == false){
+			$this->_FailureReason = "No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.";
+			return;
+		}
 
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
+		$this->_FailureReason = null;
+	}
+
+	public function GetFailureReason(){
+		return $this->_FailureReason;
 	}
 
 	// This function shouldn't be used as everything that needs it should be in this class.
