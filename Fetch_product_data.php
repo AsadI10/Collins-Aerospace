@@ -9,6 +9,11 @@ if(isset($_POST["identifier"]) ){
 	if($result != null)
 		echo json_encode($result);
 }
+
+// DocumentType
+// MissionType
+
+
 // Return array of all
 else{
 	$allArr = array();
