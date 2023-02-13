@@ -36,9 +36,14 @@
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
      </div>
+     <br> 
+     <footer>
+     <p class="copy">&copy; Created By <a class="Asad" href="">Team 1 Sheffield Hallam University</a> |
+            <script>document.write(new Date().getFullYear())</script> All rights reserved
+        </p>
+     </footer>
      
      <script type="text/javascript" src="map.js" ></script>
 
      </body>
-
 </html>

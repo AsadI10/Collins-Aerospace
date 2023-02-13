@@ -2,20 +2,18 @@
     /* position: relative; */
     height: 80vh;
     /*or as desired*/
-    width: 70%;
+    width: 60%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
     border: 4px solid orange;
     position: sticky;
 }
-
 #panel1 {
     float: right;
     position: sticky;
     width: 30%;
     height: 80vh;
 }
-
 body {
     background-color: #343a40;
     position: fixed;
@@ -27,7 +25,6 @@ body {
     height: 100%;
     /* The top is optional. Please check with Finn */
 }
-
 .copy {
     /*Use for footer class */
     color: white;
