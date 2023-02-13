@@ -38,22 +38,14 @@ fetch('Fetch_product_data.php')
         map.on('boxzoomend', onShiftDrag);
 
         function onShiftDrag(e){
+            shapes.clearLayers();
+
             var body = "";
             var rectangle;
             var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
             [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
-
-            /* THIS NEEDS TO BE FIXED SO THAT POLYGONS CAN BE REMOVED 
-            console.log(shapes._layers);
-            
-            if(shapes._layers){
-                map.removeLayer(shapes);
-            }
-            */
-            
             var rectangle = L.rectangle(bounds).addTo(shapes);
-
 
             //can be put into its own function
             markers.getLayers().forEach(element=>{
@@ -69,6 +61,8 @@ fetch('Fetch_product_data.php')
         }
 
         function onClick_Marker(e) {
+            shapes.clearLayers();
+
             var gj = e.sourceTarget.options.GeoJSON;
             var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
             document.getElementById('panel1').innerHTML = body;
