@@ -27,13 +27,34 @@ class CacheDB{
 
         $record = $result->fetchArray(SQLITE3_ASSOC);
 
-        // If record is old, return null
+        // If record is absent, return null
+        if($record == false){
+            return null;
+        }
+        // Check age
+        $nowTime = date("d-m-Y H:i:s");
+        $lastUpdated = strtotime($record["LastUpdated"]);
+        // This is in seconds
+        $outofdateSeconds = 86400;
+        // If entry is old, return null
+        if(strtotime($nowTime) - $lastUpdated > $outofdateSeconds){
+            // Remove stale entry
+            $sql = "DELETE FROM Products WHERE Product_id = :pid";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':pid', $productid);
+            $result = $stmt->execute();
+            // Return null
+            return null;
+        }
 
         // Otherwise, update LastAccessed
+        $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':lastAccessed', $nowTime);
+        $stmt->bindParam(':pid', $productid);
+        $stmt->execute();
 
-        // There should be only 1, so return it
         return $record;
-
     }
 
     public function CacheProduct($product){
