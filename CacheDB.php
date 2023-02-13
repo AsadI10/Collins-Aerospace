@@ -48,12 +48,8 @@ class CacheDB{
         }
 
         // Otherwise, update LastAccessed
-        $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':lastAccessed', $nowTime);
-        $stmt->bindParam(':pid', $productid);
-        $stmt->execute();
 
+        // There should be only 1, so return it
         return $record;
     }
 
@@ -74,3 +70,8 @@ class CacheDB{
     }
 }
 ?>
+        $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':lastAccessed', $nowTime);
+        $stmt->bindParam(':pid', $productid);
+        $stmt->execute();
