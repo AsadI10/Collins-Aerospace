@@ -9,9 +9,8 @@
 
      // The testing zone
      $testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-     $testProduct = $_SESSION["APIInterface"]->GetData($testIdentifier);
-     $_SESSION["CacheDB"]->GetProduct($testIdentifier);
-     $testProduct->SaveToCache();
+     $_SESSION["APIInterface"]->echojson($testIdentifier);
+     
      // Not the testing zone
 ?>
 

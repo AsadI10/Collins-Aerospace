@@ -6,15 +6,17 @@ session_start();
 // If an identifier is provided, return that specific ProductData if it exists.
 if(isset($_POST["identifier"]) ){
 	$result = ProductData::Load($_POST["identifier"]);
-	if($result != null)
+	if($result != null){
 		echo json_encode($result);
+		exit();
+		}
 }
 
 // DocumentType
 // MissionType
 
 
-// Return array of all
+// Return array of all by default
 else{
 	$allArr = array();
 	$identifiers = $_SESSION["APIInterface"]->GetAllProductIdentifiers();
