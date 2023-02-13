@@ -4,8 +4,8 @@ class CacheDB{
 
     private $path;
 
-    function __construct(){
-        $this->path = "./Cache.db";
+    function __construct($databasePath){
+        $this->path = $databasePath;
         $this->_Init();
     }
 
