@@ -50,10 +50,10 @@ fetch('Fetch_product_data.php')
             document.getElementById('panel1').innerHTML = body;
         }
 
-        //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
+            console.log(e);
             var gj = e.sourceTarget.options.GeoJSON;
-            var body = "ID: " + gj.product.result.identifier + "<br>NAME: " + gj.product.result.title + "<br><br>COORDINATES: " + gj.product.result.centre;
+            var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
             document.getElementById('panel1').innerHTML = body;
         }
 

@@ -73,9 +73,15 @@ class CacheDB{
         $db->close();
     }
 }
-?>
+
+/*
+        Just moved this into a comment cos it was clogging up me screen xx - finn.
+
         $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':lastAccessed', $nowTime);
         $stmt->bindParam(':pid', $productid);
         $stmt->execute();
+
+*/
+?>
