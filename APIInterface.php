@@ -1,6 +1,7 @@
 <?php
 require_once("ProductData.php");
 require_once("CacheDB.php");
+require_once("FootprintData.php");
 
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
@@ -64,9 +65,6 @@ class APIInterface{
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
-		//Initilize the database I.E create the product table
-		$_SESSION["CacheDB"]->init();
-
 	}
 
 	// This function shouldn't be used as everything that needs it should be in this class.
@@ -186,8 +184,15 @@ class APIInterface{
 
 		$result = json_decode($result);
 		$result = $result->product->result;
-		
-		$p = new ProductData($identifier,$result->viewname,$result->centre,$result->datecreated);
+
+		$p = new ProductData($identifier,$result->viewname,$result->centre);
+		$p->DocumentType = $result->documentType;
+		$p->DateCreated = date("d-m-Y H:i:s", $result->datecreated/1000);
+		$p->DateModified = date("d-m-Y H:i:s", $result->datemodified/1000);
+		$p->Footprint = new FootprintData($result->footprint->type, $result->footprint->coordinates);
+		$p->ProductURL = $result->producturl;
+		$p->Thumbnail = $result->thumbnail;
+		$p->MissionID = $result->missionid;
 		return $p;
 	}
 }
