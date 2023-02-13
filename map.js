@@ -11,7 +11,6 @@ fetch('Fetch_product_data.php')
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
-
         //---------------
         //---CODE BODY---
         //---------------
@@ -27,7 +26,9 @@ fetch('Fetch_product_data.php')
             L.marker([latlang[0], latlang[1]], {
                 title: id,
                 GeoJSON: tmp,
-            }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
+            }).addTo(markers).bindPopup(id)
+            .on('click', onClick_Marker)
+            .on('mouseover',onMouseOver_marker);
         }
 
         //forget about these event functions
@@ -38,15 +39,27 @@ fetch('Fetch_product_data.php')
 
         function onShiftDrag(e){
             var body = "";
+            var rectangle;
             var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
             [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
-            var rectangle = L.rectangle(bounds).addTo(map);
+
+            if(rectangle){
+                map.removeLayer(rectangle);
+            }
+            console.log(rectangle);
+            rectangle = L.rectangle(bounds).addTo(map);
+
+            //can be put into its own function
             markers.getLayers().forEach(element=>{
                 if(rectangle.contains(element._latlng)){
                     body += element.options.title + "<br>";
                 }
             });
             document.getElementById('panel1').innerHTML = body;
+        }
+
+        function onMouseOver_marker(e){
+
         }
 
         function onClick_Marker(e) {
