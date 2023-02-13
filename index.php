@@ -4,7 +4,9 @@
      require_once("CacheDB.php");
      session_start();
 
+     // Initialize the caching database to cache API call results
      $_SESSION["CacheDB"] = new CacheDB();
+     // Initialize the APIInterface to communicate with the API
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
 
      // The testing zone

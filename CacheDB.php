@@ -11,13 +11,20 @@ class CacheDB{
 
 
     private function _Init(){
-        try{
-            $db = new Sqlite3($this->path);
-        }catch(Exception $e){
-            $db = new Sqlite3("/Applications/XAMPP/xamppfiles/htdocs/Collins-Aerospace/Cache.db");
-        }
-        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, Date_Created TEXT, Date_Modified TEXT, Product_URL TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
-        //$db->exec('CREATE UNIQUE INDEX Products_Product_id on Products(Product_id)');
+        $db = new Sqlite3($this->path);
+
+        // Create Products table to store ProductData objects
+        $db->exec('CREATE TABLE IF NOT EXISTS Products(
+            Product_id TEXT,
+            Product_Name TEXt,
+            Centre TEXT,
+            Date_Created TEXT,
+            Date_Modified TEXT,
+            Product_URL TEXT,
+            LastAccessed INT,
+            LastUpdated INT,
+            UNIQUE(Product_id))'
+        );
         $db->close();
     }
 
@@ -29,6 +36,7 @@ class CacheDB{
         $stmt->bindParam(':pid', $productid);
         $result = $stmt->execute();
 
+        // Fetch the result as an array identified by column names
         $record = $result->fetchArray(SQLITE3_ASSOC);
 
         // If record is absent, return null
@@ -62,6 +70,7 @@ class CacheDB{
         return $record;
     }
 
+    // Caches a ProductData object to the SQL Database
     public function CacheProduct($product){
         $nowTime = date("d-m-Y H:i:s");
         $db = new Sqlite3($this->path);
