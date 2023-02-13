@@ -11,9 +11,6 @@ fetch('Fetch_product_data.php')
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
-
-        console.log(data);
-
         //---------------
         //---CODE BODY---
         //---------------
@@ -57,5 +54,4 @@ fetch('Fetch_product_data.php')
             document.getElementById('panel1').innerHTML = body;
         }
 
-    })
-;
+    });
