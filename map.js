@@ -1,11 +1,11 @@
 //ALL MAP DATA AND ASSOCIATED FUNCTIONS.
 // This is a debug thing and doesn't do anything important. aiggghhhttttt
-
+/*
 fetch('Fetch_product_data.php')
     .then(function (response) {
         console.log(response.text());
 });
-
+*/
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
@@ -23,8 +23,8 @@ fetch('Fetch_product_data.php')
         //attributes.
         for (let i = 0; i < data.length; i++) {
             var tmp = data[i];
-            var id = tmp["_Identifier"];
-            var centre = tmp["_Centre"];
+            var id = tmp["Identifier"];
+            var centre = tmp["Centre"];
             var latlang = centre.split(',');
             L.marker([latlang[0], latlang[1]], {
                 title: id,
