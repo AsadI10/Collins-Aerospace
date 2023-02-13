@@ -32,28 +32,23 @@ fetch('Fetch_product_data.php')
             }).addTo(markers).bindPopup(id).on('click', onClick_Marker);
         }
 
-        map.on('contextmenu', oncontextmenu);
-        map.on('click', onMapClick);
+        //map.on('contextmenu', onContextMenu);
+        //map.on('click', onMapClick);
+        map.on('boxzoomend', onShiftDrag);
 
-        function onMapClick(e) {
-            userpoints.push(e.latlng);
-            L.marker(e.latlng).addTo(map);
-        }
-
-        function oncontextmenu(e) {
-            var polygon;
+        function onShiftDrag(e){
             var body;
-            polygon = L.polygon(userpoints).addTo(map);
-            markers.getLayers().forEach(element => {
-                if (polygon.contains(element._latlng)) {
+            var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
+            [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
+            
+            var rectangle = L.rectangle(bounds).addTo(map);
+            markers.getLayers().forEach(element=>{
+                if(rectangle.contains(element._latlng)){
                     body = body + "<br>" + element.options.title;
                 }
             });
-            //displays all the products within the polygon onto the panel
             document.getElementById('panel1').innerHTML = body;
-            userpoints = [];
         }
-
 
         //when a marker is clicked all of its metadata is returned
         function onClick_Marker(e) {
