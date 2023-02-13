@@ -37,6 +37,7 @@ class CacheDB{
     }
 
     public function CacheProduct($product){
+        $nowTime = date("d-m-Y H:i:s");
         $db = new Sqlite3($this->path);
         $db->exec("INSERT OR IGNORE INTO Products VALUES('"
         .$product->GetIdentifer()."','"
@@ -45,8 +46,8 @@ class CacheDB{
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->ProductURL."','"
-        ."'0'"."','"
-        ."'0'".")"
+        .$nowTime."','"
+        .$nowTime."')"
         );
         $db->close();
     }

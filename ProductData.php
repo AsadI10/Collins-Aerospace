@@ -26,22 +26,22 @@
 		// =========
   
 		function __construct($identifier, $name, $centre){
-			$this->_Identifier = $identifier;
-			$this->_Name = $name;
-			$this->_Centre = $centre;
+			$this->Identifier = $identifier;
+			$this->Name = $name;
+			$this->Centre = $centre;
 		}
 		
 		// Returns the identifier of this product.
 		public function GetIdentifer(){
-			return $this->_Identifier;
+			return $this->Identifier;
 		}
 
 		public function GetName(){
-			return $this->_Name;
+			return $this->Name;
 		}
 
 		public function GetCentre(){
-			return $this->_Centre;
+			return $this->Centre;
 		}
 
 		// Fetches a ProductData object that has been cached in the SQLite database.
