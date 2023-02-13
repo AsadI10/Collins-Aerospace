@@ -6,13 +6,13 @@ class CacheDB{
 
     function __construct(){
         $this->path = "./Cache.db";
-        $this->init();
+        $this->_Init();
     }
 
 
-    public function init(){
+    private function _Init(){
         $db = new Sqlite3($this->path);
-        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
+        $db->exec('CREATE TABLE IF NOT EXISTS Products(Product_id STRING, Product_Name STRING, Centre TEXT, Date_Created TEXT, Date_Modified TEXT, Product_URL TEXT, LastAccessed INT, LastUpdated INT, UNIQUE(Product_id))');
         //$db->exec('CREATE UNIQUE INDEX Products_Product_id on Products(Product_id)');
         $db->close();
     }
@@ -38,7 +38,16 @@ class CacheDB{
 
     public function CacheProduct($product){
         $db = new Sqlite3($this->path);
-        $db->exec("INSERT OR IGNORE INTO Products VALUES('".$product->GetIdentifer()."','".$product->GetName()."','".$product->GetCentre()."','".$product->GetDateCreated()."','0')");
+        $db->exec("INSERT OR IGNORE INTO Products VALUES('"
+        .$product->GetIdentifer()."','"
+        .$product->GetName()."','"
+        .$product->GetCentre()."','"
+        .$product->DateCreated."','"
+        .$product->DateModified."','"
+        .$product->ProductURL."','"
+        ."'0'"."','"
+        ."'0'".")"
+        );
         $db->close();
     }
 }

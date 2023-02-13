@@ -44,10 +44,6 @@
 			return $this->_Centre;
 		}
 
-		public function GetDateCreated(){
-			return $this->_DateCreated;
-		}
-
 		// Fetches a ProductData object that has been cached in the SQLite database.
 		public static function Load($identifier){
 			// Try and fetch from database
