@@ -8,6 +8,27 @@ loadMarkers(data);
 //also applies event based functions to each marker +
 //attributes.
 
+/*
+FIX LATER
+function createFootprintPopup(){
+    markers._layers.forEach(marker => {
+        
+        switch(marker.options.footprint.Type){
+            case "LineString":
+                marker.bindPopup(L.polyline(footprint.Coordinates.forEach(element => {
+                    element.reverse();
+                })));
+                break;
+            case "Polygon":
+                marker.bindPopup(L.polygon(footprint.Coordinates[0].forEach(element => {
+                    element.reverse();
+                })));
+                break;
+        }
+    });
+}
+*/
+
 function onShiftDrag(e){
     shapes.clearLayers();
     var rectangle;
@@ -15,22 +36,10 @@ function onShiftDrag(e){
     [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
     var rectangle = L.rectangle(bounds).addTo(shapes);
-
-    const getMethods = (obj) => {
-        let properties = new Set()
-        let currentObj = obj
-        do {
-            Object.getOwnPropertyNames(currentObj).map(item => properties.add(item))
-        } while ((currentObj = Object.getPrototypeOf(currentObj)))
-        return [...properties.keys()].filter(item => typeof obj[item] === 'function')
-    }
-    console.log(getMethods(rectangle));
-
     let arr = [];
     //can be put into its own function
     markers.getLayers().forEach(element=>{
         if (rectangle.contains(element._latlng)) {
-            
             arr.push(element.options.title);
         }
     });

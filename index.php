@@ -68,7 +68,12 @@
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
+
 <br>
+
+<!-- <br> -->
+    <!-- Create the side panel and default load -->
+
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
         GetWebPage("SideBar_PieChart.php", function(text){
@@ -76,14 +81,15 @@
         });
     </script>
      </span>
-     <!---Piechart---------------------------------------->
-     <div class= "ProductData.php" id="piechart" style="width: 350px; height: 200px;"></div>
-     <div id="map">
+  
+    <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
           <script type="text/javascript" src="Marker_init.js" ></script>
      </div>
+
+<br>
      <footer>
-     <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
+     <p class="copy">&copy; Created By <a class="footer" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
         </p>
      </footer>
@@ -92,3 +98,4 @@
 
      </body>
 </html>
+
