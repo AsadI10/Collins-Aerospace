@@ -17,6 +17,7 @@ class CacheDB{
             Product_ID TEXT,
             Product_Name TEXt,
             Centre TEXT,
+            Document_Type TEXT,
             Date_Created TEXT,
             Date_Modified TEXT,
             Footprint_Type TEXT,
@@ -82,6 +83,7 @@ class CacheDB{
         .$product->GetIdentifer()."','"
         .$product->GetName()."','"
         .$product->GetCentre()."','"
+        .$product->DocumentType."','"
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->Footprint->Type."','"

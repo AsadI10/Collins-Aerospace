@@ -5,7 +5,7 @@
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
-    border: 4px solid orange;
+    border: 4px solid grey;
     position: sticky;
 }
 #panel1 {
@@ -45,12 +45,10 @@ span#panel1{
     /* float: left; */
     /* text-shadow: 2px 2px 5px red; */
     /* text-shadow: 2px 2px 4px #000000; */
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black;
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    font-family: "Comic Sans MS", cursive;
 }
 .name:hover{
     color: rgb(0, 0, 0);
