@@ -66,8 +66,8 @@
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
 <br>
-<!-- span used to create a chart on the right hand side  -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
+     <!-- span used to create a chart on the right hand side 
      <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -94,11 +94,12 @@
       }
     </script>
     <div id="piechart" style="width: 350px; height: 200px;"></div>
+    -->
      </span>
-     -->
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
+          <script type="text/javascript" src="Marker_init.js" ></script>
      </div>
      <footer>
      <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
