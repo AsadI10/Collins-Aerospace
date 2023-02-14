@@ -8,11 +8,8 @@ loadMarkers(data);
 //also applies event based functions to each marker +
 //attributes.
 
-map.on('boxzoomend', onShiftDrag);
-
 function onShiftDrag(e){
     shapes.clearLayers();
-
     var body = "";
     var rectangle;
     var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
@@ -53,3 +50,5 @@ function onClick_Marker(e) {
     var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
     document.getElementById('panel1').innerHTML = body;
 }
+
+map.on('boxzoomend', onShiftDrag);
