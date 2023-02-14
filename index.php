@@ -59,7 +59,7 @@
           <a class="navbar-logout" href="">Logout</a>
           <a href=""></a>
      </nav> -->
-     <h1 class="name">Collins Aerospace</h1>
+     <h1 class="name">COLLINS AEROSPACE</h1>
      <nav>
           <ul>
                <li>Home</li>
