@@ -77,3 +77,9 @@ nav ul li{
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace; 
 }
+.divsidepanal{
+    border: solid 2px black;
+    width: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #59595c;
+}
