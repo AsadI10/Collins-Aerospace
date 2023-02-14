@@ -42,7 +42,7 @@ function onClick_Marker(e) {
 
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
-    }, "identifier:" + e.sourceTarget.options.Identifier);
+    }, "identifier=" + e.sourceTarget.options.title);
 
     return;
 

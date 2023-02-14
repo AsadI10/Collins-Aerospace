@@ -1,5 +1,6 @@
 <?php
 	require_once("CacheDB.php");
+	require_once("FootprintData.php");
 
 	class ProductData implements \JsonSerializable
 	{
