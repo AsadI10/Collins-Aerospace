@@ -18,6 +18,7 @@
 	overflow-y: auto;
 	text-align:justify;
     border-radius: 2%;
+    border: solid black 2px;
 }
 body {
     background-color: #37383b;
