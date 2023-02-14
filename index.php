@@ -110,6 +110,8 @@
           <script type="text/javascript" src="Map_init.js" ></script>
           <script type="text/javascript" src="Marker_init.js" ></script>
      </div>
+
+<br>
      <footer>
      <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
@@ -120,3 +122,4 @@
 
      </body>
 </html>
+
