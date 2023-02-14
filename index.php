@@ -72,7 +72,7 @@
     <!-- Create the side panel and default load -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
-        GetWebPage("blank.php", function(text){
+        GetWebPage("SideBar_PieChart.php", function(text){
             LoadSidebar(text);
         });
     </script>
