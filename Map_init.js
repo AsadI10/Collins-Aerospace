@@ -1,6 +1,11 @@
 var userpoints = [];
 // Set default position of map
-var map = L.map('map').setView([53.45043, -2.25975], 13);
+var map = L.map('map',
+    {
+        maxBounds: [[-90, -180], [90, 180]],
+        maxBoundsViscosity: 1.0,
+        minZoom: 1
+    }).setView([53.45043, -2.25975], 13);
 // Create a layer group for markers
 var markers = new L.LayerGroup().addTo(map);
 
