@@ -93,8 +93,8 @@
       }
     </script>
     <div id="piechart" style="width: 350px; height: 200px;"></div>
-    
      </span>
+     -->
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
