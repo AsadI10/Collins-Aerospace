@@ -26,3 +26,21 @@ function loadMarkers(pulledData){
         .on('mouseover',onMouseOver_marker);
     }
 }
+
+function createFootprintPopup(footprint){
+    let shape = null;
+    switch(footprint.Type){
+        case "LineString":
+            shape = L.polyline(footprint.Coordinates.forEach(element => {
+                element.reverse();
+            })).addTo(shapes);
+            break;
+        case "Polygon":
+            shape = L.polygon(footprint.Coordinates.forEach(element => {
+                element.reverse();
+            })).addTo(shapes);
+            break;
+    }
+    console.log(shape);
+    return shape;
+}
