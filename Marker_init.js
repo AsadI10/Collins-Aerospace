@@ -10,6 +10,8 @@ function loadMarkers(pulledData){
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
 
+        
+
         L.marker([latlang[0], latlang[1]], {
             title: id,
             GeoJSON: tmp,

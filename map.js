@@ -30,8 +30,11 @@ function onShiftDrag(e){
 }
 
 function onMouseOver_marker(e){
+    shapes.clearLayers();
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
-    console.log(JSON.stringify(bounds));
+    bounds.forEach(arr => {
+        arr.reverse();
+    });
 
     var polygon = L.polygon(bounds).addTo(shapes);
 }
