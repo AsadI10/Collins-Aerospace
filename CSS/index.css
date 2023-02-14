@@ -33,7 +33,7 @@ body {
     font-style: italic;
     text-align: center;
     /* border-top: solid 1px grey; */
-    padding-top: 10px;
+    padding-top: 6px;
 }
 /* this is the right side of the page where we can add piecharts */
 span#panel1{
@@ -49,10 +49,11 @@ span#panel1{
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-family: "Comic Sans MS", cursive;
 }
 .name:hover{
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 nav{
     text-align: right;
