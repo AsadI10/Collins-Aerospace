@@ -2,7 +2,7 @@
     /* position: relative; */
     height: 80vh; /*Originally set to 75*/
     /*or as desired*/
-    width: 70%;
+    width: 68%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
     border: 2px solid rgb(150, 146, 146);
@@ -12,7 +12,7 @@
 #panel1 {
     float: right;
     position: sticky;
-    width: 30%;
+    width: 32%;
     height: 80vh;
     overflow-x: hidden;
 	overflow-y: auto;
@@ -40,9 +40,9 @@ body {
     padding-top: 6px;
 }
 /* this is the right side of the page where we can add piecharts */
-/* span#panel1{
-    text-align: center;
-} */
+span#panel1{
+    border: 2px solid rgb(69, 69, 69);
+}
 .name{
     color: white; 
     text-align: left;
