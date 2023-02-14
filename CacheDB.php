@@ -9,7 +9,6 @@ class CacheDB{
         $this->_Init();
     }
 
-
     private function _Init(){
         $db = new Sqlite3($this->path);
 
