@@ -210,6 +210,7 @@ class APIInterface{
 		$p->ProductURL = $result->producturl;
 		$p->Thumbnail = $result->thumbnail;
 		$p->MissionID = $result->missionid;
+		$p->Creator = $result->creator;
 		return $p;
 	}
 

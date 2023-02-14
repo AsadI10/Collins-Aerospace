@@ -14,16 +14,19 @@ class CacheDB{
 
         // Create Products table to store ProductData objects
         $db->exec('CREATE TABLE IF NOT EXISTS Products(
-            Product_id TEXT,
+            Product_ID TEXT,
             Product_Name TEXt,
             Centre TEXT,
             Date_Created TEXT,
             Date_Modified TEXT,
-            Product_URL TEXT,
             Footprint_Type TEXT,
             Footprint_Coordinates TEXT,
-            LastAccessed INT,
-            LastUpdated INT,
+            Product_URL TEXT,
+            Thumbnail_URL TEXT,
+            Mission_ID TEXT,
+            Creator TEXT,
+            Last_Accessed INT,
+            Last_Updated INT,
             UNIQUE(Product_id))'
         );
         $db->close();
@@ -32,7 +35,7 @@ class CacheDB{
     // Returns the raw stored form of a Product
     public function GetProduct($productid){
         $db = new Sqlite3($this->path);
-        $sql = "SELECT * FROM Products WHERE Product_id = :pid";
+        $sql = "SELECT * FROM Products WHERE Product_ID = :pid";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':pid', $productid);
         $result = $stmt->execute();
@@ -46,13 +49,13 @@ class CacheDB{
         }
         // Check age
         $nowTime = date("d-m-Y H:i:s");
-        $lastUpdated = strtotime($record["LastUpdated"]);
+        $lastUpdated = strtotime($record["Last_Updated"]);
         // This is in seconds
         $outofdateSeconds = 86400;
         // If entry is old, return null
         if(strtotime($nowTime) - $lastUpdated > $outofdateSeconds){
             // Remove stale entry
-            $sql = "DELETE FROM Products WHERE Product_id = :pid";
+            $sql = "DELETE FROM Products WHERE Product_ID = :pid";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':pid', $productid);
             $result = $stmt->execute();
@@ -61,7 +64,7 @@ class CacheDB{
         }
 
         // Otherwise, update LastAccessed
-        $sql = "UPDATE Products SET lastAccessed = :lastAccessed WHERE Product_id = :pid";
+        $sql = "UPDATE Products SET Last_Accessed = :lastAccessed WHERE Product_ID = :pid";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':lastAccessed', $nowTime);
         $stmt->bindParam(':pid', $productid);
@@ -81,9 +84,12 @@ class CacheDB{
         .$product->GetCentre()."','"
         .$product->DateCreated."','"
         .$product->DateModified."','"
-        .$product->ProductURL."','"
         .$product->Footprint->Type."','"
         .json_encode($product->Footprint->Coordinates)."','"
+        .$product->ProductURL."','"
+        .$product->Thumbnail."','"
+        .$product->MissionID."','"
+        .$product->Creator."','"
         .$nowTime."','"
         .$nowTime."')"
         );
