@@ -81,5 +81,7 @@ nav ul li{
     width: auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #59595c;
-    
+}
+.phpheader{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
