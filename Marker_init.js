@@ -11,7 +11,7 @@ function loadMarkers(pulledData){
         var centre = tmp["Centre"];
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
-        // Create marker at coordinates
+
         L.marker([latlang[0], latlang[1]], {
             icon: greenIcon,
             // Set tags
