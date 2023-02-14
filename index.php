@@ -62,8 +62,8 @@
      <h1 class="name">Collins Aerospace</h1>
      <nav>
           <ul>
-               <li><a class="navbar" href="">Home</li></a>
-               <li><a class="navbar" href="">Logout</li></a>
+               <li><a href="">Home</li></a>
+               <li><a href="">Logout</li></a>
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
