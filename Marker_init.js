@@ -19,9 +19,10 @@ function loadMarkers(pulledData){
             GeoJSON: tmp,
             footprint: footp
         // Add to the maps collection of markers
-        }).addTo(markers).bindPopup(id)
-            // Set events
-            .on('click', onClick_Marker)
-            .on('mouseover',onMouseOver_marker);
+        }).addTo(markers)
+        .bindPopup(id)
+        // Set events
+        .on('click', onClick_Marker)
+        .on('mouseover',onMouseOver_marker);
     }
 }
