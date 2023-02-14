@@ -16,11 +16,11 @@
     height: 80vh;
     border-radius: 2%;
     border: solid 1px grey;
-    /* position: relative;
-    margin-right: 2px; */
+    position: relative;
+    margin-right: 2px; 
 }
 body {
-    background-color: #464749;
+    background-color: #37383b;
     /* background-color: #343a40; */
     position: fixed;
     padding: 0;
