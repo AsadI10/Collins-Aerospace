@@ -62,8 +62,8 @@
      <h1 class="name">COLLINS AEROSPACE</h1>
      <nav>
           <ul>
-               <li>Home</li>
-               <li>Logout</li>
+               <li><a href="">Home</li></a>
+               <li><a href="">Logout</li></a>
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
@@ -110,7 +110,7 @@
           <script type="text/javascript" src="Marker_init.js" ></script>
      </div>
      <footer>
-     <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
+     <p class="copy">&copy; Created By <a class="footer" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
         </p>
      </footer>
