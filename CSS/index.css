@@ -5,7 +5,8 @@
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
-    border: 4px solid grey;
+    border: 2px solid rgb(150, 146, 146);
+    border-radius: 2%;
     position: sticky;
 }
 #panel1 {
@@ -18,7 +19,7 @@
 	text-align:justify;
 }
 body {
-    background-color: #51585e;
+    background-color: #37383b;
     /* background-color: #343a40; */
     position: fixed;
     padding: 0;
@@ -66,8 +67,9 @@ nav ul li{
     display: inline;
     font-size: 17px;
     color: black;
-    /* padding:100px 10px 10px; */
+    padding:100px 10px 10px; 
     padding: 5px 16px;
     background-color: rgb(185, 180, 180);
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
 }
