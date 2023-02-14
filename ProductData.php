@@ -19,6 +19,8 @@
 		public $ProductURL;
 		public $Thumbnail;
 		public $MissionID;
+		public $Creator;
+
 
 
 		// =========
@@ -57,9 +59,12 @@
 
 				$cachedObject->DateCreated = $vals["Date_Created"];
 				$cachedObject->DateModified = $vals["Date_Modified"];
-				$cachedObject->ProductURL = $vals["Product_URL"];
 				$cachedObject->Footprint = new FootprintData($vals["Footprint_Type"], json_decode($vals["Footprint_Coordinates"]));
-				
+				$cachedObject->ProductURL = $vals["Product_URL"];
+				$cachedObject->Thumbnail = $vals["Thumbnail_URL"];
+				$cachedObject->MissionID = $vals["Mission_ID"];
+				$cachedObject->Creator = $vals["Creator"];
+
 				return $cachedObject;
 
 			}
