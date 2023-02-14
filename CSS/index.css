@@ -18,11 +18,10 @@
 	overflow-y: auto;
 	text-align:justify;
     border-radius: 2%;
-    border: solid black 2px;
 }
 body {
     background-color: #37383b;
-    /* background-color: antiquewhite; */
+    /* background-color: #343a40; */
     position: fixed;
     padding: 0;
     margin: 0;
@@ -43,7 +42,7 @@ body {
 }
 /* this is the right side of the page where we can add piecharts */
 span#panel1{
-    text-align: left;
+    border: 2px solid rgb(69, 69, 69);
 }
 .name{
     color: white; 
@@ -76,10 +75,4 @@ nav ul li{
     background-color: rgb(185, 180, 180);
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace; 
-}
-.divsidepanal{
-    border: solid 2px black;
-    width: auto;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #59595c;
 }
