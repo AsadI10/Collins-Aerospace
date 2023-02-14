@@ -39,6 +39,13 @@ function onMouseOver_marker(e){
 function onClick_Marker(e) {
     shapes.clearLayers();
 
+
+    GetWebPage("SideBar_ProductDetails.php", function (text) {
+        LoadSidebar(text);
+    }, "identifier:" + e.sourceTarget.options.Identifier);
+
+    return;
+
     var gj = e.sourceTarget.options.GeoJSON;
     var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
     document.getElementById('panel1').innerHTML = body;
