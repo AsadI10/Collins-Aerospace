@@ -50,10 +50,10 @@ span#panel1{
     margin-left: 5px;
     margin-top: 5px;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    font-family: 'Brush Script MT', cursive;
+    font-family: "Comic Sans MS", cursive;
 }
 .name:hover{
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 nav{
     text-align: right;
