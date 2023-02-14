@@ -68,7 +68,7 @@
     <iframe src="blank.php" id="panel1" class="d-block p-2 bg-dark text-white"></iframe>
     <!--
      <span id="panel1" class="d-block p-2 bg-dark text-white">
-     -->
+     
      <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -95,8 +95,8 @@
       }
     </script>
     <div id="piechart" style="width: 350px; height: 200px;"></div>
-    
      </span>
+     -->
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
