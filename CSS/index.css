@@ -49,6 +49,7 @@ span#panel1{
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .name:hover{
     color: blue;
