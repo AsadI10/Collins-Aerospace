@@ -6,11 +6,16 @@ fetch('Fetch_product_data.php')
         console.log(response.text());
 });
 */
+
+GetWebPage("blank.php", function (text) { console.log(text); });
+
+
 fetch('Fetch_product_data.php')
     .then(function (response) {
         // TODO: Error checking to check if response is json or not
         return response.json();
     }).then(function (data) {
+
         //---------------
         //---CODE BODY---
         //---------------

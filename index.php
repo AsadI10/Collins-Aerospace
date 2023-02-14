@@ -38,6 +38,7 @@
           crossorigin=""/>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
           <link rel="stylesheet" href="CSS/index.css"/>
+          <script src="GetPage.js"></script>
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
@@ -65,10 +66,7 @@
      </nav>
 <br>
 <!-- span used to create a chart on the right hand side  -->
-    <iframe src="blank.php" class="d-block p-2 bg-dark text-white"></iframe>
-    <!--
      <span id="panel1" class="d-block p-2 bg-dark text-white">
-     -->
      <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
