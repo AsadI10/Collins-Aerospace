@@ -68,7 +68,7 @@
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
-<br>
+<!-- <br> -->
     <!-- Create the side panel and default load -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
