@@ -50,15 +50,10 @@ span#panel1{
     /* float: left; */
     /* text-shadow: 2px 2px 5px red; */
     /* text-shadow: 2px 2px 4px #000000; */
-    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 21), 0 0 5px rgb(0, 143, 31);
+    text-shadow: 1px 1px 2px black;
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    font-family: "Comic Sans MS", cursive;
-}
-.name:hover{
-    color: rgb(0, 0, 0);
 }
 nav{
     text-align: right;
@@ -72,10 +67,10 @@ nav{
 nav ul li{
     display: inline;
     font-size: 17px;
-    color: rgb(0, 0, 0);
-    /* padding:100px 10px 10px; */
+    color: black;
+    padding:100px 10px 10px; 
     padding: 5px 16px;
     background-color: rgb(185, 180, 180);
     font-weight: bold;
-    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Courier New', Courier, monospace; 
 }

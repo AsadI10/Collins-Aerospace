@@ -59,11 +59,11 @@
           <a class="navbar-logout" href="">Logout</a>
           <a href=""></a>
      </nav> -->
-     <h1 class="name">Collins Aerospace</h1>
+     <h1 class="name">COLLINS AEROSPACE</h1>
      <nav>
           <ul>
-               <li><a class="" href="">Home</li></a>
-               <li><a class="" href="">Logout</li></a>
+               <li><a href="">Home</li></a>
+               <li><a href="">Logout</li></a>
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
