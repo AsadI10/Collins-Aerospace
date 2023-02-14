@@ -13,6 +13,9 @@
     position: sticky;
     width: 30%;
     height: 80vh;
+    overflow-x: hidden;
+	overflow-y: auto;
+	text-align:justify;
 }
 body {
     background-color: #51585e;
@@ -35,9 +38,9 @@ body {
     padding-top: 6px;
 }
 /* this is the right side of the page where we can add piecharts */
-span#panel1{
+/* span#panel1{
     text-align: center;
-}
+} */
 .name{
     color: white; 
     text-align: left;
