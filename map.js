@@ -8,6 +8,27 @@ loadMarkers(data);
 //also applies event based functions to each marker +
 //attributes.
 
+/*
+FIX LATER
+function createFootprintPopup(){
+    markers._layers.forEach(marker => {
+        
+        switch(marker.options.footprint.Type){
+            case "LineString":
+                marker.bindPopup(L.polyline(footprint.Coordinates.forEach(element => {
+                    element.reverse();
+                })));
+                break;
+            case "Polygon":
+                marker.bindPopup(L.polygon(footprint.Coordinates[0].forEach(element => {
+                    element.reverse();
+                })));
+                break;
+        }
+    });
+}
+*/
+
 function onShiftDrag(e){
     shapes.clearLayers();
     var rectangle;
