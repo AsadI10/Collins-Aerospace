@@ -1,0 +1,77 @@
+#map {
+    /* position: relative; */
+    height: 80vh; /*Originally set to 75*/
+    /*or as desired*/
+    width: 68%;
+    /*This means "100% of the width of its container", the .col-md-8*/
+    /* white-space: 20px; */
+    border: 2px solid rgb(150, 146, 146);
+    border-radius: 2%;
+    position: sticky;
+}
+#panel1 {
+    float: right;
+    position: sticky;
+    width: 32%;
+    height: 80vh;
+    overflow-x: hidden;
+	overflow-y: auto;
+	text-align:justify;
+    border-radius: 2%;
+}
+body {
+    background-color: #37383b;
+    /* background-color: #343a40; */
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    /* The top is optional. Please check with Finn */
+}
+.copy {
+    /*Use for footer class */
+    color: white;
+    font-style: italic;
+    text-align: center;
+    /* border-top: solid 1px grey; */
+    padding-top: 6px;
+}
+/* this is the right side of the page where we can add piecharts */
+span#panel1{
+    border: 2px solid rgb(69, 69, 69);
+}
+.name{
+    color: white; 
+    text-align: left;
+    /* float: left; */
+    /* text-shadow: 2px 2px 5px red; */
+    /* text-shadow: 2px 2px 4px #000000; */
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 21), 0 0 5px rgb(0, 143, 31);
+    position: relative;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav{
+    text-align: right;
+    color: aliceblue;
+    overflow: hidden;
+    /* margin-top: -20px; */
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    background-color: rgb(185, 180, 180);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+}
