@@ -9,6 +9,7 @@ function loadMarkers(pulledData){
         var centre = tmp["Centre"];
         var latlang = centre.split(',');
         L.marker([latlang[0], latlang[1]], {
+            icon: greenIcon,
             title: id,
             GeoJSON: tmp,
         }).addTo(markers).bindPopup(id)
