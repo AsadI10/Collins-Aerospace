@@ -21,8 +21,27 @@ function loadMarkers(pulledData){
         // Add to the maps collection of markers
         }).addTo(markers)
         .bindPopup(id)
+        .bindPopup(createFootprintPopup(footp))
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker);
     }
+}
+
+function createFootprintPopup(footprint){
+    let shape = null;
+    switch(footprint.Type){
+        case "LineString":
+            shape = L.polyline(footprint.Coordinates.forEach(element => {
+                element.reverse();
+            })).addTo(shapes);
+            break;
+        case "Polygon":
+            shape = L.polygon(footprint.Coordinates.forEach(element => {
+                element.reverse();
+            })).addTo(shapes);
+            break;
+    }
+    console.log(shape);
+    return shape;
 }
