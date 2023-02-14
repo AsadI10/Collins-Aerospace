@@ -95,10 +95,10 @@
     <div id="piechart" style="width: 350px; height: 200px;"></div>
     -->
      </span>
-     -->
 
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
+          <script type="text/javascript" src="Marker_init.js" ></script>
      </div>
      <footer>
      <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |

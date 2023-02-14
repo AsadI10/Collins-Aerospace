@@ -1,14 +1,5 @@
-//ALL MAP DATA AND ASSOCIATED FUNCTIONS.
-// This is a debug thing and doesn't do anything important. aiggghhhttttt
-/*
-fetch('Fetch_product_data.php')
-    .then(function (response) {
-        console.log(response.text());
-});
-*/
-var pulledData;
-
-GetWebPage("Fetch_product_data.php", function (text) { pulledData = JSON.parse(text) });
+GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
+loadMarkers(data);
 
 //---------------
 //---CODE BODY---
@@ -16,23 +7,6 @@ GetWebPage("Fetch_product_data.php", function (text) { pulledData = JSON.parse(t
 //Creates a marker for each product pulled from the API
 //also applies event based functions to each marker +
 //attributes.
-
-for (let i = 0; i < pulledData.length; i++) {
-    var tmp = pulledData[i];
-    var id = tmp["Identifier"];
-    var centre = tmp["Centre"];
-    var latlang = centre.split(',');
-    L.marker([latlang[0], latlang[1]], {
-        title: id,
-        GeoJSON: tmp,
-    }).addTo(markers).bindPopup(id)
-        .on('click', onClick_Marker)
-        .on('mouseover',onMouseOver_marker);
-}
-
-//forget about these event functions
-//map.on('contextmenu', onContextMenu);
-//map.on('click', onMapClick);
 
 map.on('boxzoomend', onShiftDrag);
 
