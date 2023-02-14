@@ -13,11 +13,8 @@ function loadMarkers(pulledData){
         var latlang = centre.split(',');
         // Create marker at coordinates
         L.marker([latlang[0], latlang[1]], {
-<<<<<<< HEAD
             icon: greenIcon,
-=======
             // Set tags
->>>>>>> 71d2bc3c62dfb0c7fd6d1a049112a7053e6d28bf
             title: id,
             GeoJSON: tmp,
             footprint: footp

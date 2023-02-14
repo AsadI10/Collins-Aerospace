@@ -5,7 +5,7 @@
      session_start();
 
      // Initialize the caching database to cache API call results
-     $_SESSION["CacheDB"] = new CacheDB("/Users/imraankhan/Cache.db");
+     $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
      // Initialize the APIInterface to communicate with the API
      $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
 
