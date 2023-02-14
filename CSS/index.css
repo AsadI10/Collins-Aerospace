@@ -17,6 +17,7 @@
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
+    border-radius: 2%;
 }
 body {
     background-color: #37383b;
