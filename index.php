@@ -51,6 +51,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <script src="GetPage.js"></script>
           <script src="Sidebar.js"></script>
+          <script src="./lib/map/wise-leaflet-pip.js"></script>
      </head>
 
      <body oncontextmenu="return false;"> 
@@ -59,11 +60,11 @@
           <a class="navbar-logout" href="">Logout</a>
           <a href=""></a>
      </nav> -->
-     <h1 class="name">COLLINS AEROSPACE</h1>
+     <h1 class="name">Collins Aerospace</h1>
      <nav>
           <ul>
-               <li><a href="">Home</li></a>
-               <li><a href="">Logout</li></a>
+               <li>Home</li>
+               <li>Logout</li>
           </ul>
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
@@ -71,7 +72,7 @@
     <!-- Create the side panel and default load -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
-        GetWebPage("blank.php", function(text){
+        GetWebPage("SideBar_PieChart.php", function(text){
             LoadSidebar(text);
         });
     </script>
@@ -117,7 +118,7 @@
 
 
      <footer>
-     <p class="copy">&copy; Created By <a class="footer" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
+     <p class="copy">&copy; Created By <a class="Asad" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
             <script>document.write(new Date().getFullYear())</script> All rights reserved
         </p>
      </footer>

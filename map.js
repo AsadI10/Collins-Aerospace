@@ -19,7 +19,8 @@ function onShiftDrag(e){
     let arr = [];
     //can be put into its own function
     markers.getLayers().forEach(element=>{
-        if(rectangle.contains(element._latlng)){
+        if (rectangle.contains(element._latlng)) {
+            
             arr.push(element.options.title);
         }
     });
