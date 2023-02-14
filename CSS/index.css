@@ -22,15 +22,13 @@
 body {
     background-color: #37383b;
     /* background-color: antiquewhite; */
-    
-    /* background-color: #343a40; */
-    /* position: fixed;
+    position: fixed;
     padding: 0;
     margin: 0;
     top: 0;
     left: 5px;
     width: 100%;
-    height: 100%; */
+    height: 100%;
     /* The top is optional. Please check with Finn */
 }
 .copy {
@@ -39,7 +37,8 @@ body {
     font-style: italic;
     text-align: center;
     /* border-top: solid 1px grey; */
-    padding-top: 6px;
+    position: relative;
+    margin-top: -5px;
 }
 /* this is the right side of the page where we can add piecharts */
 span#panel1{
@@ -76,21 +75,4 @@ nav ul li{
     background-color: rgb(185, 180, 180);
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace; 
-}
-
-.datadiv{
-    border: solid 2px grey;
-    width: 90%;
-    background-color: #808d9c;
-    border-radius: 4%;
-    margin-left: 1px;
-    margin-right: 1px;
-    display: center;
-}
-.phpheader{
-    color: red;
-}
-.phpboxin1{
-    border: solid 2px black;
-    width: auto;
 }
