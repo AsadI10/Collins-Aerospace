@@ -51,6 +51,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <script src="GetPage.js"></script>
           <script src="Sidebar.js"></script>
+          <script src="./lib/map/wise-leaflet-pip.js"></script>
      </head>
 
      <body oncontextmenu="return false;"> 
