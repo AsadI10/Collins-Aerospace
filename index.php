@@ -51,6 +51,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <script src="GetPage.js"></script>
           <script src="Sidebar.js"></script>
+          <script src="./lib/map/wise-leaflet-pip.js"></script>
      </head>
 
      <body oncontextmenu="return false;"> 
@@ -68,43 +69,15 @@
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
 <br>
-    <!-- Create the side panel and default load -->
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
         GetWebPage("SideBar_PieChart.php", function(text){
             LoadSidebar(text);
         });
     </script>
-     <!-- span used to create a chart on the right hand side 
-     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-         ['Task', 'Hours per Day'],
-          ['Plane', 11],
-          ['Jet', 2],
-          ['Military', 2],
-          ['Random', 2],
-          ['On ground', 7]
-        ]);
-
-        var options = {
-          backgroundColor: 'transparent',
-          is3D: true,
-          'width':400,
-          'height':300,
-          'title' : 'My Chart'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <div id="piechart" style="width: 350px; height: 200px;"></div>
-    -->
      </span>
-
+     <!---Piechart---------------------------------------->
+     <div class= "ProductData.php" id="piechart" style="width: 350px; height: 200px;"></div>
      <div id="map">
           <script type="text/javascript" src="Map_init.js" ></script>
           <script type="text/javascript" src="Marker_init.js" ></script>
