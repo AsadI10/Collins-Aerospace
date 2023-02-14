@@ -5,7 +5,8 @@
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
-    border: 4px solid grey;
+    border: 2px solid rgb(150, 146, 146);
+    border-radius: 2%;
     position: sticky;
 }
 #panel1 {
@@ -13,9 +14,11 @@
     position: sticky;
     width: 30%;
     height: 80vh;
+    border-radius: 2%;
+    border: solid 1px grey;
 }
 body {
-    background-color: #51585e;
+    background-color: #37383b;
     /* background-color: #343a40; */
     position: fixed;
     padding: 0;
@@ -24,7 +27,6 @@ body {
     left: 5px;
     width: 100%;
     height: 100%;
-    
     /* The top is optional. Please check with Finn */
 }
 .copy {
@@ -45,10 +47,11 @@ span#panel1{
     /* float: left; */
     /* text-shadow: 2px 2px 5px red; */
     /* text-shadow: 2px 2px 4px #000000; */
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 21), 0 0 5px rgb(0, 143, 31);
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 nav{
@@ -64,8 +67,9 @@ nav ul li{
     display: inline;
     font-size: 17px;
     color: black;
-    /* padding:100px 10px 10px; */
+    padding:100px 10px 10px; 
     padding: 5px 16px;
     background-color: rgb(185, 180, 180);
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
 }
