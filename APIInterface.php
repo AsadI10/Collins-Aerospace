@@ -85,7 +85,7 @@ class APIInterface{
 	}
 
 	// Directly calls the API to get a list of all product identifiers.
-	public function GetAllProductIdentifiers($documentType = null, $missionType = null){
+	public function GetAllProductIdentifiers($documentType = null, $missionID = null){
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/search"); //set API URL
@@ -104,15 +104,19 @@ class APIInterface{
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
-		//returning small bits of data with pagination.
-		$post = '{"size":300, "keywords":""}';
+		$keywords = array();
 
 		if($documentType != null){
-
+			array_push($keywords, $documentType);
 		}
-		if($missionType != null){
-
+		if($missionID != null){
+			array_push($keywords, $missionID);
 		}
+
+		$keywords = join(",", $keywords);
+
+		//returning small bits of data with pagination.
+		$post = '{"size":300, "keywords":"'.$keywords.'"}';
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 
