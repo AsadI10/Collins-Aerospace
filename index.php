@@ -65,7 +65,7 @@
      </nav>
 <br>
 <!-- span used to create a chart on the right hand side  -->
-    <iframe src="blank.php" class="d-block p-2 bg-dark text-white"></iframe>
+    <iframe src="blank.php" id="panel1" class="d-block p-2 bg-dark text-white"></iframe>
     <!--
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      -->
