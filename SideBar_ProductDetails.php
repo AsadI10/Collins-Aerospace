@@ -11,6 +11,7 @@ $productData = ProductData::Load($_POST["identifier"]);
 ?>
 
 <h1><?php echo $productData->GetName(); ?></h1>
+Document Type: <?php echo $productData->DocumentType; ?><br>
 Creator: <?php echo $productData->Creator; ?><br>
 Created: <?php echo $productData->DateCreated; ?><br>
 Modified: <?php echo $productData->DateModified; ?><br>
