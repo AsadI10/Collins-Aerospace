@@ -10,20 +10,25 @@ loadMarkers(data);
 
 function onShiftDrag(e){
     shapes.clearLayers();
-    var body = "";
     var rectangle;
     var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
     [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
     var rectangle = L.rectangle(bounds).addTo(shapes);
 
+    let arr = [];
     //can be put into its own function
     markers.getLayers().forEach(element=>{
         if(rectangle.contains(element._latlng)){
-            body += element.options.title + "<br>";
+            arr.push(element.options.title);
         }
     });
-    document.getElementById('panel1').innerHTML = body;
+
+    GetWebPage("SideBar_ProductDetails.php", function (text) {
+        LoadSidebar(text);
+    }, "identifier=" + arr);
+
+    return;
 }
 
 function onMouseOver_marker(e){
@@ -39,10 +44,10 @@ function onMouseOver_marker(e){
 function onClick_Marker(e) {
     shapes.clearLayers();
 
-
+    let arr = [e.sourceTarget.options.title];
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
-    }, "identifier=" + e.sourceTarget.options.title);
+    }, "identifier=" + arr);
 
     return;
 
