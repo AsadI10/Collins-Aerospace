@@ -33,7 +33,7 @@ body {
     font-style: italic;
     text-align: center;
     /* border-top: solid 1px grey; */
-    padding-top: 10px;
+    padding-top: 6px;
 }
 /* this is the right side of the page where we can add piecharts */
 span#panel1{
