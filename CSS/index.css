@@ -5,12 +5,9 @@
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
-<<<<<<< HEAD
     border: 4px solid rgb(150, 146, 146);
     border-radius: 2%;
-=======
     border: 4px solid grey;
->>>>>>> d5e5a78aaf3d0bb93a9ddd7f91bd48f9e1847137
     position: sticky;
 }
 #panel1 {
