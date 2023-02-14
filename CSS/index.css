@@ -5,8 +5,12 @@
     width: 70%;
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
+<<<<<<< HEAD
     border: 4px solid rgb(150, 146, 146);
     border-radius: 2%;
+=======
+    border: 4px solid grey;
+>>>>>>> d5e5a78aaf3d0bb93a9ddd7f91bd48f9e1847137
     position: sticky;
 }
 #panel1 {
@@ -49,7 +53,7 @@ span#panel1{
     /* float: left; */
     /* text-shadow: 2px 2px 5px red; */
     /* text-shadow: 2px 2px 4px #000000; */
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 21), 0 0 5px rgb(0, 143, 31);
     position: relative;
     margin-left: 5px;
     margin-top: 5px;

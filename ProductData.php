@@ -58,6 +58,7 @@
 				$vals["Product_Name"],
 				$vals["Centre"]);
 
+				$cachedObject->DocumentType = $vals["Document_Type"];
 				$cachedObject->DateCreated = $vals["Date_Created"];
 				$cachedObject->DateModified = $vals["Date_Modified"];
 				$cachedObject->Footprint = new FootprintData($vals["Footprint_Type"], json_decode($vals["Footprint_Coordinates"]));
