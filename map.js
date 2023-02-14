@@ -30,7 +30,10 @@ function onShiftDrag(e){
 }
 
 function onMouseOver_marker(e){
+    var bounds = e.sourceTarget.options.footprint.Coordinates[0];
+    console.log(JSON.stringify(bounds));
 
+    var polygon = L.polygon(bounds).addTo(shapes);
 }
 
 function onClick_Marker(e) {
