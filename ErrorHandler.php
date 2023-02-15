@@ -1,5 +1,5 @@
 <?php
-	require_once("./SessionMaster.php");
+	require_once($_SERVER["DOCUMENT_ROOT"]."/SessionMaster.php");
 	function RaiseError($sender, $message){
 		header("Location: ./ErrorHandler.php?ErrorSender='".$sender."'&ErrorMessage='".$message."'");
 	}
