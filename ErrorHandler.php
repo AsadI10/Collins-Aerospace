@@ -1,6 +1,6 @@
 <?php
-	require_once($_SERVER["DOCUMENT_ROOT"]."/SessionMaster.php");
-	function RaiseError($sender, $message){
+	require_once("./SessionMaster.php");
+	function RaiseFatalError($sender, $message){
 		header("Location: ./ErrorHandler.php?ErrorSender='".$sender."'&ErrorMessage='".$message."'");
 	}
 	if(basename($_SERVER['PHP_SELF']) == "ErrorHandler.php"){
@@ -11,6 +11,7 @@
 			Message: <?php echo $_GET["ErrorMessage"]; ?><br>
 			<a href="index.php">Return to home page</a>
 			<?php
+			exit();
 		}
 		else{
 			header("Location: ./index.php");

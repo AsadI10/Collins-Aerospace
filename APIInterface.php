@@ -1,8 +1,8 @@
 <?php
 require_once("./ProductData.php");
 require_once("./CacheDB.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/FootprintData.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/ErrorHandler.php");
+require_once("./FootprintData.php");
+require_once("./ErrorHandler.php");
 
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
@@ -64,7 +64,7 @@ class APIInterface{
 
 		// Check if a response was given
 		if($requestReturn == false){
-			RaiseError("API Interface","No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.");
+			RaiseFatalError("API Interface","No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.");
 		}
 
 		//To get the Access token specifically from OAuth Json obj.
