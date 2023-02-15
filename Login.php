@@ -7,7 +7,7 @@
 		<input name="Username" type="text" value="hallam"><br><br>
 		<label class="loginlabel" for="">Password:</label>
 		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-		<input type="submit" value="Login">
+		<input class="" type="submit" value="Login">
 </fieldset>
 </div>
 
@@ -31,5 +31,4 @@
 		color: white;
 		font-weight: bold;
 	}
- 
 </style>
