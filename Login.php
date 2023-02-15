@@ -1,5 +1,6 @@
-<h1>Login </h1><br>
 
+<title>Login</title>
+<h1>Login </h1><br>
 <div class="logindiv">
 	<fieldset action="index.php" method="POST">
 		<legend>Login</legend><br>
@@ -16,8 +17,9 @@
 		border: solid 4px grey;
 	}
 	legend{
-		font-size: 20px;
+		font-size: 30px;
 		color: white;
+		font-weight: bold;
 	}
 	body{
 		background: #2d545e;
