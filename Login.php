@@ -1,8 +1,8 @@
-<h1>Login </h1>
+<h1>Login </h1><br>
 
 <div class="logindiv">
 	<fieldset action="index.php" method="POST">
-		<legend>Login</legend>
+		<legend>Login</legend><br>
 		<label class="loginlabel" for="">Username: </label>
 		<input name="Username" type="text" value="hallam"><br><br>
 		<label class="loginlabel" for="">Password:</label> 
@@ -12,10 +12,12 @@
 </div>
 
 <style>
+	fieldset{
+		border: solid 4px grey;
+	}
 	legend{
 		font-size: 20px;
 		color: white;
-
 	}
 	body{
 		background: #2d545e;
@@ -24,6 +26,7 @@
 		font-weight: bold;
 		margin: 0 auto;
 		width: 8%;
+		color: white;
 	}
 	div {
 		border: solid 3px grey;
