@@ -3,6 +3,7 @@
 <nav>
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav>
+<h1>Login</h1><br>
 <form action="index.php" method="POST">
 	<div class="logindiv">
 		<label class="loginlabel" for="">Username: </label>
