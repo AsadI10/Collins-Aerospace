@@ -30,6 +30,7 @@
 </body> -->
 
 <style>
+	
 	nav{
 		background-color: white;
 	}
