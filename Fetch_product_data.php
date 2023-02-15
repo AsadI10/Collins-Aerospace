@@ -9,10 +9,10 @@
 // "missionid": Returns 0 or more products that match the missionid.
 //======================================
 
-require_once($_SERVER["DOCUMENT_ROOT"]."/ProductData.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/APIInterface.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/CacheDB.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/SessionMaster.php");
+require_once("./ProductData.php");
+require_once("./APIInterface.php");
+require_once("./CacheDB.php");
+require_once("./SessionMaster.php");
 
 // If an identifier is provided, return that specific ProductData if it exists.
 // If it doesn't exist, return nothing
