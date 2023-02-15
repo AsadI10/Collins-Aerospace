@@ -9,6 +9,7 @@ class APIInterface{
 
 	private $_APIDomain;
 	private $_AccessToken;
+	private $_IsLoggedIn;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
@@ -64,18 +65,19 @@ class APIInterface{
 
 		// Check if a response was given
 		if($requestReturn == false){
+			$this->_IsLoggedIn = false;
 			RaiseFatalError("API Interface","No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.");
+			return;
 		}
 
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
+		$this->_IsLoggedIn = true;
 	}
 
-	// This function shouldn't be used as everything that needs it should be in this class.
-	// However, it's here just in case.
-	public function GetAccessToken(){
-		return $this->_AccessToken;
+	public function IsLoggedIn(){
+		return $this->_IsLoggedIn;
 	}
 
 	// Directly calls the API to get a list of all product identifiers.

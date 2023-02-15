@@ -7,10 +7,23 @@
     require_once("./SessionMaster.php");
 
     // Initialize the caching database to cache API call results
-    $_SESSION["CacheDB"] = new CacheDB($_SERVER["DOCUMENT_ROOT"]."/Cache.db");
-
+    if(!isset($_SESSION["CacheDB"])){
+        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
+    }
     // Initialize the APIInterface to communicate with the API
-    $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
+    if(!isset($_SESSION["APIInterface"]) || $_SESSION["APIInterface"]->IsLoggedIn() == false){
+        if(!isset($_POST["Username"]) || !isset($_POST["Password"])){
+            header("Location: ./Login.php");
+        }
+        else{
+            $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", $_POST["Username"], $_POST["Password"]);
+        }
+    }
+
+    // Initialize the caching database to cache API call results
+    if(!isset($_SESSION["CacheDB"])){
+        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
+    }
 
     // The testing zone
     //$testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
@@ -26,9 +39,7 @@
      <head>
           <title>Collins Team One</title>
           <!--Leaflet-->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-          crossorigin=""/>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
           <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2@0.4.1/css/leaflet-sidebar.min.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -54,6 +65,7 @@
           <script src="GetPage.js"></script>
           <script src="Sidebar.js"></script>
           <script src="./lib/map/wise-leaflet-pip.js"></script>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
      </head>
 
     <body>
@@ -63,12 +75,12 @@
         ?>
 
         <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+        <span id="panel1" class="d-block p-2 bg-dark text-white">
+        </span>
   
         <!-- Map -->
         <div id="map">
           <!-- create a sidebar on the map -->
-          
         </div>
 
 
@@ -85,9 +97,36 @@
         <script>
             // Default load of sidebar
             GetWebPage("SideBar_PieChart.php", function(text){
+                console.log(text);
                 LoadSidebar(text);
                 }
             );
+
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work',     11],
+                ['Eat',      2],
+                ['Commute',  2],
+                ['Watch TV', 2],
+                ['Sleep',    7]
+            ]);
+
+            var options = {
+               backgroundColor: 'transparent',
+               title: 'Collins Data',
+               is3D: true,
+               chartArea: {
+               width: '70%',
+               height: '70%'
+          }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+            }
         </script>
 
      </body>
