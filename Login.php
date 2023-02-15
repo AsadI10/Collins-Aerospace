@@ -5,9 +5,9 @@
 		<legend>Login</legend>
 		<label class="loginlabel" for="">Username: </label>
 		<input name="Username" type="text" value="hallam"><br><br>
-		<label class="loginlabel" for="">Password:</label>
+		<label class="loginlabel" for="">Password:</label> 
 		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-		<input class="" type="submit" value="Login">
+		<input class="Loginbutton" type="submit" value="Login">
 </fieldset>
 </div>
 
@@ -30,5 +30,9 @@
 		font-size: 19px;
 		color: white;
 		font-weight: bold;
+	}
+	.loginbutton{
+		font-size: 20px;
+		width: 200px;
 	}
 </style>
