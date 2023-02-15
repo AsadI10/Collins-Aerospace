@@ -65,5 +65,3 @@ var baseMaps = {
   "Street View": streets
 }
 var layerControl = L.control.layers(baseMaps).addTo(map);
-
-var sidebar = L.control.sidebar('sidebar').addTo(map);
