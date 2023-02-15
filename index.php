@@ -2,24 +2,14 @@
 <?php
     //===================================================================
     // This section will initialize primary session variables such as the API connection and database connection
-    require_once($_SERVER['DOCUMENT_ROOT']."/APIInterface.php");
-    require_once($_SERVER['DOCUMENT_ROOT']."/CacheDB.php");
-    session_start();
+    require_once("./APIInterface.php");
+    require_once("./CacheDB.php");
+    require_once("./SessionMaster.php");
 
     // Initialize the caching database to cache API call results
-    $_SESSION["CacheDB"] = new CacheDB($_SERVER['DOCUMENT_ROOT']."/Cache.db");
+    $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
     // Initialize the APIInterface to communicate with the API
     $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", "hallam", "9JS(g8Zh");
-    
-    // If the API fails to connect, display an error to the client
-    // This could be a redirect to an error page
-    $apiFailureReason = $_SESSION["APIInterface"]->GetFailureReason();
-    if($apiFailureReason != null){?>
-        <h1>APIInterface failed to initialize!</h1>
-        <t><?php echo $apiFailureReason ?></t>
-        <?php
-        exit();
-    }
 
     // The testing zone
     //$testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];

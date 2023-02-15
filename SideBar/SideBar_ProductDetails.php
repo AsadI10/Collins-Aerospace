@@ -1,5 +1,5 @@
 <?php
-if($_POST["identifier"] == "")
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
 {
 	exit();
 }
