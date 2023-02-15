@@ -1,10 +1,9 @@
 <title>Login</title>
-<body>
-	
-	<nav>
-		<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
-	</nav>
-</body>
+
+<nav>
+	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
+</nav>
+
 <body>
 	<h1>Login </h1><br>
 	<div class="logindiv">
