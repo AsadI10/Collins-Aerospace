@@ -15,20 +15,6 @@
 	</form>
 </fieldset>
 
-<!-- I AM STILL WORKING ON IT -->
-<!-- <body>
-	<h1>Login </h1><br>
-	<div class="logindiv">
-		<fieldset action="index.php" method="POST">
-			<legend>Login</legend><br>
-			<label class="loginlabel" for="">Username: </label>
-			<input name="Username" type="text" value="hallam"><br><br>
-			<label class="loginlabel" for="">Password:</label> 
-			<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-			<input class="Loginbutton" type="submit" value="Login">
-	</fieldset>
-	</div>
-</body> -->
 
 <style>
 	fieldset{
@@ -44,9 +30,9 @@
 		width: 16%;
 	}
 
-	form{
+	/* form{
 		border: solid 4px grey;
-	}
+	} */
 	legend{
 		font-size: 30px;
 		color: white;
