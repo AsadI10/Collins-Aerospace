@@ -1,18 +1,32 @@
 <title>Login</title>
-
-<h1>Login </h1><br>
-<div class="logindiv">
-	<fieldset action="index.php" method="POST">
-		<legend>Login</legend><br>
-		<label class="loginlabel" for="">Username: </label>
-		<input name="Username" type="text" value="hallam"><br><br>
-		<label class="loginlabel" for="">Password:</label> 
-		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-		<input class="Loginbutton" type="submit" value="Login">
-</fieldset>
-</div>
+<body>
+	
+	<nav>
+		<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
+	</nav>
+</body>
+<body>
+	<h1>Login </h1><br>
+	<div class="logindiv">
+		<fieldset action="index.php" method="POST">
+			<legend>Login</legend><br>
+			<label class="loginlabel" for="">Username: </label>
+			<input name="Username" type="text" value="hallam"><br><br>
+			<label class="loginlabel" for="">Password:</label> 
+			<input name="Password" type="password" value="9JS(g8Zh"><br><br>
+			<input class="Loginbutton" type="submit" value="Login">
+	</fieldset>
+	</div>
+</body>
 
 <style>
+	nav{
+		background-color: white;
+	}
+	.cllogo{
+		width: 20%;
+	}
+
 	fieldset{
 		border: solid 4px grey;
 	}
