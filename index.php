@@ -94,6 +94,7 @@
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
+        <!--
         <script>
             // Default load of sidebar
             GetWebPage("SideBar_PieChart.php", function(text){
@@ -128,6 +129,7 @@
             chart.draw(data, options);
             }
         </script>
+          -->
 
      </body>
 </html>

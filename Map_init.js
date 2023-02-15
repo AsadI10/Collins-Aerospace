@@ -1,4 +1,4 @@
-var userpoints = [];
+//var userpoints = [];
 // Set default position of map
 var map = L.map('map',
     {
@@ -8,7 +8,6 @@ var map = L.map('map',
     }).setView([53.45043, -2.25975], 13);
 // Create a layer group for markers
 var markers = new L.LayerGroup().addTo(map);
-
 // Create a layer group for any drawn polygons
 var shapes = new L.LayerGroup().addTo(map);
 

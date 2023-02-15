@@ -1,12 +1,13 @@
 GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
 loadMarkers(data);
-
 //---------------
 //---CODE BODY---
 //---------------
 //Creates a marker for each product pulled from the API
 //also applies event based functions to each marker +
 //attributes.
+map.on('boxzoomend', onShiftDrag);
+map.on('zoomend', onZoomEnd);
 
 function onShiftDrag(e){
     shapes.clearLayers();
@@ -26,8 +27,15 @@ function onShiftDrag(e){
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
-
     return;
+}
+
+function onZoomEnd(e){
+    let i = [Math.random()]
+
+    GetWebPage("SideBar_PieChart.php", function (text) {
+        LoadSidebar(text);
+    }, "identifier=" + i + ",");
 }
 
 function onMouseOver_marker(e){
@@ -51,12 +59,4 @@ function onClick_Marker(e) {
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
-
-    return;
-
-    var gj = e.sourceTarget.options.GeoJSON;
-    var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
-    document.getElementById('panel1').innerHTML = body;
 }
-
-map.on('boxzoomend', onShiftDrag);
