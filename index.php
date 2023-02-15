@@ -6,6 +6,10 @@
     require_once("./CacheDB.php");
     require_once("./SessionMaster.php");
 
+    // Initialize the caching database to cache API call results
+    if(!isset($_SESSION["CacheDB"])){
+        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
+    }
     // Initialize the APIInterface to communicate with the API
     if(!isset($_SESSION["APIInterface"]) || $_SESSION["APIInterface"]->IsLoggedIn() == false){
         if(!isset($_POST["Username"]) || !isset($_POST["Password"])){
