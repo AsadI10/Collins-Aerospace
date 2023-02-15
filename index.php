@@ -76,8 +76,13 @@
 
         <!-- Side Panel -->
         <span id="panel1" class="d-block p-2 bg-dark text-white">
+        <?php
+        include("SideBar_PieChart.php")
+        ?>
+        <?php
+            include("SideBar_Histogram.php");
+        ?>
         </span>
-  
         <!-- Map -->
         <div id="map">
           <!-- create a sidebar on the map -->
@@ -96,13 +101,12 @@
         <script type="text/javascript" src="map.js"></script>
         <!--
         <script>
-            // Default load of sidebar
-            GetWebPage("SideBar_PieChart.php", function(text){
-                console.log(text);
-                LoadSidebar(text);
-                }
-            );
-
+            // // Default load of sidebar
+            // GetWebPage("SideBar_PieChart.php", function(text){
+            //     console.log(text);
+            //     LoadSidebar(text);
+            //     }
+            // );
             google.charts.load("current", {packages:["corechart"]});
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
