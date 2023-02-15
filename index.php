@@ -59,6 +59,7 @@
           <script src="GetPage.js"></script>
           <script src="Sidebar.js"></script>
           <script src="./lib/map/wise-leaflet-pip.js"></script>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
      </head>
 
     <body>
@@ -69,9 +70,6 @@
 
         <!-- Side Panel -->
         <span id="panel1" class="d-block p-2 bg-dark text-white">
-        <?php
-          include("./SideBar_PieChart.php")
-        ?>
         </span>
   
         <!-- Map -->
@@ -93,9 +91,32 @@
         <script>
             // Default load of sidebar
             GetWebPage("SideBar_PieChart.php", function(text){
+                console.log(text);
                 LoadSidebar(text);
                 }
             );
+
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work',     11],
+                ['Eat',      2],
+                ['Commute',  2],
+                ['Watch TV', 2],
+                ['Sleep',    7]
+            ]);
+
+            var options = {
+                backgroundColor: 'transparent',
+                title: 'My Daily Activities',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+            }
         </script>
 
      </body>
