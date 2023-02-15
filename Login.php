@@ -37,11 +37,11 @@
 	form{
 		border: solid 4px grey;
 	}
-	legend{
+	/* legend{
 		font-size: 30px;
 		color: white;
 		font-weight: bold;
-	}
+	} */
 	body{
 		background: #2d545e;
 	}
