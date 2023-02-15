@@ -18,7 +18,7 @@
 
     // Initialize the caching database to cache API call results
     if(!isset($_SESSION["CacheDB"])){
-        $_SESSION["CacheDB"] = new CacheDB($_SERVER["DOCUMENT_ROOT"]."/Cache.db");
+        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
     }
 
     // The testing zone
