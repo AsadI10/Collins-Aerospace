@@ -5,7 +5,7 @@ if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/ProductData.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."SessionMaster.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/SessionMaster.php");
 
 //Converts the post fields (In CSV format) into a PHP style Array.
 $_POST["identifier"] = str_getcsv($_POST["identifier"]);
