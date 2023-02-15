@@ -4,7 +4,8 @@
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav>
 <h1>Login</h1><br>
-<div class="logindiv">
+<fieldset class="logindiv">
+	<legend>Login</legend>
 <form action="index.php" method="POST">
 		<label class="loginlabel" for="">Username: </label>
 		<input name="Username" type="text" value="hallam"><br><br>
@@ -12,7 +13,7 @@
 		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
 		<input class="Loginbutton" type="submit" value="Login">
 	</form>
-</div>
+</fieldset>
 
 <!-- I AM STILL WORKING ON IT -->
 <!-- <body>
@@ -30,7 +31,12 @@
 </body> -->
 
 <style>
-
+	fieldset{
+		border: solid 4px grey;
+		background: ;
+        width: 50%; 
+        margin: 0 auto;
+	}
 	nav{
 		background-color: white;
 	}
@@ -41,11 +47,11 @@
 	form{
 		border: solid 4px grey;
 	}
-	/* legend{
+	legend{
 		font-size: 30px;
 		color: white;
 		font-weight: bold;
-	} */
+	}
 	body{
 		background: #2d545e;
 	}
