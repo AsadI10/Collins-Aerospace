@@ -14,8 +14,6 @@
 		<input class="Loginbutton" type="submit" value="Login">
 	</form>
 </fieldset>
-
-
 <style>
 	fieldset{
 		border: solid 4px grey;
