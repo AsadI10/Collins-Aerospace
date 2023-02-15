@@ -4,8 +4,8 @@
 	<fieldset action="index.php" method="POST">
 		<legend>Login</legend>
 		<label class="loginlabel" for="">Username: </label>
-		<input name="Username" type="text" value="hallam">
-		<label class="loginlabel" for="">Password:</label>
+		<input name="Username" type="text" value="hallam"><br>
+		<label class="loginlabel" for="">Password:</label><br>
 		<input name="Password" type="password" value="9JS(g8Zh">
 		<input type="submit" value="Login">
 </fieldset>
