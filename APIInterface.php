@@ -1,8 +1,8 @@
 <?php
 require_once("./ProductData.php");
 require_once("./CacheDB.php");
-require_once("./FootprintData.php");
-require_once("./ErrorHandler.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/FootprintData.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/ErrorHandler.php");
 
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{

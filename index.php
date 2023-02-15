@@ -2,9 +2,10 @@
 <?php
     //===================================================================
     // This section will initialize primary session variables such as the API connection and database connection
-    require_once("./APIInterface.php");
-    require_once("./CacheDB.php");
-    require_once("./SessionMaster.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/APIInterface.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/CacheDB.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/SessionMaster.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/PathHelper.php");
 
     // Initialize the caching database to cache API call results
     $_SESSION["CacheDB"] = new CacheDB($_SERVER["DOCUMENT_ROOT"]."/Cache.db");
@@ -51,7 +52,7 @@
     <body>
         <!-- Header -->
         <?php
-            include("./Header.php")
+            include($_SERVER["DOCUMENT_ROOT"]."/Header.php")
         ?>
 
         <!-- Side Panel -->
@@ -67,7 +68,7 @@
         <br>
         <!-- Footer -->
         <?php
-            include("./Footer.php");
+            include($_SERVER["DOCUMENT_ROOT"]."/Footer.php");
         ?>
      
         <!-- Post page loading scripts -->
