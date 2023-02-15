@@ -4,12 +4,13 @@
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav>
 <form action="index.php" method="POST">
-			<!-- <legend>Login</legend><br> -->
-			<label class="loginlabel" for="">Username: </label>
-			<input name="Username" type="text" value="hallam"><br><br>
-			<label class="loginlabel" for="">Password:</label> 
-			<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-			<input class="Loginbutton" type="submit" value="Login">
+	<div class="logindiv">
+		<label class="loginlabel" for="">Username: </label>
+		<input name="Username" type="text" value="hallam"><br><br>
+		<label class="loginlabel" for="">Password:</label> 
+		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
+		<input class="Loginbutton" type="submit" value="Login">
+	</div>
 </form>
 <!-- <body>
 	<h1>Login </h1><br>
@@ -33,7 +34,7 @@
 		width: 16%;
 	}
 
-	fieldset{
+	form{
 		border: solid 4px grey;
 	}
 	legend{
