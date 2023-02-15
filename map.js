@@ -1,33 +1,13 @@
 GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
 loadMarkers(data);
-
 //---------------
 //---CODE BODY---
 //---------------
 //Creates a marker for each product pulled from the API
 //also applies event based functions to each marker +
 //attributes.
-
-/*
-FIX LATER
-function createFootprintPopup(){
-    markers._layers.forEach(marker => {
-        
-        switch(marker.options.footprint.Type){
-            case "LineString":
-                marker.bindPopup(L.polyline(footprint.Coordinates.forEach(element => {
-                    element.reverse();
-                })));
-                break;
-            case "Polygon":
-                marker.bindPopup(L.polygon(footprint.Coordinates[0].forEach(element => {
-                    element.reverse();
-                })));
-                break;
-        }
-    });
-}
-*/
+map.on('boxzoomend', onShiftDrag);
+map.on('zoomend', onZoomEnd);
 
 function onShiftDrag(e){
     shapes.clearLayers();
@@ -47,18 +27,29 @@ function onShiftDrag(e){
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
-
     return;
 }
 
+function onZoomEnd(e){
+    let i = [Math.random()]
+
+    GetWebPage("SideBar_PieChart.php", function (text) {
+        LoadSidebar(text);
+    }, "identifier=" + i + ",");
+}
+
 function onMouseOver_marker(e){
-    shapes.clearLayers();
+    //add support for polylines
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
     bounds.forEach(arr => {
         arr.reverse();
     });
 
-    var polygon = L.polygon(bounds).addTo(shapes);
+    L.polygon(bounds).addTo(shapes);
+}
+
+function offMouseOver_marker(e){
+    shapes.clearLayers();
 }
 
 function onClick_Marker(e) {
@@ -68,12 +59,4 @@ function onClick_Marker(e) {
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
-
-    return;
-
-    var gj = e.sourceTarget.options.GeoJSON;
-    var body = "ID: " + gj.Identifier + "<br>NAME: " + gj.Name + "<br><br>COORDINATES: " + gj.Centre;
-    document.getElementById('panel1').innerHTML = body;
 }
-
-map.on('boxzoomend', onShiftDrag);

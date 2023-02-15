@@ -1,3 +1,15 @@
+<?php
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
+{
+	exit();
+}
+$_POST["identifier"] = str_getcsv($_POST["identifier"]);
+
+?>
+
+
+<!-- Broken right now but we can pass CSV/array/JSON data into the piechart -->
+
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -6,12 +18,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['marker', '<?php var_dump($_POST["identifier"][0]);?>']
         ]);
 
         var options = {

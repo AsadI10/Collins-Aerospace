@@ -54,10 +54,12 @@
           <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
           <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
           <link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
-          <!-- Use this for the sidebar -->
-          <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
-          <script src="https://unpkg.com/leaflet-sidebar-v2@0.4.1/js/leaflet-sidebar.min.js"></script>
+
+          <!-- Use this for the sidebar For some reason the 0.4.1 package is taking 30 + seconds to load, Maybe depreciated? -->
+          <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+          <script src="https://unpkg.com/leaflet-sidebar-v2@0.4.1/js/leaflet-sidebar.min.js"></script>-->
           <!-- Our Stuff -->
+
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <script src="GetPage.js"></script>
@@ -92,6 +94,7 @@
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
+        <!--
         <script>
             // Default load of sidebar
             GetWebPage("SideBar_PieChart.php", function(text){
@@ -126,6 +129,7 @@
             chart.draw(data, options);
             }
         </script>
+          -->
 
      </body>
 </html>
