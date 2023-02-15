@@ -1,11 +1,11 @@
 <?php
-if($_POST["identifier"] == "")
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
 {
 	exit();
 }
 
-require_once("ProductData.php");
-session_start();
+require_once("./ProductData.php");
+require_once("./SessionMaster.php");
 
 //Converts the post fields (In CSV format) into a PHP style Array.
 $_POST["identifier"] = str_getcsv($_POST["identifier"]);

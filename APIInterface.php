@@ -1,14 +1,14 @@
 <?php
-require_once("ProductData.php");
-require_once("CacheDB.php");
-require_once("FootprintData.php");
+require_once("./ProductData.php");
+require_once("./CacheDB.php");
+require_once("./FootprintData.php");
+require_once("./ErrorHandler.php");
 
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
 
 	private $_APIDomain;
 	private $_AccessToken;
-	private $_FailureReason;
 
 	function __construct($apiDomain, $username, $password){
 		// Set the domain this object will use.
@@ -64,18 +64,12 @@ class APIInterface{
 
 		// Check if a response was given
 		if($requestReturn == false){
-			$this->_FailureReason = "No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.";
-			return;
+			RaiseFatalError("API Interface","No response from \"".$apiDomain."\". The site may be down, or the username or password may be incorrect.");
 		}
 
 		//To get the Access token specifically from OAuth Json obj.
 		$at = "access_token";
 		$this->_AccessToken = json_decode($requestReturn)->$at;
-		$this->_FailureReason = null;
-	}
-
-	public function GetFailureReason(){
-		return $this->_FailureReason;
 	}
 
 	// This function shouldn't be used as everything that needs it should be in this class.
