@@ -29,7 +29,7 @@
 		color: white;
 	}
 	div {
-		border: solid 3px grey;
+		/* border: solid 3px grey; */
 		background: ;
         width: 50%; /* Set the width of the div */
         margin: 0 auto; /* Center the div horizontally */
