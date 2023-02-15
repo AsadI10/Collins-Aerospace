@@ -43,5 +43,9 @@
 	.loginbutton{
 		font-size: 20px;
 		width: 200px;
+		display: block;
+ 		 margin-left: auto;
+  		margin-right: auto;
+		cursor: pointer;
 	}
 </style>
