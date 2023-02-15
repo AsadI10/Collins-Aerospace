@@ -1,3 +1,14 @@
+<?php
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
+{
+	exit();
+}
+$_POST["identifier"] = str_getcsv($_POST["identifier"]);
+
+?>
+
+<!-- Broken right now but we can pass CSV/array/JSON data into the piechart -->
+
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -22,7 +33,6 @@
         colors: ['green'],
 
     };
-
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
