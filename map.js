@@ -31,6 +31,7 @@ function onShiftDrag(e){
 }
 
 function onMouseOver_marker(e){
+    //add support for polylines
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
     bounds.forEach(arr => {
         arr.reverse();
