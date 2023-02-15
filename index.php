@@ -54,20 +54,10 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
      </head>
 
-     <body oncontextmenu="return false;"> 
-     <!-- <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="">Home</a>
-          <a class="navbar-logout" href="">Logout</a>
-          <a href=""></a>
-     </nav> -->
-     <h1 class="name">Collins Aerospace</h1>
-     <nav>
-          <ul>
-               <li>Home</li>
-               <li>Logout</li>
-          </ul>
-          <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
-     </nav>
+     <?php
+     // Include header
+     include("Header.php")
+     ?>
 
 <!-- <br> -->
 <!-- <br> -->
@@ -75,7 +65,8 @@
 
      <span id="panel1" class="d-block p-2 bg-dark text-white">
      <script>
-        GetWebPage("SideBar_PieChart.php", function(text){
+        // Default load of sidebar
+        GetWebPage("SideBar/SideBar_PieChart.php", function(text){
             LoadSidebar(text);
         });
     </script>
@@ -87,11 +78,10 @@
      </div>
 
 <br>
-     <footer>
-     <p class="copy">&copy; Created By <a class="footer" href="https://www.shu.ac.uk/myhallam">Team 1 Sheffield Hallam University</a> |
-            <script>document.write(new Date().getFullYear())</script> All rights reserved
-        </p>
-     </footer>
+     <?php
+     // Include the footer of the page
+     include("Footer.php");
+     ?>
      
      <script type="text/javascript" src="map.js" ></script>
 

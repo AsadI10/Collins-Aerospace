@@ -44,7 +44,7 @@ function onShiftDrag(e){
         }
     });
 
-    GetWebPage("SideBar_ProductDetails.php", function (text) {
+    GetWebPage("SideBar/SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
 
@@ -65,7 +65,7 @@ function onClick_Marker(e) {
     shapes.clearLayers();
 
     let arr = [e.sourceTarget.options.title];
-    GetWebPage("SideBar_ProductDetails.php", function (text) {
+    GetWebPage("SideBar/SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
 
