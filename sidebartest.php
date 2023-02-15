@@ -9,7 +9,7 @@
     <title>sidebar page</title>
 </head>
 <body>
-    
+
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
         <ul>
@@ -23,7 +23,9 @@
         <p>Page content goes here</p>
     </div>
 
-    <script src="sidebartest.js"></script>
+    <script type="text/javascript" src="map.js"></script>
+
+    <script type="text/javascript" src="sidebartest.js"></script>
 </body>
 
     
@@ -47,7 +49,8 @@
 .sidebar-toggle {
   position: absolute;
   top: 0;
-  right: -50px;
+  /* right: -50px; */
+  right: 0px;
   background-color: #333;
   color: #fff;
   padding: 10px 15px;
