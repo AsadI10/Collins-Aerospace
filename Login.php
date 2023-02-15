@@ -29,10 +29,6 @@
 	.cllogo{
 		width: 16%;
 	}
-
-	/* form{
-		border: solid 4px grey;
-	} */
 	legend{
 		font-size: 30px;
 		color: white;
@@ -57,7 +53,7 @@
 		color: white;
 		font-weight: bold;
 	}
-	.loginbutton{
+	.Loginbutton{
 		font-size: 20px;
 		width: 200px;
 	}
