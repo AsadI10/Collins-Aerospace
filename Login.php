@@ -61,4 +61,5 @@
  		margin-right: auto;
 		cursor: pointer;
 	}
+	
 </style>
