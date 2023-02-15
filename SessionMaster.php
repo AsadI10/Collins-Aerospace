@@ -9,7 +9,6 @@ $currentTime = time();
 if(isset($_SESSION["LastSessionAccessTime"])){
 	$deltaTime = $currentTime - $_SESSION["LastSessionAccessTime"];
 	// Timeout time in seconds
-	echo $deltaTime;
 	if($deltaTime > 3600){
 		header("Location: ./Logout.php");
 	}

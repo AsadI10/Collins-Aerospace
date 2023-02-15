@@ -16,7 +16,7 @@
 
         var options = {
           backgroundColor: 'transparent',
-          title: 'My Daily Activities',
+          title: 'Collins Data',
           is3D: true,
         };
 
@@ -26,6 +26,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart_3d" style="width: 350px; height: 240px; text-align:center;"></div>
+    <div id="piechart_3d" style="width: 350px; height: 240px;"></div>
   </body>
 </html>
