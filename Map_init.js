@@ -63,4 +63,4 @@ var baseMaps = {
   "Dark": EsriWorldImagery,
   "Street View": streets
 }
-var layerControl = L.control.layers(baseMaps).addTo(map);
+var layerControl = layers(baseMaps).addTo(map);
