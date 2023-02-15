@@ -12,6 +12,11 @@
 </div>
 
 <style>
+	legend{
+		font-size: 20px;
+		color: white;
+
+	}
 	body{
 		background: #2d545e;
 	}
