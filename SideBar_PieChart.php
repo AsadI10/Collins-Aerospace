@@ -16,12 +16,8 @@
 
         var options = {
           backgroundColor: 'transparent',
-          title: 'My Daily Activities',
+          title: 'Collins Data',
           is3D: true,
-          ChartArea: {
-            width: '190%',
-            height: '190%'
-          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

@@ -109,9 +109,13 @@
             ]);
 
             var options = {
-                backgroundColor: 'transparent',
-                title: 'My Daily Activities',
-                is3D: true,
+               backgroundColor: 'transparent',
+               title: 'Collins Data',
+               is3D: true,
+               chartArea: {
+               width: '70%',
+               height: '70%'
+          }
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
