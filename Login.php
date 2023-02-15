@@ -26,10 +26,10 @@
         width: 50%; /* Set the width of the div */
         margin: 0 auto; /* Center the div horizontally */
     }
-	/* .loginlabel{
+	.loginlabel{
 		font-size: 19px;
 		color: white;
 		font-weight: bold;
-	} */
+	}
  
 </style>
