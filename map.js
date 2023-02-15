@@ -8,27 +8,6 @@ loadMarkers(data);
 //also applies event based functions to each marker +
 //attributes.
 
-/*
-FIX LATER
-function createFootprintPopup(){
-    markers._layers.forEach(marker => {
-        
-        switch(marker.options.footprint.Type){
-            case "LineString":
-                marker.bindPopup(L.polyline(footprint.Coordinates.forEach(element => {
-                    element.reverse();
-                })));
-                break;
-            case "Polygon":
-                marker.bindPopup(L.polygon(footprint.Coordinates[0].forEach(element => {
-                    element.reverse();
-                })));
-                break;
-        }
-    });
-}
-*/
-
 function onShiftDrag(e){
     shapes.clearLayers();
     var rectangle;
@@ -52,13 +31,17 @@ function onShiftDrag(e){
 }
 
 function onMouseOver_marker(e){
-    shapes.clearLayers();
+    //add support for polylines
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
     bounds.forEach(arr => {
         arr.reverse();
     });
 
-    var polygon = L.polygon(bounds).addTo(shapes);
+    L.polygon(bounds).addTo(shapes);
+}
+
+function offMouseOver_marker(e){
+    shapes.clearLayers();
 }
 
 function onClick_Marker(e) {
