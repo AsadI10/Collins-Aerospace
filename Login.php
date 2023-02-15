@@ -23,7 +23,7 @@
 		background-color: white;
 	}
 	.cllogo{
-		width: 20%;
+		width: 16%;
 	}
 
 	fieldset{
