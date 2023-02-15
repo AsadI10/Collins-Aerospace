@@ -75,19 +75,10 @@
         ?>
 
         <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white">
-        <?php
-        include("SideBar_PieChart.php")
-        ?>
-        <?php
-            include("SideBar_Histogram.php");
-        ?>
-        </span>
-        <!-- Map -->
-        <div id="map">
-          <!-- create a sidebar on the map -->
-        </div>
+        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
 
+        <!-- Map -->
+        <div id="map"></div>
 
         <br>
         <!-- Footer -->
@@ -99,41 +90,5 @@
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-        <!--
-        <script>
-            // // Default load of sidebar
-            // GetWebPage("SideBar_PieChart.php", function(text){
-            //     console.log(text);
-            //     LoadSidebar(text);
-            //     }
-            // );
-            google.charts.load("current", {packages:["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2],
-                ['Sleep',    7]
-            ]);
-
-            var options = {
-               backgroundColor: 'transparent',
-               title: 'Collins Data',
-               is3D: true,
-               chartArea: {
-               width: '70%',
-               height: '70%'
-          }
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-            chart.draw(data, options);
-            }
-        </script>
-          -->
-
      </body>
 </html>
