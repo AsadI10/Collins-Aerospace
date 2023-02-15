@@ -51,7 +51,7 @@
     <body>
         <!-- Header -->
         <?php
-            include($_SERVER["DOCUMENT_ROOT"]."/Header.php")
+            include("./Header.php")
         ?>
 
         <!-- Side Panel -->
@@ -67,7 +67,7 @@
         <br>
         <!-- Footer -->
         <?php
-            include($_SERVER["DOCUMENT_ROOT"]."/Footer.php");
+            include("./Footer.php");
         ?>
      
         <!-- Post page loading scripts -->
@@ -76,7 +76,7 @@
         <script type="text/javascript" src="map.js"></script>
         <script>
             // Default load of sidebar
-            GetWebPage("SideBar/SideBar_PieChart.php", function(text){
+            GetWebPage("SideBar_PieChart.php", function(text){
                 LoadSidebar(text);
                 }
             );
