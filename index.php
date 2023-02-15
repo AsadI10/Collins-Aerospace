@@ -58,7 +58,10 @@
         <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
   
         <!-- Map -->
-        <div id="map"></div>
+        <div id="map">
+          <!-- create a sidebar on the map -->
+          
+        </div>
 
 
         <br>
