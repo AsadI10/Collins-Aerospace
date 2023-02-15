@@ -14,8 +14,7 @@
 	}
 	else{
 		if(basename($_SERVER['PHP_SELF']) == "ErrorHandler.php"){
-		echo "Redirect";
-			//header("Location: ./index.php");
+			header("Location: ./index.php");
 		}
 
 	}
