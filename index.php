@@ -25,9 +25,7 @@
      <head>
           <title>Collins Team One</title>
           <!--Leaflet-->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-          crossorigin=""/>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
           <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2@0.4.1/css/leaflet-sidebar.min.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -60,12 +58,15 @@
         ?>
 
         <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+        <span id="panel1" class="d-block p-2 bg-dark text-white">
+        <?php
+          include("./SideBar_PieChart.php")
+        ?>
+        </span>
   
         <!-- Map -->
         <div id="map">
           <!-- create a sidebar on the map -->
-          
         </div>
 
 
