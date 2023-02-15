@@ -52,7 +52,7 @@ span#panel1{
     position: relative;
     margin-left: 5px;
     margin-top: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* title color ------------ */
     font-weight: 600;
     background-image: repeating-radial-gradient(farthest-side at 5px 5px,#346b03, #d7e50f, #48f18c);
