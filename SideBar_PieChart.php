@@ -1,10 +1,28 @@
+<?php
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
+{
+	exit();
+}
+$_POST["identifier"] = str_getcsv($_POST["identifier"]);
+
+foreach($_POST["identifier"] as $product){
+    echo $product;
+    echo "<br>";
+}
+?>
+
+
+<!-- Broken right now but we can pass CSV/array/JSON data into the piechart -->
+
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
+
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     11],
@@ -15,17 +33,16 @@
         ]);
 
         var options = {
-          backgroundColor: 'transparent',
-          title: 'Collins Data',
-          is3D: true,
+          title: 'My Daily Activities'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div id="piechart_3d" style="width: 350px; height: 240px;"></div>
+    <div id="piechart" style="width: 100%; height: 100%"></div>
   </body>
 </html>

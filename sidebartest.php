@@ -13,19 +13,20 @@
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
         <ul>
-            <li><a href="#">Menu Item 1</a></li>
-            <li><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
+            <li><a href="#">Menu Item 1 home</a></li>
+            <li><a href="#">Menu Item 2 histogram</a></li>
+            <li><a href="#">Menu Item 3 piechart</a></li>
         </ul>
     </div>
     <div class="content">
         <h1>Collins Aerospace</h1>
-        <p>Page content goes here</p>
+        <p>the map needs to go here</p>
     </div>
 
     <script type="text/javascript" src="map.js"></script>
 
     <script type="text/javascript" src="sidebartest.js"></script>
+
 </body>
 
     
