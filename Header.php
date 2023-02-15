@@ -7,4 +7,4 @@
         </ul>
         <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
     </nav>
-<header>
+</header>
