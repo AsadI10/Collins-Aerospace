@@ -3,6 +3,7 @@
 <nav>
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav>
+
 <h1>Login</h1><br>
 <fieldset class="logindiv">
 	<legend>Login</legend>
@@ -20,6 +21,7 @@
 		background: ;
         width: 50%; 
         margin: 0 auto;
+		border-radius: 10px;
 	}
 	nav{
 		background-color: white;
