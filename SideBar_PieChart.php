@@ -18,6 +18,10 @@
           backgroundColor: 'transparent',
           title: 'My Daily Activities',
           is3D: true,
+          ChartArea: {
+            width: '190%',
+            height: '190%'
+          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -26,6 +30,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart_3d" style="width: 350px; height: 240px; text-align:center;"></div>
+    <div id="piechart_3d" style="width: 350px; height: 240px;"></div>
   </body>
 </html>
