@@ -4,15 +4,15 @@
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav>
 <h1>Login</h1><br>
+<div class="logindiv">
 <form action="index.php" method="POST">
-	<div class="logindiv">
 		<label class="loginlabel" for="">Username: </label>
 		<input name="Username" type="text" value="hallam"><br><br>
 		<label class="loginlabel" for="">Password:</label> 
 		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
 		<input class="Loginbutton" type="submit" value="Login">
-	</div>
-</form>
+	</form>
+</div>
 
 <!-- I AM STILL WORKING ON IT -->
 <!-- <body>
@@ -30,7 +30,7 @@
 </body> -->
 
 <style>
-	
+
 	nav{
 		background-color: white;
 	}
