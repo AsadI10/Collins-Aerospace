@@ -21,9 +21,9 @@
         width: 50%; 
         margin: 0 auto;
 	}
-	/* nav{
+	nav{
 		background-color: white;
-	} */
+	}
 	.cllogo{
 		width: 16%;
 	}
