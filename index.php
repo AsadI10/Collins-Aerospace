@@ -69,8 +69,7 @@
           <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search"> -->
      </nav>
 
-<br>
-
+<!-- <br> -->
 <!-- <br> -->
     <!-- Create the side panel and default load -->
 
