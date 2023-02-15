@@ -1,10 +1,10 @@
 <?php
-if($_POST["identifier"] == "")
+if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
 {
 	exit();
 }
 
-require_once("ProductData.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ProductData.php");
 session_start();
 
 //Converts the post fields (In CSV format) into a PHP style Array.

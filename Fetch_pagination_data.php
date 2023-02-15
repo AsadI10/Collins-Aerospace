@@ -1,7 +1,7 @@
 <?php
-require_once("ProductData.php");
-require_once("APIInterface.php");
-require_once("CacheDB.php");
+require_once("./ProductData.php");
+require_once("./APIInterface.php");
+require_once("./CacheDB.php");
 
 session_start();
 
