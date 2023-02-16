@@ -16,6 +16,9 @@ function loadPieChart(data){
         var options = {
           title: 'My Daily Activities',
           backgroundColor: 'transparent',
+          width: 500,
+          height: 500,
+          position:"absolute"
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('panel1'));
