@@ -13,6 +13,7 @@
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
         <ul>
+          <!-- maybe just have one item so everything is on one page  -->
             <li><a href="#">Menu Item 1 home</a></li>
             <li><a href="#">Menu Item 2 histogram</a></li>
             <li><a href="#">Menu Item 3 piechart</a></li>
@@ -24,7 +25,6 @@
     </div>
 
     <script type="text/javascript" src="map.js"></script>
-
     <script type="text/javascript" src="sidebartest.js"></script>
 
 </body>
