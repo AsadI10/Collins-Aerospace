@@ -40,34 +40,20 @@
           
 </head>
 <body>
-
-      <!-- this is where the side bar starts -->
-    <!-- <div class="sidebar">
-        <button class="sidebar-toggle" onclick="myFunction()">Toggle Sidebar</button>
-        <ul>
-          <!-- maybe just have one item so everything is on one page  -->
-            <!-- <li><a href="#">Menu Item 1 home</a></li>
-            <li><a href="#">Menu Item 2 histogram</a></li>
-            <li><a href="#">Menu Item 3 piechart</a></li>
-        </ul>
-    </div> --> 
-<!-- this is where the map is being displayed -->
 <br>
-    <?php 
+<?php 
             include("./sidebarheader.php")
-        ?>
+            ?>
+<!-- Side Panel -->
+<span id="panel1" class="d-block p-2 bg-dark text-white">
+</span>
 
-        <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
-
-        <!-- Map -->
-        <div id="map"></div>
+<!-- Map -->
+<div id="map"></div>
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-        
-    <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
 

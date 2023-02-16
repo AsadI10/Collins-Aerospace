@@ -22,10 +22,10 @@
         <a class="nav-link" onclick="Logout()">Logout</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 </header>
@@ -43,16 +43,9 @@
         padding-left: 10px 10px 10px;
         display: inline;
         font-size: 17px;
-        color: black;
-        padding:100px 10px 10px; 
-        padding: 5px 16px;
-        /* background-color: rgb(185, 180, 180); */
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
     }
-    /* .navbar-light .navbar-nav .nav-link.logout{
-        color: black;
-    } */
     .navbar-light .navbar-nav .nav-link{
         color: black;
         font-weight: bold;

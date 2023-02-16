@@ -9,22 +9,30 @@ function getDistance(lat1, lon1, lat2, lon2) {
     return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 
+function degtorad(a) {
+    return (a * Math.PI) / 180
+}
+
 function CalculateTriArea(x, y, z) {
+    console.log("xyz", x,y,z);
     // Heron's formula
     var a = getDistance(x[0], x[1], y[0], y[1]);
     var b = getDistance(y[0], y[1], z[0], z[1]);
     var c = getDistance(x[0], x[1], z[0], z[1]);
+    console.log("abc", a, b, c);
     var s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
 function CalculatePolygonArea(coordinateArr) {
     var currentArea = 0;
+    console.log("arr", coordinateArr);
     // Itterate while there are tris to calculate
     while (coordinateArr.length >= 3) {
         coordinateArr.push(coordinateArr[0], coordinateArr[2]);
-        currentArea += CalculateTriArea(coordinateArr.shift(), coordinateArr.shift(), coordinateArr.shift());
+        var triArea = CalculateTriArea(coordinateArr.shift(), coordinateArr.shift(), coordinateArr.shift());
+        currentArea += triArea;
     }
-
+    console.log("area", currentArea);
     return currentArea;
 }
