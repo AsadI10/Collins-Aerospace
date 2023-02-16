@@ -40,7 +40,21 @@
 </head>
 <body>
 
-<?php
+
+
+      <!-- this is where the side bar starts -->
+    <div class="sidebar">
+        <button class="sidebar-toggle">Toggle Sidebar</button>
+        <ul>
+          <!-- maybe just have one item so everything is on one page  -->
+            <li><a href="#">Menu Item 1 home</a></li>
+            <li><a href="#">Menu Item 2 histogram</a></li>
+            <li><a href="#">Menu Item 3 piechart</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Collins Aerospace</h1>
+        <?php
             include("./Header.php")
         ?>
 
@@ -60,20 +74,6 @@
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-
-      <!-- this is where the side bar starts -->
-    <div class="sidebar">
-        <button class="sidebar-toggle">Toggle Sidebar</button>
-        <ul>
-          <!-- maybe just have one item so everything is on one page  -->
-            <li><a href="#">Menu Item 1 home</a></li>
-            <li><a href="#">Menu Item 2 histogram</a></li>
-            <li><a href="#">Menu Item 3 piechart</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <h1>Collins Aerospace</h1>
-        <p>the map needs to go here</p>
     </div>
 
     <script type="text/javascript" src="map.js"></script>
