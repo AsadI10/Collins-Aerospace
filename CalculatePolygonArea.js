@@ -25,4 +25,6 @@ function CalculatePolygonArea(coordinateArr) {
         coordinateArr.push(coordinateArr[0], coordinateArr[2]);
         currentArea += CalculateTriArea(coordinateArr.shift(), coordinateArr.shift(), coordinateArr.shift());
     }
+
+    return currentArea;
 }
