@@ -37,21 +37,22 @@
           <script src="Sidebar.js"></script>
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="sidebartest.js"></script>
+          
 </head>
 <body>
 
       <!-- this is where the side bar starts -->
     <div class="sidebar">
-        <!-- <button class="sidebar-toggle">Toggle Sidebar</button> -->
+        <button class="sidebar-toggle" onclick="myFunction()">Toggle Sidebar</button>
         <ul>
           <!-- maybe just have one item so everything is on one page  -->
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <li><a href="#">Menu Item 1 home</a></li>
             <li><a href="#">Menu Item 2 histogram</a></li>
             <li><a href="#">Menu Item 3 piechart</a></li>
         </ul>
     </div>
-    
+
     <div class="content">
         <!-- <h1>Collins Aerospace</h1> -->
         <?php 
@@ -77,7 +78,6 @@
     </div>
 
     <script type="text/javascript" src="map.js"></script>
-    <script type="text/javascript" src="sidebartest.js"></script>
 </body>
 </html>
 
