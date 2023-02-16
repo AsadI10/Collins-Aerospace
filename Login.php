@@ -41,7 +41,7 @@
 	h1{
 		font-weight: bold;
 		margin: 0 auto;
-		width: 8%;
+		width: 6%;
 		color: white;
 	}
 	div {
