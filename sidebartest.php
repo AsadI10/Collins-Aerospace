@@ -61,7 +61,7 @@
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
 
-      this is where the side bar starts
+      <!-- this is where the side bar starts -->
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
         <ul>
