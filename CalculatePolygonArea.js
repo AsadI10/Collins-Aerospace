@@ -14,23 +14,25 @@ function degtorad(a) {
 }
 
 function CalculateTriArea(x, y, z) {
-    console.log(x);
+    console.log("xyz", x,y,z);
     // Heron's formula
     var a = getDistance(x[0], x[1], y[0], y[1]);
     var b = getDistance(y[0], y[1], z[0], z[1]);
     var c = getDistance(x[0], x[1], z[0], z[1]);
+    console.log("abc", a, b, c);
     var s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-function CalculatePolygonArea(coordinateArr, size) {
+function CalculatePolygonArea(coordinateArr) {
     var currentArea = 0;
+    console.log("arr", coordinateArr);
     // Itterate while there are tris to calculate
-    while (size >= 3) {
+    while (coordinateArr.length >= 3) {
         coordinateArr.push(coordinateArr[0], coordinateArr[2]);
         var triArea = CalculateTriArea(coordinateArr.shift(), coordinateArr.shift(), coordinateArr.shift());
-        console.log(coordinateArr);
         currentArea += triArea;
     }
+    console.log("area", currentArea);
     return currentArea;
 }
