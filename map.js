@@ -40,7 +40,8 @@ function getVisibleMarkers(e){
             arr.push(element.options.title);
         }
     });
-    console.log(arr);
+    //called here
+    CalculatePolygonArea(arr);
 
     loadPieChart(arr);
 }
