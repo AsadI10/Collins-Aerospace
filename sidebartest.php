@@ -55,7 +55,7 @@
     <div class="content">
         <!-- <h1>Collins Aerospace</h1> -->
         <?php 
-            include("./Header.php")
+            include("./sidebarheader.php")
         ?>
 
         <!-- Side Panel -->
