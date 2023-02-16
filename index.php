@@ -80,13 +80,7 @@
 
         <!-- Map -->
         <div id="map"></div>
-
-        <br>
-        <!-- Footer -->
-        <?php
-            include("./Footer.php");
-        ?>
-     
+        
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
