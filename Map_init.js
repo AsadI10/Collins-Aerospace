@@ -10,9 +10,13 @@ var map = L.map('map',
 var markers = new L.LayerGroup().addTo(map);
 // Create a layer group for any drawn polygons
 var shapes = new L.LayerGroup().addTo(map);
+// Create a layer group for any drawn footprint
+var footprints = new L.LayerGroup().addTo(map);
 //Polygon That has the bounds of the UK (allows us to calculate a coverage).
-var ukPolygonMesh = L.polygon([[[1.267359880214343,50.92385324459923],[3.2182594295425133,52.372888239740604],[-0.526563295380015,58.520067103791064],[-4.019833022964065,59.35194725811601],[-9.501579364708988,58.209998162302526],[-10.468946366193222,52.93286365003604],[-10.522688977386508,50.77573978003656],[-6.169537470707127,49.326538909642494],[1.267359880214343,50.92385324459923]]]);
+let ukBounds = [[50.52385324459923,1.2673593],[52.372888239740604,2.4182594295425133],[58.520067103791064,2.326563295380015],[59.35194725811601, -4.019833022964065],[58.209998162302526, -7.501579364708988],[52.93286365003604 ,-7.268946366193222],[49.326538909642494, -6.169537470707127]];
+var ukPolygonMesh = L.polygon(ukBounds);
 
+console.log(ukPolygonMesh);
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
