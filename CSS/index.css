@@ -101,9 +101,9 @@ nav ul li{
     text-decoration: none;
 }
 /* Pie chart CSS */
-#PieChart{
-    position: absolute;
-    margin-left: 200px;
+#pieChart{
+    position: relative;
+    left: -100px;
 }
 /* Histogram */ 
 #chart_div{
