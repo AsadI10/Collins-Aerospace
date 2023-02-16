@@ -4,16 +4,7 @@
             window.location = "./Logout.php";
         }
     </script>
-
-    <!-- <h1 class="name">Collins Aerospace</h1>
-     <nav>
-        <ul>
-            <li>Home</li>
-            <li onclick="Logout()">Logout</li>
-        </ul>
-        <!-- <input class="searchbar" type="text" id="Name" name="Name" placeholder="Search">  -->
-    </nav>  -->
-
+<br>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
