@@ -80,12 +80,12 @@
             include("./sidebarheader.php")
             ?>
 <!-- Side Panel -->
+<span id="panel1" class="d-block p-2 bg-dark text-white">
+</span>
 <div class="btn-group" class="d-block">
             <button>Piechart</button>
             <button>Histogram</button>
 </div>
-<span id="panel1" class="d-block p-2 bg-dark text-white">
-</span>
 
 <!-- Map -->
 <div id="map"></div>

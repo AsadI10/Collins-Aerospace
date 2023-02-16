@@ -1,6 +1,6 @@
 #map {
     /* position: relative; */
-    height: 84vh; /*Originally set to 75*/
+    height: 89.5vh; /*Originally set to 75*/
     /*or as desired*/
     width: 67%;
     /*This means "100% of the width of its container", the .col-md-8*/
@@ -13,7 +13,7 @@
     float: right;
     position: sticky;
     width: 33%;
-    height: 84vh;
+    height: 89.5vh;
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
@@ -26,8 +26,8 @@ body {
     position: fixed;
     padding: 0;
     margin: 0;
-    top: 0;
-    left: 3px;
+    top: -6px;
+    left: 0;
     width: 100%;
     height: 100%;
     /* The top is optional. Please check with Finn */
@@ -115,9 +115,5 @@ nav ul li{
     position: absolute;
     margin-left: 1000px;
     cursor: pointer;
-}
-.btn-group{
-    position: absolute;
-    margin-left: 1000px;
-    cursor: pointer;
+    width: 400px;
 }
