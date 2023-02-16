@@ -40,8 +40,6 @@
 </head>
 <body>
 
-
-
       <!-- this is where the side bar starts -->
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
@@ -53,8 +51,8 @@
         </ul>
     </div>
     <div class="content">
-        <h1>Collins Aerospace</h1>
-        <?php
+        <!-- <h1>Collins Aerospace</h1> -->
+        <?php 
             include("./Header.php")
         ?>
 
@@ -78,14 +76,13 @@
 
     <script type="text/javascript" src="map.js"></script>
     <script type="text/javascript" src="sidebartest.js"></script>
-
-</body>
-
-    
 </body>
 </html>
 
 <style>
+  body{
+    background-color: white;
+  }
     .sidebar {
   position: fixed;
   top: 0;
@@ -100,6 +97,7 @@
 }
 
 .sidebar-toggle {
+  font-weight: bold;
   position: absolute;
   top: 0;
   /* right: -50px; */
