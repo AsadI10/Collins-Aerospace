@@ -34,16 +34,15 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
+    let baseval = 121;
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
             arr.push(element.options.title);
         }
     });
-    //called here
-    CalculatePolygonArea(arr);
 
-    loadPieChart(arr);
+    loadPieChart(arr,baseval);
 }
 
 function onMouseOver_marker(e){

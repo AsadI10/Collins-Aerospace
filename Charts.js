@@ -2,13 +2,13 @@
 //Functions to be called to draw charts
 //=====================================
 
-function loadPieChart(data){
+function loadPieChart(data, baseval){
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
         var data = google.visualization.arrayToDataTable([
           ['Uncovered', 'Viewable coverage'],
-          ['Uncovered', data[0] - (data.length - 1)],
+          ['Uncovered', baseval - (data.length - 1)],
           ['Covered', (data.length - 1)]
         ]);
 
