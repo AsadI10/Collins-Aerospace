@@ -43,16 +43,9 @@
         padding-left: 10px 10px 10px;
         display: inline;
         font-size: 17px;
-        color: black;
-        padding:100px 10px 10px; 
-        padding: 5px 16px;
-        /* background-color: rgb(185, 180, 180); */
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
     }
-    /* .navbar-light .navbar-nav .nav-link.logout{
-        color: black;
-    } */
     .navbar-light .navbar-nav .nav-link{
         color: black;
         font-weight: bold;
