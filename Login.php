@@ -33,6 +33,7 @@
 		font-size: 30px;
 		color: white;
 		font-weight: bold;
+		text-align: center;
 	}
 	body{
 		background: #2d545e;
