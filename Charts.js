@@ -6,7 +6,6 @@ function loadPieChart(data){
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
-        console.log(data.length);
         var data = google.visualization.arrayToDataTable([
           ['Uncovered', 'Viewable coverage'],
           ['Uncovered', data[0] - (data.length - 1)],
@@ -14,7 +13,6 @@ function loadPieChart(data){
         ]);
 
         var options = {
-          title: 'My Daily Activities',
           backgroundColor: 'transparent',
         };
 
