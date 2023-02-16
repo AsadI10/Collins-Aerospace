@@ -83,7 +83,8 @@
 
 <style>
   body{
-    background-color: white;
+    /* background-color: white; */
+    background-color: grey;
   }
     .sidebar {
   position: fixed;
