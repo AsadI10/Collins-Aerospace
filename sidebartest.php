@@ -59,12 +59,12 @@
 <!-- Side Panel -->
 
 
+<div class="piecharthistogram">
+  <button>Histogram</button>
+  <button>Piechart</button>
+</div>
 <span id="panel1" class="d-block p-2 bg-dark text-white">
-  </span>
-  <div class="piecharthistogram">
-    <button class="testingbutton">Histogram</button>
-    <button class="testingbutton">Piechart</button>
-  </div>
+</span>
 
 <!-- Map -->
 <div id="map"></div>
@@ -78,6 +78,10 @@
 </html>
 
 <style>
+  .piecharthistogram{
+    position: relative;
+    margin-left:1000px;
+  }
   .testingbutton{
     border: solid black 2px;
     font-size: 19px;
