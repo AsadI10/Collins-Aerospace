@@ -81,8 +81,6 @@
 
 </body>
 
-    
-</body>
 </html>
 
 <style>
@@ -100,6 +98,7 @@
 }
 
 .sidebar-toggle {
+  font-weight: bold;
   position: absolute;
   top: 0;
   /* right: -50px; */
