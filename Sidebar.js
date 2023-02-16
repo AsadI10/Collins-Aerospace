@@ -1,3 +1,3 @@
-function LoadSidebar(content) {
-    document.getElementById("panel1").innerHTML = content;
+function loadSideBarGeneral(productContent){
+    document.getElementById("generalData-Products").innerHTML = productContent + "  /  121";
 }

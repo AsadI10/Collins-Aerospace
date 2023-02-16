@@ -45,6 +45,7 @@ function getVisibleMarkers(e){
     });
     console.log(arr);// for testing
     loadPieChart(arr);
+    loadSideBarGeneral(arr.length);
 }
 
 function calculateArea(latLngs) {

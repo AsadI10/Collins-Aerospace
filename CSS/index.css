@@ -117,3 +117,7 @@ nav ul li{
     margin-left: 1000px;
     cursor: pointer;
 }
+#generalData{
+    position: relative;
+    left:250px;
+}
