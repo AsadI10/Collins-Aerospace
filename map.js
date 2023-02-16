@@ -40,10 +40,8 @@ function getVisibleMarkers(e){
             arr.push(element.options.title);
         }
     });
-
-    GetWebPage("SideBar_PieChart.php", function (text) {
-        LoadSidebar(text);
-    }, "identifier=" + arr);
+    
+    loadPieChart(arr);
 }
 
 function onMouseOver_marker(e){
