@@ -41,9 +41,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title>sidebar page</title>
+    <title>Collins Team One</title>
 
-          <title>Collins Team One</title>
+          <!-- <title>Collins Team One</title> -->
           <!--Leaflet-->
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
