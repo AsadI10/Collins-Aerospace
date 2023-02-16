@@ -66,9 +66,7 @@
 
         <br>
         <!-- Footer -->
-        <?php
-            include("./Footer.php");
-        ?>
+        
      
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
