@@ -45,10 +45,6 @@
             include("./sidebarheader.php")
             ?>
 <!-- Side Panel -->
-<div class="piecharthistogram">
-  <button>Histogram</button>
-  <button>Piechart</button>
-</div>
 <span id="panel1" class="d-block p-2 bg-dark text-white">
 </span>
 
@@ -58,22 +54,10 @@
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-        
-    <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
 
 <style>
-  .piecharthistogram{
-    position: relative;
-    margin-left:1000px;
-  }
-  .testingbutton{
-    border: solid black 2px;
-    font-size: 19px;
-    float: right;
-    display: inline;
-  }
   body{
     /* background-color: white; */
     background-color: white;
