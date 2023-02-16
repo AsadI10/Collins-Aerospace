@@ -34,13 +34,14 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
+    arr.push(121);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
             arr.push(element.options.title);
         }
     });
-    
+
     loadPieChart(arr);
 }
 
