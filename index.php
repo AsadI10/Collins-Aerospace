@@ -87,6 +87,7 @@
 <!-- Side Panel -->
 <span id="panel1" class="d-block p-2 bg-dark text-white">
   <div id="pieChart"></div>
+   <div class="box"></div>
 </span>
 <!-- commented this out for now to opt for a more fluid design
 <div class="btn-group" class="d-block">
