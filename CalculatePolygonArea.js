@@ -1,4 +1,5 @@
 //from https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+/*
 function getDistance(lat1, lon1, lat2, lon2) {
     var p = 0.017453292519943295;    // Math.PI / 180
     var c = Math.cos;
@@ -36,3 +37,5 @@ function CalculatePolygonArea(coordinateArr) {
     //console.log("area", currentArea);
     return currentArea;
 }
+
+*/
