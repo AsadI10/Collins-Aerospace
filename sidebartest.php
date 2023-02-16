@@ -40,7 +40,6 @@
           
 </head>
 <body>
-
       <!-- this is where the side bar starts -->
     <!-- <div class="sidebar">
         <button class="sidebar-toggle" onclick="myFunction()">Toggle Sidebar</button>
@@ -53,15 +52,22 @@
     </div> --> 
 <!-- this is where the map is being displayed -->
 <br>
-    <?php 
+<?php 
             include("./sidebarheader.php")
-        ?>
+            ?>
 
-        <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+<!-- Side Panel -->
 
-        <!-- Map -->
-        <div id="map"></div>
+
+<span id="panel1" class="d-block p-2 bg-dark text-white">
+  </span>
+  <div class="piecharthistogram">
+    <button class="testingbutton">Histogram</button>
+    <button class="testingbutton">Piechart</button>
+  </div>
+
+<!-- Map -->
+<div id="map"></div>
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
@@ -72,6 +78,12 @@
 </html>
 
 <style>
+  .testingbutton{
+    border: solid black 2px;
+    font-size: 19px;
+    float: right;
+    display: inline;
+  }
   body{
     /* background-color: white; */
     background-color: white;
