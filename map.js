@@ -52,11 +52,11 @@ function onMouseOver_marker(e){
         arr.reverse();
     });
 
-    L.polygon(bounds).addTo(shapes);
+    L.polygon(bounds).addTo(footprints);
 }
 
 function offMouseOver_marker(e){
-    shapes.clearLayers();
+    footprints.clearLayers();
 }
 
 function onClick_Marker(e) {
