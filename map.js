@@ -44,7 +44,6 @@ function getVisibleMarkers(e){
         }
     });
     console.log(arr);// for testing
-
     loadPieChart(arr);
 }
 

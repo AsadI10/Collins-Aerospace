@@ -3,21 +3,25 @@
 //=====================================
 
 //base val is in M^2 (that being the total M^2 of the UK)
-function loadPieChart(data, baseval = 243610000000){
+function loadPieChart(data, baseval = 248532){
+    let total = data.reduce((a, b) => a + b, 0) / 1000000;
+
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
         var data = google.visualization.arrayToDataTable([
           ['Uncovered', 'Viewable coverage'],
-          ['Uncovered', baseval - (data.reduce((a, b) => a + b, 0))],
-          ['Covered', data.reduce((a, b) => a + b, 0)]
+          ['Uncovered', baseval - total],
+          ['Covered', total]
         ]);
 
         var options = {
           backgroundColor: 'transparent',
+          chartArea: { height: '500', left: 0, right: 0, top: 30, bottom: 0 },
+          legend: { position: 'none'},
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('panel1'));
+        var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
         chart.draw(data, options);
       }
 }

@@ -73,7 +73,7 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={
   subdomains:['mt0','mt1','mt2','mt3']
  });
  var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
+	maxZoom: 18,
   maxBounds: [[-90, -180], [90, 180]],
   maxBoundsViscosity: 1.0,
   minZoom: 1,
