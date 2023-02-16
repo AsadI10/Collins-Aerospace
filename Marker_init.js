@@ -12,7 +12,8 @@ function loadMarkers(pulledData){
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
 
-        //console.log(CalculatePolygonArea(footp.Coordinates[0]));
+        let size = footp.Coordinates[0].length;
+        CalculatePolygonArea(footp.Coordinates[0], size);
 
         L.marker([latlang[0], latlang[1]], {
             icon: greenIcon,
@@ -22,8 +23,6 @@ function loadMarkers(pulledData){
             footprint: footp
         // Add to the maps collection of markers
         }).addTo(markers)
-        //not working for now
-        //.bindPopup(createFootprintPopup(footp)).closePopup()
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)
