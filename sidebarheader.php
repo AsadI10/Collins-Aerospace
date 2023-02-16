@@ -19,7 +19,7 @@
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" onclick="Logout()">Logout</a>
+        <a class="nav-link" onclick="Logout()">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -49,10 +49,12 @@
         background-color: rgb(185, 180, 180);
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
-        cursor: pointer;
     }
-    .navbar-light .navbar-nav .nav-link.disabled{
+    /* .navbar-light .navbar-nav .nav-link.logout{
         color: black;
-
+    } */
+    .navbar-light .navbar-nav .nav-link{
+        color: black;
+        font-weight: bold;
     }
 </style>
