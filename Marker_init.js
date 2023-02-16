@@ -12,7 +12,7 @@ function loadMarkers(pulledData){
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
 
-        console.log(CalculatePolygonArea(footp.Coordinates[0]));
+        //console.log(CalculatePolygonArea(footp.Coordinates[0]));
 
         L.marker([latlang[0], latlang[1]], {
             icon: greenIcon,
