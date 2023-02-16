@@ -34,13 +34,14 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
-    arr.push(121);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
             arr.push(element.options.title);
         }
     });
+    //called here
+    CalculatePolygonArea(arr);
 
     loadPieChart(arr);
 }
@@ -52,11 +53,11 @@ function onMouseOver_marker(e){
         arr.reverse();
     });
 
-    L.polygon(bounds).addTo(shapes);
+    L.polygon(bounds).addTo(footprints);
 }
 
 function offMouseOver_marker(e){
-    shapes.clearLayers();
+    footprints.clearLayers();
 }
 
 function onClick_Marker(e) {

@@ -12,6 +12,8 @@ function loadMarkers(pulledData){
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
 
+        calculateTotalArea(footp);
+
         L.marker([latlang[0], latlang[1]], {
             icon: greenIcon,
             // Set tags
@@ -28,22 +30,3 @@ function loadMarkers(pulledData){
         .on('mouseout',offMouseOver_marker);
     }
 }
-
-/* not working for now
-function createFootprintPopup(footprint){
-    let k = [];
-
-    switch(footprint.Type){
-        case "LineString":
-            footprint.Coordinates.forEach(element => {
-                k.push(element.reverse());
-            })
-            return L.polyline(k);
-        case "Polygon":
-            footprint.Coordinates[0].forEach(element => {
-                k.push(element.reverse());
-            })
-            return L.polygon(k);
-    }
-}
-*/

@@ -66,12 +66,14 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
+          <script src="MathGeometry.js"></script>
+          <script src="CalculatePolygonArea.js"></script>
      </head>
 
     <body>
         <!-- Header -->
         <?php
-            include("./Header.php")
+            include("./Header.php");
         ?>
 
         <!-- Side Panel -->
@@ -83,13 +85,7 @@
 
         <!-- Map -->
         <div id="map"></div>
-
-        <br>
-        <!-- Footer -->
-        <?php
-            include("./Footer.php");
-        ?>
-     
+        
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>

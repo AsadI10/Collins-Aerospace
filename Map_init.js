@@ -10,6 +10,11 @@ var map = L.map('map',
 var markers = new L.LayerGroup().addTo(map);
 // Create a layer group for any drawn polygons
 var shapes = new L.LayerGroup().addTo(map);
+// Create a layer group for any drawn footprint
+var footprints = new L.LayerGroup().addTo(map);
+//Polygon That has the bounds of the UK (allows us to calculate a coverage).
+let ukBounds = [[50.52385324459923,1.2673593],[52.372888239740604,2.4182594295425133],[58.520067103791064,2.326563295380015],[59.35194725811601, -4.019833022964065],[58.209998162302526, -7.501579364708988],[52.93286365003604 ,-7.268946366193222],[49.326538909642494, -6.169537470707127]];
+var ukPolygonMesh = L.polygon(ukBounds);
 
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -35,6 +40,11 @@ searchControl.on('results', function(data){
         results.addLayer(L.marker(data.results[i].latlng));
         }
 });
+
+
+
+
+
 
 // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //     maxZoom: 18,

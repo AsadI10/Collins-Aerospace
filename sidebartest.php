@@ -42,20 +42,19 @@
 <body>
 
       <!-- this is where the side bar starts -->
-    <div class="sidebar">
+    <!-- <div class="sidebar">
         <button class="sidebar-toggle" onclick="myFunction()">Toggle Sidebar</button>
         <ul>
           <!-- maybe just have one item so everything is on one page  -->
-            <li><a href="#">Menu Item 1 home</a></li>
+            <!-- <li><a href="#">Menu Item 1 home</a></li>
             <li><a href="#">Menu Item 2 histogram</a></li>
             <li><a href="#">Menu Item 3 piechart</a></li>
         </ul>
-    </div>
-
-    <div class="content">
-        <!-- <h1>Collins Aerospace</h1> -->
-        <?php 
-            include("./Header.php")
+    </div> --> 
+<!-- this is where the map is being displayed -->
+<br>
+    <?php 
+            include("./sidebarheader.php")
         ?>
 
         <!-- Side Panel -->
@@ -63,19 +62,11 @@
 
         <!-- Map -->
         <div id="map"></div>
-
-        <br>
-        <!-- Footer -->
-        <?php
-            include("./Footer.php");
-        ?>
-     
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-    </div>
-
+        
     <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
@@ -83,7 +74,7 @@
 <style>
   body{
     /* background-color: white; */
-    background-color: grey;
+    background-color: white;
   }
     .sidebar {
   position: fixed;
