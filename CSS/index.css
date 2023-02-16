@@ -6,7 +6,7 @@
     /*This means "100% of the width of its container", the .col-md-8*/
     /* white-space: 20px; */
     border: 2px solid rgb(150, 146, 146);
-    border-radius: 2%;
+    /* border-radius: 2%; */
     position: sticky;
 }
 #panel1 {
@@ -17,7 +17,7 @@
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
-    border-radius: 2%;
+    /* border-radius: 2%; */
 }
 body {
     /* background-color: #2d545e; */
