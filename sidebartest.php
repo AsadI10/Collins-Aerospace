@@ -40,8 +40,6 @@
 </head>
 <body>
 
-
-
       <!-- this is where the side bar starts -->
     <div class="sidebar">
         <button class="sidebar-toggle">Toggle Sidebar</button>
