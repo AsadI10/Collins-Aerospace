@@ -1,7 +1,7 @@
 <?php
 if(!isset($_POST["identifier"]) || $_POST["identifier"] == "")
 {
-	exit();
+	//exit();
 }
 $_POST["identifier"] = str_getcsv($_POST["identifier"]);
 
@@ -11,38 +11,34 @@ foreach($_POST["identifier"] as $product){
 }
 ?>
 
-
 <!-- Broken right now but we can pass CSV/array/JSON data into the piechart -->
 
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+<div>
+  <canvas id="myChart"></canvas>
+</div>
 
-      function drawChart() {
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+<script>
+  const ctx = document.getElementById('myChart');
 
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
       }
-    </script>
-  </head>
-  <body>
-    <div id="piechart" style="width: 100%; height: 100%"></div>
-  </body>
-</html>
+    }
+  });
+</script>
+
