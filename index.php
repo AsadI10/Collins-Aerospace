@@ -66,7 +66,7 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
-          <script src="PolygonMath.js"></script>
+          <script src="MathGeometry.js"></script>
      </head>
 
     <body>

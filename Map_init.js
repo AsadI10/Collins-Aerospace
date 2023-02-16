@@ -16,7 +16,6 @@ var footprints = new L.LayerGroup().addTo(map);
 let ukBounds = [[50.52385324459923,1.2673593],[52.372888239740604,2.4182594295425133],[58.520067103791064,2.326563295380015],[59.35194725811601, -4.019833022964065],[58.209998162302526, -7.501579364708988],[52.93286365003604 ,-7.268946366193222],[49.326538909642494, -6.169537470707127]];
 var ukPolygonMesh = L.polygon(ukBounds);
 
-console.log(ukPolygonMesh);
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
