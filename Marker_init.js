@@ -11,9 +11,8 @@ function loadMarkers(pulledData){
         var centre = tmp["Centre"];
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
-
-        let size = footp.Coordinates[0].length;
-        CalculatePolygonArea(footp.Coordinates[0], size);
+        
+        //console.log(CalculatePolygonArea(footp.Coordinates[0]));
 
         L.marker([latlang[0], latlang[1]], {
             icon: greenIcon,
