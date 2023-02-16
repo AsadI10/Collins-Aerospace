@@ -67,6 +67,7 @@
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
           <script src="MathGeometry.js"></script>
+          <script src="CalculatePolygonArea.js"></script>
      </head>
 
     <body>
