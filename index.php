@@ -75,7 +75,11 @@
         ?>
 
         <!-- Side Panel -->
-        <span id="panel1" class="d-block p-2 bg-dark text-white"></span>
+        <!-- bg-dark this color was added by default on the class -->
+        <!-- <button class="btn1">Piechart</button>
+        <button class="btn2">Histogram</button> -->
+        <span id="panel1" class="d-block p-2 text-white">
+        </span>
 
         <!-- Map -->
         <div id="map"></div>
