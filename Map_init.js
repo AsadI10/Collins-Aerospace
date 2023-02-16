@@ -60,13 +60,13 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={
   maxZoom: 20,
   subdomains:['mt0','mt1','mt2','mt3']
  });
-//This is a street view
-var streets = L.tileLayer(mapboxUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+ var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+	maxZoom: 20,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+});
 //Trying to create a Leaflet layer control
-
 var baseLayers = {
-  "Mapbox": EsriWorldImagery,
-  "OpenStreetMap": googleStreets
+  "Bluemap": EsriWorldImagery,
+  "Smooth Dark": Stadia_AlidadeSmoothDark
 };
-
 L.control.layers(baseLayers).addTo(map);
