@@ -2,14 +2,15 @@
 //Functions to be called to draw charts
 //=====================================
 
-function loadPieChart(data, baseval){
+//base val is in M^2 (that being the total M^2 of the UK)
+function loadPieChart(data, baseval = 243610000000){
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
         var data = google.visualization.arrayToDataTable([
           ['Uncovered', 'Viewable coverage'],
-          ['Uncovered', baseval - (data.length - 1)],
-          ['Covered', (data.length - 1)]
+          ['Uncovered', baseval - (data.reduce((a, b) => a + b, 0))],
+          ['Covered', data.reduce((a, b) => a + b, 0)]
         ]);
 
         var options = {

@@ -37,19 +37,19 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
-    let baseval = 121;
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
-            arr.push(calculateArea(element.options.footprint.Coordinates[0]));
+            arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
         }
     });
     console.log(arr);// for testing
 
-    loadPieChart(arr,baseval);
+    loadPieChart(arr);
 }
 
 function calculateArea(latLngs) {
+
     var pointsCount = latLngs.length,
         area = 0.0,
         d2r = Math.PI / 180,
@@ -59,8 +59,8 @@ function calculateArea(latLngs) {
         for (var i = 0; i < pointsCount; i++) {
             p1 = latLngs[i];
             p2 = latLngs[(i + 1) % pointsCount];
-            area += ((p2.lng - p1.lng) * d2r) *
-                (2 + Math.sin(p1.lat * d2r) + Math.sin(p2.lat * d2r));
+            area += ((p2[0] - p1[0]) * d2r) *
+                (2 + Math.sin(p1[1] * d2r) + Math.sin(p2[1] * d2r));
         }
         area = area * 6378137.0 * 6378137.0 / 2.0;
     }
