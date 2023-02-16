@@ -1,3 +1,5 @@
+import computeArea from "./mathGeometry/compute-area";
+
 GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
 loadMarkers(data);
 //---------------
@@ -34,13 +36,13 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
-    arr.push(121);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
             arr.push(element.options.title);
         }
     });
+    console.log(computeArea(arr));
 
     loadPieChart(arr);
 }
