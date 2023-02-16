@@ -1,6 +1,6 @@
 #map {
     /* position: relative; */
-    height: 89.5vh; /*Originally set to 75*/
+    height: 89vh; /*Originally set to 75*/
     /*or as desired*/
     width: 67%;
     /*This means "100% of the width of its container", the .col-md-8*/
@@ -13,7 +13,7 @@
     float: right;
     position: sticky;
     width: 33%;
-    height: 89.5vh;
+    height: 89vh;
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
@@ -115,5 +115,4 @@ nav ul li{
     position: fixed;
     margin-left: 1000px;
     cursor: pointer;
-    width: 400px;
 }
