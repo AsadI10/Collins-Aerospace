@@ -79,8 +79,6 @@
     <script type="text/javascript" src="map.js"></script>
     <script type="text/javascript" src="sidebartest.js"></script>
 </body>
-
-
 </html>
 
 <style>
