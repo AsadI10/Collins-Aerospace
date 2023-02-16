@@ -17,7 +17,10 @@ function onShiftDrag(e){
     var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
     [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
-    var rectangle = L.rectangle(bounds).addTo(shapes);
+    var rectangle = L.rectangle(bounds,{
+        fillColor: 'red',
+        color: 'red'
+        }).addTo(shapes);
     let arr = [];
     //can be put into its own function
     markers.getLayers().forEach(element => {
@@ -52,7 +55,10 @@ function onMouseOver_marker(e){
         arr.reverse();
     });
 
-    L.polygon(bounds).addTo(footprints);
+    L.polygon(bounds,{
+        fillColor: 'red',
+        color: 'red'
+    }).addTo(footprints);
 }
 
 function offMouseOver_marker(e){

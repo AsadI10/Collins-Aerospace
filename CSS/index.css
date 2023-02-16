@@ -112,7 +112,7 @@ nav ul li{
     margin-top: -17px;
 }
 .btn-group{
-    position: absolute;
+    position: fixed;
     margin-left: 1000px;
     cursor: pointer;
     width: 400px;
