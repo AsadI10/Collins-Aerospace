@@ -34,15 +34,9 @@
      
     // Not the testing zone
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title>sidebar page</title>
 
+<html>
+     <head>
           <title>Collins Team One</title>
           <!--Leaflet-->
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
@@ -73,88 +67,27 @@
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
+     </head>
 
-</head>
-<body>
-<br>
-<?php 
-            include("./sidebarheader.php")
-            ?>
-<!-- Side Panel -->
-<div class="btn-group" class="d-block">
-            <button>Piechart</button>
-            <button>Histogram</button>
-</div>
-<span id="panel1" class="d-block p-2 bg-dark text-white">
-</span>
+    <body>
+        <!-- Header -->
+        <?php
+            include("./Header.php");
+        ?>
 
-<!-- Map -->
-<div id="map"></div>
+        <!-- Side Panel -->
+        <!-- bg-dark this color was added by default on the class -->
+        <!-- <button class="btn1">Piechart</button>
+        <button class="btn2">Histogram</button> -->
+        <span id="panel1" class="d-block p-2 text-white">
+        </span>
+
+        <!-- Map -->
+        <div id="map"></div>
+        
         <!-- Post page loading scripts -->
         <script type="text/javascript" src="Map_init.js"></script>
         <script type="text/javascript" src="Marker_init.js"></script>
         <script type="text/javascript" src="map.js"></script>
-</body>
+     </body>
 </html>
-
-<style>
-  body{
-    /* background-color: white; */
-    background-color: white;
-  }
-    .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  /* background-color: black; */
-  z-index: 1;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.btn-group{
-    position: absolute;
-    margin-left: 1000px;
-    cursor: pointer;
-}
-
-.sidebar-toggle {
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  /* right: -50px; */
-  right: 0px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
-}
-
-.sidebar li a:hover {
-  background-color: #ddd;
-}
-
-.content {
-  margin-left: 200px;
-  padding: 20px;
-}
-</style>

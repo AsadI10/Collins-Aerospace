@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,8 +37,9 @@
           <script src="Sidebar.js"></script>
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="sidebartest.js"></script>
-          
+          <script type="text/javascript" src="sidebartest.js"></script>
+          <script src="CalculatePolygonArea.js"></script>
+
 </head>
 <body>
 <br>
@@ -45,6 +47,10 @@
             include("./sidebarheader.php")
             ?>
 <!-- Side Panel -->
+<div class="btn-group" class="d-block">
+            <button>Piechart</button>
+            <button>Histogram</button>
+        </div>
 <span id="panel1" class="d-block p-2 bg-dark text-white">
 </span>
 
