@@ -74,7 +74,7 @@
 <style>
   body{
     /* background-color: white; */
-    background-color: grey;
+    background-color: white;
   }
     .sidebar {
   position: fixed;
