@@ -65,6 +65,10 @@
           <script src="https://unpkg.com/leaflet-sidebar-v2@0.4.1/js/leaflet-sidebar.min.js"></script>-->
           <!-- Our Stuff -->
 
+              <!-- Leaflet.draw main plug in files -->
+              <link rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
+              <script src="./lib/map/leaflet.draw.js"></script>
+
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <script src="GetPage.js"></script>
