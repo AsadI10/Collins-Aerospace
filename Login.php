@@ -1,8 +1,8 @@
 <title>Login</title>
 
-<nav>
+<!-- <nav>
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
-</nav>
+</nav> -->
 
 <h1>Login</h1><br>
 <fieldset class="logindiv">
