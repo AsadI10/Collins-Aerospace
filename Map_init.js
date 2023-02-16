@@ -55,13 +55,9 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={
   maxZoom: 20,
   subdomains:['mt0','mt1','mt2','mt3']
  });
-//This is a street view
-var streets = L.tileLayer(mapboxUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
 //Trying to create a Leaflet layer control
-
 var baseLayers = {
   "Mapbox": EsriWorldImagery,
   "OpenStreetMap": googleStreets
 };
-
 L.control.layers(baseLayers).addTo(map);
