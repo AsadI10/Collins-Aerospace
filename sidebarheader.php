@@ -36,8 +36,23 @@
         font-weight: bold;
         color: black;
     }
-    .collapse navbar-collapse ul li{
+    nav ul li{
         font-size: 20px;
+        font-weight: bold;
+        background-color: #d9d9d9;
+        padding-left: 10px 10px 10px;
+        display: inline;
+        font-size: 17px;
+        color: black;
+        padding:100px 10px 10px; 
+        padding: 5px 16px;
+        background-color: rgb(185, 180, 180);
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace; 
+        cursor: pointer;
+    }
+    .navbar-light .navbar-nav .nav-link.disabled{
+        color: black;
 
     }
 </style>
