@@ -40,25 +40,11 @@
           
 </head>
 <body>
-      <!-- this is where the side bar starts -->
-    <!-- <div class="sidebar">
-        <button class="sidebar-toggle" onclick="myFunction()">Toggle Sidebar</button>
-        <ul>
-          <!-- maybe just have one item so everything is on one page  -->
-            <!-- <li><a href="#">Menu Item 1 home</a></li>
-            <li><a href="#">Menu Item 2 histogram</a></li>
-            <li><a href="#">Menu Item 3 piechart</a></li>
-        </ul>
-    </div> --> 
-<!-- this is where the map is being displayed -->
 <br>
 <?php 
             include("./sidebarheader.php")
             ?>
-
 <!-- Side Panel -->
-
-
 <div class="piecharthistogram">
   <button>Histogram</button>
   <button>Piechart</button>
