@@ -78,8 +78,10 @@
 
         <!-- Side Panel -->
         <!-- bg-dark this color was added by default on the class -->
-        <!-- <button class="btn1">Piechart</button>
-        <button class="btn2">Histogram</button> -->
+        <div class="btn-group" class="d-block">
+            <button>Piechart</button>
+            <button>Histogram</button>
+        </div>
         <span id="panel1" class="d-block p-2 text-white">
         </span>
 

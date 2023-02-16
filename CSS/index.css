@@ -1,6 +1,6 @@
 #map {
     /* position: relative; */
-    height: 88vh; /*Originally set to 75*/
+    height: 84vh; /*Originally set to 75*/
     /*or as desired*/
     width: 67%;
     /*This means "100% of the width of its container", the .col-md-8*/
@@ -13,7 +13,7 @@
     float: right;
     position: sticky;
     width: 33%;
-    height: 82vh;
+    height: 84vh;
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
@@ -93,6 +93,7 @@ nav ul li{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 35px;
     text-align: center;
+    margin-top: 20px;
 }
 .footer:hover{
     color:black;
@@ -109,7 +110,8 @@ nav ul li{
     position: relative;
     margin-top: -17px;
 }
-/* Button on the side panel */
-/* .btn-group{
+.btn-group{
+    position: absolute;
+    margin-left: 1000px;
     cursor: pointer;
-} */
+}
