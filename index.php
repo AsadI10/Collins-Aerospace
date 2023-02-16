@@ -49,7 +49,6 @@
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
           <link rel="stylesheet" href="CSS/index.css"/>
-          <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
@@ -98,63 +97,4 @@
 </html>
 
 <style>
-  body{
-    /* background-color: white; */
-    background-color: white;
-  }
-    .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  /* background-color: black; */
-  z-index: 1;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.btn-group{
-    position: absolute;
-    margin-left: 1000px;
-    cursor: pointer;
-}
-
-.sidebar-toggle {
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  /* right: -50px; */
-  right: 0px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
-}
-
-.sidebar li a:hover {
-  background-color: #ddd;
-}
-
-.content {
-  margin-left: 200px;
-  padding: 20px;
-}
 </style>

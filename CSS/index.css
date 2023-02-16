@@ -20,8 +20,9 @@
     border-radius: 2%;
 }
 body {
-    background-color: #2d545e;
+    /* background-color: #2d545e; */
     /* background-color: #989b9d; */
+    background-color: white;
     position: fixed;
     padding: 0;
     margin: 0;
@@ -109,6 +110,11 @@ nav ul li{
     width: 95%;
     position: relative;
     margin-top: -17px;
+}
+.btn-group{
+    position: absolute;
+    margin-left: 1000px;
+    cursor: pointer;
 }
 .btn-group{
     position: absolute;
