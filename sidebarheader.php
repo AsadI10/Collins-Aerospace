@@ -22,7 +22,7 @@
         <a class="nav-link" onclick="Logout()">Logout</a>
       </li>
       <li>
-        <a class="nav-link" href="">Help</a>
+        <a class="nav-link" href="/collins-Aerospace/Help.php">Help</a>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
