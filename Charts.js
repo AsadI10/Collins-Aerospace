@@ -17,8 +17,6 @@ function loadPieChart(data, baseval = 248532){
 
         var options = {
           backgroundColor: 'transparent',
-          width: 500,
-          height: 500,
           position:"absolute",
           chartArea: { height: '500', left: 0, right: 0, top: 10, bottom: 0 },
           legend: { position: 'none'},
