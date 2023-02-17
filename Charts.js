@@ -19,7 +19,8 @@ function loadPieChart(data, baseval = 248532){
           backgroundColor: 'transparent',
           chartArea: { height: '500', left: 0, right: 0, top: 10, bottom: 0 },
           legend: { position: 'none'},
-          colors: ['#333333', '#242424']
+          // colors: ['#333333', '#242424']
+          colors: ['#bac9b9', '#102de8']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
