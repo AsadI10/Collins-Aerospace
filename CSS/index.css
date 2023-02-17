@@ -119,5 +119,7 @@ nav ul li{
 }
 #generalData{
     position: relative;
-    left:250px;
+    left:250px; 
+    /* margin-left: 205px;
+    margin-top: -105px; */
 }
