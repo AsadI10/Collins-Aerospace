@@ -12,7 +12,7 @@ class FootprintData{
 	private $Area;
 
 	private function _ReCalculateArea(){
-
+		
 	}
 
 	public function GetArea(){
