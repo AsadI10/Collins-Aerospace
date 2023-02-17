@@ -1,6 +1,8 @@
 function loadSideBarGeneral(productContent){
+    console.log(productContent);
     document.getElementById("generalData-Label").hidden = false;
-    document.getElementById("generalData-Products").innerHTML = productContent + "  /  121";
+    document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  121"
+    + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0) / 1000000;;
 }
 
 function loadSideBarProduct(product){
@@ -16,6 +18,7 @@ function loadSideBarProduct(product){
 
     redirect.innerHTML = "Details";
     redirect.setAttribute('href', 'Product_view.php/?identifier=' + data.Identifier);
+    redirect.target = "_blank";
     //set HTML fields for the div
     div.id = "divsidepanal";
     div.innerHTML = "Product : " + product.options.index + " / 121"
