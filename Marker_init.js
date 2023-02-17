@@ -13,6 +13,7 @@ function loadMarkers(pulledData){
         var latlang = centre.split(',');
 
         L.marker([latlang[0], latlang[1]], {
+            index: i,
             icon: greenIcon,
             // Set tags
             title: id,
@@ -20,6 +21,7 @@ function loadMarkers(pulledData){
             footprint: footp
         // Add to the maps collection of markers
         }).addTo(markers)
+        .bindPopup("Product: " + i + " / " + pulledData.length)
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)

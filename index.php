@@ -85,15 +85,19 @@
             include("./sidebarheader.php")
             ?>
 <!-- Side Panel -->
-<span id="panel1" class="d-block p-2 bg-dark text-white">
-  <div id="pieChart"></div>
-  <div id="generalData">
-    <label>Products: </label>
-    <a id="generalData-Products"></a>
-    <label>Products: </label>
-    <a id="generalData-Products"></a>
-  </div>
-</span>
+<div>
+  <span id="panel1" class="d-block p-2 bg-dark text-white">
+    <div id="pieChart"></div>
+    <div id="generalData">
+      <label id="generalData-Label">Products: </label>
+      <a id="generalData-Products"></a>
+    </div>
+    <div id="panel-info">
+    </div>
+  </span>
+  <script> document.getElementById("generalData-Label").hidden = true; </script>
+
+</div>
 <!-- commented this out for now to opt for a more fluid design
 <div class="btn-group" class="d-block">
             <button>Piechart</button>
@@ -121,7 +125,7 @@
   left: 0;
   bottom: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #242424;
   /* background-color: black; */
   z-index: 1;
   overflow-x: hidden;

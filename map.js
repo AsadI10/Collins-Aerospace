@@ -12,6 +12,7 @@ map.on('zoomend', getVisibleMarkers);
 map.on('dragend',getVisibleMarkers);
 
 function onShiftDrag(e){
+    clearProducts();
     shapes.clearLayers();
     var rectangle;
     var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
@@ -26,13 +27,19 @@ function onShiftDrag(e){
     markers.getLayers().forEach(element => {
         if (rectangle.contains(element._latlng)) {
             arr.push(element.options.title);
+            loadSideBarProduct(element);
         }
     });
 
+    //this should not be repeated, its lazy af rn but i cant style multiple panels lmao so itll have to do.
+    //loadSideBarGeneral(arr.length);
+    /*
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
     return;
+    */
+
 }
 
 function getVisibleMarkers(e){
@@ -43,7 +50,7 @@ function getVisibleMarkers(e){
             arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
         }
     });
-    console.log(arr);// for testing
+
     loadPieChart(arr);
     loadSideBarGeneral(arr.length);
 }
@@ -69,6 +76,7 @@ function calculateArea(latLngs) {
 }
 
 function onMouseOver_marker(e){
+    e.target.openPopup();
     //add support for polylines
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
     bounds.forEach(arr => {
@@ -82,14 +90,18 @@ function onMouseOver_marker(e){
 }
 
 function offMouseOver_marker(e){
+    e.target.closePopup();
     footprints.clearLayers();
 }
 
 function onClick_Marker(e) {
+    clearProducts();
     shapes.clearLayers();
 
-    let arr = [e.sourceTarget.options.title];
+    loadSideBarProduct(this);
+    /*
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         LoadSidebar(text);
     }, "identifier=" + arr);
+    */
 }

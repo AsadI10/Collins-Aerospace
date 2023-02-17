@@ -21,6 +21,9 @@
       <li class="nav-item">
         <a class="nav-link" onclick="Logout()">Logout</a>
       </li>
+      <li>
+        <a class="nav-link" href="/collins-Aerospace/Help.php">Help</a>
+      </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,7 +42,7 @@
     nav ul li{
         font-size: 20px;
         font-weight: bold;
-        background-color: white; 
+        background-color: #f8f9fa; 
         padding-left: 10px 10px 10px;
         display: inline;
         font-size: 17px;

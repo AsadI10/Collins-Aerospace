@@ -4,7 +4,7 @@
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav> -->
 
-<h1>Login</h1><br>
+<!-- <h1>Login</h1><br> -->
 <fieldset class="logindiv">
 	<legend>Login</legend>
 <form action="index.php" method="POST">
@@ -22,6 +22,12 @@
         width: 50%; 
         margin: 0 auto;
 		border-radius: 10px;
+	}
+	input[type=text]{
+		margin-left:2px
+	}
+	input[type=password]{
+		margin-left:7px;
 	}
 	nav{
 		background-color: white;
@@ -62,5 +68,4 @@
  		margin-right: auto;
 		cursor: pointer;
 	}
-	
 </style>
