@@ -23,6 +23,12 @@
         margin: 0 auto;
 		border-radius: 10px;
 	}
+	input[type=text]{
+		margin-left:2px
+	}
+	input[type=password]{
+		margin-left:7px;
+	}
 	nav{
 		background-color: white;
 	}
@@ -62,5 +68,4 @@
  		margin-right: auto;
 		cursor: pointer;
 	}
-	
 </style>
