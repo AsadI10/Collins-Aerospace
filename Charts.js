@@ -2,26 +2,28 @@
 //Functions to be called to draw charts
 //=====================================
 
-function loadPieChart(data){
+//base val is in M^2 (that being the total M^2 of the UK)
+function loadPieChart(data, baseval = 248532){
+    let total = data.reduce((a, b) => a + b, 0) / 1000000;
+
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
-        console.log(data.length);
         var data = google.visualization.arrayToDataTable([
           ['Uncovered', 'Viewable coverage'],
-          ['Uncovered', data[0] - (data.length - 1)],
-          ['Covered', (data.length - 1)]
+          ['Uncovered', baseval - total],
+          ['Covered', total]
         ]);
 
         var options = {
-          title: 'My Daily Activities',
           backgroundColor: 'transparent',
           width: 500,
           height: 500,
           position:"absolute"
+
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('panel1'));
+        var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
         chart.draw(data, options);
       }
 }

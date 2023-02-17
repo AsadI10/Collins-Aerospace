@@ -20,30 +20,9 @@ function loadMarkers(pulledData){
             footprint: footp
         // Add to the maps collection of markers
         }).addTo(markers)
-        //not working for now
-        //.bindPopup(createFootprintPopup(footp)).closePopup()
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)
         .on('mouseout',offMouseOver_marker);
     }
 }
-
-/* not working for now
-function createFootprintPopup(footprint){
-    let k = [];
-
-    switch(footprint.Type){
-        case "LineString":
-            footprint.Coordinates.forEach(element => {
-                k.push(element.reverse());
-            })
-            return L.polyline(k);
-        case "Polygon":
-            footprint.Coordinates[0].forEach(element => {
-                k.push(element.reverse());
-            })
-            return L.polygon(k);
-    }
-}
-*/

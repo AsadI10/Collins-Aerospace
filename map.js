@@ -17,7 +17,10 @@ function onShiftDrag(e){
     var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
     [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
-    var rectangle = L.rectangle(bounds).addTo(shapes);
+    var rectangle = L.rectangle(bounds,{
+        fillColor: 'red',
+        color: 'red'
+        }).addTo(shapes);
     let arr = [];
     //can be put into its own function
     markers.getLayers().forEach(element => {
@@ -34,15 +37,35 @@ function onShiftDrag(e){
 
 function getVisibleMarkers(e){
     var arr = [];
-    arr.push(121);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
-            arr.push(element.options.title);
+            arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
         }
     });
-
+    console.log(arr);// for testing
     loadPieChart(arr);
+    loadSideBarGeneral(arr.length);
+}
+
+function calculateArea(latLngs) {
+
+    var pointsCount = latLngs.length,
+        area = 0.0,
+        d2r = Math.PI / 180,
+        p1, p2;
+
+    if (pointsCount > 2) {
+        for (var i = 0; i < pointsCount; i++) {
+            p1 = latLngs[i];
+            p2 = latLngs[(i + 1) % pointsCount];
+            area += ((p2[0] - p1[0]) * d2r) *
+                (2 + Math.sin(p1[1] * d2r) + Math.sin(p2[1] * d2r));
+        }
+        area = area * 6378137.0 * 6378137.0 / 2.0;
+    }
+
+    return Math.abs(area);
 }
 
 function onMouseOver_marker(e){
@@ -52,11 +75,14 @@ function onMouseOver_marker(e){
         arr.reverse();
     });
 
-    L.polygon(bounds).addTo(shapes);
+    L.polygon(bounds,{
+        fillColor: 'red',
+        color: 'red'
+    }).addTo(footprints);
 }
 
 function offMouseOver_marker(e){
-    shapes.clearLayers();
+    footprints.clearLayers();
 }
 
 function onClick_Marker(e) {
