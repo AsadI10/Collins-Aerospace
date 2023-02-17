@@ -10,7 +10,7 @@
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="CompanyName" href="#">Aerospace Discovery</a>
+    <h1 class="CompanyName" href="">Aerospace Discovery</h1>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
