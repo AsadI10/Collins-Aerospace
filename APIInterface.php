@@ -176,8 +176,7 @@ class APIInterface{
 		return $results;
 
 	}
-
-	public function GetData($identifier){
+	public function GetRawData($identifer){
 		//-----------------------------------
 		//MULTITHREADED PRODUCT DATA RETRIVAL
 		//-----------------------------------
@@ -201,6 +200,12 @@ class APIInterface{
 
 		$result = json_decode($result);
 		$result = $result->product->result;
+
+		return $result;
+	}
+
+	public function GetData($identifier){
+		$result = $this->GetRawData($identifier);
 
 		$p = new ProductData($identifier,$result->viewname,$result->centre);
 		$p->DocumentType = $result->documentType;

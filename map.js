@@ -1,4 +1,3 @@
-GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
 loadMarkers(data);
 //---------------
 //---CODE BODY---
@@ -10,6 +9,22 @@ map.on('boxzoomend', onShiftDrag);
 //Allows us to know what markers the user is looking at
 map.on('zoomend', getVisibleMarkers);
 map.on('dragend',getVisibleMarkers);
+
+
+function getVisibleMarkers(e){
+    var arr = [];
+
+    markers.getLayers().forEach(element => {
+        if(map.getBounds().contains(element._latlng)){
+            arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
+        }
+    });
+
+    loadPieChart(arr);
+    loadSideBarGeneral(arr.length);
+}
+
+// Map events
 
 function onShiftDrag(e){
     clearProducts();

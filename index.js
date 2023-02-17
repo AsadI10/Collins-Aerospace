@@ -1,0 +1,22 @@
+GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
+
+
+function calculateArea(latLngs) {
+
+    var pointsCount = latLngs.length,
+        area = 0.0,
+        d2r = Math.PI / 180,
+        p1, p2;
+
+    if (pointsCount > 2) {
+        for (var i = 0; i < pointsCount; i++) {
+            p1 = latLngs[i];
+            p2 = latLngs[(i + 1) % pointsCount];
+            area += ((p2[0] - p1[0]) * d2r) *
+                (2 + Math.sin(p1[1] * d2r) + Math.sin(p2[1] * d2r));
+        }
+        area = area * 6378137.0 * 6378137.0 / 2.0;
+    }
+
+    return Math.abs(area);
+}
