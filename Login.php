@@ -4,7 +4,7 @@
 	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
 </nav> -->
 
-<h1>Login</h1><br>
+<!-- <h1>Login</h1><br> -->
 <fieldset class="logindiv">
 	<legend>Login</legend>
 <form action="index.php" method="POST">
