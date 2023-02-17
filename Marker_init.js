@@ -20,6 +20,7 @@ function loadMarkers(pulledData){
             footprint: footp
         // Add to the maps collection of markers
         }).addTo(markers)
+        .bindPopup("Product: " +id + "\n" + i + " / " + pulledData.length)
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)

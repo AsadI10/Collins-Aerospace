@@ -76,6 +76,7 @@ function calculateArea(latLngs) {
 }
 
 function onMouseOver_marker(e){
+    e.target.openPopup();
     //add support for polylines
     var bounds = e.sourceTarget.options.footprint.Coordinates[0];
     bounds.forEach(arr => {
@@ -89,6 +90,7 @@ function onMouseOver_marker(e){
 }
 
 function offMouseOver_marker(e){
+    e.target.closePopup();
     footprints.clearLayers();
 }
 
