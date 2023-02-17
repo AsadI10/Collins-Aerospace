@@ -67,7 +67,7 @@ function getVisibleMarkers(e){
     });
 
     loadPieChart(arr);
-    loadSideBarGeneral(arr.length);
+    loadSideBarGeneral(arr);
 }
 
 //https://stackoverflow.com/questions/53604117/calculate-area-of-a-polygon-using-longitude-and-latitude-using-javascript
