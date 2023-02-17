@@ -92,7 +92,7 @@ nav ul li{
 }
 .phpheader{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 35px;
+    font-size: 10px;
     text-align: center;
     margin-top: 20px;
 }
@@ -118,8 +118,21 @@ nav ul li{
     cursor: pointer;
 }
 #generalData{
-    position: relative;
-    left:250px; 
-    /* margin-left: 205px;
-    margin-top: -105px; */
+    position: absolute;
+    /* left:250px;  */
+    margin-left: 200px;
+    margin-top: -170px;
+}
+#phpheader{
+    text-align: center;
+    font-size: 35px;
+}
+#panel-info{
+    /* border: 2px solid gray;
+    margin-top: 5px;
+    border-bottom: none; */
+    text-align: center;
+}
+#divsidepanal{
+    border-bottom: 1px solid rgb(150, 146, 146);
 }
