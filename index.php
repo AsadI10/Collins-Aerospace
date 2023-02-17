@@ -82,7 +82,7 @@
 <body>
 <br>
 <?php 
-            include("./sidebarheader.php")
+            include("./indexheader.php")
             ?>
 <!-- Side Panel -->
 <div>
