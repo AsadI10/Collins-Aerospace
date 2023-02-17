@@ -16,14 +16,15 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="/collins-Aerospace/Help.php">Help</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" onclick="Logout()">Logout</a>
       </li>
-      <li>
-        <a class="nav-link" href="/collins-Aerospace/Help.php">Help</a>
+       <!--<li>
+        <a class="nav-link" href="#">Link</a>
       </li>
+      --->
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
