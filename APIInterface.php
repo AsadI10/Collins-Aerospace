@@ -183,7 +183,7 @@ class APIInterface{
 		
 		$ch = curl_init();
 		
-		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifier); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/".$identifer); //set API URL			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //**
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); // This is needed to stop it printing to screen

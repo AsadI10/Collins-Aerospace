@@ -1,8 +1,11 @@
 <?php
-if(!isset($_POST['identifier'])){
+if(!isset($_GET['identifier'])){
     exit();
 }
+require_once("./APIInterface.php");
 require_once("./SessionMaster.php");
 
-$_SESSION['APIInterface']
+$_SESSION['APIInterface']->GetRawData($_GET['identifier']);
+$json_string = json_encode($_SESSION['APIInterface']->GetRawData($_GET['identifier']), JSON_PRETTY_PRINT);
+echo $json_string;
 ?>
