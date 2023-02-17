@@ -39,7 +39,7 @@
     nav ul li{
         font-size: 20px;
         font-weight: bold;
-        background-color: white; 
+        background-color: #f8f9fa; 
         padding-left: 10px 10px 10px;
         display: inline;
         font-size: 17px;
