@@ -32,14 +32,4 @@ function clearProducts(){
             products.removeChild(products.lastChild)
           }
     }
-    /*
-    var div = document.getElementById("divsidepanal");
-    var title = document.getElementById("phpheader");
-
-    console.log(div);
-    if(div != null){
-        div.remove();
-        title.remove();
-    }
-    */
 }
