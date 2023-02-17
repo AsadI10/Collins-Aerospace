@@ -13,7 +13,8 @@ function loadSideBarProduct(product){
     title.id = "phpheader";
     title.innerHTML = data.Identifier;
     div.id = "divsidepanal";
-    div.innerHTML = "Product Name: " + data.Name 
+    div.innerHTML = "Product : " + product.options.index + " / 121"
+    + " <BR> Product Name: " + data.Name
     + " <BR> Date Created: " + data.DateCreated
     + " <BR> Date Modified: " + data.DateModified
     + " <BR> Creator: " + data.Creator
