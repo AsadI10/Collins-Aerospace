@@ -55,6 +55,8 @@ function getVisibleMarkers(e){
     loadSideBarGeneral(arr.length);
 }
 
+//https://stackoverflow.com/questions/53604117/calculate-area-of-a-polygon-using-longitude-and-latitude-using-javascript
+//explanation on the last comment
 function calculateArea(latLngs) {
 
     var pointsCount = latLngs.length,

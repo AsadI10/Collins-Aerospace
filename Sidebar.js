@@ -9,9 +9,14 @@ function loadSideBarProduct(product){
     //create new HTML elements
     var div = document.createElement("div");
     var title = document.createElement("h1");
-    //set HTML fields for elements
+    var redirect = document.createElement("a");
+    //set HTML fields for title
     title.id = "phpheader";
     title.innerHTML = data.Identifier;
+
+    redirect.innerHTML = "Details";
+    redirect.setAttribute('href', 'Product_view.php/?identifier=' + data.Identifier);
+    //set HTML fields for the div
     div.id = "divsidepanal";
     div.innerHTML = "Product : " + product.options.index + " / 121"
     + " <BR> Product Name: " + data.Name
@@ -22,6 +27,7 @@ function loadSideBarProduct(product){
     //Add the div to the panel
     document.getElementById('panel-info').appendChild(title);
     document.getElementById('panel-info').appendChild(div);
+    document.getElementById('panel-info').appendChild(redirect);
 }
 
 function clearProducts(){
