@@ -19,6 +19,16 @@
 	text-align:justify;
     /* border-radius: 2%; */
 }
+#panel2 {
+    float: center;
+    position: sticky;
+    width: 100px;
+    height: 139px;
+    overflow-x: hidden;
+	overflow-y: auto;
+	text-align:justify;
+    /* border-radius: 2%; */
+}
 body {
     /* background-color: #2d545e; */
     /* background-color: #989b9d; */
