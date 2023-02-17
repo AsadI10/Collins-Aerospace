@@ -94,7 +94,7 @@ nav ul li{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 35px;
     text-align: center;
-    /* margin-top: 20px; */
+    margin-top: 20px;
 }
 .footer:hover{
     color:black;
