@@ -13,7 +13,7 @@ function loadMarkers(pulledData){
         var latlang = centre.split(',');
 
         L.marker([latlang[0], latlang[1]], {
-            index: i,
+            index: i + 1,
             icon: greenIcon,
             // Set tags
             title: id,

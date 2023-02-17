@@ -1,3 +1,11 @@
+<?php
+	require_once("SessionMaster.php");
+
+	if(isset($_SESSION["APIInterface"])){
+		header("Location: ./index.php");
+	}
+?>
+
 <title>Login</title>
 
 <!-- <nav>

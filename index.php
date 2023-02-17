@@ -76,13 +76,13 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
-          <script src="CalculatePolygonArea.js"></script>
+          <script src="index.js"></script>
 
 </head>
 <body>
 <br>
 <?php 
-            include("./sidebarheader.php")
+            include("./indexheader.php")
             ?>
 <!-- Side Panel -->
 <div>
@@ -98,12 +98,6 @@
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
-<!-- commented this out for now to opt for a more fluid design
-<div class="btn-group" class="d-block">
-            <button>Piechart</button>
-            <button>Histogram</button>
-</div>
-  -->
 
 <!-- Map -->
 <div id="map"></div>
