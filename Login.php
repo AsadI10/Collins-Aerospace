@@ -20,14 +20,37 @@
 		<input name="Username" type="text" value="hallam"><br><br>
 		<label class="loginlabel" for="">Password:</label> 
 		<input name="Password" type="password" value="9JS(g8Zh"><br><br>
-		<input class="Loginbutton" type="submit" value="Login">
+		<input class="Loginbutton" type="submit" value="Submit">
 	</form>
 </fieldset>
 <style>
+/* ------added new stuff-------  */
+	body {
+  background: #ABCDEF;
+  font-family: Assistant, sans-serif;
+  display: flex;
+  min-height: 90vh;
+}
+.logindiv{
+	 color: white;
+  background: #136a8a;
+  background: 
+    -webkit-linear-gradient(to right, #267871, #136a8a);
+  background: 
+    linear-gradient(to right, #267871, #136a8a);
+  margin: auto;
+  box-shadow: 
+    0px 2px 10px rgba(0,0,0,0.2),
+    0px 10px 20px rgba(0,0,0,0.3), 
+    0px 30px 60px 1px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  padding: 50px;
+}
+
 	fieldset{
 		border: solid 4px grey;
 		background: ;
-        width: 50%; 
+        /* width: 50%;  */
         margin: 0 auto;
 		border-radius: 10px;
 	}
@@ -35,7 +58,7 @@
 		margin-left:2px
 	}
 	input[type=password]{
-		margin-left:7px;
+		margin-left:5px;
 	}
 	nav{
 		background-color: white;
