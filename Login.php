@@ -98,5 +98,7 @@
   		margin-left: auto;
  		margin-right: auto;
 		cursor: pointer;
+		/* position: absolute;
+		margin-top: 20px; */
 	}
 </style>
