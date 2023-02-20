@@ -83,7 +83,7 @@
 	}
 	div {
 		background: ;
-        width: 50%; 
+        width: 90%; 
         margin: 0 auto; 
     }
 	.loginlabel{
@@ -94,11 +94,12 @@
 	.Loginbutton{
 		font-size: 20px;
 		width: 200px;
-		display: block;
+		/* display: block;
   		margin-left: auto;
- 		margin-right: auto;
+ 		margin-right: auto; */
 		cursor: pointer;
-		/* position: absolute;
-		margin-top: 20px; */
+		position: absolute;
+		margin-top: 10px;
+		margin-left:50px;
 	}
 </style>
