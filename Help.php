@@ -101,6 +101,16 @@
        correct Username and Password in order to login into the system.
     </p>
   </details>
+  <details>
+  <summary>Navbar</summary>
+    <p>The Navbar is a interactable face that allows you to click different pages and make sure you are on the home page or even
+      logout if done using the system.
+    </p>
+  </details>
+  <details>
+    <summary>The Map</summary>
+    <p></p>
+  </details>
 </div>
 
 </body>
@@ -172,6 +182,8 @@
 .Dropmenu{
   border: solid 2px grey;
   width: 40%;
+  margin-left: 2px;
+  padding-left: 2px
 }
 
 </style>
