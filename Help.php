@@ -94,6 +94,15 @@
   <li>pie chart for the coverage</li>
 </ul>
 
+<div>
+  <details>
+    <summary>Login</summary>
+    <p>The first Screen you will be introducted to is the login page. In this page you will have to make sure to use the 
+       correct Username and Password in order to login into the system.
+    </p>
+
+  </details>
+</div>
 </body>
 </html>
 
