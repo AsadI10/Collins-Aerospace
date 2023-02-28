@@ -78,12 +78,47 @@
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
-
+        
 </head>
 <body>
 <br>
 <?php include("./PageHeader.php")?>
 
+<ul>
+  <li>Login</li>
+  <li>interactable nav bar with some options</li>
+  <li>Press on the stalite icon</li>
+  <li>press shift for polygon</li>
+  <li>Zoom in and out of the map</li>
+  <li>use the side panal for the information</li>
+  <li>pie chart for the coverage</li>
+</ul>
+
+<div class="Dropmenu">
+  <details>
+    <summary>Login</summary>
+    <p>The first Screen you will be introducted to is the login page. In this page you will have to make sure to use the 
+       correct Username and Password in order to login into the system.
+    </p>
+  </details>
+  <details>
+  <summary>Navbar</summary>
+    <p>The Navbar is a interactable face that allows you to click different pages and make sure you are on the home page or even
+      logout if done using the system.
+    </p>
+  </details>
+  <details>
+    <summary>The Map</summary>
+    <p>The map is interactable, in the right top corder of the map you have the option to change the map to ensure that you could gain 
+      different data from different maps. also you have the option to zoom in and out of the map to give the user a greater
+      view of the coverage. on left side there is also a search option to look for a specific cities.
+    </p>
+  </details>
+  <details>
+    <summary>Stalite icon</summary>
+    <p>kamil </p>
+  </details>
+</div>
 
 </body>
 </html>
@@ -143,4 +178,19 @@
   margin-left: 200px;
   padding: 20px;
 }
+
+.box {
+  background-color: black;
+  width: 300px;
+  border: 15px lightgrey;
+  padding: 50px;
+  margin: 20px;
+}
+.Dropmenu{
+  border: solid 2px grey;
+  width: 40%;
+  margin-left: 2px;
+  padding-left: 2px
+}
+
 </style>

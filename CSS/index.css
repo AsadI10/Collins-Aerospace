@@ -93,19 +93,14 @@ nav ul li{
     font-family: 'Courier New', Courier, monospace; 
     cursor: pointer;
 }
-.divsidepanal{
+/* .divsidepanal{
+    this is the divsidpanel
     border: solid 2px black;
     width: auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #59595c;
     text-align: left;
-}
-.phpheader{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 10px;
-    text-align: center;
-    margin-top: 20px;
-}
+} */
 .footer:hover{
     color:black;
     text-decoration: none;
@@ -133,10 +128,6 @@ nav ul li{
     margin-left: 215px;
     margin-top: -190px;
 }
-#phpheader{
-    text-align: center;
-    font-size: 35px;
-}
 #panel-info{
     /* border: 2px solid gray;
     margin-top: 5px;
@@ -146,3 +137,25 @@ nav ul li{
 /* #divsidepanal{
     border-bottom: 1px solid rgb(150, 146, 146);
 } */
+/* sidebar worked very well */
+.phpheader{
+    border: solid 2px black;
+    width: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #59595c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+.divsidepanal{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.Details-link{
+    font-size: 20px;
+}
+.Details-link:hover{
+    color: #2be7f4;
+}
