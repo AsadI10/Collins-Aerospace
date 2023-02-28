@@ -5,11 +5,21 @@ function loadSideBarGeneral(productContent){
     + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0) / 1000000;;
 }
 
-function loadSideBarProduct(product){
+function loadSideBarProduct(product) {
     data = product.options.GeoJSON;
+    var div = document.createElement("div");
+    div.id = data.Identifier;
+
+    GetWebPage("SideBar_ProductDetails.php", function (text) {
+        div.innerHTML = text;
+    }, "identifier=" + data.Identifier);
+
+    document.getElementById('panel-info').appendChild(div);
+    return;
+
+
     console.log(data);
     //create new HTML elements
-    var div = document.createElement("div");
     var title = document.createElement("h1");
     var redirect = document.createElement("a");
     //set HTML fields for title
@@ -29,7 +39,6 @@ function loadSideBarProduct(product){
     + "<BR>";
     //Add the div to the panel
     document.getElementById('panel-info').appendChild(title);
-    document.getElementById('panel-info').appendChild(div);
     document.getElementById('panel-info').appendChild(redirect);
 }
 
