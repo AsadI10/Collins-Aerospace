@@ -78,7 +78,7 @@
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
-
+        
 </head>
 <body>
 <br>
@@ -143,4 +143,13 @@
   margin-left: 200px;
   padding: 20px;
 }
+
+.box {
+  background-color: black;
+  width: 300px;
+  border: 15px lightgrey;
+  padding: 50px;
+  margin: 20px;
+}
+
 </style>
