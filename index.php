@@ -83,8 +83,8 @@
 <body>
 <br>
 <?php 
-            include("./indexheader.php")
-            ?>
+    include("./PageHeader.php")
+?>
 <!-- Side Panel -->
 <div>
   <span id="panel1" class="d-block p-2 bg-dark text-white">
