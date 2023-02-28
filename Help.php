@@ -109,7 +109,9 @@
   </details>
   <details>
     <summary>The Map</summary>
-    <p>The map is interactable </p>
+    <p>The map is interactable, in the right top corder of the map you have the option to change the map to ensure that you could gain 
+      different data from different maps. 
+    </p>
   </details>
 </div>
 
