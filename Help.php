@@ -100,11 +100,12 @@
     <p>The first Screen you will be introducted to is the login page. In this page you will have to make sure to use the 
        correct Username and Password in order to login into the system.
     </p>
-    <summary>Navbar</summary>
+  </details>
+  <details>
+  <summary>Navbar</summary>
     <p>The Navbar is a interactable face that allows you to click different pages and make sure you are on the home page or even
       logout if done using the system.
     </p>
-    
   </details>
 </div>
 
