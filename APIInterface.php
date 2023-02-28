@@ -80,6 +80,30 @@ class APIInterface{
 		return $this->_IsLoggedIn;
 	}
 
+	// Returns raw result of the next page
+	private function GetNextPage($paginationID){
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/page/".$paginationID); //set API URL
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
+		curl_setopt($ch, CURLOPT_TCP_FASTOPEN, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
+
+		$headers = array(
+			'Accept: */*',
+			'Authorization: Bearer '.$this->_AccessToken,
+		);
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+
+		$results = curl_exec($ch);
+		curl_close($ch); 
+
+		return $results;
+	}
+
 	// Directly calls the API to get a list of all product identifiers.
 	public function GetAllProductIdentifiers($documentType = null, $missionID = null){
 		$ch = curl_init();
@@ -139,30 +163,7 @@ class APIInterface{
 		return $result;
 	}
 
-	public function GetNextPage($paginationID){
-		$ch = curl_init();
-
-		curl_setopt($ch, CURLOPT_URL, $this->_APIDomain."/discover/api/v1/products/page/".$paginationID); //set API URL
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //enables returned JSON from execution
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //disables SSL/TPL for execution
-		curl_setopt($ch, CURLOPT_TCP_FASTOPEN, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // **
-
-		$headers = array(
-			'Accept: */*',
-			'Authorization: Bearer '.$this->_AccessToken,
-		);
-
-		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
-
-		$results = curl_exec($ch);
-		curl_close($ch); 
-
-		return $results;
-
-	}
-	public function GetRawData($identifer){
+	public function GetRawProductData($identifer){
 		//-----------------------------------
 		//MULTITHREADED PRODUCT DATA RETRIVAL
 		//-----------------------------------
@@ -190,8 +191,8 @@ class APIInterface{
 		return $result;
 	}
 
-	public function GetData($identifier){
-		$result = $this->GetRawData($identifier);
+	public function GetProductData($identifier){
+		$result = $this->GetRawProductData($identifier);
 
 		$p = new ProductData($identifier,$result->viewname,$result->centre);
 		$p->DocumentType = $result->documentType;
