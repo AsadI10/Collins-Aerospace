@@ -18,7 +18,9 @@ function loadMarkers(pulledData){
             // Set tags
             title: id,
             GeoJSON: tmp,
-            footprint: footp
+            footprint: footp,
+            // calculates the footprints area and stores it to the object once (val is const)
+            area: Math.round(calculateArea(footp.Coordinates[0])) / 1000000
         // Add to the maps collection of markers
         }).addTo(markers)
         .bindPopup("Product: " + i + " / " + pulledData.length)

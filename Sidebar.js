@@ -1,8 +1,8 @@
 function loadSideBarGeneral(productContent){
-    console.log(productContent);
+    //console.log(productContent);
     document.getElementById("generalData-Label").hidden = false;
     document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  121"
-    + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0) / 1000000;;
+    + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
 }
 
 function loadSideBarProduct(product) {
