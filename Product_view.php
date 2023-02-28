@@ -15,7 +15,6 @@ require_once("./SessionMaster.php");
 </head>
 <body>
     <br>
-    
     <?php
     include("PageHeader.php");
 
