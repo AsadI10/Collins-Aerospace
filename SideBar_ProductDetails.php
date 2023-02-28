@@ -20,18 +20,16 @@ if(gettype($_POST["identifier"])!= "string"){
 else{
 	array_push($arrid, ProductData::Load($_POST["identifier"]));
 }
-?>
-<!--
 //iterates through collection and outputs correct format.
--->
+?>
 <?php foreach($arrid as $id){ ?>
- <h1 class="phpheader"><?php echo $id->GetName(); ?></h1>
-<div class="divsidepanal">
-Document Type: <?php echo $id->DocumentType; ?><br>
-Creator: <?php echo $id->Creator; ?><br>
-Created: <?php echo $id->DateCreated; ?><br>
-Modified: <?php echo $id->DateModified; ?><br>
-
-</div>
+	<h1 class="phpheader"><?php echo $id->GetName(); ?></h1>
+	<div class="divsidepanal">
+		Document Type: <?php echo $id->DocumentType; ?><br>
+		Creator: <?php echo $id->Creator; ?><br>
+		Created: <?php echo $id->DateCreated; ?><br>
+		Modified: <?php echo $id->DateModified; ?><br>
+	</div>
+	<a href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a>
 <?php
 }?>
