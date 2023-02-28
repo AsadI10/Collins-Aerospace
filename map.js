@@ -45,16 +45,6 @@ function onShiftDrag(e){
             loadSideBarProduct(element);
         }
     });
-
-    //this should not be repeated, its lazy af rn but i cant style multiple panels lmao so itll have to do.
-    //loadSideBarGeneral(arr.length);
-    /*
-    GetWebPage("SideBar_ProductDetails.php", function (text) {
-        LoadSidebar(text);
-    }, "identifier=" + arr);
-    return;
-    */
-
 }
 
 function getVisibleMarkers(e){
@@ -116,9 +106,4 @@ function onClick_Marker(e) {
     shapes.clearLayers();
 
     loadSideBarProduct(this);
-    /*
-    GetWebPage("SideBar_ProductDetails.php", function (text) {
-        LoadSidebar(text);
-    }, "identifier=" + arr);
-    */
 }
