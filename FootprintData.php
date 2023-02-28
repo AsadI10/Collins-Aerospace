@@ -9,21 +9,10 @@ class FootprintData{
 	// For a LineString, this is an array of coordinates
 	// Example: [[0,1], [1,2], [3,4]]
 	public $Coordinates;
-	private $Area;
-
-	private function _ReCalculateArea(){
-		
-	}
-
-	public function GetArea(){
-		return $this->Area;
-	}
 
 	function __construct($type, $coordinateArr){
 		$this->Type = $type;
 		$this->Coordinates = $coordinateArr;
-
-		$this->_ReCalculateArea();
 	}
 }
 ?>

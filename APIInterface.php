@@ -139,20 +139,6 @@ class APIInterface{
 		return $result;
 	}
 
-	public function NormalizeResults($results){
-		$set = json_decode($results);
-
-		$_SESSION['Pagination_id'] = $set->paginationId;
-		$results = $set->results->searchresults;
-
-		$result = array();
-		foreach($results as $element){
-			array_push($result, $element->id);
-		}
-
-		return $result;
-	}
-
 	public function GetNextPage($paginationID){
 		$ch = curl_init();
 
