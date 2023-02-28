@@ -78,10 +78,11 @@
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
-          <?php include("./PageHeader.php")?>
+        
 </head>
 <body>
 <br>
+<?php include("./PageHeader.php")?>
 
 
 </body>
