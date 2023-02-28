@@ -111,7 +111,7 @@
     <summary>The Map</summary>
     <p>The map is interactable, in the right top corder of the map you have the option to change the map to ensure that you could gain 
       different data from different maps. also you have the option to zoom in and out of the map to give the user a greater
-      view of the coverage. on left side there is also a search option to narrows down 
+      view of the coverage. on left side there is also a search option to look for a specific cities.
     </p>
   </details>
 </div>
