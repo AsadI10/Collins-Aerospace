@@ -109,7 +109,7 @@
   </details>
   <details>
     <summary>The Map</summary>
-    <p></p>
+    <p>The map is interactable </p>
   </details>
 </div>
 
