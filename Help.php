@@ -172,6 +172,8 @@
 .Dropmenu{
   border: solid 2px grey;
   width: 40%;
+  margin-left: 2px;
+  padding-left: 2px
 }
 
 </style>
