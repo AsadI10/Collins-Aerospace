@@ -84,6 +84,11 @@
 <br>
 <?php include("./PageHeader.php")?>
 
+<ul>
+  <li>Login</li>
+  <li>Press on the stalite icon</li>
+  <li>press shift for polygon</li>
+</ul>
 
 </body>
 </html>
