@@ -108,7 +108,8 @@
     </p>
   </details>
   <details>
-    <summary></summary>
+    <summary>The Map</summary>
+    <p></p>
   </details>
 </div>
 
