@@ -77,26 +77,14 @@
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
+          <script src="index.js"></script>
 
 </head>
 <body>
 <br>
-<?php 
-            include("./sidebarheader.php")
-            ?>
-<!-- Side Panel -->
-<div>
-  <span id="panel1" class="d-block p-2 bg-dark text-white">
-  <h1><u>Help Page</u></h1><br>
-  <p><u>Login Page </u></p>
-  <p><u>Map</u></p>
-  <p><u>Coverage</u></p>
-  <p><u>Search</u></p>
-  <p><u>Polygon</u></p>
-  </span>
-  <script> document.getElementById("generalData-Label").hidden = true; </script>
+<?php include("./indexheader.php")?>
 
-</div>
+
 
 </body>
 </html>
@@ -157,4 +145,3 @@
   padding: 20px;
 }
 </style>
-
