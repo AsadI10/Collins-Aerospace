@@ -23,13 +23,13 @@ else{
 //iterates through collection and outputs correct format.
 ?>
 <?php foreach($arrid as $id){ ?>
-	<h1 class="phpheader"><?php echo $id->GetName(); ?></h1>
+	<h1 class="phpheader"><?php echo $id->GetName(); ?>
 	<div class="divsidepanal">
 		Document Type: <?php echo $id->DocumentType; ?><br>
 		Creator: <?php echo $id->Creator; ?><br>
 		Created: <?php echo $id->DateCreated; ?><br>
 		Modified: <?php echo $id->DateModified; ?><br>
 	</div>
-	<a href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a>
+	<a class="Details-link" href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a></h1>
 <?php
 }?>
