@@ -116,7 +116,7 @@
   </details>
   <details>
     <summary>Stalite icon</summary>
-    <p></p>
+    <p>kamil </p>
   </details>
 </div>
 
