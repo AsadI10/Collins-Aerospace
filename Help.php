@@ -114,6 +114,10 @@
       view of the coverage. on left side there is also a search option to look for a specific cities.
     </p>
   </details>
+  <details>
+    <summary>Stalite icon</summary>
+    <p></p>
+  </details>
 </div>
 
 </body>
