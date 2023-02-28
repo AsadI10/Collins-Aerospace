@@ -127,6 +127,12 @@
   body{
     /* background-color: white; */
     background-color: white;
+     /* float: center; */
+    position: sticky;
+    overflow-x: hidden;
+	  overflow-y: auto;
+	  text-align:justify;
+    margin-top: -6px;
   }
     .sidebar {
   position: fixed;
