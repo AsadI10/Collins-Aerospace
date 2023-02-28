@@ -13,10 +13,11 @@ map.on('dragend',getVisibleMarkers);
 
 function getVisibleMarkers(e){
     var arr = [];
+    console.log(e.options);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
-            arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
+            arr.push(element.options.area);
         }
     });
 
@@ -52,7 +53,7 @@ function getVisibleMarkers(e){
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
-            arr.push(Math.round(calculateArea(element.options.footprint.Coordinates[0])));
+            arr.push(element.options.area);
         }
     });
 

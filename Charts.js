@@ -3,8 +3,23 @@
 //=====================================
 
 //base val is in M^2 (that being the total M^2 of the UK)
-function loadPieChart(data, baseval = 248532){
-    let total = data.reduce((a, b) => a + b, 0) / 1000000;
+function loadPieChart(data){
+  //gets the bounds of the current users Map view...
+    let bounds = map.getBounds();
+    let boundsarr = [
+      [bounds.getNorthEast().lat, bounds.getNorthEast().lng],
+      [bounds.getNorthWest().lat, bounds.getNorthWest().lng],
+      [bounds.getSouthWest().lat, bounds.getSouthWest().lng],
+      [bounds.getSouthEast().lat, bounds.getSouthWest().lng]
+    ];
+    baseval = calculateArea(boundsarr) / 1000000;
+    console.log(baseval);
+
+    //gets the aggregate area of each marker the user can see
+    let total = data.reduce(function(a, b){
+      return a + b;
+    });
+    console.log(total);
 
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
