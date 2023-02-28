@@ -94,15 +94,15 @@
   <li>pie chart for the coverage</li>
 </ul>
 
-<div>
+<div class="Dropmenu">
   <details>
     <summary>Login</summary>
     <p>The first Screen you will be introducted to is the login page. In this page you will have to make sure to use the 
        correct Username and Password in order to login into the system.
     </p>
-
   </details>
 </div>
+
 </body>
 </html>
 
@@ -168,6 +168,10 @@
   border: 15px lightgrey;
   padding: 50px;
   margin: 20px;
+}
+.Dropmenu{
+  border: solid 2px grey;
+  width: 40%;
 }
 
 </style>
