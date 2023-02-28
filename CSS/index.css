@@ -93,16 +93,17 @@ nav ul li{
     font-family: 'Courier New', Courier, monospace; 
     cursor: pointer;
 }
-.divsidepanal{
+/* .divsidepanal{
+    this is the divsidpanel
     border: solid 2px black;
     width: auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #59595c;
     text-align: left;
-}
+} */
 .phpheader{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 10px;
+    font-size: 25px;
     text-align: center;
     margin-top: 20px;
 }
@@ -132,10 +133,6 @@ nav ul li{
     /* left:250px;  */
     margin-left: 215px;
     margin-top: -190px;
-}
-#phpheader{
-    text-align: center;
-    font-size: 35px;
 }
 #panel-info{
     /* border: 2px solid gray;
