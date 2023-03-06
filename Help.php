@@ -116,7 +116,20 @@
   </details>
   <details>
     <summary>Stalite icon</summary>
-    <p>kamil </p>
+    <p>
+       The satalite is interactable and easy to use. Click on th corner top right hand icon the users have multiple map view.
+       Users have varities of map views such as Bluemap, Smooth Dark, Bright map, and Satelite map. 
+       The map has different view because, it is responsive and adaptive.
+    </p>
+    <p>
+       Zoom in and out features are available for the users. This is located on the top left corner. 
+       Plus + is to zoom in minus - is to zoom out. 
+    </p>
+     <p>
+       Other features include search engine which allows you to manually write the location of user desired
+       location. To use this click on the search engine, write the location of where you want to go.  
+       Note be specific to where you want to go because, there might be more than one location with the same name.  
+     </p>
   </details>
 </div>
 
@@ -128,7 +141,7 @@
     /* background-color: white; */
     background-color: white;
      /* float: center; */
-    position: sticky;
+    position: center;
     overflow-x: hidden;
 	  overflow-y: auto;
 	  text-align:justify;
@@ -187,16 +200,17 @@
 
 .box {
   background-color: black;
-  width: 300px;
+  width: 250px;
   border: 15px lightgrey;
   padding: 50px;
   margin: 20px;
 }
 .Dropmenu{
   border: solid 2px grey;
-  width: 40%;
+  width: 55%;
   margin-left: 2px;
-  padding-left: 2px
+  padding-left: 2px;
+  border-radius: 25px;
 }
 
 </style>
