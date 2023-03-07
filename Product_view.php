@@ -44,7 +44,7 @@ require_once("./SessionMaster.php");
                     ?> <br> <?php
                     displaylevel($val,$depth+1, true);
                     break;
-                case "int":
+                case "integer":
                     echo $val;
                     ?> <br> <?php
                     break;
