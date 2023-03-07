@@ -49,7 +49,7 @@
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <link rel="stylesheet" href="CSS/index.css"/>
+          <!-- <link rel="stylesheet" href="CSS/index.css"/> -->
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
@@ -145,7 +145,7 @@
   </details>
 
 </div>
-
+<br>
 </body>
 </html>
 
@@ -160,6 +160,25 @@
 	  text-align:justify;
     margin-top: -6px;
   }
+  /* added nav  */
+  nav{
+    text-align: right;
+    overflow: hidden;
+    /* margin-top: -20px; */
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+}
     .sidebar {
   position: fixed;
   top: 0;
@@ -227,6 +246,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding:3px;
 }
 
 </style>
