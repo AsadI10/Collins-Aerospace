@@ -135,6 +135,11 @@
 </html>
 
 <style>
+  summary{
+    color: black;
+    font-size: 21px;
+    font-family: 'Poppins', sens-serif;
+  }
   body{
     /* background-color: white; */
     background-color: white;
