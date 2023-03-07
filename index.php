@@ -24,15 +24,6 @@
     if(!isset($_SESSION["CacheDB"])){
         $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
     }
-
-    // The testing zone
-    //$testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-    //$testProduct = ProductData::Load($testIdentifier);
-    //var_dump($testProduct);
-
-    //$_SESSION["APIInterface"]->echojson($testIdentifier);
-     
-    // Not the testing zone
 ?>
 
 <!DOCTYPE html>
