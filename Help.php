@@ -87,8 +87,7 @@
 <ul>
   <li>Press shift for polygon</li>
   <li>Zoom in and out of the map</li>
-  <li>use the side panal for the information</li>
-  <li>pie chart for the coverage</li>
+
 </ul>
 <br>
 
