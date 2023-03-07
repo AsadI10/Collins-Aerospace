@@ -85,8 +85,6 @@
 <?php include("./PageHeader.php")?>
 
 <ul>
-  <li>Interactable nav bar with some options</li>
-  <li>Press on the stalite icon</li>
   <li>Press shift for polygon</li>
   <li>Zoom in and out of the map</li>
   <li>use the side panal for the information</li>
