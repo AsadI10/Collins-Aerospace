@@ -26,8 +26,8 @@
 </nav>
 </header>
 
-<style>
-    .CompanyName{
+<style> 
+   .CompanyName{
         font-size: 25px;
         font-weight: bold;
         color: black;

@@ -213,6 +213,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding: 15px;
 }
 
 </style>
