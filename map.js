@@ -22,7 +22,7 @@ function getVisibleMarkers(e){
     });
 
     loadPieChart(arr);
-    loadSideBarGeneral(arr.length);
+    loadSideBarGeneral(arr);
 }
 
 // Map events
