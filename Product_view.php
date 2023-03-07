@@ -21,8 +21,8 @@ require_once("./SessionMaster.php");
     <div>
     <?php
 
-    $_SESSION['APIInterface']->GetRawData($_GET['identifier']);
-    $json_string = json_encode($_SESSION['APIInterface']->GetRawData($_GET['identifier']), JSON_PRETTY_PRINT);
+    $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
+    $json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
     echo $json_string;
     ?>
     </div>

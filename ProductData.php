@@ -74,7 +74,7 @@
 			else
 			{
 				// Fetch from API
-				$APIResult = $_SESSION["APIInterface"]->GetData($identifier);
+				$APIResult = $_SESSION["APIInterface"]->GetProductData($identifier);
 				// If API returned a good result, cache it and return.
 				if($APIResult != null){
 					$APIResult->SaveToCache();
