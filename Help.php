@@ -140,6 +140,10 @@
     font-size: 21px;
     font-family: 'Poppins', sens-serif;
   }
+  p{
+    font-family: 'Poppins', sens-serif;
+    font-size: 16px;
+  }
   body{
     /* background-color: white; */
     background-color: white;
