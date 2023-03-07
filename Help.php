@@ -139,7 +139,8 @@
        Other features include search icon which allows you to manually write the location of user desired
        location. To use this click on the search engine, write the location of where you want to go.  
        Note be specific to where you want to go because, there might be more than one location with the same name.  
-     </p>     
+     </p>   
+     <img class="search-bar" src="img/Search-GIF.gif">  
   </details>
   <details>
 
