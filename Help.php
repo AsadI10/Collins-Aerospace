@@ -212,7 +212,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  padding: 2px;
+  padding: 15px;
 }
 
 </style>
