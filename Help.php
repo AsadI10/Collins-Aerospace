@@ -98,40 +98,52 @@
 <div class="Dropmenu">
   <details>
     <summary>Login</summary>
-    <p>The first Screen you will be introducted to is the login page. In this page you will have to make sure to use the 
-       correct Username and Password in order to login into the system.
+    <p>To access website please enter your login details with your username and password. 
+       Ensure that the user has logged in before accessing the map. 
+       Once logged in it will direct you to index page with the map as your main veiw.  
     </p>
   </details>
   <details>
   <summary>Navbar</summary>
-    <p>The Navbar is a interactable face that allows you to click different pages and make sure you are on the home page or even
-      logout if done using the system.
+    <p>
+      Navbar directs user to three different directories index page, help page, and logout.
+      To access index page user can click on the home page which will be the main page.
+      Help will direct user to help page if the user need access to any guidence.
+      Finally to logout click logout it will direct out main login page.
+  
     </p>
   </details>
   <details>
     <summary>The Map</summary>
-    <p>The map is interactable, in the right top corder of the map you have the option to change the map to ensure that you could gain 
-      different data from different maps. also you have the option to zoom in and out of the map to give the user a greater
-      view of the coverage. on left side there is also a search option to look for a specific cities.
+    <p>
+      Map is a interactable and main part of the software which allows user to view.Location
+      and interact with collection of markers. Markers is product which contains all the data such as 
+      calculating the footprint area. 
     </p>
   </details>
   <details>
-    <summary>Stalite icon</summary>
+    <summary>Icon</summary>
     <p>
-       The satalite is interactable and easy to use. Click on th corner top right hand icon the users have multiple map view.
+    <p><u>Map view </u></p>
        Users have varities of map views such as Bluemap, Smooth Dark, Bright map, and Satelite map. 
        The map has different view because, it is responsive and adaptive.
     </p>
     <p>
+    <p><u>Zoom in and out </u></p>
        Zoom in and out features are available for the users. This is located on the top left corner. 
        Plus + is to zoom in minus - is to zoom out. 
     </p>
      <p>
-       Other features include search engine which allows you to manually write the location of user desired
+      <p><u>Search bar </u></p>
+       Other features include search icon which allows you to manually write the location of user desired
        location. To use this click on the search engine, write the location of where you want to go.  
        Note be specific to where you want to go because, there might be more than one location with the same name.  
-     </p>
+     </p>     
   </details>
+  <details>
+
+  </details>
+
 </div>
 
 </body>
