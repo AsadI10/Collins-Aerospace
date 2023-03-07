@@ -130,6 +130,7 @@
      </p>
   </details>
 </div>
+<br>
 
 </body>
 </html>
@@ -140,10 +141,10 @@
     background-color: white;
      /* float: center; */
     position: center;
+    margin-top: -6px;
     overflow-x: hidden;
 	  overflow-y: auto;
 	  text-align:justify;
-    margin-top: -6px;
   }
     .sidebar {
   position: fixed;
