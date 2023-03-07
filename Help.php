@@ -93,6 +93,7 @@
   <li>use the side panal for the information</li>
   <li>pie chart for the coverage</li>
 </ul>
+<br>
 
 <div class="Dropmenu">
   <details>
@@ -208,9 +209,12 @@
 .Dropmenu{
   border: solid 2px grey;
   width: 55%;
-  margin-left: 2px;
+  /* margin-left: 2px; */
   padding-left: 2px;
-  border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 </style>
