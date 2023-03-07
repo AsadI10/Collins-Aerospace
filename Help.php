@@ -49,7 +49,7 @@
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <link rel="stylesheet" href="CSS/index.css"/>
+          <!-- <link rel="stylesheet" href="CSS/index.css"/> -->
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
@@ -87,8 +87,7 @@
 <ul>
   <li>Press shift for polygon</li>
   <li>Zoom in and out of the map</li>
-  <li>use the side panal for the information</li>
-  <li>pie chart for the coverage</li>
+
 </ul>
 <br>
 
@@ -130,21 +129,50 @@
      </p>
   </details>
 </div>
+<br>
 
 </body>
 </html>
 
 <style>
+  summary{
+    color: black;
+    font-size: 21px;
+    font-family: 'Poppins', sens-serif;
+  }
+  p{
+    font-family: 'Poppins', sens-serif;
+    font-size: 16px;
+  }
   body{
     /* background-color: white; */
     background-color: white;
      /* float: center; */
     position: center;
+    margin-top: -6px;
     overflow-x: hidden;
 	  overflow-y: auto;
 	  text-align:justify;
-    margin-top: -6px;
   }
+  /* added new */
+  nav{
+    text-align: right;
+    color: aliceblue;
+    overflow: hidden;
+    /* margin-top: -20px; */
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+}
     .sidebar {
   position: fixed;
   top: 0;

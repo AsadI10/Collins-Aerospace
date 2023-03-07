@@ -107,5 +107,19 @@ class CacheDB{
         );
         $db->close();
     }
+
+    public function GetAllStoredMissionIDs(){
+        $db = new Sqlite3($this->path);
+        $sql = "SELECT DISTINCT Mission_ID FROM Products";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute();
+
+        $r = array();
+        while ($row = $result->fetchArray(SQLITE3_NUM)) {
+            array_push($r,$row);
+        }
+
+        return $r;
+    }
 }
 ?>

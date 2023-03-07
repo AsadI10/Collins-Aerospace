@@ -31,6 +31,7 @@
         font-size: 25px;
         font-weight: bold;
         color: black;
+        cursor:pointer;
     }
     nav ul li{
         font-size: 20px;
