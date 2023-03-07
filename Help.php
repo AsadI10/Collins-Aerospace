@@ -85,7 +85,6 @@
 <?php include("./PageHeader.php")?>
 
 <ul>
-  <li>Login</li>
   <li>Interactable nav bar with some options</li>
   <li>Press on the stalite icon</li>
   <li>Press shift for polygon</li>
