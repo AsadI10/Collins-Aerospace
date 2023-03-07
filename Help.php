@@ -120,6 +120,7 @@
       and interact with collection of markers. Markers is product which contains all the data such as 
       calculating the footprint area. 
     </p>
+    <!-- <img src="https://media.discordapp.net/attachments/1064835577310089289/1082683496721567814/ezgif.com-optimize.gif?width=807&height=586" width="40%"> -->
   </details>
   <details>
     <summary>Icon</summary>
