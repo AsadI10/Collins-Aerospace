@@ -26,11 +26,12 @@
 </nav>
 </header>
 
-<style>
-    .CompanyName{
+<style> 
+   .CompanyName{
         font-size: 25px;
         font-weight: bold;
         color: black;
+        cursor:pointer;
     }
     nav ul li{
         font-size: 20px;
@@ -46,4 +47,5 @@
         color: black;
         font-weight: bold;
     }
+    
 </style>

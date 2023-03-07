@@ -1,7 +1,9 @@
 <?php
+	require_once("APIInterface.php");
 	require_once("SessionMaster.php");
 
-	if(isset($_SESSION["APIInterface"])){
+	// If already logged in, go to index
+	if(isset($_SESSION["APIInterface"]) && $_SESSION["APIInterface"]->IsLoggedIn() == true){
 		header("Location: ./index.php");
 	}
 ?>
