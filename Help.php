@@ -86,13 +86,14 @@
 
 <ul>
   <li>Login</li>
-  <li>interactable nav bar with some options</li>
+  <li>Interactable nav bar with some options</li>
   <li>Press on the stalite icon</li>
-  <li>press shift for polygon</li>
+  <li>Press shift for polygon</li>
   <li>Zoom in and out of the map</li>
   <li>use the side panal for the information</li>
   <li>pie chart for the coverage</li>
 </ul>
+<br>
 
 <div class="Dropmenu">
   <details>
@@ -115,7 +116,7 @@
     </p>
   </details>
   <details>
-    <summary>Stalite icon</summary>
+    <summary>Satellite icon</summary>
     <p>
        The satalite is interactable and easy to use. Click on th corner top right hand icon the users have multiple map view.
        Users have varities of map views such as Bluemap, Smooth Dark, Bright map, and Satelite map. 
@@ -208,9 +209,12 @@
 .Dropmenu{
   border: solid 2px grey;
   width: 55%;
-  margin-left: 2px;
+  /* margin-left: 2px; */
   padding-left: 2px;
-  border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 </style>
