@@ -1,6 +1,6 @@
 #map {
     /* position: relative; */
-    height: 89.5vh; /*Originally set to 75*/
+    height: 86.5vh; /*Originally set to 75*/
     /*or as desired*/
     width: 67%;
     /*This means "100% of the width of its container", the .col-md-8*/
@@ -13,7 +13,7 @@
     float: right;
     position: sticky;
     width: 33%;
-    height: 89.5vh;
+    height: 86.5vh;  /* originally set to 89.5*/
     overflow-x: hidden;
 	overflow-y: auto;
 	text-align:justify;
