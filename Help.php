@@ -135,6 +135,7 @@
        Zoom in and out features are available for the users. This is located on the top left corner. 
        Plus + is to zoom in minus - is to zoom out. 
     </p>
+    <img class="Zoom-in" src="img/Zoom_in_out.gif">
      <p>
       <p><u>Search bar </u></p>
        Other features include search icon which allows you to manually write the location of user desired
@@ -153,6 +154,13 @@
 </html>
 
 <style>
+  .Zoom-in{
+    width:35%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer
+  }
   .Map-layers{
     width:35%;
     display:block;
