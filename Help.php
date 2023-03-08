@@ -152,6 +152,12 @@
 </html>
 
 <style>
+  .search-bar{
+    width:35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   body{
     /* background-color: white; */
     background-color: white;
