@@ -8,6 +8,7 @@
     border: 2px solid rgb(150, 146, 146);
     /* border-radius: 2%; */
     position: sticky;
+    /* margin-top: -12px; */
 }
 #panel1 {
     float: right;
