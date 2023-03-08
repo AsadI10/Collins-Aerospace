@@ -129,6 +129,7 @@
        Users have varities of map views such as Bluemap, Smooth Dark, Bright map, and Satelite map. 
        The map has different view because, it is responsive and adaptive.
     </p>
+    <img class="Map-layers" src="img/Map-Views.gif">
     <p>
     <p><u>Zoom in and out </u></p>
        Zoom in and out features are available for the users. This is located on the top left corner. 
@@ -152,11 +153,19 @@
 </html>
 
 <style>
+  .Map-layers{
+    width:35%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer
+  }
   .search-bar{
     width:35%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor:pointer;
   }
   body{
     /* background-color: white; */
