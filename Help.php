@@ -144,9 +144,6 @@
      </p>   
      <img class="search-bar" src="img/Search-GIF.gif">  
   </details>
-  <details>
-
-  </details>
 
 </div>
 <br>
