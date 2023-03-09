@@ -19,10 +19,10 @@ var ukPolygonMesh = L.polygon(ukBounds);
 var greenIcon = new L.Icon({
   iconUrl: 'https://static.thenounproject.com/png/625-200.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  iconSize: [25, 41], //size of the icon
+  iconAnchor: [12, 41], //The icon will correspond to the marker location
+  popupAnchor: [1, -34], //point from which the popup should open relative to the iconAnchor
+  shadowSize: [41, 41] //size of the shadow
 });
 //This add a scale to the map
 L.control.scale().addTo(map);
