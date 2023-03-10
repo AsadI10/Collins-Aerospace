@@ -156,7 +156,7 @@
     display:block;
     margin-left:auto;
     margin-right:auto;
-    cursor:pointer
+    cursor:pointer;
   }
   .Map-layers{
     width:35%;
