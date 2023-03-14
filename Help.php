@@ -84,27 +84,16 @@
 <br>
 <?php include("./PageHeader.php")?>
 
-<ul>
-  <li>Login</li>
-  <li>interactable nav bar with some options</li>
-  <li>Press on the stalite icon</li>
-  <li>press shift for polygon</li>
-  <li>Zoom in and out of the map</li>
-  <li>use the side panal for the information</li>
-  <li>pie chart for the coverage</li>
-</ul>
+<p>
+Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
+This Project has been developed by 5 students at sheffield hallam university over the span of 12
+weeks in order to demonstrate our ability to create a profesional application.
+</p>
 <br>
 
 <div class="Dropmenu">
-  <details>
-    <summary>Login</summary>
-    <p>To access website please enter your login details with your username and password. 
-       Ensure that the user has logged in before accessing the map. 
-       Once logged in it will direct you to index page with the map as your main veiw.  
-    </p>
-  </details>
-  <details>
-  <summary>Navbar</summary>
+  <details open>
+  <summary>How do i change the map view.</summary>
     <p>
       Navbar directs user to three different directories index page, help page, and logout.
       To access index page user can click on the home page which will be the main page.
@@ -112,24 +101,20 @@
       Finally to logout click logout it will direct out main login page.
   
     </p>
+    <img class="Map-layers" src="img/Map-Views.gif">
   </details>
-  <details>
+  <details open>
     <summary>The Map</summary>
     <p>
+    <p><u>The Map</u></p>
       Map is a interactable and main part of the software which allows user to view.Location
       and interact with collection of markers. Markers is product which contains all the data such as 
-      calculating the footprint area. 
+      calculating the footprint area.
     </p>
-    <!-- <img src="https://media.discordapp.net/attachments/1064835577310089289/1082683496721567814/ezgif.com-optimize.gif?width=807&height=586" width="40%"> -->
   </details>
-  <details>
+  <details open>
     <summary>Icon</summary>
     <p>
-    <p><u>Map view </u></p>
-       Users have varities of map views such as Bluemap, Smooth Dark, Bright map, and Satelite map. 
-       The map has different view because, it is responsive and adaptive.
-    </p>
-    <img class="Map-layers" src="img/Map-Views.gif">
     <p>
     <p><u>Zoom in and out </u></p>
        Zoom in and out features are available for the users. This is located on the top left corner. 
@@ -264,7 +249,7 @@ nav ul li{
   margin: 20px;
 }
 .Dropmenu{
-  border: solid 2px grey;
+  border: solid 3px grey;
   width: 55%;
   /* margin-left: 2px; */
   padding-left: 2px;
