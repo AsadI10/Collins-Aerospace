@@ -125,14 +125,14 @@ weeks in order to demonstrate our ability to create a profesional application.
        Zoom in and out features are available for the users. This is located on the top left corner. 
        Plus + is to zoom in minus - is to zoom out. 
     </p>
-    <img class="Zoom-in" src="img/Zoom_in_out.gif">
+    <img class="Map-layers" src="img/Zoom_in_out.gif">
      <p>
       <p><u>Search bar </u></p>
        Other features include search icon which allows you to manually write the location of user desired
        location. To use this click on the search engine, write the location of where you want to go.  
        Note be specific to where you want to go because, there might be more than one location with the same name.  
      </p>   
-     <img class="search-bar" src="img/Search-GIF.gif">  
+     <img class="Map-layers" src="img/Search-GIF.gif">  
   </details>
 
 </div>
@@ -141,13 +141,6 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
-  .Zoom-in{
-    width:35%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    cursor:pointer;
-  }
   p{
     font-family: 'Poppins', sens-serif;
     font-size: 16px; 
@@ -159,28 +152,18 @@ weeks in order to demonstrate our ability to create a profesional application.
     margin-right:auto;
     cursor:pointer
   }
-  .search-bar{
-    width:35%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor:pointer;
-  }
   body{
     /* background-color: white; */
     background-color: white;
-     /* float: center; */
     position: center;
     overflow-x: hidden;
 	  overflow-y: auto;
 	  text-align:justify;
     margin-top: -6px;
   }
-  /* added nav  */
   nav{
     text-align: right;
     overflow: hidden;
-    /* margin-top: -20px; */
     position: relative;
     margin-top: -42px;
     padding-right: 15px;
@@ -208,7 +191,6 @@ nav ul li{
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidebar-toggle {
   font-weight: bold;
   position: absolute;
@@ -223,29 +205,24 @@ nav ul li{
   cursor: pointer;
   z-index: 2;
 }
-
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .sidebar li a {
   display: block;
   padding: 10px;
   text-decoration: none;
   color: #000;
 }
-
 .sidebar li a:hover {
   background-color: #ddd;
 }
-
 .content {
   margin-left: 200px;
   padding: 20px;
 }
-
 .box {
   background-color: black;
   width: 250px;
@@ -256,7 +233,6 @@ nav ul li{
 .Dropmenu{
   border: solid 3px grey;
   width: 55%;
-  /* margin-left: 2px; */
   padding-left: 2px;
   display: block;
   margin-left: auto;
@@ -264,5 +240,4 @@ nav ul li{
   width: 50%;
   padding:3px;
 }
-
 </style>
