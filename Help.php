@@ -135,6 +135,13 @@ weeks in order to demonstrate our ability to create a profesional application.
     </p>   
     <img class="Map-layers" src="img/Search-GIF.gif">  
   </details>
+  <details open>
+    <summary><u><b>What does the red box represent under the markers?</b></u></summary>
+    <p>
+    The red box that appears when you hover over a marker represents the "footprint" of the marker. The footprint
+    is drawn based on the GeoJSON given in the metadata.
+    </p>
+  </details>
 
 </div>
 <br>
@@ -234,12 +241,12 @@ nav ul li{
 }
 .Dropmenu{
   border: solid 3px grey;
-  width: 55%;
+  /* width: 100%; */
   padding-left: 2px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 98%;
   padding:3px;
 }
 </style>
