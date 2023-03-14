@@ -148,7 +148,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     font-size: 16px; 
   }
   .Map-layers{
-    width:35%;
+    width:100%;
     display:block;
     margin-left:auto;
     margin-right:auto;
