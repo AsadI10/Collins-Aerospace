@@ -268,7 +268,7 @@ nav ul li{
   margin: 20px;
 }
 .Dropmenu{
-  border: solid 2px grey;
+  border: solid 3px grey;
   width: 55%;
   /* margin-left: 2px; */
   padding-left: 2px;
