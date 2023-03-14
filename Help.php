@@ -103,12 +103,19 @@ weeks in order to demonstrate our ability to create a profesional application.
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
   <details open>
-    <summary><u>How do i get the details from a marker</u></summary>
+    <summary><u>How do i get the details from a marker?</u></summary>
     <p>
-      Map is a interactable and main part of the software which allows user to view.Location
-      and interact with collection of markers. Markers is product which contains all the data such as 
-      calculating the footprint area.
+    If you want to view the details of a single marker then you just need to left click it and it will
+    appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
+    to view all the JSON it contains you can click "Details".
     </p>
+    <img class="Map-layers" src="img/Marker-view-details.gif">
+    <p>
+    <br>
+    To select multiple markers you can shift + left click in order to drag a box over markers. This will
+    then put the markers into the sidebar.
+    </p>
+    <img class="Map-layers" src="img/2023-03-14 10-08-04.gif">
   </details>
   <details open>
     <summary>Icon</summary>
