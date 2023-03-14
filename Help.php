@@ -98,7 +98,9 @@
 <div class="Dropmenu">
   <details>
     <summary>Login</summary>
-    <p>To access website please enter your login details with your username and password. 
+    <p>
+    <p><u>Login</u></p>
+      To access website please enter your login details with your username and password. 
        Ensure that the user has logged in before accessing the map. 
        Once logged in it will direct you to index page with the map as your main veiw.  
     </p>
@@ -106,6 +108,7 @@
   <details>
   <summary>Navbar</summary>
     <p>
+      <p><u>Navbar</u></p>
       Navbar directs user to three different directories index page, help page, and logout.
       To access index page user can click on the home page which will be the main page.
       Help will direct user to help page if the user need access to any guidence.
@@ -116,6 +119,7 @@
   <details>
     <summary>The Map</summary>
     <p>
+    <p><u>The Map</u></p>
       Map is a interactable and main part of the software which allows user to view.Location
       and interact with collection of markers. Markers is product which contains all the data such as 
       calculating the footprint area. 
