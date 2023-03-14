@@ -240,12 +240,12 @@ nav ul li{
 }
 .Dropmenu{
   border: solid 3px grey;
-  width: 55%;
+  /* width: 100%; */
   padding-left: 2px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 98%;
   padding:3px;
 }
 </style>
