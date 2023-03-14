@@ -95,14 +95,18 @@ weeks in order to demonstrate our ability to create a profesional application.
   <details open>
   <summary>How do i change the map view.</summary>
     <p>
-    If you want to change the style/colour of the map click the stack icon in the top right of the map view.
-    From there you can choose between 4 different styles (BlueMap, Smooth Dark, BrightMap and Satellite view).
+      Navbar directs user to three different directories index page, help page, and logout.
+      To access index page user can click on the home page which will be the main page.
+      Help will direct user to help page if the user need access to any guidence.
+      Finally to logout click logout it will direct out main login page.
+  
     </p>
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
   <details open>
     <summary>The Map</summary>
     <p>
+    <p><u>The Map</u></p>
       Map is a interactable and main part of the software which allows user to view.Location
       and interact with collection of markers. Markers is product which contains all the data such as 
       calculating the footprint area.
@@ -245,7 +249,7 @@ nav ul li{
   margin: 20px;
 }
 .Dropmenu{
-  border: solid 2px grey;
+  border: solid 3px grey;
   width: 55%;
   /* margin-left: 2px; */
   padding-left: 2px;
