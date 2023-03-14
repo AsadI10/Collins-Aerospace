@@ -184,7 +184,6 @@ nav ul li{
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidebar-toggle {
   font-weight: bold;
   position: absolute;
@@ -199,20 +198,17 @@ nav ul li{
   cursor: pointer;
   z-index: 2;
 }
-
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .sidebar li a {
   display: block;
   padding: 10px;
   text-decoration: none;
   color: #000;
 }
-
 .sidebar li a:hover {
   background-color: #ddd;
 }
