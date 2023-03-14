@@ -134,13 +134,6 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
-  .Zoom-in{
-    width:35%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    cursor:pointer;
-  }
   p{
     font-family: 'Poppins', sens-serif;
     font-size: 16px; 
@@ -152,13 +145,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     margin-right:auto;
     cursor:pointer
   }
-  .search-bar{
-    width:35%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor:pointer;
-  }
+
   body{
     /* background-color: white; */
     background-color: white;
