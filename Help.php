@@ -216,12 +216,10 @@ nav ul li{
 .sidebar li a:hover {
   background-color: #ddd;
 }
-
 .content {
   margin-left: 200px;
   padding: 20px;
 }
-
 .box {
   background-color: black;
   width: 250px;
@@ -232,7 +230,6 @@ nav ul li{
 .Dropmenu{
   border: solid 3px grey;
   width: 55%;
-  /* margin-left: 2px; */
   padding-left: 2px;
   display: block;
   margin-left: auto;
