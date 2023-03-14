@@ -145,7 +145,6 @@ weeks in order to demonstrate our ability to create a profesional application.
     margin-right:auto;
     cursor:pointer
   }
-
   body{
     /* background-color: white; */
     background-color: white;
