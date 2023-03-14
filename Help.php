@@ -142,7 +142,6 @@ weeks in order to demonstrate our ability to create a profesional application.
     is drawn based on the GeoJSON given in the metadata.
     </p>
   </details>
-
 </div>
 <br>
 </body>
