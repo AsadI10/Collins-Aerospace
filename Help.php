@@ -93,7 +93,7 @@ weeks in order to demonstrate our ability to create a profesional application.
 
 <div class="Dropmenu">
   <details open>
-  <summary><u>How do i change the map view?</u></summary>
+  <summary><u><b>How do i change the map view?</b></u></summary>
     <p>
       Navbar directs user to three different directories index page, help page, and logout.
       To access index page user can click on the home page which will be the main page.
@@ -103,7 +103,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
   <details open>
-    <summary><u>How do i get the details from a marker?</u></summary>
+    <summary><u><b>How do i get the details from a marker?</b></u></summary>
     <p>
     If you want to view the details of a single marker then you just need to left click it and it will
     appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
@@ -118,21 +118,22 @@ weeks in order to demonstrate our ability to create a profesional application.
     <img class="Map-layers" src="img/2023-03-14 10-08-04.gif">
   </details>
   <details open>
-    <summary>Icon</summary>
+    <summary><u><b>How does the pie chart update?</b></u></summary>
     <p>
-    <p>
-    <p><u>Zoom in and out </u></p>
-       Zoom in and out features are available for the users. This is located on the top left corner. 
-       Plus + is to zoom in minus - is to zoom out. 
+    The pie chart represents the coverage of the markers landmass in comparison with the landmass the user
+    can see in the maps view. It is calculated by aggregating all the footprints on-screen (taking into
+    consideration overlapping of footprints).
     </p>
     <img class="Map-layers" src="img/Zoom_in_out.gif">
-     <p>
-      <p><u>Search bar </u></p>
-       Other features include search icon which allows you to manually write the location of user desired
-       location. To use this click on the search engine, write the location of where you want to go.  
-       Note be specific to where you want to go because, there might be more than one location with the same name.  
-     </p>   
-     <img class="Map-layers" src="img/Search-GIF.gif">  
+  </details>
+  <details open>
+    <summary><u><b>How do i search for a location?</b></u></summary>
+    <p>
+    To search for a specific location you can click the magnifying glass icon, underneeth the zoom in and
+    zoom out. You can search for any city/country and the map will redirect your view to that area, along
+    with placing a temporary marker in that location.
+    </p>   
+    <img class="Map-layers" src="img/Search-GIF.gif">  
   </details>
 
 </div>
