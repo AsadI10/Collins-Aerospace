@@ -142,7 +142,7 @@
   }
   p{
     font-family: 'Poppins', sens-serif;
-    font-size: 16px;
+    font-size: 16px; 
   }
   body{
     /* background-color: white; */
