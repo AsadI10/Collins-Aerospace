@@ -150,7 +150,8 @@ weeks in order to demonstrate our ability to create a profesional application.
 <style>
   p{
     font-family: 'Poppins', sens-serif;
-    font-size: 16px; 
+    font-size: 16px;
+    padding: 6px;
   }
   .Map-layers{
     width:100%;
