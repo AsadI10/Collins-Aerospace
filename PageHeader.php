@@ -23,6 +23,8 @@
       </li>
     </ul>
   </div>
+  <!-- added image on the right  -->
+  <img src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png" width="10%">
 </nav>
 </header>
 
@@ -31,6 +33,7 @@
         font-size: 25px;
         font-weight: bold;
         color: black;
+        cursor:pointer;
     }
     nav ul li{
         font-size: 20px;

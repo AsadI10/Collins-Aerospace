@@ -8,12 +8,12 @@ loadMarkers(data);
 map.on('boxzoomend', onShiftDrag);
 //Allows us to know what markers the user is looking at
 map.on('zoomend', getVisibleMarkers);
-map.on('dragend',getVisibleMarkers);
+map.on('dragend', getVisibleMarkers);
 
 
 function getVisibleMarkers(e){
     var arr = [];
-    console.log(e.options);
+    //console.log(e.options);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
@@ -22,7 +22,7 @@ function getVisibleMarkers(e){
     });
 
     loadPieChart(arr);
-    loadSideBarGeneral(arr.length);
+    loadSideBarGeneral(arr);
 }
 
 // Map events
@@ -46,19 +46,6 @@ function onShiftDrag(e){
             loadSideBarProduct(element);
         }
     });
-}
-
-function getVisibleMarkers(e){
-    var arr = [];
-
-    markers.getLayers().forEach(element => {
-        if(map.getBounds().contains(element._latlng)){
-            arr.push(element.options.area);
-        }
-    });
-
-    loadPieChart(arr);
-    loadSideBarGeneral(arr);
 }
 
 //https://stackoverflow.com/questions/53604117/calculate-area-of-a-polygon-using-longitude-and-latitude-using-javascript

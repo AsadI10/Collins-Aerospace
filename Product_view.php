@@ -18,12 +18,50 @@ require_once("./SessionMaster.php");
     <?php
     include("PageHeader.php");
     ?>
-    <div>
+    <div style="overflow:auto; height:90%">
     <?php
 
-    $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
-    $json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
-    echo $json_string;
+    $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
+    //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
+
+    function displaylevel($obj, $depth, $isarr){
+        $hasDisplayed = false;
+        foreach($obj as $name => $val){
+            $hasDisplayed = true;
+            if(!$isarr){
+                echo str_repeat("-",$depth * 4); echo "\"".$name."\""; ?> : <?php
+            }
+            else{
+                echo str_repeat("-",$depth * 4); echo "[".$name."]"; ?> : <?php
+            }
+
+            switch(gettype($val)){
+                case "object":
+                    ?> <br> <?php
+                    displaylevel($val,$depth+1, false);
+                    break;
+                case "array":
+                    ?> <br> <?php
+                    displaylevel($val,$depth+1, true);
+                    break;
+                case "integer":
+                    echo $val;
+                    ?> <br> <?php
+                    break;
+                default:
+                    echo $val == null ? "NULL" : "\"".$val."\"";
+                    ?> <br> <?php
+                    break;
+            }
+        }
+        if(!$hasDisplayed){
+            echo str_repeat("-",$depth * 4)."EMPTY";
+            ?> <br> <?php
+        }
+    }
+
+    displaylevel($data,0, false);
+    
     ?>
     </div>
 </body>
