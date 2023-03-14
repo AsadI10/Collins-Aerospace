@@ -120,14 +120,14 @@ weeks in order to demonstrate our ability to create a profesional application.
        Zoom in and out features are available for the users. This is located on the top left corner. 
        Plus + is to zoom in minus - is to zoom out. 
     </p>
-    <img class="Zoom-in" src="img/Zoom_in_out.gif">
+    <img class="Map-layers" src="img/Zoom_in_out.gif">
      <p>
       <p><u>Search bar </u></p>
        Other features include search icon which allows you to manually write the location of user desired
        location. To use this click on the search engine, write the location of where you want to go.  
        Note be specific to where you want to go because, there might be more than one location with the same name.  
      </p>   
-     <img class="search-bar" src="img/Search-GIF.gif">  
+     <img class="Map-layers" src="img/Search-GIF.gif">  
   </details>
 
 </div>
