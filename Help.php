@@ -92,7 +92,7 @@ weeks in order to demonstrate our ability to create a profesional application.
 <br>
 
 <div class="Dropmenu">
-  <details>
+  <details open>
   <summary>How do i change the map view.</summary>
     <p>
     If you want to change the style/colour of the map click the stack icon in the top right of the map view.
@@ -100,7 +100,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     </p>
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
-  <details>
+  <details open>
     <summary>The Map</summary>
     <p>
       Map is a interactable and main part of the software which allows user to view.Location
@@ -108,7 +108,7 @@ weeks in order to demonstrate our ability to create a profesional application.
       calculating the footprint area.
     </p>
   </details>
-  <details>
+  <details open>
     <summary>Icon</summary>
     <p>
     <p>
