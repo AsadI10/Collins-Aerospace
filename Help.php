@@ -93,20 +93,18 @@ weeks in order to demonstrate our ability to create a profesional application.
 
 <div class="Dropmenu">
   <details open>
-  <summary>How do i change the map view.</summary>
+  <summary><u>How do i change the map view?</u></summary>
     <p>
       Navbar directs user to three different directories index page, help page, and logout.
       To access index page user can click on the home page which will be the main page.
       Help will direct user to help page if the user need access to any guidence.
       Finally to logout click logout it will direct out main login page.
-  
     </p>
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
   <details open>
-    <summary>The Map</summary>
+    <summary><u>How do i get the details from a marker</u></summary>
     <p>
-    <p><u>The Map</u></p>
       Map is a interactable and main part of the software which allows user to view.Location
       and interact with collection of markers. Markers is product which contains all the data such as 
       calculating the footprint area.
