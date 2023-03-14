@@ -148,18 +148,15 @@ weeks in order to demonstrate our ability to create a profesional application.
   body{
     /* background-color: white; */
     background-color: white;
-     /* float: center; */
     position: center;
     overflow-x: hidden;
 	  overflow-y: auto;
 	  text-align:justify;
     margin-top: -6px;
   }
-  /* added nav  */
   nav{
     text-align: right;
     overflow: hidden;
-    /* margin-top: -20px; */
     position: relative;
     margin-top: -42px;
     padding-right: 15px;
