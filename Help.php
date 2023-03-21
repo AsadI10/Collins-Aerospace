@@ -93,7 +93,7 @@ weeks in order to demonstrate our ability to create a profesional application.
 
 <div class="Dropmenu">
   <details open>
-  <summary><u><b>How do i change the map view?</b></u></summary>
+  <summary><u><b>How do I change the map view?</b></u></summary>
     <p>
       Navbar directs user to three different directories index page, help page, and logout.
       To access index page user can click on the home page which will be the main page.
@@ -103,7 +103,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     <img class="Map-layers" src="img/Map-Views.gif">
   </details>
   <details open>
-    <summary><u><b>How do i get the details from a marker?</b></u></summary>
+    <summary><u><b>How do I get the details from a marker?</b></u></summary>
     <p>
     If you want to view the details of a single marker then you just need to left click it and it will
     appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
@@ -127,7 +127,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     <img class="Map-layers" src="img/Zoom_in_out.gif">
   </details>
   <details open>
-    <summary><u><b>How do i search for a location?</b></u></summary>
+    <summary><u><b>How do I search for a location?</b></u></summary>
     <p>
     To search for a specific location you can click the magnifying glass icon, underneeth the zoom in and
     zoom out. You can search for any city/country and the map will redirect your view to that area, along
