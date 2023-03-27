@@ -13,13 +13,11 @@ function loadPieChart(data){
       [bounds.getSouthEast().lat, bounds.getSouthWest().lng]
     ];
     baseval = calculateArea(boundsarr) / 1000000;
-    console.log(baseval);
 
     //gets the aggregate area of each marker the user can see
     let total = data.reduce(function(a, b){
       return a + b;
     });
-    console.log(total);
 
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));

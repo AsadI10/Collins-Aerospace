@@ -44,7 +44,9 @@
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
-          <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/"></script>
+          <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+          <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
           <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <!-- use this to get the search bar -->
