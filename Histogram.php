@@ -18,7 +18,7 @@
 
         var options = {
             title: 'Data Creation Dates',
-            legend: { position: 'none' },
+            legend: { position: 'top', maxLines: 2  },
         };
 
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
