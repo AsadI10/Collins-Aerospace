@@ -10,7 +10,8 @@
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <h1 class="CompanyName" href="">Aerospace Discovery</h1>
+    <!-- <h1 class="CompanyName" href="">Aerospace Discovery</h1> -->
+    <img class="logo "src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png" width="10%">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
@@ -24,7 +25,6 @@
     </ul>
   </div>
   <!-- added image on the right  -->
-  <img class="logo "src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png" width="10%">
 </nav>
 </header>
 
