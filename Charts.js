@@ -42,6 +42,7 @@ function loadPieChart(data){
       }
 }
 
+/*
 function loadHistogram(data){
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawChart);
@@ -64,3 +65,4 @@ function loadHistogram(data){
       chart.draw(data, options);
     }
 }
+  */
