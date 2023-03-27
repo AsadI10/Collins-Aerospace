@@ -105,7 +105,7 @@
     /* background-color: white; */
     background-color: white;
   }
-    .sidebar {
+  .sidebar {
   position: fixed;
   top: 0;
   left: 0;
