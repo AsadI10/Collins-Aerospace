@@ -1,0 +1,30 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="GetPage.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var arrayData = [];
+        arrayData.push(["Product", "Date"]);
+        var products;
+        GetWebPage("Fetch_product_data.php", function (text) { products = JSON.parse(text) });
+        for(var i = 0; i < products.length; i++){
+            var date = new Date(1970, 0, 1);
+            date.setSeconds(products[i]["DateCreated"]);
+            arrayData.push([products[i]["Identifier"] + i, date]);
+        }
+
+        var data = google.visualization.arrayToDataTable(arrayData);
+
+    var options = {
+        title: 'Data Creation Dates',
+        legend: { position: 'none' },
+    };
+
+    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+    chart.draw(data, options);
+    }
+</script>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<?php
+?>

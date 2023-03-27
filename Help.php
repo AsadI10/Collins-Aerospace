@@ -58,7 +58,7 @@
 
 <p>
 Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
-This Project has been developed by 5 students at sheffield hallam university over the span of 12
+This Project has been developed by collins team one at sheffield hallam university over the span of 12
 weeks in order to demonstrate our ability to create a profesional application.
 </p>
 <br>
