@@ -72,7 +72,7 @@ require_once("./SessionMaster.php");
     .DataProductPage{
         border: solid black 2px;
         font-size: 19px;
-        width: 70%;
+        width: 80%;
         padding: 2px;
         margin-left: 100px;
     }
