@@ -104,10 +104,10 @@
 <style>
   .searchsidebar{
     margin-top:12px;
-    display: block;
+    display: left;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 50%;
   }
   body{
     background-color: white;

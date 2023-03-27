@@ -28,8 +28,8 @@ else{
 		Document Type: <?php echo $id->DocumentType; ?><br>
 		Mission: <?php echo $id->MissionID; ?><br>
 		Creator: <?php echo $id->Creator; ?><br>
-		Created: <?php echo $id->DateCreated; ?><br>
-		Modified: <?php echo $id->DateModified; ?><br>
+		Created: <?php echo date("d-m-Y H:i:s", $id->DateCreated); ?><br>
+		Modified: <?php echo date("d-m-Y H:i:s", $id->DateModified); ?><br>
 	</div>
 	<a class="Details-link" href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a></h1>
 <?php
