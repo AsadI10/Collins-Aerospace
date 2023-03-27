@@ -77,5 +77,6 @@ require_once("./SessionMaster.php");
         width: 80%;
         padding: 2px;
         margin-left: 150px;
+        
     }
 </style>
