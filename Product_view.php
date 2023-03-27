@@ -82,5 +82,6 @@ require_once("./SessionMaster.php");
     body{
         overflow: auto;
         height:100%;
+        
     }
 </style>
