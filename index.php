@@ -105,7 +105,6 @@
 
 .Searchsidebar{
   float: right;
-  margin-bottom:10px;
 }
 
 
