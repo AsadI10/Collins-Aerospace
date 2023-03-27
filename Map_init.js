@@ -91,8 +91,8 @@ googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
 //Trying to create a Leaflet layer control
 var baseLayers = {
   "Bluemap": EsriWorldImagery,
-  "Smooth Dark": Stadia_AlidadeSmoothDark,
+  "SmoothDark": Stadia_AlidadeSmoothDark,
   "OSMBright": StadiaOSMBright,
-  "Satellite Map": googleSat
+  "SatelliteMap": googleSat
 };
 L.control.layers(baseLayers).addTo(map);
