@@ -28,3 +28,11 @@
 <div id="chart_div" style="width: 900px; height: 500px;"></div>
 <?php
 ?>
+
+<style>
+    div#chart_div div div div svg g g g{
+        color: red;
+        font-size: 20px;
+    }
+</style>
+
