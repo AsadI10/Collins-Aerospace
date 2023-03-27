@@ -44,6 +44,9 @@ class CacheDB{
             $db = new Sqlite3($this->path);
             $sql = "SELECT * FROM Products WHERE Product_ID = :pid";
             $stmt = $db->prepare($sql);
+            if(!$stmt)
+                RaiseFatalError("Cache DB", "Cache Table Missing.");
+
             $stmt->bindParam(':pid', $productid);
             $result = $stmt->execute();
 
