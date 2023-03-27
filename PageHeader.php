@@ -39,7 +39,7 @@
         color: black;
         cursor:pointer;
     }
-    nav ul li{
+    /* nav ul li{
         font-size: 20px;
         font-weight: bold;
         background-color: #f8f9fa; 
@@ -48,7 +48,24 @@
         font-size: 20px;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
-    }
+    } */
+    nav{
+    text-align: right;
+    overflow: hidden;
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+}
     .navbar-light .navbar-nav .nav-link{
         color: black;
         font-weight: bold;

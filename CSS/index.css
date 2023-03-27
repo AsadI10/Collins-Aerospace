@@ -74,11 +74,11 @@ span#panel1{
     cursor: pointer;
 }
 
-nav{
+/* nav{
     text-align: right;
     color: aliceblue;
     overflow: hidden;
-    /* margin-top: -20px; */
+    margin-top: -20px;
     position: relative;
     margin-top: -42px;
     padding-right: 15px;
@@ -90,6 +90,23 @@ nav ul li{
     padding:100px 10px 10px; 
     padding: 5px 16px;
     background-color: rgb(185, 180, 180);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+} */
+nav{
+    text-align: right;
+    overflow: hidden;
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px;
+    padding: 5px 16px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace; 
     cursor: pointer;
