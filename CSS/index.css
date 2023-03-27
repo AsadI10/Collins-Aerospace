@@ -128,13 +128,6 @@ nav ul li{
     position: relative;
     left: -100px;
 }
-/* Histogram */ 
-#chart_div{
-    margin: auto;
-    width: 95%;
-    position: relative;
-    margin-top: -17px;
-}
 .btn-group{
     position: fixed;
     margin-left: 1000px;
