@@ -197,7 +197,7 @@ class APIInterface{
 		$p = new ProductData($identifier,$result->viewname,$result->centre);
 		$p->DocumentType = $result->documentType;
 		$p->DateCreated = $result->datecreated/1000;
-		$p->DateModified = $result->datemodified/1000);
+		$p->DateModified = $result->datemodified/1000;
 		$p->Footprint = new FootprintData($result->footprint->type, $result->footprint->coordinates);
 		$p->ProductURL = $result->producturl;
 		$p->Thumbnail = $result->thumbnail;
