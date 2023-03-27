@@ -31,7 +31,7 @@
 <style> 
 .logo{
   cursor:pointer;
-  width: 11vw;
+  width: 9.5vw;
 }
    .CompanyName{
         font-size: 25px;
