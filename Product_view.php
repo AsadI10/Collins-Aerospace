@@ -18,6 +18,7 @@ require_once("./SessionMaster.php");
     <?php
     include("PageHeader.php");
     ?>
+    <br>
     <?php
     $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
     //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
