@@ -26,7 +26,7 @@ require_once("./SessionMaster.php");
     include("Histogram.php");
     ?>
 
-    <div class="DataProductPage" style="overflow:auto; height:90%">
+    <div class="DataProductPage">
     <?php
     function displaylevel($obj, $depth, $isarr){
         $hasDisplayed = false;
@@ -77,6 +77,10 @@ require_once("./SessionMaster.php");
         width: 80%;
         padding: 2px;
         margin-left: 150px;
-        
+        /* style="overflow:auto; height:90%" */
+    }
+    body{
+        overflow: auto;
+        height:100%;
     }
 </style>
