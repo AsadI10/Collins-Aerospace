@@ -84,9 +84,10 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
+    <input class="searchsidebar" type="text" placeholder="Search..">
     <div id="panel-info">
     </div>
-  </span>
+  </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
@@ -101,18 +102,23 @@
 </html>
 
 <style>
+  .searchsidebar{
+    margin-top:12px;
+    display: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   body{
-    /* background-color: white; */
     background-color: white;
   }
-    .sidebar {
+  .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 200px;
   background-color: #242424;
-  /* background-color: black; */
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
@@ -123,7 +129,6 @@
   font-weight: bold;
   position: absolute;
   top: 0;
-  /* right: -50px; */
   right: 0px;
   background-color: #333;
   color: #fff;
