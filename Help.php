@@ -5,34 +5,6 @@
     require_once("./APIInterface.php");
     require_once("./CacheDB.php");
     require_once("./SessionMaster.php");
-
-    // Initialize the caching database to cache API call results
-    if(!isset($_SESSION["CacheDB"])){
-        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
-    }
-    // Initialize the APIInterface to communicate with the API
-    if(!isset($_SESSION["APIInterface"]) || $_SESSION["APIInterface"]->IsLoggedIn() == false){
-        if(!isset($_POST["Username"]) || !isset($_POST["Password"])){
-            header("Location: ./Login.php");
-        }
-        else{
-            $_SESSION["APIInterface"] = new APIInterface("https://hallam.sci-toolset.com", $_POST["Username"], $_POST["Password"]);
-        }
-    }
-
-    // Initialize the caching database to cache API call results
-    if(!isset($_SESSION["CacheDB"])){
-        $_SESSION["CacheDB"] = new CacheDB("./Cache.db");
-    }
-
-    // The testing zone
-    //$testIdentifier = $_SESSION["APIInterface"]->GetAllProductIdentifiers()[0];
-    //$testProduct = ProductData::Load($testIdentifier);
-    //var_dump($testProduct);
-
-    //$_SESSION["APIInterface"]->echojson($testIdentifier);
-     
-    // Not the testing zone
 ?>
 
 <!DOCTYPE html>
@@ -155,7 +127,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     padding: 6px;
   }
   .Map-layers{
-    width:100%;
+    width:40%;
     display:block;
     margin-left:auto;
     margin-right:auto;
