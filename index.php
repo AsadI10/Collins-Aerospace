@@ -84,7 +84,7 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
-    <input type="text" placeholder="Search..">
+    <input class="Searchsidebar" type="text" placeholder="Search..">
     <div id="panel-info">
     </div>
   </span>
@@ -102,6 +102,14 @@
 </html>
 
 <style>
+
+.Searchsidebar{
+  float: right;
+  margin-bottom:10px;
+}
+
+
+
   body{
     /* background-color: white; */
     background-color: white;
