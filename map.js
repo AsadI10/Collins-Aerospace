@@ -1,4 +1,4 @@
-loadMarkers(data);
+ReloadMap();
 //---------------
 //---CODE BODY---
 //---------------
