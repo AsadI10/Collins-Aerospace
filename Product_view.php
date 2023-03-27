@@ -17,14 +17,14 @@ require_once("./SessionMaster.php");
     <br>
     <?php
     include("PageHeader.php");
-    ?>
-    <div style="overflow:auto; height:90%">
-    <?php
-
     $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
     //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
-
+    
     include("Histogram.php");
+    ?>
+    <div class="DataProductPage" style="overflow:auto; height:90%">
+    <?php
+
 
     function displaylevel($obj, $depth, $isarr){
         $hasDisplayed = false;
@@ -67,3 +67,13 @@ require_once("./SessionMaster.php");
     ?>
     </div>
 </body>
+
+<style>
+    .DataProductPage{
+        border: solid black 2px;
+        font-size: 19px;
+        width: 80%;
+        padding: 2px;
+        margin-left: 150px;
+    }
+</style>
