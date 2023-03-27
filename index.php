@@ -84,11 +84,7 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
-<<<<<<< HEAD
     <input class="search" type="text" placeholder="Search..">
-=======
-    <input class="Searchsidebar" type="text" placeholder="Search..">
->>>>>>> 908846688beb148021dfb984e7d80ddf80bc96a9
     <div id="panel-info">
     </div>
   </span> 
