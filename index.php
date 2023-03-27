@@ -129,7 +129,6 @@
   font-weight: bold;
   position: absolute;
   top: 0;
-  /* right: -50px; */
   right: 0px;
   background-color: #333;
   color: #fff;
