@@ -91,7 +91,7 @@
 >>>>>>> 908846688beb148021dfb984e7d80ddf80bc96a9
     <div id="panel-info">
     </div>
-  </span>
+  </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
