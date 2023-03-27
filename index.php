@@ -86,7 +86,7 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
-    <input class="searchsidebar" type="text" placeholder="Search...">
+    <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
     <div id="panel-info">
     </div>
   </span> 

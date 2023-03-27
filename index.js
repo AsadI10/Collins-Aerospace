@@ -1,5 +1,13 @@
-GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) });
-
+function isEmptyOrSpaces(str) {
+    return str === null || str.match(/^ *$/) !== null;
+}
+function ReloadMap() {
+    var missionID = document.getElementById("MissionSearch").value;
+    console.log(missionID);
+    GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) }, (isEmptyOrSpaces(missionID) != null? "missionid=" + missionID : ""));
+    markers.clearLayers();
+    loadMarkers(data);
+}
 
 function calculateArea(latLngs) {
 
