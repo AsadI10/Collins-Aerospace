@@ -18,7 +18,7 @@
 
         var options = {
             title: 'Data Creation Dates',
-            legend: { position: 'top', maxLines: 2  },
+            legend: { position: 'none' },
         };
 
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
@@ -29,10 +29,4 @@
 <?php
 ?>
 
-<style>
-    div#chart_div div div div svg g g g{
-        color: red;
-        font-size: 20px;
-    }
-</style>
 
