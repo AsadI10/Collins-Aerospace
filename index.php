@@ -84,9 +84,10 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
+    <input class="search" type="text" placeholder="Search..">
     <div id="panel-info">
     </div>
-  </span>
+  </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
@@ -101,11 +102,18 @@
 </html>
 
 <style>
+  .search{
+    margin-top:12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   body{
     /* background-color: white; */
     background-color: white;
   }
-    .sidebar {
+  .sidebar {
   position: fixed;
   top: 0;
   left: 0;
