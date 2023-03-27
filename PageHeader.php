@@ -44,7 +44,7 @@
         background-color: #f8f9fa; 
         padding-left: 10px 10px 10px;
         display: inline;
-        font-size: 17px;
+        font-size: 20px;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
     }
