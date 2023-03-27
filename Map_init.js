@@ -92,7 +92,7 @@ googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
 var baseLayers = {
   "Bluemap": EsriWorldImagery,
   "Smooth Dark": Stadia_AlidadeSmoothDark,
-  "Bright Map": StadiaOSMBright,
+  "OSMBright": StadiaOSMBright,
   "Satellite Map": googleSat
 };
 L.control.layers(baseLayers).addTo(map);
