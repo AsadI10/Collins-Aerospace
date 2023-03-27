@@ -119,7 +119,6 @@
   bottom: 0;
   width: 200px;
   background-color: #242424;
-  /* background-color: black; */
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
