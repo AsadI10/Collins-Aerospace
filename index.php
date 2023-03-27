@@ -87,7 +87,7 @@
     <input class="Searchsidebar" type="text" placeholder="Search..">
     <div id="panel-info">
     </div>
-  </span>
+  </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
@@ -102,17 +102,6 @@
 </html>
 
 <style>
-
-.Searchsidebar{
-  float: left;
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-
-}
-
-
-
   body{
     /* background-color: white; */
     background-color: white;
