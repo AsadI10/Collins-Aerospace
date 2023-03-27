@@ -4,6 +4,15 @@ require_once("./CacheDB.php");
 require_once("./FootprintData.php");
 require_once("./ErrorHandler.php");
 
+//Test function (Allows us to log shit)
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
 
