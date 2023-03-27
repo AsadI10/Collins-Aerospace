@@ -84,6 +84,7 @@
       <label id="generalData-Label">Products: </label>
       <a id="generalData-Products"></a>
     </div>
+    <input type="text" placeholder="Search..">
     <div id="panel-info">
     </div>
   </span>

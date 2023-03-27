@@ -24,6 +24,8 @@ require_once("./SessionMaster.php");
     $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
     //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
 
+    include("Histogram.php");
+
     function displaylevel($obj, $depth, $isarr){
         $hasDisplayed = false;
         foreach($obj as $name => $val){

@@ -26,6 +26,7 @@ else{
 	<h1 class="phpheader"><?php echo $id->GetName(); ?>
 	<div class="divsidepanal">
 		Document Type: <?php echo $id->DocumentType; ?><br>
+		Mission: <?php echo $id->MissionID; ?><br>
 		Creator: <?php echo $id->Creator; ?><br>
 		Created: <?php echo $id->DateCreated; ?><br>
 		Modified: <?php echo $id->DateModified; ?><br>
