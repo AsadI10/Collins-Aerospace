@@ -74,6 +74,7 @@
           <script src="index.js"></script>
 </head>
 <body>
+  <!-- this is the loading animation of the index page -->
   <!-- <div id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
