@@ -36,11 +36,8 @@ require_once("./SessionMaster.php");
         <?php
             $hasDisplayed = false;
             foreach($obj as $name => $val){
-                ?>
-        
-                <li>
-                    <summary>
-                        <?php
+                ?><li>
+                    <summary><?php
                         // Display a name
                         $hasDisplayed = true;
                         if(!$isarr){
@@ -55,22 +52,20 @@ require_once("./SessionMaster.php");
                     // If object type has children, display
                     switch(gettype($val)){
                         case "object":
-                            ?> <br><details> <?php
+                            ?><details><?php
                             displaylevel($val, false);
                             ?></details><?php
                             break;
                         case "array":
-                            ?> <br><details> <?php
+                            ?><details><?php
                             displaylevel($val, true);
                             ?></details><?php
                             break;
                         case "integer":
                             echo $val;
-                            ?> <br> <?php
                             break;
                         default:
                             echo $val == null ? "NULL" : "\"".$val."\"";
-                            ?> <br> <?php
                             break;
                     }
                     ?>
