@@ -54,7 +54,7 @@ require_once("./SessionMaster.php");
                         </span> : <span class="variable_value">
                         <?php
 
-                        
+                        // this is test
                         // If object type has children, display
                         switch(gettype($val)){
                             case "object":

@@ -75,7 +75,7 @@
 </head>
 <body>
   <!-- this is the loading animation of the index page -->
-  <!-- <div id="loading">
+  <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
 <br>
@@ -117,10 +117,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        /* background-color: #fff; */
         z-index: 9999;
         text-align: center;
+        animation: display 1s linear;
       }
+
+      
       
       #loading img {
         margin-top: 20%;
