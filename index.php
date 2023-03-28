@@ -87,6 +87,8 @@
       <a id="generalData-Products"></a>
     </div>
     <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
+    <!-- <button class="ClearButton"><a href="index.php">Clear</a></button> -->
+    <button class="ClearButton">Clear</button>
     <div id="panel-info">
     </div>
   </span> 
@@ -104,7 +106,14 @@
 </html>
 
 <style>
+  .ClearButton{
+    font-weight: bold;
+    border: solid 2px black;
+    color: black;
+  }
   .searchsidebar{
+    border: solid black 2px;
+    font-weight: bold;
     margin-top:12px;
     display: left;
     margin-left: auto;
