@@ -9,7 +9,7 @@ function loadMarkers(pulledData){
         var id = tmp["Identifier"];
         // Parse the coordinates of the centre
         var centre = tmp["Centre"];
-        var footp = simplifyPath(tmp["Footprint"],);
+        var footp = tmp["Footprint"];
         var latlang = centre.split(',');
 
         L.marker([latlang[0], latlang[1]], {
