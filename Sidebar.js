@@ -51,4 +51,3 @@ function clearProducts(){
           }
     }
 }
-​
