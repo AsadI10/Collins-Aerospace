@@ -28,25 +28,31 @@ require_once("./SessionMaster.php");
 
     <div class="DataProductPage">
     <?php
-    function displaylevel($obj, $depth, $isarr){
+    function displaylevel($obj, $isarr){
+        ?>
+        <ul>
+        <?php
         $hasDisplayed = false;
         foreach($obj as $name => $val){
+            ?>
+            <li>
+            <?php
             $hasDisplayed = true;
             if(!$isarr){
-                echo str_repeat("-",$depth * 4); echo "\"".$name."\""; ?> : <?php
+                echo "\"".$name."\""; ?> : <?php
             }
             else{
-                echo str_repeat("-",$depth * 4); echo "[".$name."]"; ?> : <?php
+                echo "[".$name."]"; ?> : <?php
             }
 
             switch(gettype($val)){
                 case "object":
                     ?> <br> <?php
-                    displaylevel($val,$depth+1, false);
+                    displaylevel($val, false);
                     break;
                 case "array":
                     ?> <br> <?php
-                    displaylevel($val,$depth+1, true);
+                    displaylevel($val, true);
                     break;
                 case "integer":
                     echo $val;
@@ -57,13 +63,18 @@ require_once("./SessionMaster.php");
                     ?> <br> <?php
                     break;
             }
+            ?>
+            </li>
+            <?php
         }
         if(!$hasDisplayed){
-            echo str_repeat("-",$depth * 4)."EMPTY";
+            echo "EMPTY";
             ?> <br> <?php
         }
+        ?>
+        </ul>
+        <?php
     }
-
     displaylevel($data,0, false);
     
     ?>
