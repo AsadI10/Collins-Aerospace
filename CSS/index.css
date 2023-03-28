@@ -136,7 +136,7 @@ nav ul li{
 #generalData{
     position: absolute;
     /* left:250px;  */
-    margin-left: 215px;
+    margin-left: 240px; /*originally set to 215 */
     margin-top: -190px;
 }
 #panel-info{
