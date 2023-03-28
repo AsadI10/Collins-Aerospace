@@ -118,6 +118,7 @@ nav ul li{
         width: 80%;
         padding: 2px;
         margin-left: 150px;
+        background: #c9c9cd;
     }
     body{
         overflow: auto;
