@@ -14,10 +14,15 @@ function loadPieChart(data){
     ];
     baseval = calculateArea(boundsarr) / 1000000;
 
+    let total;
+    try{
     //gets the aggregate area of each marker the user can see
-    let total = data.reduce(function(a, b){
-      return a + b;
-    });
+        total = data.reduce(function(a, b){
+        return a + b;
+      });
+    }catch(error){
+      total = baseval;
+    }
 
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
