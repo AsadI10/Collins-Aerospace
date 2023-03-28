@@ -1,0 +1,4 @@
+cd /c/Users/New\Owner/Documents/GitHub/Collins-Aerospace/Collins-Aerospace;
+mapshaper -i tmpgeojson.json \
+        -simplify percentage=0.01 dp no-repair keep-shapes planar \
+        -o outputgeojson.json|/c/Users/New\Owner/Documents/GitHub/Collins-Aerospace/Collins-Aerospace
