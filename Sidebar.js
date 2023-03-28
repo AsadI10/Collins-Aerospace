@@ -1,5 +1,5 @@
-function loadSideBarGeneral(productContent){
-    //console.log(productContent);
+// Loads details to the section to the side of the pie chart.
+function loadSideBarGeneral(productContent) {
     document.getElementById("generalData-Label").hidden = false;
     document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  " + markers.getLayers().length
     + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
