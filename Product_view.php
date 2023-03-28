@@ -10,7 +10,7 @@ require_once("./SessionMaster.php");
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/index.css"/>
+    <!-- <link rel="stylesheet" href="CSS/index.css"/> -->
 </head>
 <body>
     <br> 
@@ -25,7 +25,7 @@ require_once("./SessionMaster.php");
     include("Histogram.php");
     ?>
 
-    <div class="DataProductPage" style="overflow:auto; height:90%">
+    <div class="DataProductPage">
     <?php
     function displaylevel($obj, $depth, $isarr){
         $hasDisplayed = false;
@@ -67,14 +67,43 @@ require_once("./SessionMaster.php");
     
     ?>
     </div>
+    <br>
 </body>
 
 <style>
+    nav{
+    text-align: right;
+    overflow: hidden;
+    position: relative;
+    margin-top: -48px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+}
     .DataProductPage{
         border: solid black 2px;
         font-size: 19px;
         width: 80%;
         padding: 2px;
         margin-left: 150px;
+        /* style="overflow:auto; height:90%" */
     }
+    body{
+        overflow: auto;
+        height:100%;
+    }
+    #chart_div{
+    margin: auto;
+    width: 95%;
+    position: relative;
+    margin-top: -17px;
+}
 </style>
