@@ -4,7 +4,6 @@ if(!isset($_GET['identifier'])){
 }
 require_once("./APIInterface.php");
 require_once("./SessionMaster.php");
-
 ?>
 
 <head>
