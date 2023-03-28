@@ -81,13 +81,13 @@ weeks in order to demonstrate our ability to create a profesional application.
     appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
     to view all the JSON it contains you can click "Details".
     </p>
-    <img class="Map-layers" src="img/Marker-view-details.gif">
+    <img class="Map-layers" src="img/Marker-det.gif">
     <p>
     <br>
     To select multiple markers you can shift + left click in order to drag a box over markers. This will
     then put the markers into the sidebar.
     </p>
-    <img class="Map-layers" src="img/2023-03-14 10-08-04.gif">
+    <img class="Map-layers" src="img/Multiple_Markers.gif">
   </details>
   <details open>
     <summary><u><b>How does the pie chart update?</b></u></summary>
@@ -96,7 +96,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     can see in the maps view. It is calculated by aggregating all the footprints on-screen (taking into
     consideration overlapping of footprints).
     </p>
-    <img class="Map-layers" src="img/Zoom_in_out.gif">
+    <img class="Map-layers" src="img/Pie-Chart.gif">
   </details>
   <details open>
     <summary><u><b>How do I search for a location?</b></u></summary>
@@ -105,7 +105,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     zoom out. You can search for any city/country and the map will redirect your view to that area, along
     with placing a temporary marker in that location.
     </p>   
-    <img class="Map-layers" src="img/Search-GIF.gif">  
+    <img class="Map-layers" src="img/Search.gif">
   </details>
   <details open>
     <summary><u><b>What does the red box represent under the markers?</b></u></summary>
