@@ -21,6 +21,7 @@ require_once("./SessionMaster.php");
     <br>
     <?php
     $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
+    //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
 
     include("Histogram.php");
     ?>
@@ -52,7 +53,7 @@ require_once("./SessionMaster.php");
                             ?>
                         </span> : <span class="variable_value">
                         <?php
-    
+                        
                         // If object type has children, display
                         switch(gettype($val)){
                             case "object":
