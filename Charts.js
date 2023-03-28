@@ -21,13 +21,12 @@ function loadPieChart(data){
         return a + b;
       });
     }catch(error){
-      total = baseval;
+      total = 0;
     }
 
     // Clamp to maximum
     if (total > baseval)
         total = baseval;
-
     // Load the package and call the function as soon as possible to load the chart
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart(data));
