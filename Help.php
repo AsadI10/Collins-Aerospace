@@ -73,9 +73,13 @@ weeks in order to demonstrate our ability to create a profesional application.
       Finally to logout click logout it will direct out main login page.
     </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <!-- Display map view -->
     <img class="Map-layers" src="img/Map-Views.gif">
+=======
+    <img class="Map-layers" src="img/Map-View.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
 =======
     <img class="Map-layers" src="img/Map-View.gif">
 >>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
@@ -88,9 +92,13 @@ weeks in order to demonstrate our ability to create a profesional application.
     to view all the JSON it contains you can click "Details".
     </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <!-- Display marker -->
     <img class="Map-layers" src="img/Marker-view-details.gif">
+=======
+    <img class="Map-layers" src="img/Marker-det.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
 =======
     <img class="Map-layers" src="img/Marker-det.gif">
 >>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
@@ -109,8 +117,12 @@ weeks in order to demonstrate our ability to create a profesional application.
     consideration overlapping of footprints).
     </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- Display pie charts-->
     <img class="Map-layers" src="img/Zoom_in_out.gif">
+=======
+    <img class="Map-layers" src="img/Pie-Chart.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
 =======
     <img class="Map-layers" src="img/Pie-Chart.gif">
 >>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
@@ -123,9 +135,13 @@ weeks in order to demonstrate our ability to create a profesional application.
     with placing a temporary marker in that location.
     </p>   
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <!-- Search for location -->
     <img class="Map-layers" src="img/Search-GIF.gif">  
+=======
+    <img class="Map-layers" src="img/Search.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
 =======
     <img class="Map-layers" src="img/Search.gif">
 >>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
