@@ -44,6 +44,9 @@ class CacheDB{
             $db = new Sqlite3($this->path);
             $sql = "SELECT * FROM Products WHERE Product_ID = :pid";
             $stmt = $db->prepare($sql);
+            if(!$stmt)
+                RaiseFatalError("Cache DB", "Cache Table Missing.");
+
             $stmt->bindParam(':pid', $productid);
             $result = $stmt->execute();
 
@@ -111,6 +114,19 @@ class CacheDB{
     public function GetAllStoredMissionIDs(){
         $db = new Sqlite3($this->path);
         $sql = "SELECT DISTINCT Mission_ID FROM Products";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute();
+
+        $r = array();
+        while ($row = $result->fetchArray(SQLITE3_NUM)) {
+            array_push($r,$row);
+        }
+
+        return $r;
+    }
+    public function GetAllStoredDocumentTypes(){
+        $db = new Sqlite3($this->path);
+        $sql = "SELECT DISTINCT Document_Type FROM Products";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();
 

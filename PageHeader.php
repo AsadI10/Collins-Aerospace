@@ -10,7 +10,8 @@
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <h1 class="CompanyName" href="">Aerospace Discovery</h1>
+    <!-- <h1 class="CompanyName" href="">Aerospace Discovery</h1> -->
+    <img class="logo "src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
@@ -24,13 +25,13 @@
     </ul>
   </div>
   <!-- added image on the right  -->
-  <img class="logo "src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png" width="10%">
 </nav>
 </header>
 
 <style> 
 .logo{
   cursor:pointer;
+  width: 9.5vw;
 }
    .CompanyName{
         font-size: 25px;
@@ -38,16 +39,33 @@
         color: black;
         cursor:pointer;
     }
-    nav ul li{
+    /* nav ul li{
         font-size: 20px;
         font-weight: bold;
         background-color: #f8f9fa; 
         padding-left: 10px 10px 10px;
         display: inline;
-        font-size: 17px;
+        font-size: 20px;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace; 
-    }
+    } */
+    nav{
+    text-align: right;
+    overflow: hidden;
+    position: relative;
+    margin-top: -42px;
+    padding-right: 15px;
+}
+nav ul li{
+    display: inline;
+    font-size: 17px;
+    color: black;
+    padding:100px 10px 10px; 
+    padding: 5px 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
+}
     .navbar-light .navbar-nav .nav-link{
         color: black;
         font-weight: bold;

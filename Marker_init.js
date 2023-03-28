@@ -23,7 +23,7 @@ function loadMarkers(pulledData){
             area: Math.round(calculateArea(footp.Coordinates[0])) / 1000000
         // Add to the maps collection of markers
         }).addTo(markers)
-        .bindPopup("Product: " + i + " / " + pulledData.length)
+        .bindPopup("Product: " + (i + 1) + " / " + pulledData.length)
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)

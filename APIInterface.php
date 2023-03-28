@@ -4,6 +4,15 @@ require_once("./CacheDB.php");
 require_once("./FootprintData.php");
 require_once("./ErrorHandler.php");
 
+//Test function (Allows us to log shit)
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 // The class will be responsible for communication with the API, as well as caching data for faster access.
 class APIInterface{
 
@@ -196,8 +205,8 @@ class APIInterface{
 
 		$p = new ProductData($identifier,$result->viewname,$result->centre);
 		$p->DocumentType = $result->documentType;
-		$p->DateCreated = date("d-m-Y H:i:s", $result->datecreated/1000);
-		$p->DateModified = date("d-m-Y H:i:s", $result->datemodified/1000);
+		$p->DateCreated = $result->datecreated/1000;
+		$p->DateModified = $result->datemodified/1000;
 		$p->Footprint = new FootprintData($result->footprint->type, $result->footprint->coordinates);
 		$p->ProductURL = $result->producturl;
 		$p->Thumbnail = $result->thumbnail;

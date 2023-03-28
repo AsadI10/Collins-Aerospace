@@ -44,6 +44,9 @@
           <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
+          <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+          <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
           <script src="/lib/map/wise-leaflet-pip.js" type="text/javascript"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <!-- use this to get the search bar -->
@@ -69,7 +72,6 @@
           <script src="Charts.js"></script>
           <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
-
 </head>
 <body>
 <br>
@@ -81,12 +83,13 @@
   <span id="panel1" class="d-block p-2 bg-dark text-white">
     <div id="pieChart"></div>
     <div id="generalData">
-      <label id="generalData-Label">Products: </label>
+      <label id="generalData-Label" style="font-weight: bold;">Products: </label>
       <a id="generalData-Products"></a>
     </div>
+    <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
     <div id="panel-info">
     </div>
-  </span>
+  </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
 </div>
@@ -101,18 +104,23 @@
 </html>
 
 <style>
+  .searchsidebar{
+    margin-top:12px;
+    display: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
   body{
-    /* background-color: white; */
     background-color: white;
   }
-    .sidebar {
+  .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 200px;
   background-color: #242424;
-  /* background-color: black; */
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
@@ -123,7 +131,6 @@
   font-weight: bold;
   position: absolute;
   top: 0;
-  /* right: -50px; */
   right: 0px;
   background-color: #333;
   color: #fff;

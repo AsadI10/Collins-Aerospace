@@ -4,10 +4,11 @@ var map = L.map('map',
     {
         maxBounds: [[-90, -180], [90, 180]],
         maxBoundsViscosity: 1.0,
-        minZoom: 1
+        minZoom: 1,
+        maxZoom: 18
     }).setView([53.45043, -2.25975], 13);
 // Create a layer group for markers
-var markers = new L.LayerGroup().addTo(map);
+var markers = new L.MarkerClusterGroup().addTo(map);
 // Create a layer group for any drawn polygons
 var shapes = new L.LayerGroup().addTo(map);
 // Create a layer group for any drawn footprint
@@ -73,13 +74,13 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={
   subdomains:['mt0','mt1','mt2','mt3']
  });
  var StadiaOSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
+	maxZoom: 18,
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-}).addTo(map);
-googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
 });
+googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    maxZoom: 18,
+    subdomains:['mt0','mt1','mt2','mt3']
+}).addTo(map);
  var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
 	maxZoom: 18,
   maxBounds: [[-90, -180], [90, 180]],
@@ -90,8 +91,8 @@ googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
 //Trying to create a Leaflet layer control
 var baseLayers = {
   "Bluemap": EsriWorldImagery,
-  "Smooth Dark": Stadia_AlidadeSmoothDark,
-  "Bright Map": StadiaOSMBright,
-  "Satellite Map": googleSat
+  "SmoothDark": Stadia_AlidadeSmoothDark,
+  "OSMBright": StadiaOSMBright,
+  "SatelliteMap": googleSat
 };
 L.control.layers(baseLayers).addTo(map);

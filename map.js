@@ -1,4 +1,4 @@
-loadMarkers(data);
+ReloadMap();
 //---------------
 //---CODE BODY---
 //---------------
@@ -13,7 +13,6 @@ map.on('dragend', getVisibleMarkers);
 
 function getVisibleMarkers(e){
     var arr = [];
-    //console.log(e.options);
 
     markers.getLayers().forEach(element => {
         if(map.getBounds().contains(element._latlng)){
@@ -77,7 +76,7 @@ function onMouseOver_marker(e){
     bounds.forEach(arr => {
         arr.reverse();
     });
-
+ 
     L.polygon(bounds,{
         fillColor: 'red',
         color: 'red'
