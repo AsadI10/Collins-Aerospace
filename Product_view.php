@@ -21,7 +21,6 @@ require_once("./SessionMaster.php");
     <br>
     <?php
     $data = $_SESSION['APIInterface']->GetRawProductData($_GET['identifier']);
-    //$json_string = json_encode($_SESSION['APIInterface']->GetRawProductData($_GET['identifier']), JSON_PRETTY_PRINT);
 
     include("Histogram.php");
     ?>
@@ -31,60 +30,61 @@ require_once("./SessionMaster.php");
     function displaylevel($obj, $isarr){
         // Create a list of all members
         ?>
-        <ul>
-        <?php
-            $hasDisplayed = false;
-            foreach($obj as $name => $val){
-                ?>
-                <!-- <details>
-                    
-                </details> -->
-                <li>
-                    <span class="variable_name">
+        <details>
+            <summary>Data</summary>
+            <ul>
+            <?php
+                $hasDisplayed = false;
+                foreach($obj as $name => $val){
+                    ?>
+        
+                    <li>
+                        <span class="variable_name">
+                            <?php
+                            // Display a name
+                            $hasDisplayed = true;
+                            if(!$isarr){
+                                echo "\"".$name."\"";
+                            }
+                            else{
+                                echo "[".$name."]";
+                            }
+                            ?>
+                        </span> : <span class="variable_value">
                         <?php
-                        // Display a name
-                        $hasDisplayed = true;
-                        if(!$isarr){
-                            echo "\"".$name."\"";
-                        }
-                        else{
-                            echo "[".$name."]";
+    
+                        // If object type has children, display
+                        switch(gettype($val)){
+                            case "object":
+                                ?> <br> <?php
+                                displaylevel($val, false);
+                                break;
+                            case "array":
+                                ?> <br> <?php
+                                displaylevel($val, true);
+                                break;
+                            case "integer":
+                                echo $val;
+                                ?> <br> <?php
+                                break;
+                            default:
+                                echo $val == null ? "NULL" : "\"".$val."\"";
+                                ?> <br> <?php
+                                break;
                         }
                         ?>
-                    </span> : <span class="variable_value">
+                        </span>
+                    </li>
                     <?php
-
-                    // If object type has children, display
-                    switch(gettype($val)){
-                        case "object":
-                            ?> <br> <?php
-                            displaylevel($val, false);
-                            break;
-                        case "array":
-                            ?> <br> <?php
-                            displaylevel($val, true);
-                            break;
-                        case "integer":
-                            echo $val;
-                            ?> <br> <?php
-                            break;
-                        default:
-                            echo $val == null ? "NULL" : "\"".$val."\"";
-                            ?> <br> <?php
-                            break;
-                    }
-                    ?>
-                    </span>
-                </li>
-                <?php
-            }
-            if(!$hasDisplayed){
-                ?> <span class="variable_value"> <?php
-                echo "EMPTY";
-                ?> </span> <br> <?php
-            }
-            ?>
-        </ul>
+                }
+                if(!$hasDisplayed){
+                    ?> <span class="variable_value"> <?php
+                    echo "EMPTY";
+                    ?> </span> <br> <?php
+                }
+                ?>
+            </ul>
+        </details>
         <?php
     }
     displaylevel($data,0, false);
