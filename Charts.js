@@ -24,6 +24,10 @@ function loadPieChart(data){
       total = baseval;
     }
 
+    // Clamp to maximum
+    if (total > baseval)
+        total = baseval;
+
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart(data));
       function drawChart(data) {
