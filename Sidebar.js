@@ -1,7 +1,7 @@
 function loadSideBarGeneral(productContent){
     //console.log(productContent);
     document.getElementById("generalData-Label").hidden = false;
-    document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  121"
+    document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  " + markers.getLayers().length
     + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
 }
 
@@ -17,8 +17,6 @@ function loadSideBarProduct(product) {
     document.getElementById('panel-info').appendChild(div);
     return;
 
-
-    console.log(data);
     //create new HTML elements
     var title = document.createElement("h1");
     var redirect = document.createElement("a");
