@@ -51,9 +51,4 @@ function clearProducts(){
           }
     }
 }
-
-function clearAll() {
-    $(".ClearButton").each(function(index,element) {
-        element.innerHTML="";
-    });
-}​
+​
