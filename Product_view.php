@@ -27,8 +27,7 @@ require_once("./SessionMaster.php");
 
     <div class="DataProductPage">
     <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     // Display layers object 
     function displaylevel($obj, $depth, $isarr){
         $hasDisplayed = false;
@@ -64,9 +63,7 @@ require_once("./SessionMaster.php");
             echo str_repeat("-",$depth * 4)."EMPTY";
             ?> <br> <?php
         }
-=======
-=======
->>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
+
     function displaylevel($obj, $isarr){
         // Create a list of all members
         ?>
@@ -126,10 +123,7 @@ require_once("./SessionMaster.php");
             </ul>
         </details>
         <?php
-<<<<<<< HEAD
->>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
-=======
->>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
+
     }
     displaylevel($data,0, false);
     
