@@ -91,9 +91,7 @@ require_once("./SessionMaster.php");
         </details>
         <?php
     }
-           
     displaylevel($data,0, false);
-
     ?>
     </div>
     <br>
