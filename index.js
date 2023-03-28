@@ -6,6 +6,7 @@ function ReloadMap() {
     console.log(missionID);
     GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) }, (isEmptyOrSpaces(missionID) != null? "missionid=" + missionID : ""));
     markers.clearLayers();
+    shapes.clearLayers();
     loadMarkers(data);
 }
 
