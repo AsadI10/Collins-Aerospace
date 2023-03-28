@@ -5,8 +5,8 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Team');
-        data.addColumn('date', 'Season Start Date');
+        data.addColumn('string', 'Identifier');
+        data.addColumn('date', 'Date Created');
         var products;
         GetWebPage("Fetch_product_data.php", function (text) { products = JSON.parse(text) });
         for(var i = 0; i < products.length; i++){
