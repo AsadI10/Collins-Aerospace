@@ -88,7 +88,7 @@
     </div>
     <form>
       <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
-      <input type="reset" value="Reset">
+      <input type="reset" value="Clear">
     </form>
     <div id="panel-info">
     </div>
