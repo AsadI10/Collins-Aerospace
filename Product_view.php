@@ -29,49 +29,58 @@ require_once("./SessionMaster.php");
     <div class="DataProductPage">
     <?php
     function displaylevel($obj, $isarr){
+        // Create a list of all members
         ?>
         <ul>
         <?php
-        $hasDisplayed = false;
-        foreach($obj as $name => $val){
-            ?>
-            <li>
-            <?php
-            $hasDisplayed = true;
-            if(!$isarr){
-                echo "\"".$name."\""; ?> : <?php
-            }
-            else{
-                echo "[".$name."]"; ?> : <?php
-            }
+            $hasDisplayed = false;
+            foreach($obj as $name => $val){
+                ?>
+                <li>
+                    <span class="variable_name">
+                        <?php
+                        // Display a name
+                        $hasDisplayed = true;
+                        if(!$isarr){
+                            echo "\"".$name."\"";
+                        }
+                        else{
+                            echo "[".$name."]";
+                        }
+                        ?>
+                    </span> : <span class="variable_value">
+                    <?php
 
-            switch(gettype($val)){
-                case "object":
-                    ?> <br> <?php
-                    displaylevel($val, false);
-                    break;
-                case "array":
-                    ?> <br> <?php
-                    displaylevel($val, true);
-                    break;
-                case "integer":
-                    echo $val;
-                    ?> <br> <?php
-                    break;
-                default:
-                    echo $val == null ? "NULL" : "\"".$val."\"";
-                    ?> <br> <?php
-                    break;
+                    // If object type has children, display
+                    switch(gettype($val)){
+                        case "object":
+                            ?> <br> <?php
+                            displaylevel($val, false);
+                            break;
+                        case "array":
+                            ?> <br> <?php
+                            displaylevel($val, true);
+                            break;
+                        case "integer":
+                            echo $val;
+                            ?> <br> <?php
+                            break;
+                        default:
+                            echo $val == null ? "NULL" : "\"".$val."\"";
+                            ?> <br> <?php
+                            break;
+                    }
+                    ?>
+                    </span>
+                </li>
+                <?php
+            }
+            if(!$hasDisplayed){
+                ?> <span class="variable_value"> <?php
+                echo "EMPTY";
+                ?> </span> <br> <?php
             }
             ?>
-            </li>
-            <?php
-        }
-        if(!$hasDisplayed){
-            echo "EMPTY";
-            ?> <br> <?php
-        }
-        ?>
         </ul>
         <?php
     }
