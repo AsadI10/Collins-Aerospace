@@ -36,6 +36,9 @@ require_once("./SessionMaster.php");
             $hasDisplayed = false;
             foreach($obj as $name => $val){
                 ?>
+                <!-- <details>
+                    
+                </details> -->
                 <li>
                     <span class="variable_name">
                         <?php
@@ -115,7 +118,6 @@ nav ul li{
         width: 80%;
         padding: 2px;
         margin-left: 150px;
-        /* style="overflow:auto; height:90%" */
     }
     body{
         overflow: auto;
