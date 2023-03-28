@@ -1,7 +1,7 @@
-function loadSideBarGeneral(productContent){
-    //console.log(productContent);
+// Loads details to the section to the side of the pie chart.
+function loadSideBarGeneral(productContent) {
     document.getElementById("generalData-Label").hidden = false;
-    document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  121"
+    document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  " + markers.getLayers().length
     + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
 }
 
@@ -15,31 +15,6 @@ function loadSideBarProduct(product) {
     }, "identifier=" + data.Identifier);
 
     document.getElementById('panel-info').appendChild(div);
-    return;
-
-
-    console.log(data);
-    //create new HTML elements
-    var title = document.createElement("h1");
-    var redirect = document.createElement("a");
-    //set HTML fields for title
-    title.id = "phpheader";
-    title.innerHTML = data.Identifier;
-
-    redirect.innerHTML = "Details";
-    redirect.setAttribute('href', 'Product_view.php/?identifier=' + data.Identifier);
-    redirect.target = "_blank";
-    //set HTML fields for the div
-    div.id = "divsidepanal";
-    div.innerHTML = "Product : " + product.options.index + " / 121"
-    + " <BR> Product Name: " + data.Name
-    + " <BR> Date Created: " + data.DateCreated
-    + " <BR> Date Modified: " + data.DateModified
-    + " <BR> Creator: " + data.Creator
-    + "<BR>";
-    //Add the div to the panel
-    document.getElementById('panel-info').appendChild(title);
-    document.getElementById('panel-info').appendChild(redirect);
 }
 
 function clearProducts(){
@@ -48,6 +23,6 @@ function clearProducts(){
     if(products.children.length > 0){
         while (products.hasChildNodes()) {
             products.removeChild(products.lastChild)
-          }
+        }
     }
 }

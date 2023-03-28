@@ -5,8 +5,8 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Team');
-        data.addColumn('date', 'Season Start Date');
+        data.addColumn('string', 'Identifier');
+        data.addColumn('date', 'Date Created');
         var products;
         GetWebPage("Fetch_product_data.php", function (text) { products = JSON.parse(text) });
         for(var i = 0; i < products.length; i++){
@@ -16,9 +16,16 @@
             data.addRow([products[i]["Identifier"], date]);
         }
 
-        var options = {
+        var options =
+         {
             title: 'Data Creation Dates',
             legend: {  position: 'top', maxLines: 2 },
+        
+            histogram:
+             {
+                minValue: 0,
+                maxValue: 0
+            }
         };
 
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));

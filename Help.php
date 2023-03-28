@@ -72,7 +72,13 @@ weeks in order to demonstrate our ability to create a profesional application.
       Help will direct user to help page if the user need access to any guidence.
       Finally to logout click logout it will direct out main login page.
     </p>
+<<<<<<< HEAD
+
+    <!-- Display map view -->
     <img class="Map-layers" src="img/Map-Views.gif">
+=======
+    <img class="Map-layers" src="img/Map-View.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
   </details>
   <details open>
     <summary><u><b>How do I get the details from a marker?</b></u></summary>
@@ -81,13 +87,19 @@ weeks in order to demonstrate our ability to create a profesional application.
     appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
     to view all the JSON it contains you can click "Details".
     </p>
+<<<<<<< HEAD
+
+    <!-- Display marker -->
     <img class="Map-layers" src="img/Marker-view-details.gif">
+=======
+    <img class="Map-layers" src="img/Marker-det.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
     <p>
     <br>
     To select multiple markers you can shift + left click in order to drag a box over markers. This will
     then put the markers into the sidebar.
     </p>
-    <img class="Map-layers" src="img/2023-03-14 10-08-04.gif">
+    <img class="Map-layers" src="img/Multiple_Markers.gif">
   </details>
   <details open>
     <summary><u><b>How does the pie chart update?</b></u></summary>
@@ -96,7 +108,12 @@ weeks in order to demonstrate our ability to create a profesional application.
     can see in the maps view. It is calculated by aggregating all the footprints on-screen (taking into
     consideration overlapping of footprints).
     </p>
+<<<<<<< HEAD
+    <!-- Display pie charts-->
     <img class="Map-layers" src="img/Zoom_in_out.gif">
+=======
+    <img class="Map-layers" src="img/Pie-Chart.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
   </details>
   <details open>
     <summary><u><b>How do I search for a location?</b></u></summary>
@@ -105,7 +122,13 @@ weeks in order to demonstrate our ability to create a profesional application.
     zoom out. You can search for any city/country and the map will redirect your view to that area, along
     with placing a temporary marker in that location.
     </p>   
+<<<<<<< HEAD
+
+    <!-- Search for location -->
     <img class="Map-layers" src="img/Search-GIF.gif">  
+=======
+    <img class="Map-layers" src="img/Search.gif">
+>>>>>>> c1907f62d8a45786b6645b17b2b29ccbea4c94ed
   </details>
   <details open>
     <summary><u><b>What does the red box represent under the markers?</b></u></summary>

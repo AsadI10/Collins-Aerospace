@@ -39,12 +39,18 @@ function onShiftDrag(e){
         }).addTo(shapes);
     let arr = [];
     //can be put into its own function
+    const maxDisplay = 20
+    var counter = 0;
     markers.getLayers().forEach(element => {
-        if (rectangle.contains(element._latlng)) {
+        if (rectangle.contains(element._latlng) && counter < maxDisplay) {
             arr.push(element.options.title);
             loadSideBarProduct(element);
+            counter = counter + 1;
         }
     });
+    if (counter == maxDisplay) {
+
+    }
 }
 
 //https://stackoverflow.com/questions/53604117/calculate-area-of-a-polygon-using-longitude-and-latitude-using-javascript

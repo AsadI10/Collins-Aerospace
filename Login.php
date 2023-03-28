@@ -10,14 +10,12 @@
 
 <title>Login</title>
 
-<!-- <nav>
-	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
-</nav> -->
-
 <!-- <h1>Login</h1><br> -->
 <fieldset class="logindiv">
 	<legend>Login</legend>
 <form action="index.php" method="POST">
+
+		<!-- Login  to your user name and password -->
 		<label class="loginlabel" for="">Username: </label>
 		<input name="Username" type="text" value="hallam"><br><br>
 		<label class="loginlabel" for="">Password:</label> 
