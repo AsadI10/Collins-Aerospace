@@ -10,10 +10,6 @@
 
 <title>Login</title>
 
-<!-- <nav>
-	<img class="cllogo" src="img/collins-aerospace-logo-vector.png">
-</nav> -->
-
 <!-- <h1>Login</h1><br> -->
 <fieldset class="logindiv">
 	<legend>Login</legend>
