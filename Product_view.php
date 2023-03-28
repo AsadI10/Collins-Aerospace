@@ -41,7 +41,6 @@ require_once("./SessionMaster.php");
                 $hasDisplayed = false;
                 foreach($obj as $name => $val){
                     ?>
-        
                     <li>
                         <span class="variable_name">
                             <?php
@@ -91,53 +90,8 @@ require_once("./SessionMaster.php");
             </ul>
         </details>
         <?php
-            $hasDisplayed = false;
-            foreach($obj as $name => $val){
-                ?><li>
-                    <summary><?php
-                        // Display a name
-                        $hasDisplayed = true;
-                        if(!$isarr){
-                            echo "\"".$name."\"";
-                        }
-                        else{
-                            echo "[".$name."]";
-                        }
-                        ?> :</summary>
-                    <?php
-    
-                    // If object type has children, display
-                    switch(gettype($val)){
-                        case "object":
-                            ?><details><?php
-                            displaylevel($val, false);
-                            ?></details><?php
-                            break;
-                        case "array":
-                            ?><details><?php
-                            displaylevel($val, true);
-                            ?></details><?php
-                            break;
-                        case "integer":
-                            echo $val;
-                            break;
-                        default:
-                            echo $val == null ? "NULL" : "\"".$val."\"";
-                            break;
-                    }
-                    ?>
-                </li>
-                <?php
-            }
-            if(!$hasDisplayed){
-                ?> <span class="variable_value"> <?php
-                echo "EMPTY";
-                ?> </span> <br> <?php
-            }
-            ?>
-        </ul>
-        <?php
     }
+           
     displaylevel($data,0, false);
 
     ?>
