@@ -72,7 +72,7 @@ weeks in order to demonstrate our ability to create a profesional application.
       Help will direct user to help page if the user need access to any guidence.
       Finally to logout click logout it will direct out main login page.
     </p>
-    <img class="Map-layers" src="img/Map-Views.gif">
+    <img class="Map-layers" src="img/Map-View.gif">
   </details>
   <details open>
     <summary><u><b>How do I get the details from a marker?</b></u></summary>
