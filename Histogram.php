@@ -16,9 +16,16 @@
             data.addRow([products[i]["Identifier"], date]);
         }
 
-        var options = {
+        var options =
+         {
             title: 'Data Creation Dates',
             legend: {  position: 'top', maxLines: 2 },
+        
+            histogram:
+             {
+                minValue: 0,
+                maxValue: 0
+            }
         };
 
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
