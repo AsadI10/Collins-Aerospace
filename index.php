@@ -86,9 +86,10 @@
       <label id="generalData-Label" style="font-weight: bold;">Products: </label>
       <a id="generalData-Products"></a>
     </div>
-    <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
-    <!-- <button class="ClearButton"><a href="index.php">Clear</a></button> -->
-    <button class="ClearButton">Clear</button>
+    <form>
+      <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
+      <input type="reset" value="Reset">
+    </form>
     <div id="panel-info">
     </div>
   </span> 
@@ -106,6 +107,7 @@
 </html>
 
 <style>
+ 
   .ClearButton{
     font-weight: bold;
     border: solid 2px black;
