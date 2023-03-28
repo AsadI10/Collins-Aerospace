@@ -28,7 +28,43 @@ require_once("./SessionMaster.php");
     <div class="DataProductPage">
     <?php
 
-    // Display layers object    
+    // Display layers object 
+    function displaylevel($obj, $depth, $isarr)
+    {
+        $hasDisplayed = false;
+        foreach($obj as $name => $val){
+            $hasDisplayed = true;
+            if(!$isarr){
+                echo str_repeat("-",$depth * 4); echo "\"".$name."\""; ?> : <?php
+            }
+            else{
+                echo str_repeat("-",$depth * 4); echo "[".$name."]"; ?> : <?php
+            }
+
+            switch(gettype($val)){
+                case "object":
+                    ?> <br> <?php
+                    displaylevel($val,$depth+1, false);
+                    break;
+                case "array":
+                    ?> <br> <?php
+                    displaylevel($val,$depth+1, true);
+                    break;
+                case "integer":
+                    echo $val;
+                    ?> <br> <?php
+                    break;
+                default:
+                    echo $val == null ? "NULL" : "\"".$val."\"";
+                    ?> <br> <?php
+                    break;
+            }
+        }
+        if(!$hasDisplayed){
+            echo str_repeat("-",$depth * 4)."EMPTY";
+            ?> <br> <?php
+        }
+    
     function displaylevel($obj, $isarr){
         // Create a list of all members
         ?>
@@ -88,7 +124,9 @@ require_once("./SessionMaster.php");
             </ul>
         </details>
         <?php
+
     }
+}
     displaylevel($data,0, false);
 
     ?>
