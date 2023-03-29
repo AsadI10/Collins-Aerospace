@@ -108,14 +108,12 @@ function onClick_Marker(e) {
     shapes.clearLayers();
 
     loadSideBarProduct(this);
-<<<<<<< Updated upstream
+
     document.getElementById("PanelInfoOverflowNote").hidden = true;
-=======
 }
 
 function onClick_Cluster(e){
     clearProducts();
     shapes.clearLayers();
 
->>>>>>> Stashed changes
 }
