@@ -56,12 +56,18 @@
 <br>
 <?php include("./PageHeader.php")?>
 
+<div class="Helppagediv" >
 <p>
 Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
 This Project has been developed by collins team one at sheffield hallam university over the span of 12
 weeks in order to demonstrate our ability to create a profesional application.
 </p>
+</div>
 <br>
+
+ <!-- the line of the page -->
+
+
 
 <div class="Dropmenu">
   <details open>
@@ -127,9 +133,17 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
+  .Helppagediv{
+    border: solid 2px black;
+    width: 40%;
+    width: 98%;
+    padding:3px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   p{
     font-family: 'Poppins', sens-serif;
-    font-size: 16px;
+    font-size: 20px;
     padding: 6px;
   }
   .Map-layers{
