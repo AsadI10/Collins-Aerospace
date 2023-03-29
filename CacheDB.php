@@ -1,5 +1,5 @@
 <?php
-
+require("DouglasPuckerAlgo.php");
 class CacheDB{
 
     private $path;
@@ -88,8 +88,42 @@ class CacheDB{
         return $record;
     }
 
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+        $output = implode(',', $output);
+        
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+        }
+
     // Caches a ProductData object to the SQL Database
     public function CacheProduct($product){
+        //file_put_contents("tmpgeojson.json",'{"type":"Feature","geometry":{"type":"Polygon","coordinates":'.json_encode($product->Footprint->Coordinates).'}}');
+
+        //need to make these reletive
+        //shell_exec('bash AntiAliasingScript');
+
+        /*
+        for($i = 5; $i <= 10; $i++){
+            $fp = simplify_rdp($fp,$tolerance);
+            $tolerance / 2;
+        }
+        */
+        //for some reason the compression isnt working atm
+
+
+        switch($product->Footprint->Type){
+            // If it's a polygon, remove outer bracket, process it then put it back in.
+            case "Polygon":
+                $sssp = array();
+                array_push($sssp, simplify_RDP($product->Footprint->Coordinates[0], 0.004));
+                break;
+            // If not handled, just pass it through as is.
+            default:
+                $sssp = $product->Footprint->Coordinates;
+                break;
+        }
+
         $nowTime = date("d-m-Y H:i:s");
         $db = new Sqlite3($this->path);
         $db->exec("INSERT OR IGNORE INTO Products VALUES('"
@@ -100,7 +134,7 @@ class CacheDB{
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->Footprint->Type."','"
-        .json_encode($product->Footprint->Coordinates)."','"
+        .json_encode($sssp)."','"
         .$product->ProductURL."','"
         .$product->Thumbnail."','"
         .$product->MissionID."','"

@@ -27,18 +27,19 @@ function getVisibleMarkers(e){
 // Map events
 
 function onShiftDrag(e){
-    clearProducts();
-    shapes.clearLayers();
+    clearProducts(); //clears all previous shapes that may have been drawn
+    shapes.clearLayers(); // ^^ same as before
     var rectangle;
-    var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng],
+    var bounds = [[e.boxZoomBounds._northEast.lat, e.boxZoomBounds._northEast.lng], // gets the bounds/corners of the box drawn
     [e.boxZoomBounds._southWest.lat, e.boxZoomBounds._southWest.lng]];
 
-    var rectangle = L.rectangle(bounds,{
+    var rectangle = L.rectangle(bounds,{ // creates a rectangle that stays after the drag
         fillColor: 'red',
         color: 'red'
         }).addTo(shapes);
-    let arr = [];
+    let arr = []; // declare an array to be populated with markers.
     //can be put into its own function
+    markers.getLayers().forEach(element => { // forloop that iterates through all markers to see if they are in the rectangle
     const maxDisplay = 20
     var counter = 0;
     var totalCount = 0;

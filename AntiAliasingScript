@@ -1,0 +1,4 @@
+cd /k/"server dev"/collins/Collins-Aerospace;
+mapshaper -i tmpgeojson.json \
+        -simplify percentage=0.01 dp no-repair keep-shapes planar \
+        -o outputgeojson.json|/k/"server dev"/collins/Collins-Aerospace
