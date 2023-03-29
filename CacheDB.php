@@ -1,5 +1,5 @@
 <?php
-
+require("DouglasPuckerAlgo.php");
 class CacheDB{
 
     private $path;
@@ -110,8 +110,7 @@ class CacheDB{
         }
         */
         //for some reason the compression isnt working atm
-        $sssp = simplify_RDP(substr(json_encode($product->Footprint->Coordinates),1,-1), 0.004);
-
+        $sssp = simplify_RDP(json_decode(substr(json_encode($product->Footprint->Coordinates),1,-1)), 0.004);
 
 
         $nowTime = date("d-m-Y H:i:s");
@@ -124,7 +123,7 @@ class CacheDB{
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->Footprint->Type."','"
-        ."[".$sssp."]','"
+        .substr(json_encode($product->Footprint->Coordinates),1,-1)."','"
         .$product->ProductURL."','"
         .$product->Thumbnail."','"
         .$product->MissionID."','"
@@ -161,67 +160,5 @@ class CacheDB{
 
         return $r;
     }
-}
-
-
-
-
-//optimizing functions (compression etc)
-function simplify_RDP($vertices, $tolerance) {
-    // if this is a multilinestring, then we call ourselves one each segment individually, collect the list, and return that list of simplified lists
-    if (is_array($vertices[0][0])) {
-        $multi = array();
-        foreach ($vertices as $subvertices) $multi[] = simplify_RDP($subvertices,$tolerance);
-        return $multi;
-    }
-
-    $tolerance2 = $tolerance * $tolerance;
-
-    // okay, so this is a single linestring and we simplify it individually
-    return _segment_RDP($vertices,$tolerance2);
-}
-
-function _segment_RDP($segment, $tolerance_squared) {
-    if (sizeof($segment) <= 2) return $segment; // segment is too small to simplify, hand it back as-is
-
-    // find the maximum distance (squared) between this line $segment and each vertex
-    // distance is solved as described at UCSD page linked above
-    // cheat: vertical lines (directly north-south) have no slope so we fudge it with a very tiny nudge to one vertex; can't imagine any units where this will matter
-    $startx = (float) $segment[0][0];
-    $starty = (float) $segment[0][1];
-    $endx   = (float) $segment[ sizeof($segment)-1 ][0];
-    $endy   = (float) $segment[ sizeof($segment)-1 ][1];
-    if ($endx == $startx) $startx += 0.00001;
-    $m = ($endy - $starty) / ($endx - $startx); // slope, as in y = mx + b
-    $b = $starty - ($m * $startx);              // y-intercept, as in y = mx + b
-
-    $max_distance_squared = 0;
-    $max_distance_index   = null;
-    for ($i=1, $l=sizeof($segment); $i<=$l-2; $i++) {
-        $x1 = $segment[$i][0];
-        $y1 = $segment[$i][1];
-
-        $closestx = ( ($m*$y1) + ($x1) - ($m*$b) ) / ( ($m*$m)+1);
-        $closesty = ($m * $closestx) + $b;
-        $distsqr  = ($closestx-$x1)*($closestx-$x1) + ($closesty-$y1)*($closesty-$y1);
-
-        if ($distsqr > $max_distance_squared) {
-            $max_distance_squared = $distsqr;
-            $max_distance_index   = $i;
-        }
-    }
-
-    // cleanup and disposition
-    // if the max distance is below tolerance, we can bail, giving a straight line between the start vertex and end vertex   (all points are so close to the straight line)
-    if ($max_distance_squared <= $tolerance_squared) {
-        return array($segment[0], $segment[ sizeof($segment)-1 ]);
-    }
-    // but if we got here then a vertex falls outside the tolerance
-    // split the line segment into two smaller segments at that "maximum error vertex" and simplify those
-    $slice1 = array_slice($segment, 0, $max_distance_index);
-    $slice2 = array_slice($segment, $max_distance_index);
-    $segs1 = _segment_RDP($slice1, $tolerance_squared);
-    $segs2 = _segment_RDP($slice2, $tolerance_squared);
-    return array_merge($segs1,$segs2);
 }
 ?>
