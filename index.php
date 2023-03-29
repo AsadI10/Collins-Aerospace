@@ -81,7 +81,7 @@
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
-      <div class="loading"></div>
+      <!-- <div class="loading"></div> -->
 
 <br>
 <?php 
@@ -126,9 +126,16 @@
   border-top-color: #333;
   border-radius: 50%;
   text-align: center;
-
   animation: spin 1s infinite linear;
-
+}
+@keyframes hideImage {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+#loading {
+  animation-name: hideImage;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes spin {
