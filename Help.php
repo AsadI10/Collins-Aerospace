@@ -55,7 +55,7 @@
 <body>
 <br>
 <?php include("./PageHeader.php")?>
-
+<br>
 <div class="Helppagediv" >
 <p>
 Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
@@ -66,9 +66,6 @@ weeks in order to demonstrate our ability to create a profesional application.
 <br>
 
  <!-- the line of the page -->
-
-
-
 <div class="Dropmenu">
   <details open>
   <summary><u><b>How do I change the map view?</b></u></summary>
