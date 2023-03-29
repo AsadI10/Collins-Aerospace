@@ -75,7 +75,7 @@
 <body>
 
 <!-- this is where the loading animation start of the page -->
-  <br>
+  <!-- <br> -->
   <!-- this is the loading animation of the index page -->
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
