@@ -31,6 +31,6 @@ else{
 		Created: <?php echo date("d-m-Y H:i:s", $id->DateCreated); ?><br>
 		Modified: <?php echo date("d-m-Y H:i:s", $id->DateModified); ?><br>
 	</div>
-	<a class="Details-link" href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a></h1>
+	<a class="Details-link" target = '_blank' href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a></h1>
 <?php
 }?>
