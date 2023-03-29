@@ -2,7 +2,27 @@ function isEmptyOrSpaces(str) {
     return str === null || str.match(/^ *$/) !== null;
 }
 
+<<<<<<< Updated upstream
 //retrieves and reload map data
+=======
+/*
+function filterMarkerLayers(){
+	var missionID = document.getElementById("MissionSearch").value;
+	if(missionID == null){
+		toggleAllMarkersOn();
+		return;
+	}
+
+	markers.getLayers().forEach(element => {
+		if(element.options.GeoJSON.missionid != missionID){
+			toggleMarker(element);
+		}
+	});
+}
+*/
+
+//changing so that instead of reloading from the DB it just clears the layers that don't corrospond
+>>>>>>> Stashed changes
 function ReloadMap() {
     var missionID = document.getElementById("MissionSearch").value;
     console.log(missionID);
@@ -12,6 +32,26 @@ function ReloadMap() {
     shapes.clearLayers();
     loadMarkers(data);
 }
+/*
+
+function toggleMarker(marker){
+
+	if(map.hasLayer(marker)){
+		map.removeLayer(marker)
+	}
+	else {
+		map.addLayer(marker)
+	}
+}
+
+function toggleAllMarkersOn(){
+	markers.getLayers().forEach(element => {
+		if(!map.hasLayer(marker)){
+			map.addLayer(marker);
+		}
+	});
+}
+*/
 
 // calculates the area of the  lat longs position of the array.
 function calculateArea(latLngs) {

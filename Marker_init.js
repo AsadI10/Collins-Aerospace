@@ -29,4 +29,7 @@ function loadMarkers(pulledData){
         .on('mouseover',onMouseOver_marker)
         .on('mouseout',offMouseOver_marker);
     }
+    
+
+    markers.on('clusterclick',onClick_Cluster);
 }
