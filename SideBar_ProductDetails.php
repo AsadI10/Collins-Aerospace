@@ -25,13 +25,13 @@ else{
 <?php foreach($arrid as $id){ ?>
 	<h1 class="phpheader"><?php echo $id->GetName(); ?>
 	<div class="divsidepanal">
-		Identifier: <?php echo $id->GetIdentifer(); ?><br>
+		Identifier: <?php echo $id->GetIdentifier(); ?><br>
 		Document Type: <?php echo $id->DocumentType; ?><br>
 		Mission: <a style="color: red; font-weight: bold;" onclick="document.getElementById('MissionSearch').value='<?php echo ($id->MissionID);?>'; ReloadMap();"><?php echo $id->MissionID; ?></a><br>
 		Creator: <?php echo $id->Creator; ?><br>
 		Created: <?php echo date("d-m-Y H:i:s", $id->DateCreated); ?><br>
 		Modified: <?php echo date("d-m-Y H:i:s", $id->DateModified); ?><br>
 	</div>
-	<a class="Details-link" href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifer())."\"";  ?>>Details</a></h1>
+	<a class="Details-link" href=<?php echo ("\"Product_view.php?identifier=".$id->GetIdentifier())."\"";  ?>>Details</a></h1>
 <?php
 }?>
