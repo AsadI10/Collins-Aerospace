@@ -111,7 +111,6 @@ class CacheDB{
         */
         //for some reason the compression isnt working atm
 
-        $disable = false;
 
         switch($product->Footprint->Type){
             // If it's a polygon, remove outer bracket, process it then put it back in.
