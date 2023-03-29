@@ -55,9 +55,9 @@
 <body>
 <br>
 <?php include("./PageHeader.php")?>
-
+<br>
 <div class="Helppagediv" >
-<p>
+<p class="help-title">
 Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
 This Project has been developed by collins team one at sheffield hallam university over the span of 12
 weeks in order to demonstrate our ability to create a profesional application.
@@ -66,9 +66,6 @@ weeks in order to demonstrate our ability to create a profesional application.
 <br>
 
  <!-- the line of the page -->
-
-
-
 <div class="Dropmenu">
   <details open>
   <summary><u><b>How do I change the map view?</b></u></summary>
@@ -126,6 +123,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     The red box that appears when you hover over a marker represents the "footprint" of the marker. The footprint
     is drawn based on the GeoJSON given in the metadata.
     </p>
+    <img class="Map-layers" src="img/Red-Box.gif">
   </details>
 </div>
 <br>
@@ -133,6 +131,11 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
+  .help-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 6px;
+    font-size:20px;
+  }
   .Helppagediv{
     border: solid 2px black;
     width: 40%;
@@ -143,7 +146,7 @@ weeks in order to demonstrate our ability to create a profesional application.
   }
   p{
     font-family: 'Poppins', sens-serif;
-    font-size: 20px;
+    font-size: 18px; /* originally set to 20px */
     padding: 6px;
   }
   .Map-layers{

@@ -60,7 +60,7 @@
           <!-- Our Stuff -->
 
               <!-- Leaflet.draw main plug in files -->
-              <link rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
+              <link class="loadinganimation" rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
               <script src="./lib/map/leaflet.draw.js"></script>
 
           <meta charset="UTF-8">
@@ -74,10 +74,15 @@
           <script src="index.js"></script>
 </head>
 <body>
+
+<!-- this is where the loading animation start of the page -->
+  <br>
   <!-- this is the loading animation of the index page -->
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
+      <div class="loading"></div>
+
 <br>
 <?php 
     include("./PageHeader.php")
@@ -113,26 +118,26 @@
 </html>
 
 <style>
-      #loading {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* background-color: #fff; */
-        z-index: 9999;
-        text-align: center;
-        animation: display 1s linear;
-      }
+  .loading {
+  width: 100px;
+  height: 100px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #333;
+  border-radius: 50%;
+  text-align: center;
 
-      
-      
-      #loading img {
-        margin-top: 20%;
-      }
+  animation: spin 1s infinite linear;
 
+}
 
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  }
   .ClearButton{
     font-weight: bold;
     border: solid 2px black;
