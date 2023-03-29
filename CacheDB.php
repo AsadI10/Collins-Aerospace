@@ -110,8 +110,20 @@ class CacheDB{
         }
         */
         //for some reason the compression isnt working atm
-        $sssp = simplify_RDP(json_decode(substr(json_encode($product->Footprint->Coordinates),1,-1)), 0.004);
 
+        $disable = false;
+
+        switch($product->Footprint->Type){
+            // If it's a polygon, remove outer bracket, process it then put it back in.
+            case "Polygon":
+                $sssp = array();
+                array_push($sssp, simplify_RDP($product->Footprint->Coordinates[0], 0.004));
+                break;
+            // If not handled, just pass it through as is.
+            default:
+                $sssp = $product->Footprint->Coordinates;
+                break;
+        }
 
         $nowTime = date("d-m-Y H:i:s");
         $db = new Sqlite3($this->path);
@@ -123,7 +135,7 @@ class CacheDB{
         .$product->DateCreated."','"
         .$product->DateModified."','"
         .$product->Footprint->Type."','"
-        .substr(json_encode($product->Footprint->Coordinates),1,-1)."','"
+        .json_encode($sssp)."','"
         .$product->ProductURL."','"
         .$product->Thumbnail."','"
         .$product->MissionID."','"
