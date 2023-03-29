@@ -60,7 +60,7 @@
           <!-- Our Stuff -->
 
               <!-- Leaflet.draw main plug in files -->
-              <link rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
+              <link class="loadinganimation" rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
               <script src="./lib/map/leaflet.draw.js"></script>
 
           <meta charset="UTF-8">
@@ -70,10 +70,18 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
-          <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
 </head>
 <body>
+
+<!-- this is where the loading animation start of the page -->
+  <br>
+  <!-- this is the loading animation of the index page -->
+  <!-- <div class="loadinggiv" id="loading">
+        <img src="img/loading.gif" alt="Loading...">
+      </div> -->
+      <!-- <div class="loading"></div> -->
+
 <br>
 <?php 
     include("./PageHeader.php")
@@ -81,16 +89,20 @@
 <!-- Side Panel -->
 <div>
   <span id="panel1" class="d-block p-2 bg-dark text-white">
-    <div id="pieChart"></div>
-    <div id="generalData">
-      <label id="generalData-Label" style="font-weight: bold;">Products: </label>
-      <a id="generalData-Products"></a>
+    <div>
+        <div id="pieChart"></div>
+        <div id="generalData">
+          <label id="generalData-Label" style="font-weight: bold;">Products: </label>
+          <a id="generalData-Products"></a>
+        </div>
     </div>
-    <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
-    <!-- <button class="ClearButton"><a href="index.php">Clear</a></button> -->
-    <button class="ClearButton">Clear</button>
+    <form>
+      <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">
+      <input class="ClearButton" id="MissionSearch" type="reset" value="Clear" onclick="document.getElementById('MissionSearch').value = ''; ReloadMap()">
+    </form>
     <div id="panel-info">
     </div>
+    <p id="PanelInfoOverflowNote" hidden>More hidden</p>
   </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
@@ -106,6 +118,33 @@
 </html>
 
 <style>
+  .loading {
+  width: 100px;
+  height: 100px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #333;
+  border-radius: 50%;
+  text-align: center;
+  animation: spin 1s infinite linear;
+}
+@keyframes hideImage {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+#loading {
+  animation-name: hideImage;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  }
   .ClearButton{
     font-weight: bold;
     border: solid 2px black;

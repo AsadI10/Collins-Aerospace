@@ -1,15 +1,19 @@
 function isEmptyOrSpaces(str) {
     return str === null || str.match(/^ *$/) !== null;
 }
+
+//retrieves and reload map data
 function ReloadMap() {
     var missionID = document.getElementById("MissionSearch").value;
     console.log(missionID);
+    //retrieves data and import it on marker
     GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) }, (isEmptyOrSpaces(missionID) != null? "missionid=" + missionID : ""));
     markers.clearLayers();
     shapes.clearLayers();
     loadMarkers(data);
 }
 
+// calculates the area of the  lat longs position of the array.
 function calculateArea(latLngs) {
 
     var pointsCount = latLngs.length,
@@ -105,3 +109,4 @@ var simplifyPath = function( points, tolerance ) {
 	arr.push( points[points.length - 1 ] );
 	return arr;
 };
+

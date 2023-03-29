@@ -28,44 +28,70 @@ require_once("./SessionMaster.php");
 
     <div class="DataProductPage">
     <?php
-    function displaylevel($obj, $depth, $isarr){
-        $hasDisplayed = false;
-        foreach($obj as $name => $val){
-            $hasDisplayed = true;
-            if(!$isarr){
-                echo str_repeat("-",$depth * 4); echo "\"".$name."\""; ?> : <?php
-            }
-            else{
-                echo str_repeat("-",$depth * 4); echo "[".$name."]"; ?> : <?php
-            }
 
-            switch(gettype($val)){
-                case "object":
-                    ?> <br> <?php
-                    displaylevel($val,$depth+1, false);
-                    break;
-                case "array":
-                    ?> <br> <?php
-                    displaylevel($val,$depth+1, true);
-                    break;
-                case "integer":
-                    echo $val;
-                    ?> <br> <?php
-                    break;
-                default:
-                    echo $val == null ? "NULL" : "\"".$val."\"";
-                    ?> <br> <?php
-                    break;
-            }
-        }
-        if(!$hasDisplayed){
-            echo str_repeat("-",$depth * 4)."EMPTY";
-            ?> <br> <?php
-        }
-    }
-
-    displaylevel($data,0, false);
+    // Display layers object 
     
+    function displaylevel($obj, $isarr){
+        // Create a list of all members
+        ?>
+        <details>
+            <summary>Data</summary>
+            <ul>
+            <?php
+                $hasDisplayed = false;
+                foreach($obj as $name => $val){
+                    ?>
+                    <li>
+                        <span class="variable_name">
+                            <?php
+                            // Display a name
+                            $hasDisplayed = true;
+                            if(!$isarr){
+                                echo "\"".$name."\"";
+                            }
+                            else{
+                                echo "[".$name."]";
+                            }
+                            ?>
+                        </span> : <span class="variable_value">
+                        <?php
+
+                        // this is test
+                        // If object type has children, display
+                        switch(gettype($val)){
+                            case "object":
+                                ?> <br> <?php
+                                displaylevel($val, false);
+                                break;
+                            case "array":
+                                ?> <br> <?php
+                                displaylevel($val, true);
+                                break;
+                            case "integer":
+                                echo $val;
+                                ?> <br> <?php
+                                break;
+                            default:
+                                echo $val == null ? "NULL" : "\"".$val."\"";
+                                ?> <br> <?php
+                                break;
+                        }
+                        ?>
+                        </span>
+                    </li>
+                    <?php
+                }
+                if(!$hasDisplayed){
+                    ?> <span class="variable_value"> <?php
+                    echo "EMPTY";
+                    ?> </span> <br> <?php
+                }
+                ?>
+            </ul>
+        </details>
+        <?php
+    }
+    displaylevel($data,0, false);
     ?>
     </div>
     <br>
@@ -95,7 +121,7 @@ nav ul li{
         width: 80%;
         padding: 2px;
         margin-left: 150px;
-        /* style="overflow:auto; height:90%" */
+        background: #c9c9cd;
     }
     body{
         overflow: auto;

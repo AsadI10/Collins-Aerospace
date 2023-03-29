@@ -35,7 +35,7 @@
 		}
 		
 		// Returns the identifier of this product.
-		public function GetIdentifer(){
+		public function GetIdentifier(){
 			return $this->Identifier;
 		}
 

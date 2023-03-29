@@ -25,6 +25,7 @@ else{
 <?php foreach($arrid as $id){ ?>
 	<h1 class="phpheader"><?php echo $id->GetName(); ?>
 	<div class="divsidepanal">
+		Identifier: <?php echo $id->GetIdentifier(); ?><br>
 		Document Type: <?php echo $id->DocumentType; ?><br>
 		Mission: <a style="color: red; font-weight: bold;" onclick="document.getElementById('MissionSearch').value='<?php echo ($id->MissionID);?>'; ReloadMap();"><?php echo $id->MissionID; ?></a><br>
 		Creator: <?php echo $id->Creator; ?><br>

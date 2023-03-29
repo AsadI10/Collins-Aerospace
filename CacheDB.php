@@ -127,7 +127,7 @@ class CacheDB{
         $nowTime = date("d-m-Y H:i:s");
         $db = new Sqlite3($this->path);
         $db->exec("INSERT OR IGNORE INTO Products VALUES('"
-        .$product->GetIdentifer()."','"
+        .$product->GetIdentifier()."','"
         .$product->GetName()."','"
         .$product->GetCentre()."','"
         .$product->DocumentType."','"

@@ -4,7 +4,7 @@ var map = L.map('map',
     {
         maxBounds: [[-90, -180], [90, 180]],
         maxBoundsViscosity: 1.0,
-        minZoom: 1,
+        minZoom: 3,
         maxZoom: 18
     }).setView([53.45043, -2.25975], 13);
 // Create a layer group for markers

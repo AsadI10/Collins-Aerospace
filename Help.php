@@ -55,14 +55,17 @@
 <body>
 <br>
 <?php include("./PageHeader.php")?>
-
-<p>
+<br>
+<div class="Helppagediv" >
+<p class="help-title">
 Welcome to SHU-Discovery, an instance of SCI-Discovery developed by Collins-Aerospace.
 This Project has been developed by collins team one at sheffield hallam university over the span of 12
 weeks in order to demonstrate our ability to create a profesional application.
 </p>
+</div>
 <br>
 
+ <!-- the line of the page -->
 <div class="Dropmenu">
   <details open>
   <summary><u><b>How do I change the map view?</b></u></summary>
@@ -72,7 +75,9 @@ weeks in order to demonstrate our ability to create a profesional application.
       Help will direct user to help page if the user need access to any guidence.
       Finally to logout click logout it will direct out main login page.
     </p>
-    <img class="Map-layers" src="img/Map-Views.gif">
+    <!-- Display map view -->
+    <img class="Map-layers" src="./img/Map-View.gif">
+
   </details>
   <details open>
     <summary><u><b>How do I get the details from a marker?</b></u></summary>
@@ -81,13 +86,14 @@ weeks in order to demonstrate our ability to create a profesional application.
     appear on the sidebar. Once its in the sidebar you can see simple details about the marker,
     to view all the JSON it contains you can click "Details".
     </p>
-    <img class="Map-layers" src="img/Marker-view-details.gif">
+    <!-- Display marker -->
+    <img class="Map-layers" src="img/Marker-det.gif">
     <p>
     <br>
     To select multiple markers you can shift + left click in order to drag a box over markers. This will
     then put the markers into the sidebar.
     </p>
-    <img class="Map-layers" src="img/2023-03-14 10-08-04.gif">
+    <img class="Map-layers" src="img/Multiple_Markers.gif">
   </details>
   <details open>
     <summary><u><b>How does the pie chart update?</b></u></summary>
@@ -96,7 +102,9 @@ weeks in order to demonstrate our ability to create a profesional application.
     can see in the maps view. It is calculated by aggregating all the footprints on-screen (taking into
     consideration overlapping of footprints).
     </p>
-    <img class="Map-layers" src="img/Zoom_in_out.gif">
+
+    <!-- Display pie charts-->
+    <img class="Map-layers" src="img/Pie-Chart.gif">
   </details>
   <details open>
     <summary><u><b>How do I search for a location?</b></u></summary>
@@ -105,7 +113,9 @@ weeks in order to demonstrate our ability to create a profesional application.
     zoom out. You can search for any city/country and the map will redirect your view to that area, along
     with placing a temporary marker in that location.
     </p>   
-    <img class="Map-layers" src="img/Search-GIF.gif">  
+
+    <!-- Search for location -->
+    <img class="Map-layers" src="img/Search.gif">  
   </details>
   <details open>
     <summary><u><b>What does the red box represent under the markers?</b></u></summary>
@@ -113,6 +123,7 @@ weeks in order to demonstrate our ability to create a profesional application.
     The red box that appears when you hover over a marker represents the "footprint" of the marker. The footprint
     is drawn based on the GeoJSON given in the metadata.
     </p>
+    <img class="Map-layers" src="img/Red-Box.gif">
   </details>
 </div>
 <br>
@@ -120,9 +131,22 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
+  .help-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 6px;
+    font-size:20px;
+  }
+  .Helppagediv{
+    border: solid 2px black;
+    width: 40%;
+    width: 98%;
+    padding:3px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   p{
     font-family: 'Poppins', sens-serif;
-    font-size: 16px;
+    font-size: 18px; /* originally set to 20px */
     padding: 6px;
   }
   .Map-layers{
