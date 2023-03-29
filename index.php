@@ -70,7 +70,6 @@
           <script src="./lib/map/wise-leaflet-pip.js"></script>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script src="Charts.js"></script>
-          <script src="CalculatePolygonArea.js"></script>
           <script src="index.js"></script>
 </head>
 <body>

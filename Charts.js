@@ -1,3 +1,4 @@
+google.load('visualization', '1.0', { 'packages': ['corechart'] });
 //=====================================
 //Functions to be called to draw charts
 //=====================================
