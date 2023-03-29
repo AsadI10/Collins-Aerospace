@@ -135,25 +135,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-      #loading {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* background-color: #fff; */
-        z-index: 9999;
-        text-align: center;
-        animation: display 1s linear;
-      }
-      #loading img {
-        margin-top: 20%;
-      }
-  
-
-
+  }
   .ClearButton{
     font-weight: bold;
     border: solid 2px black;
