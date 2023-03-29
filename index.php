@@ -90,10 +90,12 @@
 <!-- Side Panel -->
 <div>
   <span id="panel1" class="d-block p-2 bg-dark text-white">
-    <div id="pieChart"></div>
-    <div id="generalData">
-      <label id="generalData-Label" style="font-weight: bold;">Products: </label>
-      <a id="generalData-Products"></a>
+    <div>
+        <div id="pieChart"></div>
+        <div id="generalData">
+          <label id="generalData-Label" style="font-weight: bold;">Products: </label>
+          <a id="generalData-Products"></a>
+        </div>
     </div>
     <form>
       <input id="MissionSearch" class="searchsidebar" type="text" placeholder="Search..." oninput="ReloadMap()">

@@ -126,7 +126,8 @@ nav ul li{
 /* Pie chart CSS */
 #pieChart{
     position: relative;
-    left: -100px;
+    width: 60%;
+    float:left;
 }
 .btn-group{
     position: fixed;
@@ -136,8 +137,8 @@ nav ul li{
 #generalData{
     position: absolute;
     /* left:250px;  */
-    margin-left: 240px; /*originally set to 215 */
-    margin-top: -190px;
+    width: 40%;
+    margin-left: 60%; /*originally set to 215 */
 }
 #panel-info{
     /* border: 2px solid gray;
