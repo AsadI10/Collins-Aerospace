@@ -74,6 +74,9 @@
           <script src="index.js"></script>
 </head>
 <body>
+
+<!-- this is where the loading animation start of the page -->
+  <br>
   <!-- this is the loading animation of the index page -->
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
@@ -114,8 +117,8 @@
 
 <style>
   .loading {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top-color: #333;
   border-radius: 50%;
