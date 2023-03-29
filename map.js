@@ -39,7 +39,6 @@ function onShiftDrag(e){
         }).addTo(shapes);
     let arr = []; // declare an array to be populated with markers.
     //can be put into its own function
-    markers.getLayers().forEach(element => { // forloop that iterates through all markers to see if they are in the rectangle
     const maxDisplay = 20
     var counter = 0;
     var totalCount = 0;
@@ -59,6 +58,7 @@ function onShiftDrag(e){
     }
     else {
         document.getElementById("PanelInfoOverflowNote").hidden = false;
+
     }
 }
 
