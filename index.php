@@ -78,6 +78,8 @@
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
+      <div class="loading"></div>
+
 <br>
 <?php 
     include("./PageHeader.php")
@@ -111,6 +113,27 @@
 </html>
 
 <style>
+  .loading {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #333;
+  border-radius: 50%;
+  text-align: center;
+
+  animation: spin 1s infinite linear;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
       #loading {
         position: absolute;
         top: 0;
