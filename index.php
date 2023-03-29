@@ -81,7 +81,7 @@
   <!-- <div class="loadinggiv" id="loading">
         <img src="img/loading.gif" alt="Loading...">
       </div> -->
-      <div class="loading"></div>
+      <!-- <div class="loading"></div> -->
 
 <br>
 <?php 
