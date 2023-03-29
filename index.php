@@ -60,7 +60,7 @@
           <!-- Our Stuff -->
 
               <!-- Leaflet.draw main plug in files -->
-              <link rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
+              <link class="loadinganimation" rel="stylesheet" href="./lib/map/leaflet.draw.css" /> <!--add here-->
               <script src="./lib/map/leaflet.draw.js"></script>
 
           <meta charset="UTF-8">
@@ -122,13 +122,10 @@
         text-align: center;
         animation: display 1s linear;
       }
-
-      
-      
       #loading img {
         margin-top: 20%;
       }
-
+  
 
 
   .ClearButton{
