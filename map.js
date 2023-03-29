@@ -41,15 +41,23 @@ function onShiftDrag(e){
     //can be put into its own function
     const maxDisplay = 20
     var counter = 0;
+    var totalCount = 0;
     markers.getLayers().forEach(element => {
-        if (rectangle.contains(element._latlng) && counter < maxDisplay) {
-            arr.push(element.options.title);
-            loadSideBarProduct(element);
-            counter = counter + 1;
+        if (rectangle.contains(element._latlng)) {
+            if (counter < maxDisplay) {
+                arr.push(element.options.title);
+                loadSideBarProduct(element);
+                counter = counter + 1;
+            }
+            totalCount = totalCount + 1;
         }
     });
     if (counter == maxDisplay) {
-
+        document.getElementById("PanelInfoOverflowNote").hidden = false;
+        document.getElementById("PanelInfoOverflowNote").innerHTML = (totalCount - maxDisplay) + " more hidden";
+    }
+    else {
+        document.getElementById("PanelInfoOverflowNote").hidden = false;
     }
 }
 
@@ -99,4 +107,5 @@ function onClick_Marker(e) {
     shapes.clearLayers();
 
     loadSideBarProduct(this);
+    document.getElementById("PanelInfoOverflowNote").hidden = true;
 }

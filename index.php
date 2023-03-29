@@ -102,8 +102,8 @@
       <input class="ClearButton" id="MissionSearch" type="reset" value="Clear" onclick="document.getElementById('MissionSearch').value = ''; ReloadMap()">
     </form>
     <div id="panel-info">
-    <a class="disabled">Show More</a>
     </div>
+    <p id="PanelInfoOverflowNote" hidden>More hidden</p>
   </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
