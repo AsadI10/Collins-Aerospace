@@ -1,12 +1,11 @@
 Installation:
 1. Open visual studio/ or visual studio code
 2. Clone the repository using the URL: https://github.com/AsadI10/Collins-Aerospace.git
-3. or Open the submitted files
 4. once you have done that download xampp where you can host the project
 5. Once you have followed those steps it's time to save the project on xampp and the folder called htdocs
 6. Now you can run the project by typing localhost/name-of-the-folder/index.php
 7. Install Node.js on your machine
-8. Install SQLlite on your machine
+8. Install SQLlite3 on your machine (and enable it in php.ini)
 
 How to Install Node
 Windows
@@ -45,7 +44,7 @@ Linux
 
 
 How to login?
--In the login just login with the API credentials given to us.
+-To login use the credentials given to us from collins
 
 
 
