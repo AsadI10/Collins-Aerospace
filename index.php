@@ -155,7 +155,7 @@
     font-weight: bold;
     border: solid 2px black;
     color: black;
-    width: 132px;
+    width: 28.5%; /*originally set to 132px*/
   }
   .searchsidebar{
     border: solid black 2px;
