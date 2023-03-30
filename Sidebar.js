@@ -2,7 +2,7 @@
 function loadSideBarGeneral(productContent) {
     document.getElementById("generalData-Label").hidden = false;
     document.getElementById("generalData-Products").innerHTML = productContent.length + "  /  " + markers.getLayers().length
-    + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
+    + "<BR> Covered (km²): <BR>" + productContent.reduce((a, b) => a + b, 0);
 }
 
 /*
@@ -19,7 +19,8 @@ function loadSideBarProduct(product) {
 }
 */
 
-function loadSideBarProduct(product) {
+async function loadSideBarProduct(product) {
+    let myPromise = new Promise(function(resolve, reject){
     data = product.options.GeoJSON;
     var div = document.createElement("div");
     div.id = data.Identifier;
@@ -27,8 +28,9 @@ function loadSideBarProduct(product) {
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         div.innerHTML = text;
     }, "data=" + JSON.stringify(data));
-
-    document.getElementById('panel-info').appendChild(div);
+    resolve(div);
+    });
+    document.getElementById('panel-info').appendChild(await myPromise);
 }
 
 function clearProducts(){

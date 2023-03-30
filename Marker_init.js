@@ -11,6 +11,7 @@ function loadMarkers(pulledData){
         var centre = tmp["Centre"];
         var footp = tmp["Footprint"];
         var latlang = centre.split(',');
+        var calcArea = Math.round(calculateArea(footp.Coordinates[0])) / 1000000;
 
         L.marker([latlang[0], latlang[1]], {
             index: i + 1,
@@ -20,10 +21,10 @@ function loadMarkers(pulledData){
             GeoJSON: tmp,
             footprint: footp,
             // calculates the footprints area and stores it to the object once (val is const)
-            area: Math.round(calculateArea(footp.Coordinates[0])) / 1000000
+            area: calcArea
         // Add to the maps collection of markers
         }).addTo(markers)
-        .bindPopup("Product: " + (i + 1) + " / " + pulledData.length)
+        .bindPopup("Product: " + (i + 1) + " / " + pulledData.length + "<BR>Coverage: " + calcArea + "KM²")
         // Set events
         .on('click', onClick_Marker)
         .on('mouseover',onMouseOver_marker)
