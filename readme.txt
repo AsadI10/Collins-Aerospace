@@ -6,7 +6,9 @@ Installation:
 5. Once you have followed those steps it's time to save the project on xampp and the folder called htdocs
 6. Now you can run the project by typing localhost/name-of-the-folder/index.php
 
-How to run it?
+Run it:
+1.To run install xampp if not already installed.
+2.Click run in Apache that will allow you to run the code on your server. 
 
 
 How to login?
