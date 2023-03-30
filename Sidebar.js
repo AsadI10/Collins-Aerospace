@@ -5,6 +5,7 @@ function loadSideBarGeneral(productContent) {
     + "<BR> Covered (km^2): <BR>" + productContent.reduce((a, b) => a + b, 0);
 }
 
+/*
 function loadSideBarProduct(product) {
     data = product.options.GeoJSON;
     var div = document.createElement("div");
@@ -13,6 +14,19 @@ function loadSideBarProduct(product) {
     GetWebPage("SideBar_ProductDetails.php", function (text) {
         div.innerHTML = text;
     }, "identifier=" + data.Identifier);
+
+    document.getElementById('panel-info').appendChild(div);
+}
+*/
+
+function loadSideBarProduct(product) {
+    data = product.options.GeoJSON;
+    var div = document.createElement("div");
+    div.id = data.Identifier;
+
+    GetWebPage("SideBar_ProductDetails.php", function (text) {
+        div.innerHTML = text;
+    }, "data=" + JSON.stringify(data));
 
     document.getElementById('panel-info').appendChild(div);
 }
