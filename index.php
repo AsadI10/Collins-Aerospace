@@ -73,15 +73,6 @@
           <script src="index.js"></script>
 </head>
 <body>
-
-<!-- this is where the loading animation start of the page -->
-  <!-- <br> -->
-  <!-- this is the loading animation of the index page -->
-  <!-- <div class="loadinggiv" id="loading">
-        <img src="img/loading.gif" alt="Loading...">
-      </div> -->
-      <!-- <div class="loading"></div> -->
-
 <br>
 <?php 
     include("./PageHeader.php")
@@ -118,33 +109,6 @@
 </html>
 
 <style>
-  .loading {
-  width: 100px;
-  height: 100px;
-  border: 5px solid rgba(0, 0, 0, 0.1);
-  border-top-color: #333;
-  border-radius: 50%;
-  text-align: center;
-  animation: spin 1s infinite linear;
-}
-@keyframes hideImage {
-  0% { opacity: 1; }
-  100% { opacity: 0; display: none; }
-}
-#loading {
-  animation-name: hideImage;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-  }
   .ClearButton{
     font-weight: bold;
     border: solid 2px black;
