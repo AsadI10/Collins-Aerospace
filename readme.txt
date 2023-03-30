@@ -24,7 +24,7 @@ Linux
 2. Then enter the following command: sudo apt-get install nodejs
 3. Check if Node.js is installed correctly by entering the following command: node -v
 
-how to Install SQLlite
+How to Install SQLlite
 Windows
 1. Go to the SQLite download page (https://www.sqlite.org/download.html) and download the precompiled binaries for Windows.
 2. Extract the files from the downloaded archive.
@@ -47,6 +47,5 @@ Linux
 How to login?
 -In the login just login with the API credentials given to us.
 
-they need node
 
 
