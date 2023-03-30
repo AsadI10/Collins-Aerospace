@@ -92,7 +92,7 @@
     </form>
     <div id="panel-info">
     </div>
-    <p id="PanelInfoOverflowNote" hidden>More hidden</p>
+    <!-- <p id="PanelInfoOverflowNote" hidden>More hidden</p> -->
   </span> 
   <script> document.getElementById("generalData-Label").hidden = true; </script>
 
