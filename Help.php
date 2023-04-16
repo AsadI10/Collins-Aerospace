@@ -131,6 +131,7 @@ weeks in order to demonstrate our ability to create a profesional application.
 </html>
 
 <style>
+  
   .help-title{
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 6px;
