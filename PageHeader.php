@@ -11,7 +11,7 @@
     </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <!-- <h1 class="CompanyName" href="">Aerospace Discovery</h1> -->
-    <a href="index.php"><img class="logo "src="https://cdn.discordapp.com/attachments/1064837575375851621/1082612530616209418/SHU_Discover_official_logo.png"></a>
+    <a href="index.php"><img class="logo "src="img\SHU Discover official logo.png"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
