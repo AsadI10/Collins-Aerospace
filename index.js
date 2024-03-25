@@ -24,28 +24,9 @@ function ReloadMap() {
     GetWebPage("Fetch_product_data.php", function (text) { data = JSON.parse(text) }, (isEmptyOrSpaces(missionID) != null? "missionid=" + missionID : ""));
     markers.clearLayers();
     shapes.clearLayers();
+	console.log(data);
     loadMarkers(data);
 }
-/*
-
-function toggleMarker(marker){
-
-	if(map.hasLayer(marker)){
-		map.removeLayer(marker)
-	}
-	else {
-		map.addLayer(marker)
-	}
-}
-
-function toggleAllMarkersOn(){
-	markers.getLayers().forEach(element => {
-		if(!map.hasLayer(marker)){
-			map.addLayer(marker);
-		}
-	});
-}
-*/
 
 function calculateArea(latLngs) {
 

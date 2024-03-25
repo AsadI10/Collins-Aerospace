@@ -26,6 +26,7 @@ function getVisibleMarkers(e){
 
 // Map events
 
+//function responsible for getting the markers within a selected L.Rectangle
 function onShiftDrag(e){
     clearProducts(); //clears all previous shapes that may have been drawn
     shapes.clearLayers(); // ^^ same as before
