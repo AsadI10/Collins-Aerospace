@@ -209,7 +209,11 @@ class APIInterface{
 		$p->DateModified = $result->datemodified/1000;
 		$p->Footprint = new FootprintData($result->footprint->type, $result->footprint->coordinates);
 		$p->ProductURL = $result->producturl;
-		$p->Thumbnail = $result->thumbnail;
+		if($result->thumbnail){
+			$p->Thumbnail = $result->thumbnail;
+		} else{
+			$p->Thumbnail = 0;
+		}
 		$p->MissionID = $result->missionid;
 		$p->Creator = $result->creator;
 		return $p;
